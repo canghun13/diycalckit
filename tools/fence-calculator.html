@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Fence Posts Do I Need? — Free Fence Calculator</title>
+  <meta name="description" content="Calculate fence posts, panels, and materials for any fence length and style. Free fence calculator — instant results, no signup required.">
+  <link rel="canonical" href="https://diycalckit.com/tools/fence-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Many Fence Posts Do I Need?</h1>
+    <p class="tool-desc">Enter your fence length and post spacing to calculate posts, panels, and concrete bags needed for your fence project.</p>
+
+    <div class="tool-box">
+      <div class="form-group">
+        <label>Total Fence Length (ft)</label>
+        <input type="number" id="length" placeholder="e.g. 150" min="0" step="1">
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Post Spacing</label>
+          <select id="spacing">
+            <option value="6">6 ft (standard wood)</option>
+            <option value="8" selected>8 ft (common)</option>
+            <option value="10">10 ft (metal/chain link)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Number of Gates</label>
+          <input type="number" id="gates" value="1" min="0">
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Fence Height</label>
+          <select id="height">
+            <option value="4">4 ft</option>
+            <option value="6" selected>6 ft</option>
+            <option value="8">8 ft</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Fence Type</label>
+          <select id="type">
+            <option value="wood">Wood panel</option>
+            <option value="picket">Picket fence</option>
+            <option value="chainlink">Chain link</option>
+            <option value="vinyl">Vinyl panel</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcFence()" style="width:100%">Calculate Fence Materials →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div class="result-num" style="font-size:2rem" id="posts">—</div>
+            <div class="result-label">fence posts</div>
+          </div>
+          <div>
+            <div class="result-num" style="font-size:2rem" id="panels">—</div>
+            <div class="result-label">panels / sections</div>
+          </div>
+          <div>
+            <div class="result-num" style="font-size:2rem" id="concrete_bags">—</div>
+            <div class="result-label">concrete bags</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:1rem;">Use 2 bags of 60 lb concrete per post for secure installation.</p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate Fence Posts</h2>
+    <p>Divide total fence length by post spacing and add 1 for the end post. For example, a 100-ft fence with 8-ft spacing needs 14 posts (100 ÷ 8 = 12.5, rounded up to 13, plus 1 end post).</p>
+    <p>Always add 2 extra posts per gate opening. Set posts at least 1/3 of their length underground — a 6-ft fence post should be set 2 ft deep.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Call 811 (USA) before digging any fence post holes. This free service marks underground utility lines and prevents costly and dangerous accidents.
+    </div>
+  </div>
+</main>
+<script>
+function calcFence() {
+  const len = parseFloat(document.getElementById('length').value);
+  const spacing = parseFloat(document.getElementById('spacing').value);
+  const gates = parseInt(document.getElementById('gates').value) || 0;
+  if (!len) { alert('Please enter fence length.'); return; }
+  const sections = Math.ceil(len / spacing);
+  const posts = sections + 1 + (gates * 2);
+  const panels = sections;
+  const concrete = posts * 2;
+  document.getElementById('posts').textContent = posts;
+  document.getElementById('panels').textContent = panels;
+  document.getElementById('concrete_bags').textContent = concrete;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

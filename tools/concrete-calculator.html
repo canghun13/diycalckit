@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Bags of Concrete Do I Need? — Free Calculator</title>
+  <meta name="description" content="Calculate cubic yards or bags of concrete for slabs, footings, or steps. Free concrete calculator — get an instant estimate, no signup required.">
+  <link rel="canonical" href="https://diycalckit.com/tools/concrete-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+  <style>
+    .shape-tabs { display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+    .shape-tab { padding:0.5rem 1.25rem; border:1.5px solid var(--border); border-radius:100px; font-size:0.875rem; font-weight:500; cursor:pointer; background:var(--white); color:var(--mid); transition:all 0.15s; }
+    .shape-tab.active { border-color:var(--amber); background:var(--amber-light); color:var(--amber-dark); }
+    .shape-inputs { display:none; }
+    .shape-inputs.active { display:block; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Many Bags of Concrete Do I Need?</h1>
+    <p class="tool-desc">Calculate cubic yards and pre-mixed bags needed for slabs, footings, columns, or steps. Supports 40 lb, 60 lb, and 80 lb bags.</p>
+
+    <div class="tool-box">
+      <p style="font-size:0.875rem; font-weight:600; color:var(--ink); margin-bottom:0.75rem;">Project Type</p>
+      <div class="shape-tabs">
+        <button class="shape-tab active" onclick="setShape('slab', this)">⬜ Slab</button>
+        <button class="shape-tab" onclick="setShape('footing', this)">🔲 Footing</button>
+        <button class="shape-tab" onclick="setShape('column', this)">⭕ Column</button>
+      </div>
+
+      <div class="shape-inputs active" id="slab-inputs">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-group"><label>Length (ft)</label><input type="number" id="slab-l" placeholder="e.g. 10" min="0" step="0.1"></div>
+          <div class="form-group"><label>Width (ft)</label><input type="number" id="slab-w" placeholder="e.g. 10" min="0" step="0.1"></div>
+        </div>
+        <div class="form-group"><label>Thickness (inches)</label>
+          <select id="slab-t">
+            <option value="3">3 inches — Light foot traffic</option>
+            <option value="4" selected>4 inches — Standard slab</option>
+            <option value="5">5 inches — Driveway</option>
+            <option value="6">6 inches — Heavy load</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="shape-inputs" id="footing-inputs">
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;">
+          <div class="form-group"><label>Length (ft)</label><input type="number" id="foot-l" placeholder="e.g. 8" min="0" step="0.1"></div>
+          <div class="form-group"><label>Width (ft)</label><input type="number" id="foot-w" placeholder="e.g. 1.5" min="0" step="0.1"></div>
+          <div class="form-group"><label>Depth (ft)</label><input type="number" id="foot-d" placeholder="e.g. 1" min="0" step="0.1"></div>
+        </div>
+      </div>
+
+      <div class="shape-inputs" id="column-inputs">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-group"><label>Diameter (inches)</label><input type="number" id="col-d" placeholder="e.g. 10" min="0" step="0.5"></div>
+          <div class="form-group"><label>Depth (ft)</label><input type="number" id="col-h" placeholder="e.g. 3" min="0" step="0.1"></div>
+        </div>
+        <div class="form-group"><label>Number of Columns</label><input type="number" id="col-n" value="1" min="1"></div>
+      </div>
+
+      <div class="form-group" style="margin-top:0.5rem;">
+        <label>Bag Size</label>
+        <select id="bag">
+          <option value="0.45">40 lb bag (0.45 cu ft)</option>
+          <option value="0.45">50 lb bag (0.45 cu ft)</option>
+          <option value="0.6" selected>60 lb bag (0.60 cu ft)</option>
+          <option value="0.6">66 lb bag (0.60 cu ft)</option>
+          <option value="0.6">80 lb bag (0.60 cu ft)</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" onclick="calcConcrete()" style="width:100%">Calculate Concrete Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="bags">—</div>
+        <div class="result-label">bags of concrete needed</div>
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="cubic_yards">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">cubic yards</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="cubic_feet">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">cubic feet</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;">For projects over 1 cubic yard, consider ordering ready-mix concrete — it's more cost-effective than bags.</p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate Concrete Needed</h2>
+    <p>To calculate concrete volume, multiply length × width × depth (all in feet) to get cubic feet. Divide by 27 to convert to cubic yards. For bags, divide cubic feet by the bag volume (0.45 cu ft for 60 lb bags).</p>
+    <p>For projects under 1 cubic yard, pre-mixed bags are the most practical option. For larger projects, ordering ready-mix concrete from a supplier is significantly cheaper per yard.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Always add 5–10% extra concrete to account for spillage and uneven subbase. Running out mid-pour creates cold joints that weaken the slab.
+    </div>
+  </div>
+</main>
+<script>
+let currentShape = 'slab';
+function setShape(shape, btn) {
+  currentShape = shape;
+  document.querySelectorAll('.shape-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.shape-inputs').forEach(i => i.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(shape + '-inputs').classList.add('active');
+}
+function calcConcrete() {
+  let cubicFeet = 0;
+  if (currentShape === 'slab') {
+    const l = parseFloat(document.getElementById('slab-l').value);
+    const w = parseFloat(document.getElementById('slab-w').value);
+    const t = parseFloat(document.getElementById('slab-t').value);
+    if (!l || !w) { alert('Please enter dimensions.'); return; }
+    cubicFeet = l * w * (t / 12);
+  } else if (currentShape === 'footing') {
+    const l = parseFloat(document.getElementById('foot-l').value);
+    const w = parseFloat(document.getElementById('foot-w').value);
+    const d = parseFloat(document.getElementById('foot-d').value);
+    if (!l || !w || !d) { alert('Please enter dimensions.'); return; }
+    cubicFeet = l * w * d;
+  } else {
+    const d = parseFloat(document.getElementById('col-d').value);
+    const h = parseFloat(document.getElementById('col-h').value);
+    const n = parseInt(document.getElementById('col-n').value) || 1;
+    if (!d || !h) { alert('Please enter dimensions.'); return; }
+    cubicFeet = Math.PI * Math.pow((d / 2) / 12, 2) * h * n;
+  }
+  const bagVol = parseFloat(document.getElementById('bag').value);
+  cubicFeet *= 1.08;
+  const cubicYards = cubicFeet / 27;
+  const bags = Math.ceil(cubicFeet / bagVol);
+  document.getElementById('bags').textContent = bags;
+  document.getElementById('cubic_yards').textContent = cubicYards.toFixed(2);
+  document.getElementById('cubic_feet').textContent = cubicFeet.toFixed(1);
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Area Calculator — Calculate Square Footage of Any Room</title>
+  <meta name="description" content="Calculate the area of any room shape — square, rectangular, or L-shaped. Instant results in sq ft. Free room area calculator, no signup needed.">
+  <link rel="canonical" href="https://diycalckit.com/tools/room-area-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+  <style>
+    .shape-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+    .shape-tab{padding:.5rem 1.25rem;border:1.5px solid var(--border);border-radius:100px;font-size:.875rem;font-weight:500;cursor:pointer;background:var(--white);color:var(--mid);transition:all .15s}
+    .shape-tab.active{border-color:var(--amber);background:var(--amber-light);color:var(--amber-dark)}
+    .shape-inputs{display:none}.shape-inputs.active{display:block}
+  </style>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Room Area Calculator</h1>
+    <p class="tool-desc">Calculate the square footage of any room shape. Supports rectangular, square, and L-shaped rooms.</p>
+    <div class="tool-box">
+      <div class="shape-tabs">
+        <button class="shape-tab active" onclick="setShape('rect',this)">⬜ Rectangle</button>
+        <button class="shape-tab" onclick="setShape('lshape',this)">🔲 L-Shape</button>
+        <button class="shape-tab" onclick="setShape('triangle',this)">🔺 Triangle</button>
+      </div>
+      <div class="shape-inputs active" id="rect-inputs">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group"><label>Length (ft)</label><input type="number" id="r-l" placeholder="e.g. 12" min="0" step="0.1"></div>
+          <div class="form-group"><label>Width (ft)</label><input type="number" id="r-w" placeholder="e.g. 10" min="0" step="0.1"></div>
+        </div>
+      </div>
+      <div class="shape-inputs" id="lshape-inputs">
+        <p style="font-size:0.85rem;color:var(--mid);margin-bottom:1rem;">Divide your L-shaped room into two rectangles (A and B) and enter each.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group"><label>Section A Length (ft)</label><input type="number" id="la-l" min="0" step="0.1"></div>
+          <div class="form-group"><label>Section A Width (ft)</label><input type="number" id="la-w" min="0" step="0.1"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group"><label>Section B Length (ft)</label><input type="number" id="lb-l" min="0" step="0.1"></div>
+          <div class="form-group"><label>Section B Width (ft)</label><input type="number" id="lb-w" min="0" step="0.1"></div>
+        </div>
+      </div>
+      <div class="shape-inputs" id="triangle-inputs">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group"><label>Base (ft)</label><input type="number" id="t-b" min="0" step="0.1"></div>
+          <div class="form-group"><label>Height (ft)</label><input type="number" id="t-h" min="0" step="0.1"></div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcArea()" style="width:100%">Calculate Area →</button>
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="area">—</div>
+        <div class="result-label">square feet</div>
+        <div style="margin-top:.5rem;font-size:1rem;font-weight:600;color:var(--amber-dark)" id="sqyd">—</div>
+        <div style="font-size:.78rem;color:var(--mid)">square yards</div>
+      </div>
+    </div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:.75rem;">How to Calculate Room Area</h2>
+    <p>For rectangular rooms, multiply length × width. For L-shaped rooms, divide into two rectangles and add the areas. Always measure at the widest points of the room for the most accurate calculation.</p>
+    <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Measure twice. A small measurement error compounds when buying materials — especially for flooring and tile.
+    </div>
+  </div>
+</main>
+<script>
+let shape = 'rect';
+function setShape(s,btn){shape=s;document.querySelectorAll('.shape-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.shape-inputs').forEach(i=>i.classList.remove('active'));btn.classList.add('active');document.getElementById(s+'-inputs').classList.add('active');}
+function calcArea(){
+  let area=0;
+  if(shape==='rect'){const l=parseFloat(document.getElementById('r-l').value),w=parseFloat(document.getElementById('r-w').value);if(!l||!w){alert('Enter dimensions.');return;}area=l*w;}
+  else if(shape==='lshape'){const al=parseFloat(document.getElementById('la-l').value),aw=parseFloat(document.getElementById('la-w').value),bl=parseFloat(document.getElementById('lb-l').value),bw=parseFloat(document.getElementById('lb-w').value);if(!al||!aw||!bl||!bw){alert('Enter all dimensions.');return;}area=(al*aw)+(bl*bw);}
+  else{const b=parseFloat(document.getElementById('t-b').value),h=parseFloat(document.getElementById('t-h').value);if(!b||!h){alert('Enter dimensions.');return;}area=(b*h)/2;}
+  document.getElementById('area').textContent=area.toFixed(1);
+  document.getElementById('sqyd').textContent=(area/9).toFixed(1)+' sq yd';
+  document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>

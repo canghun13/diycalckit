@@ -52,7 +52,14 @@ const TOOLS = [
 
 // ── 블로그 목록 (추가 시 여기만 수정) ──────────────────────
 const BLOGS = [
-  // 추후 추가
+  { name: "How Much Does It Cost to Paint a Room in 2026?", url: "/blog/how-much-does-it-cost-to-paint-a-room.html", date: "2026-05-01", desc: "The average cost ranges from $380 to $790 when hiring a pro, or $80–$150 in materials if you DIY." },
+  { name: "How Much Does a Bathroom Renovation Cost in 2026?", url: "/blog/how-much-does-a-bathroom-renovation-cost.html", date: "2026-05-01", desc: "A mid-range bathroom remodel costs $10,000–$25,000. Here's what drives the price." },
+  { name: "How Much Does It Cost to Tile a Floor in 2026?", url: "/blog/how-much-does-it-cost-to-tile-a-floor.html", date: "2026-05-01", desc: "Tiling a floor costs $7–$25 per sq ft installed. Full breakdown by tile type and labor." },
+  { name: "DIY vs. Hiring a Contractor: When to Do It Yourself", url: "/blog/diy-vs-hiring-a-contractor.html", date: "2026-05-01", desc: "How to decide when to hire a contractor and when to tackle it yourself — with cost comparisons." },
+  { name: "10 Home Renovations That Add the Most Value in 2026", url: "/blog/home-renovations-that-add-the-most-value.html", date: "2026-05-01", desc: "Based on the 2025/2026 Cost vs. Value Report — the 10 projects with the highest ROI." },
+  { name: "How Much Mulch Do I Need? Complete Homeowner Guide", url: "/blog/how-much-mulch-do-i-need.html", date: "2026-05-01", desc: "The right depth, bags vs. bulk pricing, and the simple formula to calculate how many bags to buy." },
+  { name: "How to Calculate Flooring for Any Room (Step-by-Step)", url: "/blog/how-to-calculate-flooring-for-a-room.html", date: "2026-05-01", desc: "Measure, add waste factor, convert to boxes. Works for LVP, hardwood, tile, and carpet." },
+  { name: "How Much Does It Cost to Move in 2026? Complete Guide", url: "/blog/moving-cost-guide.html", date: "2026-05-01", desc: "Local moves average $800–$2,500. Cross-country runs $4,000–$10,000. Full breakdown." },
 ];
 
 // ── 메뉴 렌더링 ─────────────────────────────────────────────

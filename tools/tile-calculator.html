@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Tiles Do I Need? — Free Tile Calculator</title>
+  <meta name="description" content="Calculate tiles needed for floors, walls, or bathrooms. Includes grout lines and waste allowance. Free tile calculator — instant results, no signup.">
+  <link rel="canonical" href="https://diycalckit.com/tools/tile-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Many Tiles Do I Need?</h1>
+    <p class="tool-desc">Enter your room and tile dimensions to find out exactly how many tiles to buy, including waste allowance for cuts and breakage.</p>
+
+    <div class="tool-box">
+      <p style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:0.75rem;">Room / Area Dimensions</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Area Length (ft)</label>
+          <input type="number" id="room-l" placeholder="e.g. 10" min="0" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Area Width (ft)</label>
+          <input type="number" id="room-w" placeholder="e.g. 8" min="0" step="0.1">
+        </div>
+      </div>
+
+      <p style="font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin:0.75rem 0;">Tile Size</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Tile Length (inches)</label>
+          <input type="number" id="tile-l" placeholder="e.g. 12" min="1" step="0.5" value="12">
+        </div>
+        <div class="form-group">
+          <label>Tile Width (inches)</label>
+          <input type="number" id="tile-w" placeholder="e.g. 12" min="1" step="0.5" value="12">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Grout Joint Width (inches)</label>
+          <select id="grout">
+            <option value="0.125">⅛" — Rectified tiles</option>
+            <option value="0.1875" selected>3/16" — Standard</option>
+            <option value="0.25">¼" — Most common</option>
+            <option value="0.375">⅜" — Rustic/natural stone</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Waste Factor</label>
+          <select id="waste">
+            <option value="0.10" selected>10% — Straight lay</option>
+            <option value="0.15">15% — Diagonal / complex</option>
+            <option value="0.20">20% — Herringbone / pattern</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="calcTiles()" style="width:100%">Calculate Tiles Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="tiles">—</div>
+        <div class="result-label">tiles needed (including waste)</div>
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="base_tiles">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">base tiles</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="waste_tiles">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">waste buffer</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="sqft">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">sq ft to cover</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate Tiles Needed</h2>
+    <p>To calculate tile quantity, divide the total area (in sq ft) by the area of each tile. Always add a waste factor of 10–20% for cuts, breakage, and future repairs. For diagonal or herringbone patterns, use 15–20% waste.</p>
+    <p>For example, covering a 10×8 ft floor (80 sq ft) with 12×12 inch tiles at 10% waste requires approximately 89 tiles.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">How Much Waste Factor Should I Use?</h2>
+    <p>Use 10% for straight lay patterns in simple rectangular rooms. Use 15% for diagonal layouts or rooms with multiple angles. Use 20% for herringbone, chevron, or other complex patterns where more cuts are required.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Always buy extra tiles from the same batch. Tile colors can vary between production runs, making it difficult to match later.
+    </div>
+  </div>
+</main>
+<script>
+function calcTiles() {
+  const rl = parseFloat(document.getElementById('room-l').value);
+  const rw = parseFloat(document.getElementById('room-w').value);
+  const tl = parseFloat(document.getElementById('tile-l').value);
+  const tw = parseFloat(document.getElementById('tile-w').value);
+  const grout = parseFloat(document.getElementById('grout').value);
+  const waste = parseFloat(document.getElementById('waste').value);
+  if (!rl || !rw || !tl || !tw) { alert('Please enter all dimensions.'); return; }
+  const roomSqFt = rl * rw;
+  const tileSqFt = ((tl + grout) / 12) * ((tw + grout) / 12);
+  const baseTiles = Math.ceil(roomSqFt / tileSqFt);
+  const wasteTiles = Math.ceil(baseTiles * waste);
+  const total = baseTiles + wasteTiles;
+  document.getElementById('tiles').textContent = total;
+  document.getElementById('base_tiles').textContent = baseTiles;
+  document.getElementById('waste_tiles').textContent = wasteTiles;
+  document.getElementById('sqft').textContent = roomSqFt.toFixed(0);
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Primer Do I Need? — Free Primer Calculator</title>
+  <meta name="description" content="Calculate primer coverage for walls, ceilings, and bare surfaces. Get exact gallons needed in seconds. Free primer calculator — no signup required.">
+  <link rel="canonical" href="https://diycalckit.com/tools/primer-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Much Primer Do I Need?</h1>
+    <p class="tool-desc">Enter your room dimensions to calculate exactly how many gallons of primer you need for walls and ceilings. Accounts for doors and windows.</p>
+
+    <div class="tool-box">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Room Length (ft)</label>
+          <input type="number" id="length" placeholder="e.g. 12" min="0" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Room Width (ft)</label>
+          <input type="number" id="width" placeholder="e.g. 10" min="0" step="0.1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Ceiling Height (ft)</label>
+        <input type="number" id="height" placeholder="e.g. 8" min="0" step="0.1" value="8">
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Number of Doors</label>
+          <input type="number" id="doors" placeholder="0" min="0" value="1">
+        </div>
+        <div class="form-group">
+          <label>Number of Windows</label>
+          <input type="number" id="windows" placeholder="0" min="0" value="2">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Surface Type</label>
+        <select id="surface">
+          <option value="350">Previously painted (350 sq ft/gal)</option>
+          <option value="300">Lightly textured (300 sq ft/gal)</option>
+          <option value="250">Bare drywall / new surface (250 sq ft/gal)</option>
+          <option value="200">Heavily textured / porous (200 sq ft/gal)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Include Ceiling?</label>
+        <select id="ceiling">
+          <option value="yes">Yes, include ceiling</option>
+          <option value="no">No, walls only</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="calcPrimer()" style="width:100%">Calculate Primer Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="gallons">—</div>
+        <div class="result-label">gallons of primer needed</div>
+        <div style="margin-top:1rem; font-size:0.85rem; color:var(--mid)" id="details"></div>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How Much Primer Does a Room Need?</h2>
+    <p>A standard gallon of primer covers 350 square feet on a previously painted surface. For bare drywall or new construction, plan for 250 sq ft per gallon as the surface is more porous and absorbs more primer.</p>
+    <p>To calculate wall area: add up the perimeter of the room, multiply by ceiling height, then subtract 21 sq ft per door and 15 sq ft per window.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Do I Need Primer Before Painting?</h2>
+    <p>Primer is essential when painting bare drywall, going from a dark to a light color, covering stains, or painting over glossy surfaces. For minor touch-ups on already-painted walls, you can often skip primer with a paint-and-primer combo product.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Always apply primer before painting bare drywall — skipping it leads to uneven color and extra coats of paint, costing more in the long run.
+    </div>
+  </div>
+</main>
+<script>
+function calcPrimer() {
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  const h = parseFloat(document.getElementById('height').value) || 8;
+  const doors = parseInt(document.getElementById('doors').value) || 0;
+  const windows = parseInt(document.getElementById('windows').value) || 0;
+  const coverage = parseInt(document.getElementById('surface').value);
+  const ceiling = document.getElementById('ceiling').value;
+  if (!l || !w || l <= 0 || w <= 0) { alert('Please enter valid dimensions.'); return; }
+  const wallArea = (2 * (l + w) * h) - (doors * 21) - (windows * 15);
+  const ceilArea = ceiling === 'yes' ? l * w : 0;
+  const totalArea = wallArea + ceilArea;
+  const gallons = Math.ceil((totalArea / coverage) * 10) / 10;
+  document.getElementById('gallons').textContent = gallons.toFixed(1);
+  document.getElementById('details').textContent = `Wall area: ${Math.round(wallArea)} sq ft${ceiling === 'yes' ? ` + Ceiling: ${Math.round(ceilArea)} sq ft` : ''} = ${Math.round(totalArea)} sq ft total`;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

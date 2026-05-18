@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Moving Boxes Do I Need? — Free Packing Calculator</title>
+  <meta name="description" content="Estimate moving boxes needed by room. Get a room-by-room packing breakdown for your move. Free packing box calculator — no signup required.">
+  <link rel="canonical" href="https://diycalckit.com/tools/packing-box-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+  <style>
+    .room-row { display:flex; align-items:center; justify-content:space-between; padding:0.75rem 0; border-bottom:1px solid var(--border); }
+    .room-row:last-child { border-bottom:none; }
+    .room-label { font-size:0.9rem; font-weight:500; color:var(--ink); }
+    .room-count { display:flex; align-items:center; gap:0.75rem; }
+    .count-btn { width:32px; height:32px; border-radius:50%; border:1.5px solid var(--border); background:var(--white); cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; color:var(--ink); transition:all 0.15s; }
+    .count-btn:hover { border-color:var(--amber); color:var(--amber); }
+    .count-num { min-width:24px; text-align:center; font-weight:600; font-size:1rem; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Many Moving Boxes Do I Need?</h1>
+    <p class="tool-desc">Select the rooms you're moving to get a room-by-room box estimate. Adjust quantities based on how much stuff you have.</p>
+
+    <div class="tool-box">
+      <p style="font-size:0.875rem; color:var(--mid); margin-bottom:1.25rem;">How many of each room are you moving?</p>
+
+      <div id="rooms">
+        <div class="room-row">
+          <span class="room-label">🛏️ Bedroom</span>
+          <div class="room-count">
+            <button class="count-btn" onclick="adjust('bedroom',-1)">−</button>
+            <span class="count-num" id="bedroom">1</span>
+            <button class="count-btn" onclick="adjust('bedroom',1)">+</button>
+          </div>
+        </div>
+        <div class="room-row">
+          <span class="room-label">🍳 Kitchen</span>
+          <div class="room-count">
+            <button class="count-btn" onclick="adjust('kitchen',-1)">−</button>
+            <span class="count-num" id="kitchen">1</span>
+            <button class="count-btn" onclick="adjust('kitchen',1)">+</button>
+          </div>
+        </div>
+        <div class="room-row">
+          <span class="room-label">🛋️ Living Room</span>
+          <div class="room-count">
+            <button class="count-btn" onclick="adjust('living',-1)">−</button>
+            <span class="count-num" id="living">1</span>
+            <button class="count-btn" onclick="adjust('living',1)">+</button>
+          </div>
+        </div>
+        <div class="room-row">
+          <span class="room-label">🚿 Bathroom</span>
+          <div class="room-count">
+            <button class="count-btn" onclick="adjust('bathroom',-1)">−</button>
+            <span class="count-num" id="bathroom">1</span>
+            <button class="count-btn" onclick="adjust('bathroom',1)">+</button>
+          </div>
+        </div>
+        <div class="room-row">
+          <span class="room-label">🍽️ Dining Room</span>
+          <div class="room-count">
+            <button class="count-btn" onclick="adjust('dining',-1)">−</button>
+            <span class="count-num" id="dining">0</span>
+            <button class="count-btn" onclick="adjust('dining',1)">+</button>
+          </div>
+        </div>
+        <div class="room-row">
+          <span class="room-label">🗄️ Home Office</span>
+          <div class="room-count">
+            <button class="count-btn" onclick="adjust('office',-1)">−</button>
+            <span class="count-num" id="office">0</span>
+            <button class="count-btn" onclick="adjust('office',1)">+</button>
+          </div>
+        </div>
+        <div class="room-row">
+          <span class="room-label">🧹 Basement / Storage</span>
+          <div class="room-count">
+            <button class="count-btn" onclick="adjust('basement',-1)">−</button>
+            <span class="count-num" id="basement">0</span>
+            <button class="count-btn" onclick="adjust('basement',1)">+</button>
+          </div>
+        </div>
+        <div class="room-row">
+          <span class="room-label">🚗 Garage</span>
+          <div class="room-count">
+            <button class="count-btn" onclick="adjust('garage',-1)">−</button>
+            <span class="count-num" id="garage">0</span>
+            <button class="count-btn" onclick="adjust('garage',1)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="calcBoxes()" style="width:100%; margin-top:1.5rem">Calculate Boxes Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="total_boxes">—</div>
+        <div class="result-label">total boxes estimated</div>
+        <div style="margin-top:1.25rem; font-size:0.875rem; color:var(--mid); text-align:left" id="breakdown"></div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:1rem;">Estimates include 10% buffer. Actual needs vary based on how much stuff you have.</p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How Many Boxes Do I Need to Move?</h2>
+    <p>The number of moving boxes depends on the size of your home and how much stuff you own. On average, a 1-bedroom apartment needs 20–30 boxes, a 2-bedroom home needs 30–50 boxes, and a 3-bedroom home needs 50–80 boxes.</p>
+    <p>Kitchens and bedrooms are the most box-intensive rooms. Don't forget to account for closets, garages, and storage areas — these often need more boxes than expected.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Order boxes from Home Depot or U-Haul a week before moving. Buying used boxes from Facebook Marketplace can cut costs by 50%.
+    </div>
+  </div>
+</main>
+<script>
+const COUNTS = { bedroom:1, kitchen:1, living:1, bathroom:1, dining:0, office:0, basement:0, garage:0 };
+const PER_ROOM = { bedroom:18, kitchen:20, living:12, bathroom:6, dining:10, office:15, basement:20, garage:18 };
+const NAMES = { bedroom:'Bedroom', kitchen:'Kitchen', living:'Living Room', bathroom:'Bathroom', dining:'Dining Room', office:'Home Office', basement:'Basement/Storage', garage:'Garage' };
+
+function adjust(room, delta) {
+  COUNTS[room] = Math.max(0, COUNTS[room] + delta);
+  document.getElementById(room).textContent = COUNTS[room];
+}
+
+function calcBoxes() {
+  let total = 0;
+  let lines = [];
+  for (const [room, count] of Object.entries(COUNTS)) {
+    if (count > 0) {
+      const boxes = Math.ceil(count * PER_ROOM[room] * 1.1);
+      total += boxes;
+      lines.push(`${NAMES[room]} (×${count}): ~${boxes} boxes`);
+    }
+  }
+  if (total === 0) { alert('Please add at least one room.'); return; }
+  document.getElementById('total_boxes').textContent = total;
+  document.getElementById('breakdown').innerHTML = lines.map(l => `<div style="padding:0.3rem 0; border-bottom:1px solid rgba(0,0,0,0.06)">${l}</div>`).join('');
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

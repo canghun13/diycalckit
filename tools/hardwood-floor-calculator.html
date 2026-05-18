@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Hardwood Flooring Do I Need? — Free Calculator</title>
+  <meta name="description" content="Estimate hardwood boards needed with install angle and waste percentage included. Free hardwood floor calculator — instant results, no signup.">
+  <link rel="canonical" href="https://diycalckit.com/tools/hardwood-floor-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Much Hardwood Flooring Do I Need?</h1>
+    <p class="tool-desc">Enter your room dimensions and installation angle to calculate hardwood flooring needed, including waste for cuts.</p>
+    <div class="tool-box">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Room Length (ft)</label><input type="number" id="l" placeholder="e.g. 12" min="0" step="0.1"></div>
+        <div class="form-group"><label>Room Width (ft)</label><input type="number" id="w" placeholder="e.g. 10" min="0" step="0.1"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Install Direction</label><select id="angle"><option value="0.10">Straight (10% waste)</option><option value="0.15" selected>Diagonal (15% waste)</option><option value="0.20">Herringbone (20% waste)</option></select></div>
+        <div class="form-group"><label>Board Width (inches)</label><select id="bw"><option value="2.25">2¼" (strip)</option><option value="3.25" selected>3¼" (standard plank)</option><option value="5">5" (wide plank)</option></select></div>
+      </div>
+      <button class="btn-primary" onclick="calcHardwood()" style="width:100%">Calculate Hardwood Needed →</button>
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="sqft">—</div>
+        <div class="result-label">sq ft needed (with waste)</div>
+        <div style="margin-top:0.75rem;font-size:0.85rem;color:var(--mid)" id="details"></div>
+      </div>
+    </div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:0.75rem;">Hardwood Flooring Waste Guide</h2>
+    <p>Straight installation: 10% waste. Diagonal: 15%. Herringbone or parquet patterns: 20%. Always buy slightly more than calculated — leftover boards are valuable for future repairs.</p>
+    <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Let hardwood planks acclimate in the room for 3–5 days before installation to prevent warping after install.
+    </div>
+  </div>
+</main>
+<script>
+function calcHardwood() {
+  const l = parseFloat(document.getElementById('l').value);
+  const w = parseFloat(document.getElementById('w').value);
+  const waste = parseFloat(document.getElementById('angle').value);
+  if (!l||!w) { alert('Enter dimensions.'); return; }
+  const net = l*w;
+  const total = Math.ceil(net*(1+waste));
+  document.getElementById('sqft').textContent = total;
+  document.getElementById('details').textContent = `Net area: ${net.toFixed(1)} sq ft + ${Math.round(net*waste)} sq ft waste`;
+  document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which Home Renovations Add the Most Value? — Free ROI Calculator</title>
+  <meta name="description" content="Find out which renovations add the most value to your home. Compare ROI for 15+ project types based on 2026 Cost vs. Value data. Free home renovation ROI calculator.">
+  <link rel="canonical" href="https://diycalckit.com/tools/home-renovation-roi-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+  <style>
+    .roi-table { width:100%; border-collapse:collapse; margin-top:1.5rem; font-size:0.9rem; }
+    .roi-table th { background:var(--slate); color:#fff; padding:0.75rem 1rem; text-align:left; }
+    .roi-table td { padding:0.75rem 1rem; border-bottom:1px solid var(--border); }
+    .roi-table tr:hover td { background:var(--amber-light); }
+    .roi-bar { height:8px; background:var(--steel-dark); border-radius:4px; margin-top:4px; }
+    .roi-bar-fill { height:8px; background:var(--amber); border-radius:4px; }
+    .roi-high { color:#2e7d32; font-weight:600; }
+    .roi-mid { color:var(--amber-dark); font-weight:600; }
+    .roi-low { color:#c62828; font-weight:600; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Which Home Renovations Add the Most Value?</h1>
+    <p class="tool-desc">Compare ROI for the most common home improvement projects. Enter your project cost to see your estimated return — based on 2025/2026 Cost vs. Value Report data.</p>
+
+    <div class="tool-box">
+      <div class="form-group">
+        <label>Select Renovation Project</label>
+        <select id="project">
+          <option value="garage_door">Garage Door Replacement</option>
+          <option value="stone_veneer">Manufactured Stone Veneer</option>
+          <option value="entry_door">Steel Entry Door Replacement</option>
+          <option value="minor_kitchen">Minor Kitchen Remodel</option>
+          <option value="deck_wood">Wood Deck Addition</option>
+          <option value="siding_vinyl">Vinyl Siding Replacement</option>
+          <option value="bathroom_mid">Bathroom Remodel (Mid-Range)</option>
+          <option value="window_vinyl">Vinyl Window Replacement</option>
+          <option value="roofing">Roofing Replacement</option>
+          <option value="major_kitchen">Major Kitchen Remodel</option>
+          <option value="bathroom_upscale">Bathroom Remodel (Upscale)</option>
+          <option value="master_suite">Master Suite Addition</option>
+          <option value="deck_composite">Composite Deck Addition</option>
+          <option value="sunroom">Sunroom Addition</option>
+          <option value="pool">Swimming Pool</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Project Cost ($) <span style="color:var(--muted); font-weight:400">(or leave blank for national average)</span></label>
+        <input type="number" id="cost" placeholder="Leave blank for average" min="0">
+      </div>
+      <button class="btn-primary" onclick="calcROI()" style="width:100%">Calculate ROI →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="roi_pct">—</div>
+        <div class="result-label">estimated ROI</div>
+        <div style="margin-top:1.25rem; display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="cost_display">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">Project Cost</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="value_added">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">Value Added</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="net_cost">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">Net Cost</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:1rem;">Based on 2025/2026 Remodeling Magazine Cost vs. Value Report national averages. Actual ROI varies by location and market.</p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:2rem 0 0.75rem;">2026 Home Renovation ROI Rankings</h2>
+    <p>Based on the 2025/2026 Cost vs. Value Report by Remodeling Magazine, here are the top home improvement projects ranked by return on investment:</p>
+
+    <table class="roi-table">
+      <thead>
+        <tr><th>Project</th><th>Avg Cost</th><th>ROI</th></tr>
+      </thead>
+      <tbody id="roi_tbody"></tbody>
+    </table>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Key insight:</strong> Exterior improvements consistently deliver the highest ROI. Garage door replacement, stone veneer, and entry door replacement all return over 90 cents per dollar spent.
+    </div>
+  </div>
+</main>
+<script>
+const PROJECTS = {
+  garage_door:      { name: 'Garage Door Replacement',        avg: 4500,  roi: 194 },
+  stone_veneer:     { name: 'Manufactured Stone Veneer',      avg: 11000, roi: 153 },
+  entry_door:       { name: 'Steel Entry Door Replacement',   avg: 2400,  roi: 188 },
+  minor_kitchen:    { name: 'Minor Kitchen Remodel',          avg: 27000, roi: 96  },
+  deck_wood:        { name: 'Wood Deck Addition',             avg: 17000, roi: 83  },
+  siding_vinyl:     { name: 'Vinyl Siding Replacement',       avg: 17000, roi: 80  },
+  bathroom_mid:     { name: 'Bathroom Remodel (Mid-Range)',   avg: 25000, roi: 74  },
+  window_vinyl:     { name: 'Vinyl Window Replacement',       avg: 20000, roi: 69  },
+  roofing:          { name: 'Roofing Replacement',            avg: 30000, roi: 61  },
+  major_kitchen:    { name: 'Major Kitchen Remodel',          avg: 80000, roi: 62  },
+  bathroom_upscale: { name: 'Bathroom Remodel (Upscale)',     avg: 76000, roi: 57  },
+  master_suite:     { name: 'Master Suite Addition',          avg: 150000,roi: 53  },
+  deck_composite:   { name: 'Composite Deck Addition',        avg: 24000, roi: 68  },
+  sunroom:          { name: 'Sunroom Addition',               avg: 75000, roi: 52  },
+  pool:             { name: 'Swimming Pool',                  avg: 90000, roi: 50  },
+};
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function calcROI() {
+  const key = document.getElementById('project').value;
+  const p = PROJECTS[key];
+  const cost = parseFloat(document.getElementById('cost').value) || p.avg;
+  const valueAdded = cost * (p.roi / 100);
+  const netCost = cost - valueAdded;
+  document.getElementById('roi_pct').textContent = p.roi + '%';
+  document.getElementById('cost_display').textContent = fmt(cost);
+  document.getElementById('value_added').textContent = fmt(valueAdded);
+  document.getElementById('net_cost').textContent = fmt(netCost);
+  document.getElementById('result').style.display = 'block';
+}
+
+// 표 렌더링
+const sorted = Object.values(PROJECTS).sort((a,b) => b.roi - a.roi);
+const tbody = document.getElementById('roi_tbody');
+tbody.innerHTML = sorted.map(p => {
+  const cls = p.roi >= 100 ? 'roi-high' : p.roi >= 70 ? 'roi-mid' : 'roi-low';
+  return `<tr>
+    <td>${p.name}</td>
+    <td>${fmt(p.avg)}</td>
+    <td><span class="${cls}">${p.roi}%</span>
+      <div class="roi-bar"><div class="roi-bar-fill" style="width:${Math.min(p.roi,200)/2}%"></div></div>
+    </td>
+  </tr>`;
+}).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — DIYCalcKit</title>
+  <meta name="description" content="Get in touch with DIYCalcKit. Send us a message for calculator suggestions, error reports, or general feedback.">
+  <link rel="canonical" href="https://diycalckit.com/contact.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Contact Us</h1>
+    <p class="tool-desc">Have a question, found an error, or want to suggest a new calculator? Send us a message.</p>
+    <div class="tool-box">
+      <p style="color:var(--mid);margin-bottom:1.5rem;">For the fastest response, email us directly at <a href="mailto:canghun13@naver.com" style="color:var(--amber);font-weight:600;">canghun13@naver.com</a></p>
+      <div class="form-group"><label>Your Name</label><input type="text" id="c-name" placeholder="John Smith"></div>
+      <div class="form-group"><label>Your Email</label><input type="email" id="c-email" placeholder="you@example.com"></div>
+      <div class="form-group"><label>Subject</label>
+        <select id="c-subject">
+          <option>Calculator suggestion</option>
+          <option>Found an error</option>
+          <option>General feedback</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea id="c-msg" rows="5" style="width:100%;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:1rem;resize:vertical;outline:none;" placeholder="Tell us what's on your mind..."></textarea></div>
+      <button class="btn-primary" onclick="sendContact()" style="width:100%">Send Message →</button>
+      <p id="c-confirm" style="display:none;text-align:center;color:var(--amber-dark);font-weight:600;margin-top:1rem;">✓ Thanks for reaching out! We'll get back to you soon.</p>
+    </div>
+  </div>
+</main>
+<script>
+function sendContact(){
+  const name=document.getElementById('c-name').value;
+  const email=document.getElementById('c-email').value;
+  const msg=document.getElementById('c-msg').value;
+  if(!name||!email||!msg){alert('Please fill in all fields.');return;}
+  document.getElementById('c-confirm').style.display='block';
+}
+</script>
+</body>
+</html>

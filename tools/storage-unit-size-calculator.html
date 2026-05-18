@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Size Storage Unit Do I Need? — Free Calculator</title>
+  <meta name="description" content="Find the right storage unit size for your furniture and belongings. Free storage unit size calculator — get a recommendation in seconds, no signup required.">
+  <link rel="canonical" href="https://diycalckit.com/tools/storage-unit-size-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+  <style>
+    .item-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:1.5rem; }
+    .item-check { display:flex; align-items:center; gap:0.6rem; padding:0.6rem 0.75rem; border:1.5px solid var(--border); border-radius:var(--radius); cursor:pointer; transition:all 0.15s; font-size:0.875rem; }
+    .item-check:hover { border-color:var(--amber); background:var(--amber-light); }
+    .item-check.selected { border-color:var(--amber); background:var(--amber-light); }
+    .item-check input { accent-color:var(--amber); width:16px; height:16px; }
+    .unit-card { padding:1.25rem; border:2px solid var(--border); border-radius:var(--radius-lg); margin-bottom:0.75rem; transition:all 0.2s; }
+    .unit-card.recommended { border-color:var(--amber); background:var(--amber-light); }
+    .unit-size { font-family:'DM Serif Display',serif; font-size:1.3rem; color:var(--slate); }
+    .unit-badge { display:inline-block; background:var(--amber); color:#fff; font-size:0.7rem; font-weight:700; padding:0.2rem 0.6rem; border-radius:100px; margin-left:0.5rem; text-transform:uppercase; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>What Size Storage Unit Do I Need?</h1>
+    <p class="tool-desc">Check everything you're storing to get a personalized storage unit size recommendation.</p>
+
+    <div class="tool-box">
+      <p style="font-size:0.875rem; font-weight:600; color:var(--ink); margin-bottom:0.75rem;">What are you storing?</p>
+
+      <div class="item-grid" id="itemGrid">
+        <label class="item-check"><input type="checkbox" value="30" onchange="toggleItem(this)"> 🛏️ King/Queen Bed</label>
+        <label class="item-check"><input type="checkbox" value="15" onchange="toggleItem(this)"> 🛏️ Twin Bed</label>
+        <label class="item-check"><input type="checkbox" value="25" onchange="toggleItem(this)"> 🛋️ Sofa / Couch</label>
+        <label class="item-check"><input type="checkbox" value="10" onchange="toggleItem(this)"> 🪑 Loveseat</label>
+        <label class="item-check"><input type="checkbox" value="20" onchange="toggleItem(this)"> 🍽️ Dining Table</label>
+        <label class="item-check"><input type="checkbox" value="5" onchange="toggleItem(this)"> 🪑 Dining Chairs (×4)</label>
+        <label class="item-check"><input type="checkbox" value="20" onchange="toggleItem(this)"> 🗄️ Dresser</label>
+        <label class="item-check"><input type="checkbox" value="15" onchange="toggleItem(this)"> 📚 Bookcase</label>
+        <label class="item-check"><input type="checkbox" value="10" onchange="toggleItem(this)"> 🖥️ Desk</label>
+        <label class="item-check"><input type="checkbox" value="15" onchange="toggleItem(this)"> 🪟 Wardrobe / Armoire</label>
+        <label class="item-check"><input type="checkbox" value="8" onchange="toggleItem(this)"> 📦 Boxes (×10)</label>
+        <label class="item-check"><input type="checkbox" value="12" onchange="toggleItem(this)"> 🚿 Washer / Dryer</label>
+        <label class="item-check"><input type="checkbox" value="10" onchange="toggleItem(this)"> 🧊 Refrigerator</label>
+        <label class="item-check"><input type="checkbox" value="8" onchange="toggleItem(this)"> 🏋️ Exercise Equipment</label>
+        <label class="item-check"><input type="checkbox" value="5" onchange="toggleItem(this)"> 🚲 Bicycle</label>
+        <label class="item-check"><input type="checkbox" value="15" onchange="toggleItem(this)"> 🌿 Patio Furniture Set</label>
+      </div>
+
+      <button class="btn-primary" onclick="calcStorage()" style="width:100%">Find My Storage Size →</button>
+
+      <div id="result" style="display:none; margin-top:1.5rem;">
+        <p style="font-size:0.875rem; font-weight:600; color:var(--ink); margin-bottom:1rem;">Recommended unit size:</p>
+        <div id="unit_cards"></div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;">Storage unit sizes vary by facility. Always confirm availability with your local storage provider.</p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">Storage Unit Size Guide</h2>
+    <p>Choosing the right storage unit size can save you money. Here's a quick reference:</p>
+    <ul style="padding-left:1.5rem; margin:1rem 0; line-height:2;">
+      <li><strong>5×5 (25 sq ft)</strong> — Small closet worth of items, boxes, seasonal décor</li>
+      <li><strong>5×10 (50 sq ft)</strong> — Studio apartment or small bedroom contents</li>
+      <li><strong>10×10 (100 sq ft)</strong> — 1-bedroom apartment, most furniture included</li>
+      <li><strong>10×15 (150 sq ft)</strong> — 2-bedroom home contents</li>
+      <li><strong>10×20 (200 sq ft)</strong> — 3-bedroom home or vehicle storage</li>
+      <li><strong>10×30 (300 sq ft)</strong> — Large home or commercial storage</li>
+    </ul>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Always go one size up from what you think you need. It's much easier to fit everything in a slightly larger unit than to squeeze into one that's too small.
+    </div>
+  </div>
+</main>
+<script>
+const UNITS = [
+  { size:'5×5', sqft:25, desc:'Small closet — boxes, seasonal items, small furniture' },
+  { size:'5×10', sqft:50, desc:'Studio/small bedroom — bike, boxes, small furniture' },
+  { size:'10×10', sqft:100, desc:'1-bedroom apartment — sofa, bed, dresser, boxes' },
+  { size:'10×15', sqft:150, desc:'2-bedroom home — full furniture set + boxes' },
+  { size:'10×20', sqft:200, desc:'3-bedroom home — large furniture, appliances, vehicle' },
+  { size:'10×30', sqft:300, desc:'Large home or commercial — multiple rooms of furniture' },
+];
+
+let totalPoints = 0;
+
+function toggleItem(el) {
+  const val = parseInt(el.value);
+  totalPoints += el.checked ? val : -val;
+  el.closest('.item-check').classList.toggle('selected', el.checked);
+}
+
+function calcStorage() {
+  if (totalPoints === 0) { alert('Please select at least one item.'); return; }
+  let recommended;
+  if (totalPoints <= 20) recommended = 0;
+  else if (totalPoints <= 40) recommended = 1;
+  else if (totalPoints <= 80) recommended = 2;
+  else if (totalPoints <= 120) recommended = 3;
+  else if (totalPoints <= 170) recommended = 4;
+  else recommended = 5;
+
+  document.getElementById('unit_cards').innerHTML = UNITS.map((u, i) => {
+    const isRec = i === recommended;
+    const isClose = i === recommended + 1;
+    return `<div class="unit-card ${isRec ? 'recommended' : ''}">
+      <div class="unit-size">${u.size} ft${isRec ? '<span class="unit-badge">Recommended</span>' : isClose ? '<span style="font-size:0.7rem;color:var(--mid);margin-left:0.5rem">Next size up</span>' : ''}</div>
+      <div style="font-size:0.85rem; color:var(--mid); margin-top:0.25rem">${u.sqft} sq ft — ${u.desc}</div>
+    </div>`;
+  }).slice(Math.max(0, recommended - 1), recommended + 3).join('');
+
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

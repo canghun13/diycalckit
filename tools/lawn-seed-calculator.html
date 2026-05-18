@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Grass Seed Do I Need? — Free Lawn Seed Calculator</title>
+  <meta name="description" content="Calculate grass seed coverage for new lawns or overseeding. Supports all major grass types. Free lawn seed calculator — instant results, no signup.">
+  <link rel="canonical" href="https://diycalckit.com/tools/lawn-seed-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Much Grass Seed Do I Need?</h1>
+    <p class="tool-desc">Enter your lawn area and grass type to calculate how many pounds of seed to buy for new seeding or overseeding.</p>
+    <div class="tool-box">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Lawn Length (ft)</label><input type="number" id="l" placeholder="e.g. 50" min="0" step="1"></div>
+        <div class="form-group"><label>Lawn Width (ft)</label><input type="number" id="w" placeholder="e.g. 40" min="0" step="1"></div>
+      </div>
+      <div class="form-group"><label>Grass Type</label>
+        <select id="grass">
+          <option value="3">Kentucky Bluegrass (3 lbs/1000 sq ft new)</option>
+          <option value="4">Tall Fescue (4 lbs/1000 sq ft new)</option>
+          <option value="2" selected>Fine Fescue (2 lbs/1000 sq ft new)</option>
+          <option value="2">Perennial Ryegrass (2 lbs/1000 sq ft new)</option>
+          <option value="1">Bermuda Grass (1 lb/1000 sq ft new)</option>
+          <option value="2">Zoysia Grass (2 lbs/1000 sq ft new)</option>
+          <option value="1">Centipede Grass (0.5 lbs/1000 sq ft new)</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Seeding Type</label>
+        <select id="type">
+          <option value="1">New lawn (full seeding)</option>
+          <option value="0.5" selected>Overseeding (fill in thin spots)</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="calcSeed()" style="width:100%">Calculate Seed Needed →</button>
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="lbs">—</div>
+        <div class="result-label">pounds of grass seed needed</div>
+        <div style="margin-top:.75rem;font-size:.85rem;color:var(--mid)" id="details"></div>
+        <p style="font-size:.78rem;color:var(--mid);margin-top:.75rem;">Seeding rates are per 1,000 sq ft. Actual needs vary by existing lawn condition.</p>
+      </div>
+    </div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:.75rem;">Grass Seed Coverage Rates</h2>
+    <p>Seeding rates vary by grass type. Cool-season grasses like fescue and bluegrass typically require 2–4 lbs per 1,000 sq ft for new seeding. Overseeding an existing lawn requires about half that rate.</p>
+    <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Seed in fall for cool-season grasses, and in late spring for warm-season grasses. Soil temperature matters more than air temperature for germination.
+    </div>
+  </div>
+</main>
+<script>
+function calcSeed(){
+  const l=parseFloat(document.getElementById('l').value),w=parseFloat(document.getElementById('w').value);
+  if(!l||!w){alert('Enter lawn dimensions.');return;}
+  const sqft=l*w;
+  const ratePerK=parseFloat(document.getElementById('grass').value);
+  const typeMult=parseFloat(document.getElementById('type').value);
+  const lbs=Math.ceil((sqft/1000)*ratePerK*typeMult);
+  document.getElementById('lbs').textContent=lbs;
+  document.getElementById('details').textContent=`Lawn area: ${sqft.toLocaleString()} sq ft`;
+  document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>

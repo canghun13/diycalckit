@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garden Area Calculator — Calculate Garden Bed Size</title>
+  <meta name="description" content="Calculate garden bed area for soil, mulch, or planting. Supports rectangular, circular, and triangular beds. Free garden area calculator — instant results.">
+  <link rel="canonical" href="https://diycalckit.com/tools/garden-area-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+  <style>
+    .shape-tabs { display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+    .shape-tab { padding:0.5rem 1.25rem; border:1.5px solid var(--border); border-radius:100px; font-size:0.875rem; font-weight:500; cursor:pointer; background:var(--white); color:var(--mid); transition:all 0.15s; }
+    .shape-tab.active { border-color:var(--amber); background:var(--amber-light); color:var(--amber-dark); }
+    .shape-inputs { display:none; }
+    .shape-inputs.active { display:block; }
+    .beds-list { margin-top:1rem; }
+    .bed-item { display:flex; justify-content:space-between; align-items:center; padding:0.6rem 0.75rem; background:var(--steel); border-radius:var(--radius); margin-bottom:0.5rem; font-size:0.875rem; }
+    .remove-btn { background:none; border:none; cursor:pointer; color:var(--muted); font-size:1rem; padding:0.25rem; }
+    .remove-btn:hover { color:#c62828; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Garden Area Calculator</h1>
+    <p class="tool-desc">Calculate the area of one or more garden beds. Add multiple beds and get the total area for soil, mulch, or planting estimates.</p>
+
+    <div class="tool-box">
+      <p style="font-size:0.875rem; font-weight:600; color:var(--ink); margin-bottom:0.75rem;">Bed Shape</p>
+      <div class="shape-tabs">
+        <button class="shape-tab active" onclick="setShape('rect', this)">⬜ Rectangle</button>
+        <button class="shape-tab" onclick="setShape('circle', this)">⭕ Circle</button>
+        <button class="shape-tab" onclick="setShape('triangle', this)">🔺 Triangle</button>
+      </div>
+
+      <div class="shape-inputs active" id="rect-inputs">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-group">
+            <label>Length (ft)</label>
+            <input type="number" id="rect-l" placeholder="e.g. 8" min="0" step="0.1">
+          </div>
+          <div class="form-group">
+            <label>Width (ft)</label>
+            <input type="number" id="rect-w" placeholder="e.g. 4" min="0" step="0.1">
+          </div>
+        </div>
+      </div>
+
+      <div class="shape-inputs" id="circle-inputs">
+        <div class="form-group">
+          <label>Diameter (ft)</label>
+          <input type="number" id="circle-d" placeholder="e.g. 6" min="0" step="0.1">
+        </div>
+      </div>
+
+      <div class="shape-inputs" id="triangle-inputs">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-group">
+            <label>Base (ft)</label>
+            <input type="number" id="tri-b" placeholder="e.g. 6" min="0" step="0.1">
+          </div>
+          <div class="form-group">
+            <label>Height (ft)</label>
+            <input type="number" id="tri-h" placeholder="e.g. 4" min="0" step="0.1">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Bed Name (optional)</label>
+        <input type="text" id="bed-name" placeholder="e.g. Front yard bed">
+      </div>
+
+      <div style="display:flex; gap:0.75rem;">
+        <button class="btn-primary" onclick="addBed()" style="flex:1">Add Bed</button>
+        <button class="btn-secondary" onclick="calcTotal()" style="flex:1">Calculate Total →</button>
+      </div>
+
+      <div class="beds-list" id="beds-list"></div>
+
+      <div class="result-box" id="result" style="display:none; margin-top:1rem;">
+        <div class="result-num" id="total-area">—</div>
+        <div class="result-label">total square feet</div>
+        <div style="margin-top:0.75rem; font-size:0.85rem; color:var(--mid)" id="bed-count"></div>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate Garden Bed Area</h2>
+    <p>For rectangular beds: multiply length by width. For circular beds: multiply π (3.14) by the radius squared. For triangular beds: multiply base by height and divide by 2.</p>
+    <p>Once you have the total area, you can use it to calculate how much soil, mulch, compost, or seed you need for your garden.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> For irregularly shaped beds, break them into smaller rectangles or circles, calculate each section, and add them together.
+    </div>
+  </div>
+</main>
+<script>
+let currentShape = 'rect';
+const beds = [];
+
+function setShape(shape, btn) {
+  currentShape = shape;
+  document.querySelectorAll('.shape-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.shape-inputs').forEach(i => i.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(shape + '-inputs').classList.add('active');
+}
+
+function getArea() {
+  if (currentShape === 'rect') {
+    const l = parseFloat(document.getElementById('rect-l').value);
+    const w = parseFloat(document.getElementById('rect-w').value);
+    if (!l || !w) return null;
+    return { area: l * w, desc: `${l} × ${w} ft rectangle` };
+  } else if (currentShape === 'circle') {
+    const d = parseFloat(document.getElementById('circle-d').value);
+    if (!d) return null;
+    return { area: Math.PI * (d/2) * (d/2), desc: `${d} ft diameter circle` };
+  } else {
+    const b = parseFloat(document.getElementById('tri-b').value);
+    const h = parseFloat(document.getElementById('tri-h').value);
+    if (!b || !h) return null;
+    return { area: (b * h) / 2, desc: `${b} × ${h} ft triangle` };
+  }
+}
+
+function addBed() {
+  const res = getArea();
+  if (!res) { alert('Please enter valid dimensions.'); return; }
+  const name = document.getElementById('bed-name').value || `Bed ${beds.length + 1}`;
+  beds.push({ name, area: res.area, desc: res.desc });
+  renderBeds();
+}
+
+function renderBeds() {
+  const list = document.getElementById('beds-list');
+  list.innerHTML = beds.map((b, i) => `
+    <div class="bed-item">
+      <div>
+        <strong>${b.name}</strong>
+        <span style="color:var(--mid); margin-left:0.5rem">${b.desc}</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <strong>${b.area.toFixed(1)} sq ft</strong>
+        <button class="remove-btn" onclick="removeBed(${i})">✕</button>
+      </div>
+    </div>`).join('');
+}
+
+function removeBed(i) { beds.splice(i, 1); renderBeds(); }
+
+function calcTotal() {
+  if (beds.length === 0) { alert('Please add at least one bed.'); return; }
+  const total = beds.reduce((sum, b) => sum + b.area, 0);
+  document.getElementById('total-area').textContent = total.toFixed(1);
+  document.getElementById('bed-count').textContent = `${beds.length} bed${beds.length > 1 ? 's' : ''} added`;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

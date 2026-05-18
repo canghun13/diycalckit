@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Sheets of Drywall Do I Need? — Free Calculator</title>
+  <meta name="description" content="Calculate drywall sheets needed for walls and ceilings. Subtracts doors and windows. Includes waste factor. Free drywall calculator — no signup required.">
+  <link rel="canonical" href="https://diycalckit.com/tools/drywall-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Many Sheets of Drywall Do I Need?</h1>
+    <p class="tool-desc">Enter your room dimensions to calculate drywall sheets for walls and ceiling. Doors and windows are automatically subtracted.</p>
+
+    <div class="tool-box">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Room Length (ft)</label>
+          <input type="number" id="length" placeholder="e.g. 12" min="0" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Room Width (ft)</label>
+          <input type="number" id="width" placeholder="e.g. 10" min="0" step="0.1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Ceiling Height (ft)</label>
+        <input type="number" id="height" value="8" min="0" step="0.5">
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Number of Doors</label>
+          <input type="number" id="doors" value="1" min="0">
+        </div>
+        <div class="form-group">
+          <label>Number of Windows</label>
+          <input type="number" id="windows" value="2" min="0">
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Sheet Size</label>
+          <select id="sheet">
+            <option value="32">4×8 ft (32 sq ft)</option>
+            <option value="48">4×12 ft (48 sq ft)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Include Ceiling?</label>
+          <select id="ceiling">
+            <option value="yes">Yes</option>
+            <option value="no">No — walls only</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcDrywall()" style="width:100%">Calculate Drywall Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="sheets">—</div>
+        <div class="result-label">sheets of drywall needed</div>
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="wall_sheets">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">wall sheets</div>
+          </div>
+          <div id="ceil_col">
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="ceil_sheets">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">ceiling sheets</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;">Includes 10% waste factor for cuts and damage.</p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate Drywall Sheets</h2>
+    <p>Calculate total wall area by multiplying perimeter by ceiling height. Subtract 21 sq ft per door and 15 sq ft per window. Divide by the sheet area (32 sq ft for 4×8 sheets) and add 10% for waste.</p>
+    <p>Standard drywall sheets are 4×8 ft (32 sq ft). For rooms with 9-ft ceilings, 4×12 sheets reduce seams and save time on finishing.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Buy drywall in 4×12 sheets for rooms with standard 8-ft ceilings — you'll cover the entire height in one sheet and have fewer horizontal seams to tape.
+    </div>
+  </div>
+</main>
+<script>
+function calcDrywall() {
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  const h = parseFloat(document.getElementById('height').value) || 8;
+  const doors = parseInt(document.getElementById('doors').value) || 0;
+  const windows = parseInt(document.getElementById('windows').value) || 0;
+  const sheetSqFt = parseInt(document.getElementById('sheet').value);
+  const ceiling = document.getElementById('ceiling').value;
+  if (!l || !w) { alert('Please enter room dimensions.'); return; }
+  const wallArea = (2 * (l + w) * h) - (doors * 21) - (windows * 15);
+  const ceilArea = l * w;
+  const wallSheets = Math.ceil((wallArea / sheetSqFt) * 1.1);
+  const ceilSheets = Math.ceil((ceilArea / sheetSqFt) * 1.1);
+  const total = wallSheets + (ceiling === 'yes' ? ceilSheets : 0);
+  document.getElementById('sheets').textContent = total;
+  document.getElementById('wall_sheets').textContent = wallSheets;
+  document.getElementById('ceil_sheets').textContent = ceilSheets;
+  document.getElementById('ceil_col').style.display = ceiling === 'yes' ? 'block' : 'none';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square Footage Calculator — Add Up Multiple Rooms Fast</title>
+  <meta name="description" content="Calculate total square footage for one room or an entire floor plan. Add multiple rooms instantly. Free square footage calculator — no signup required.">
+  <link rel="canonical" href="https://diycalckit.com/tools/square-footage-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+  <style>.room-item{display:flex;justify-content:space-between;align-items:center;padding:.6rem .75rem;background:var(--steel);border-radius:var(--radius);margin-bottom:.5rem;font-size:.875rem}.remove-btn{background:none;border:none;cursor:pointer;color:var(--muted);font-size:1rem}.remove-btn:hover{color:#c62828}</style>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Square Footage Calculator</h1>
+    <p class="tool-desc">Add multiple rooms to calculate total square footage for your home, renovation project, or floor plan.</p>
+    <div class="tool-box">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Length (ft)</label><input type="number" id="l" placeholder="e.g. 12" min="0" step="0.1"></div>
+        <div class="form-group"><label>Width (ft)</label><input type="number" id="w" placeholder="e.g. 10" min="0" step="0.1"></div>
+      </div>
+      <div class="form-group"><label>Room Name (optional)</label><input type="text" id="name" placeholder="e.g. Living Room"></div>
+      <div style="display:flex;gap:.75rem;">
+        <button class="btn-secondary" onclick="addRoom()" style="flex:1">+ Add Room</button>
+        <button class="btn-primary" onclick="calcTotal()" style="flex:1">Calculate Total →</button>
+      </div>
+      <div id="room-list" style="margin-top:1rem;"></div>
+      <div class="result-box" id="result" style="display:none;margin-top:1rem;">
+        <div class="result-num" id="total">—</div>
+        <div class="result-label">total square feet</div>
+        <div style="margin-top:.5rem;font-size:1rem;font-weight:600;color:var(--amber-dark)" id="rooms_count">—</div>
+      </div>
+    </div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:.75rem;">How to Calculate Square Footage</h2>
+    <p>Multiply length × width for each room and add the totals. For odd-shaped rooms, break them into rectangles. Don't include walls, closets, or bathrooms unless needed for your specific project.</p>
+    <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> When calculating for flooring, measure each room separately and account for closets and hallways individually.
+    </div>
+  </div>
+</main>
+<script>
+const rooms=[];
+function addRoom(){const l=parseFloat(document.getElementById('l').value),w=parseFloat(document.getElementById('w').value);if(!l||!w){alert('Enter dimensions.');return;}const name=document.getElementById('name').value||`Room ${rooms.length+1}`;rooms.push({name,sqft:l*w});renderRooms();document.getElementById('l').value='';document.getElementById('w').value='';document.getElementById('name').value='';}
+function renderRooms(){document.getElementById('room-list').innerHTML=rooms.map((r,i)=>`<div class="room-item"><span><strong>${r.name}</strong> — ${r.sqft.toFixed(1)} sq ft</span><button class="remove-btn" onclick="rooms.splice(${i},1);renderRooms()">✕</button></div>`).join('');}
+function calcTotal(){const l=parseFloat(document.getElementById('l').value),w=parseFloat(document.getElementById('w').value);let all=[...rooms];if(l&&w)all.push({name:'Current',sqft:l*w});if(!all.length){alert('Add at least one room.');return;}const total=all.reduce((s,r)=>s+r.sqft,0);document.getElementById('total').textContent=total.toFixed(1);document.getElementById('rooms_count').textContent=`${all.length} room${all.length>1?'s':''}`;document.getElementById('result').style.display='block';}
+</script>
+</body>
+</html>

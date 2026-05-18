@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Bags of Mulch Do I Need? — Free Mulch Calculator</title>
+  <meta name="description" content="Calculate cubic yards or bags of mulch needed for any garden bed. Supports 2 cu ft and 3 cu ft bags. Free mulch calculator — instant results, no signup.">
+  <link rel="canonical" href="https://diycalckit.com/tools/mulch-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Many Bags of Mulch Do I Need?</h1>
+    <p class="tool-desc">Enter your garden bed dimensions and desired depth to find out exactly how many bags of mulch to buy — in cubic yards, cubic feet, or bags.</p>
+
+    <div class="tool-box">
+      <div class="form-group">
+        <label for="length">Bed Length (feet)</label>
+        <input type="number" id="length" placeholder="e.g. 10" min="0" step="0.1">
+      </div>
+      <div class="form-group">
+        <label for="width">Bed Width (feet)</label>
+        <input type="number" id="width" placeholder="e.g. 4" min="0" step="0.1">
+      </div>
+      <div class="form-group">
+        <label for="depth">Mulch Depth (inches)</label>
+        <select id="depth">
+          <option value="2">2 inches (recommended minimum)</option>
+          <option value="3" selected>3 inches (most common)</option>
+          <option value="4">4 inches (maximum recommended)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="bagsize">Bag Size</label>
+        <select id="bagsize">
+          <option value="2" selected>2 cu ft bags (standard)</option>
+          <option value="3">3 cu ft bags (large)</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="calcMulch()" style="width:100%">Calculate Mulch Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="bags">—</div>
+        <div class="result-label">bags needed</div>
+        <div style="margin-top:1rem; display:flex; gap:2rem; justify-content:center; flex-wrap:wrap;">
+          <div>
+            <div style="font-size:1.25rem; font-weight:600; color:var(--amber-dark)" id="cubicFeet">—</div>
+            <div style="font-size:0.8rem; color:var(--mid)">cubic feet</div>
+          </div>
+          <div>
+            <div style="font-size:1.25rem; font-weight:600; color:var(--amber-dark)" id="cubicYards">—</div>
+            <div style="font-size:0.8rem; color:var(--mid)">cubic yards</div>
+          </div>
+        </div>
+        <p style="font-size:0.8rem; color:var(--mid); margin-top:1rem;">We recommend buying 10% extra for waste and uneven spreading.</p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate Mulch Needed</h2>
+    <p>To calculate how much mulch you need, multiply the length and width of your garden bed to get the area in square feet. Then multiply by the depth in inches, divide by 12 to convert to feet, and divide by 27 to get cubic yards.</p>
+    <p>The formula is: <strong>(Length × Width × Depth in inches) ÷ 12 ÷ 27 = Cubic Yards</strong></p>
+    <p>Most bags of mulch sold at Home Depot and Lowe's contain 2 cubic feet. One cubic yard equals 13.5 bags of 2 cu ft mulch. Always buy 10% extra to account for settling and uneven areas.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Recommended Mulch Depth</h2>
+    <p>The ideal mulch depth is 2–4 inches. Going deeper than 4 inches can suffocate plant roots. For most garden beds, 3 inches is the sweet spot — enough to suppress weeds and retain moisture without harming plants.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Measure each garden bed separately and add the totals. Don't forget to subtract any areas taken up by large plants or trees.
+    </div>
+  </div>
+</main>
+<script>
+function calcMulch() {
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  const d = parseFloat(document.getElementById('depth').value);
+  const bag = parseFloat(document.getElementById('bagsize').value);
+  if (!l || !w || l <= 0 || w <= 0) { alert('Please enter valid dimensions.'); return; }
+  const cubicFeet = l * w * (d / 12);
+  const cubicYards = cubicFeet / 27;
+  const bags = Math.ceil((cubicFeet / bag) * 1.1);
+  document.getElementById('cubicFeet').textContent = cubicFeet.toFixed(1);
+  document.getElementById('cubicYards').textContent = cubicYards.toFixed(2);
+  document.getElementById('bags').textContent = bags;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

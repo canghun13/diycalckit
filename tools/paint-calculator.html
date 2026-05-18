@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Paint Do I Need? — Free Paint Calculator</title>
+  <meta name="description" content="Calculate exactly how many gallons of paint you need for any room. Accounts for doors, windows, ceilings, and number of coats. Free paint calculator — instant results.">
+  <link rel="canonical" href="https://diycalckit.com/tools/paint-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Much Paint Do I Need?</h1>
+    <p class="tool-desc">Enter your room dimensions to find out exactly how many gallons of paint to buy — walls, ceiling, and trim calculated separately.</p>
+
+    <div class="tool-box">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Room Length (ft)</label>
+          <input type="number" id="length" placeholder="e.g. 12" min="0" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Room Width (ft)</label>
+          <input type="number" id="width" placeholder="e.g. 10" min="0" step="0.1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Ceiling Height (ft)</label>
+        <input type="number" id="height" placeholder="e.g. 8" min="0" step="0.1" value="8">
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Number of Doors</label>
+          <input type="number" id="doors" placeholder="0" min="0" value="1">
+        </div>
+        <div class="form-group">
+          <label>Number of Windows</label>
+          <input type="number" id="windows" placeholder="0" min="0" value="2">
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Number of Coats</label>
+          <select id="coats">
+            <option value="1">1 coat</option>
+            <option value="2" selected>2 coats (recommended)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Include Ceiling?</label>
+          <select id="ceiling">
+            <option value="yes">Yes</option>
+            <option value="no">No — walls only</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcPaint()" style="width:100%">Calculate Paint Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; text-align:center;">
+          <div>
+            <div class="result-num" id="wall_gallons">—</div>
+            <div class="result-label">gallons for walls</div>
+          </div>
+          <div id="ceil_col">
+            <div class="result-num" id="ceil_gallons">—</div>
+            <div class="result-label">gallons for ceiling</div>
+          </div>
+        </div>
+        <div style="margin-top:1rem; font-size:0.85rem; color:var(--mid)" id="area_details"></div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;">One gallon covers approx. 350–400 sq ft per coat. Always round up to the nearest quart or gallon.</p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate Paint for a Room</h2>
+    <p>To calculate paint needed, find the total wall area by multiplying room perimeter by ceiling height. Subtract 21 sq ft per door and 15 sq ft per window. Divide by 350 (sq ft per gallon) and multiply by your number of coats.</p>
+    <p>For a standard 12×10 room with 8-ft ceilings, 1 door, and 2 windows, you'll typically need about 1.5 gallons for two coats of wall paint.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">How Many Coats of Paint Do I Need?</h2>
+    <p>Most paint jobs require 2 coats for an even finish. One coat is only sufficient when repainting with the same or similar color. Going from dark to light always requires at least 2 coats, sometimes 3.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Buy slightly more paint than calculated and keep a can for touch-ups. Paint color can vary slightly between batches.
+    </div>
+  </div>
+</main>
+<script>
+function calcPaint() {
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  const h = parseFloat(document.getElementById('height').value) || 8;
+  const doors = parseInt(document.getElementById('doors').value) || 0;
+  const windows = parseInt(document.getElementById('windows').value) || 0;
+  const coats = parseInt(document.getElementById('coats').value);
+  const ceiling = document.getElementById('ceiling').value;
+  if (!l || !w) { alert('Please enter room dimensions.'); return; }
+  const wallArea = (2 * (l + w) * h) - (doors * 21) - (windows * 15);
+  const ceilArea = l * w;
+  const wallGallons = Math.ceil((wallArea * coats / 350) * 10) / 10;
+  const ceilGallons = Math.ceil((ceilArea / 350) * 10) / 10;
+  document.getElementById('wall_gallons').textContent = wallGallons.toFixed(1);
+  document.getElementById('ceil_gallons').textContent = ceilGallons.toFixed(1);
+  document.getElementById('ceil_col').style.display = ceiling === 'yes' ? 'block' : 'none';
+  document.getElementById('area_details').textContent = `Wall area: ${Math.round(wallArea)} sq ft${ceiling === 'yes' ? ` | Ceiling: ${Math.round(ceilArea)} sq ft` : ''}`;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

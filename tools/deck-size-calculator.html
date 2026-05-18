@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Lumber Do I Need for a Deck? — Free Deck Size Calculator</title>
+  <meta name="description" content="Plan deck dimensions and estimate lumber, joists, and fasteners needed. Free deck size calculator — instant results, no signup required.">
+  <link rel="canonical" href="https://diycalckit.com/tools/deck-size-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Much Lumber Do I Need for a Deck?</h1>
+    <p class="tool-desc">Enter your deck dimensions to estimate decking boards, joists, posts, and fasteners needed for your build.</p>
+    <div class="tool-box">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Deck Length (ft)</label><input type="number" id="l" placeholder="e.g. 16" min="0" step="0.5"></div>
+        <div class="form-group"><label>Deck Width (ft)</label><input type="number" id="w" placeholder="e.g. 12" min="0" step="0.5"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Decking Board Width</label><select id="bw"><option value="5.5" selected>5½" (2×6)</option><option value="3.5">3½" (2×4)</option></select></div>
+        <div class="form-group"><label>Joist Spacing</label><select id="js"><option value="12">12" OC</option><option value="16" selected>16" OC (standard)</option><option value="24">24" OC</option></select></div>
+      </div>
+      <button class="btn-primary" onclick="calcDeck()" style="width:100%">Calculate Deck Materials →</button>
+      <div class="result-box" id="result" style="display:none">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;text-align:center;">
+          <div><div class="result-num" style="font-size:2rem" id="boards">—</div><div class="result-label">decking boards</div></div>
+          <div><div class="result-num" style="font-size:2rem" id="joists">—</div><div class="result-label">joists</div></div>
+        </div>
+        <div style="margin-top:1rem;font-size:.85rem;color:var(--mid)" id="sqft_detail"></div>
+        <p style="font-size:.78rem;color:var(--mid);margin-top:.75rem;">Includes 10% waste. Board lengths may vary — adjust based on available sizes at your lumber yard.</p>
+      </div>
+    </div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:.75rem;">How to Calculate Deck Lumber</h2>
+    <p>Calculate deck area (length × width), then divide by the board width to get the number of rows needed. For joists, divide deck length by joist spacing and add 1 for the end joist.</p>
+    <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Use pressure-treated lumber (rated for ground contact) for the frame. Composite decking costs more upfront but requires far less maintenance over time.
+    </div>
+  </div>
+</main>
+<script>
+function calcDeck(){
+  const l=parseFloat(document.getElementById('l').value),w=parseFloat(document.getElementById('w').value);
+  if(!l||!w){alert('Enter dimensions.');return;}
+  const bw=parseFloat(document.getElementById('bw').value)/12;
+  const js=parseInt(document.getElementById('js').value);
+  const sqft=l*w;
+  const boards=Math.ceil((w/bw)*1.1);
+  const joists=Math.ceil((l/(js/12))+1);
+  document.getElementById('boards').textContent=boards;
+  document.getElementById('joists').textContent=joists;
+  document.getElementById('sqft_detail').textContent=`Deck area: ${sqft.toFixed(0)} sq ft`;
+  document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>

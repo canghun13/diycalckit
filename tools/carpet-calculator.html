@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Carpet Do I Need? — Free Carpet Calculator</title>
+  <meta name="description" content="Calculate carpet square footage for any room. Includes seam placement and 10% waste factor. Free carpet calculator — instant results, no signup required.">
+  <link rel="canonical" href="https://diycalckit.com/tools/carpet-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+  <style>
+    .room-item { display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0.75rem;background:var(--steel);border-radius:var(--radius);margin-bottom:0.5rem;font-size:0.875rem; }
+    .remove-btn { background:none;border:none;cursor:pointer;color:var(--muted);font-size:1rem; }
+    .remove-btn:hover { color:#c62828; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Much Carpet Do I Need?</h1>
+    <p class="tool-desc">Calculate carpet needed for one room or multiple rooms. Includes waste factor for cuts and seams.</p>
+    <div class="tool-box">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Room Length (ft)</label><input type="number" id="length" placeholder="e.g. 12" min="0" step="0.1"></div>
+        <div class="form-group"><label>Room Width (ft)</label><input type="number" id="width" placeholder="e.g. 10" min="0" step="0.1"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Room Name (optional)</label><input type="text" id="name" placeholder="e.g. Master Bedroom"></div>
+        <div class="form-group"><label>Waste Factor</label><select id="waste"><option value="0.10" selected>10% — Standard</option><option value="0.15">15% — Complex room</option></select></div>
+      </div>
+      <div style="display:flex;gap:0.75rem;">
+        <button class="btn-secondary" onclick="addRoom()" style="flex:1">+ Add Room</button>
+        <button class="btn-primary" onclick="calcCarpet()" style="flex:1">Calculate →</button>
+      </div>
+      <div id="room-list" style="margin-top:1rem;"></div>
+      <div class="result-box" id="result" style="display:none;margin-top:1rem;">
+        <div class="result-num" id="sqyd">—</div>
+        <div class="result-label">square yards needed</div>
+        <div style="margin-top:0.5rem;font-size:1rem;font-weight:600;color:var(--amber-dark)" id="sqft">—</div>
+        <div style="font-size:0.78rem;color:var(--mid)">square feet (with waste)</div>
+        <p style="font-size:0.78rem;color:var(--mid);margin-top:0.75rem;">Carpet is typically sold by the square yard. 1 sq yd = 9 sq ft.</p>
+      </div>
+    </div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:0.75rem;">How to Calculate Carpet</h2>
+    <p>Multiply room length by width to get square footage. Add 10% for waste. Divide total square feet by 9 to convert to square yards — the standard unit carpet is sold in.</p>
+    <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Carpet comes in 12-ft wide rolls. If your room is wider than 12 ft, you'll need a seam — factor this into your waste calculation.
+    </div>
+  </div>
+</main>
+<script>
+const rooms = [];
+function addRoom() {
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  if (!l || !w) { alert('Enter dimensions.'); return; }
+  const waste = parseFloat(document.getElementById('waste').value);
+  const name = document.getElementById('name').value || `Room ${rooms.length+1}`;
+  rooms.push({name, sqft: l*w, waste});
+  document.getElementById('room-list').innerHTML = rooms.map((r,i) => `<div class="room-item"><span><strong>${r.name}</strong> — ${r.sqft.toFixed(1)} sq ft</span><button class="remove-btn" onclick="rooms.splice(${i},1);this.closest('.room-item').remove()">✕</button></div>`).join('');
+  document.getElementById('length').value=''; document.getElementById('width').value=''; document.getElementById('name').value='';
+}
+function calcCarpet() {
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  const waste = parseFloat(document.getElementById('waste').value);
+  let all = [...rooms];
+  if (l&&w) all.push({sqft:l*w, waste});
+  if (!all.length) { alert('Enter room dimensions.'); return; }
+  const total = all.reduce((s,r) => s + r.sqft*(1+r.waste), 0);
+  document.getElementById('sqyd').textContent = Math.ceil(total/9);
+  document.getElementById('sqft').textContent = Math.ceil(total) + ' sq ft';
+  document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>
