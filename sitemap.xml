@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://diycalckit.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Tools -->
+  <url><loc>https://diycalckit.com/tools/paint-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/wallpaper-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/primer-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/flooring-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/tile-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/carpet-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/hardwood-floor-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/room-area-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/square-footage-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/drywall-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/concrete-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/renovation-cost-estimator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/contractor-cost-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/home-renovation-roi-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/fence-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/deck-size-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/garden-area-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/mulch-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/lawn-seed-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/moving-cost-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/storage-unit-size-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/packing-box-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+
+  <!-- Pages -->
+  <url><loc>https://diycalckit.com/about.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://diycalckit.com/contact.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://diycalckit.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://diycalckit.com/blog/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+</urlset>
