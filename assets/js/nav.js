@@ -6,7 +6,7 @@
 
 // ── GA ──────────────────────────────────────────────────────
 // GA_ID는 Google Analytics 연결 후 교체
-const GA_ID = 'G-XXXXXXXXXX';
+const GA_ID = 'G-QM4NEN1DFQ';
 (function () {
   var s = document.createElement('script');
   s.async = true;
