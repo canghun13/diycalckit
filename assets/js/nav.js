@@ -43,6 +43,7 @@ const TOOLS = [
   { name: "Deck Size Calculator", url: "/tools/deck-size-calculator.html" },
   { name: "Garden Area Calculator", url: "/tools/garden-area-calculator.html" },
   { name: "Mulch Calculator", url: "/tools/mulch-calculator.html" },
+  { name: "Gravel Calculator", url: "/tools/gravel-calculator.html" },
   { name: "Lawn Seed Calculator", url: "/tools/lawn-seed-calculator.html" },
   // 이사
   { name: "Moving Cost Calculator", url: "/tools/moving-cost-calculator.html" },
@@ -60,6 +61,9 @@ const BLOGS = [
   { name: "How Much Mulch Do I Need? Complete Homeowner Guide", url: "/blog/how-much-mulch-do-i-need.html", date: "2026-05-01", desc: "The right depth, bags vs. bulk pricing, and the simple formula to calculate how many bags to buy." },
   { name: "How to Calculate Flooring for Any Room (Step-by-Step)", url: "/blog/how-to-calculate-flooring-for-a-room.html", date: "2026-05-01", desc: "Measure, add waste factor, convert to boxes. Works for LVP, hardwood, tile, and carpet." },
   { name: "How Much Does It Cost to Move in 2026? Complete Guide", url: "/blog/moving-cost-guide.html", date: "2026-05-01", desc: "Local moves average $800–$2,500. Cross-country runs $4,000–$10,000. Full breakdown." },
+  { name: "How Much Gravel Do I Need? Complete Homeowner Guide", url: "/blog/how-much-gravel-do-i-need.html", date: "2026-05-31", desc: "Calculate cubic yards and tons of gravel for driveways, paths, and garden beds. Includes depth guide, gravel types, and bags vs. bulk cost comparison." },
+  { name: "How to Build a Gravel Driveway: Step-by-Step Guide", url: "/blog/how-to-build-a-gravel-driveway.html", date: "2026-05-31", desc: "A complete DIY guide to building a gravel driveway — excavation, base layers, finish gravel, and cost breakdown vs. hiring a contractor." },
+  { name: "Gravel vs. Mulch for Garden Beds: Which Is Better?", url: "/blog/gravel-vs-mulch-for-garden-beds.html", date: "2026-05-31", desc: "An honest comparison of gravel and mulch for garden beds — cost, weed control, plant health, moisture, and which to choose for your yard." },
 ];
 
 // ── 메뉴 렌더링 ─────────────────────────────────────────────
