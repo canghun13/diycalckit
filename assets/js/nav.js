@@ -62,8 +62,8 @@ const BLOGS = [
   { name: "How to Calculate Flooring for Any Room (Step-by-Step)", url: "/blog/how-to-calculate-flooring-for-a-room.html", date: "2026-05-01", desc: "Measure, add waste factor, convert to boxes. Works for LVP, hardwood, tile, and carpet." },
   { name: "How Much Does It Cost to Move in 2026? Complete Guide", url: "/blog/moving-cost-guide.html", date: "2026-05-01", desc: "Local moves average $800–$2,500. Cross-country runs $4,000–$10,000. Full breakdown." },
   { name: "How Much Gravel Do I Need? Complete Homeowner Guide", url: "/blog/how-much-gravel-do-i-need.html", date: "2026-05-31", desc: "Calculate cubic yards and tons of gravel for driveways, paths, and garden beds. Includes depth guide, gravel types, and bags vs. bulk cost comparison." },
-  { name: "How to Build a Gravel Driveway: Step-by-Step Guide", url: "/blog/how-to-build-a-gravel-driveway.html", date: "2026-05-31", desc: "A complete DIY guide to building a gravel driveway — excavation, base layers, finish gravel, and cost breakdown vs. hiring a contractor." },
-  { name: "Gravel vs. Mulch for Garden Beds: Which Is Better?", url: "/blog/gravel-vs-mulch-for-garden-beds.html", date: "2026-05-31", desc: "An honest comparison of gravel and mulch for garden beds — cost, weed control, plant health, moisture, and which to choose for your yard." },
+  { name: "How Much Does a Gravel Driveway Cost in 2026?", url: "/blog/how-much-does-a-gravel-driveway-cost.html", date: "2026-05-31", desc: "A gravel driveway costs $300–$1,500 DIY or $1,000–$3,000 installed. Full cost breakdown by driveway size, gravel type, and labor." },
+  { name: "How Much Gravel Do I Need for a Garden Bed?", url: "/blog/how-much-gravel-for-garden-bed.html", date: "2026-05-31", desc: "Calculate bags or cubic yards of gravel for any garden bed. Covers depth, gravel types, landscape fabric, and bags vs. bulk cost comparison." },
 ];
 
 // ── 메뉴 렌더링 ─────────────────────────────────────────────
