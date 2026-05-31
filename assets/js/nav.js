@@ -44,6 +44,7 @@ const TOOLS = [
   { name: "Garden Area Calculator", url: "/tools/garden-area-calculator.html" },
   { name: "Mulch Calculator", url: "/tools/mulch-calculator.html" },
   { name: "Gravel Calculator", url: "/tools/gravel-calculator.html" },
+  { name: "Soil Calculator", url: "/tools/soil-calculator.html" },
   { name: "Lawn Seed Calculator", url: "/tools/lawn-seed-calculator.html" },
   // 이사
   { name: "Moving Cost Calculator", url: "/tools/moving-cost-calculator.html" },
@@ -64,6 +65,9 @@ const BLOGS = [
   { name: "How Much Gravel Do I Need? Complete Homeowner Guide", url: "/blog/how-much-gravel-do-i-need.html", date: "2026-05-31", desc: "Calculate cubic yards and tons of gravel for driveways, paths, and garden beds. Includes depth guide, gravel types, and bags vs. bulk cost comparison." },
   { name: "How Much Does a Gravel Driveway Cost in 2026?", url: "/blog/how-much-does-a-gravel-driveway-cost.html", date: "2026-05-31", desc: "A gravel driveway costs $300–$1,500 DIY or $1,000–$3,000 installed. Full cost breakdown by driveway size, gravel type, and labor." },
   { name: "How Much Gravel Do I Need for a Garden Bed?", url: "/blog/how-much-gravel-for-garden-bed.html", date: "2026-05-31", desc: "Calculate bags or cubic yards of gravel for any garden bed. Covers depth, gravel types, landscape fabric, and bags vs. bulk cost comparison." },
+  { name: "How Much Does It Cost to Wallpaper a Room in 2026?", url: "/blog/how-much-does-it-cost-to-wallpaper-a-room.html", date: "2026-06-01", desc: "Wallpapering a room costs $300–$800 in materials and $300–$800 in labor. Full cost breakdown by wallpaper type and room size." },
+  { name: "How Many Rolls of Wallpaper Do I Need?", url: "/blog/how-many-rolls-of-wallpaper-do-i-need.html", date: "2026-06-01", desc: "The formula, pattern repeat guide, and quick reference table for any room size. Get the exact roll count before you buy." },
+  { name: "How Much Wallpaper Do I Need for an Accent Wall?", url: "/blog/how-much-wallpaper-for-accent-wall.html", date: "2026-06-01", desc: "Roll count by wall size, pattern repeat impact, cost breakdown, and peel-and-stick vs. traditional comparison." },
 ];
 
 // ── 메뉴 렌더링 ─────────────────────────────────────────────

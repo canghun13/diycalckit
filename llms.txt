@@ -34,6 +34,7 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [Garden Area Calculator](https://diycalckit.com/tools/garden-area-calculator.html): Calculates garden bed area for soil, mulch, or planting planning.
 - [Mulch Calculator](https://diycalckit.com/tools/mulch-calculator.html): Calculates cubic yards or bags of mulch needed based on bed dimensions and depth.
 - [Gravel Calculator](https://diycalckit.com/tools/gravel-calculator.html): Calculates cubic yards, tons, and bags of gravel needed for driveways, paths, and garden beds.
+- [Soil Calculator](https://diycalckit.com/tools/soil-calculator.html): Calculate cubic feet, cubic yards, and bags of soil needed for raised garden beds, planters, and in-ground garden beds.
 - [Lawn Seed Calculator](https://diycalckit.com/tools/lawn-seed-calculator.html): Calculates pounds of grass seed needed for new lawns or overseeding.
 
 ### Moving
