@@ -8,6 +8,17 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/nav.js" defer></script>
+  <style>
+    .search-wrap { max-width: 520px; margin: 0 auto 2rem; }
+    .search-wrap input {
+      width: 100%; padding: .75rem 1rem; font-size: 1rem;
+      border: 2px solid var(--border); border-radius: var(--radius);
+      background: var(--surface); color: var(--text);
+      outline: none; box-sizing: border-box;
+    }
+    .search-wrap input:focus { border-color: var(--amber); }
+    .no-results { text-align:center; color:var(--mid); padding:2rem 0; display:none; }
+  </style>
 </head>
 <body>
 <main>
@@ -18,65 +29,60 @@
     </div>
   </div>
   <section class="section">
-    <div class="blog-grid">
-      <a href="/blog/how-much-does-it-cost-to-paint-a-room.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Does It Cost to Paint a Room in 2026?</h3><p class="blog-card-desc">The average cost to paint a room ranges from $380 to $790 when hiring a pro, or $80–$150 in materials if you DIY. Here's the full breakdown.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/how-much-does-a-bathroom-renovation-cost.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Does a Bathroom Renovation Cost in 2026?</h3><p class="blog-card-desc">A mid-range bathroom remodel costs $10,000–$25,000. Here's what drives the price and how to budget your project.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/how-much-does-it-cost-to-tile-a-floor.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Does It Cost to Tile a Floor in 2026?</h3><p class="blog-card-desc">Tiling a floor costs $7–$25 per sq ft installed. Full breakdown by tile type, room size, and labor costs.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/diy-vs-hiring-a-contractor.html" class="blog-card">
-        <div class="blog-card-body"><h3>DIY vs. Hiring a Contractor: When to Do It Yourself</h3><p class="blog-card-desc">Not every home project is worth DIYing. Here's how to decide — with cost comparisons and a list of what to never attempt yourself.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/home-renovations-that-add-the-most-value.html" class="blog-card">
-        <div class="blog-card-body"><h3>10 Home Renovations That Add the Most Value in 2026</h3><p class="blog-card-desc">Based on the 2025/2026 Cost vs. Value Report — the 10 projects with the highest ROI, ranked and explained.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/how-much-mulch-do-i-need.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Mulch Do I Need? Complete Homeowner Guide</h3><p class="blog-card-desc">The right depth, bags vs. bulk pricing, and the simple formula to calculate exactly how many bags to buy.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/how-to-calculate-flooring-for-a-room.html" class="blog-card">
-        <div class="blog-card-body"><h3>How to Calculate Flooring for Any Room (Step-by-Step)</h3><p class="blog-card-desc">Measure, add waste factor, convert to boxes. Works for LVP, hardwood, tile, and carpet — with a handy table of waste factors by type.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/moving-cost-guide.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Does It Cost to Move in 2026? Complete Guide</h3><p class="blog-card-desc">Local moves average $800–$2,500. Cross-country runs $4,000–$10,000. Full breakdown by home size, distance, and service level.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/how-much-gravel-do-i-need.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Gravel Do I Need? Complete Homeowner Guide</h3><p class="blog-card-desc">Calculate cubic yards and tons for driveways, paths, and garden beds. Includes depth guide, gravel types, and bags vs. bulk cost comparison.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/how-much-does-a-gravel-driveway-cost.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Does a Gravel Driveway Cost in 2026?</h3><p class="blog-card-desc">A gravel driveway costs $300–$1,500 DIY or $1,000–$3,000 installed. Full cost breakdown by size, gravel type, and labor.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/how-much-gravel-for-garden-bed.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Gravel Do I Need for a Garden Bed?</h3><p class="blog-card-desc">Calculate bags or cubic yards for any garden bed. Covers depth guide, gravel types, landscape fabric, and bags vs. bulk cost comparison.</p></div>
-        <div class="blog-card-footer"><time>May 2026</time></div>
-      </a>
-      <a href="/blog/how-much-does-it-cost-to-wallpaper-a-room.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Does It Cost to Wallpaper a Room in 2026?</h3><p class="blog-card-desc">Wallpapering a room costs $300–$800 in materials and $300–$800 in labor. Full cost breakdown by wallpaper type and room size.</p></div>
-        <div class="blog-card-footer"><time>Jun 2026</time></div>
-      </a>
-      <a href="/blog/how-many-rolls-of-wallpaper-do-i-need.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Many Rolls of Wallpaper Do I Need?</h3><p class="blog-card-desc">The formula, pattern repeat guide, and quick reference table for any room size. Get the exact roll count before you buy.</p></div>
-        <div class="blog-card-footer"><time>Jun 2026</time></div>
-      </a>
-      <a href="/blog/how-much-wallpaper-for-accent-wall.html" class="blog-card">
-        <div class="blog-card-body"><h3>How Much Wallpaper Do I Need for an Accent Wall?</h3><p class="blog-card-desc">Roll count by wall size, pattern repeat impact, cost breakdown, and peel-and-stick vs. traditional comparison.</p></div>
-        <div class="blog-card-footer"><time>Jun 2026</time></div>
-      </a>
+    <div class="search-wrap">
+      <input type="text" id="blogSearch" placeholder="Search guides — e.g. paint, flooring, gravel…" oninput="filterBlogs()">
     </div>
+    <div class="blog-grid" id="blogGrid"></div>
+    <p class="no-results" id="noResults">No guides found. Try a different keyword.</p>
   </section>
 </main>
+<script>
+const BLOG_POSTS = [
+  { title: "How Much Wallpaper Do I Need for an Accent Wall?", url: "/blog/how-much-wallpaper-for-accent-wall.html", date: "2026-06-01", desc: "Roll count by wall size, pattern repeat impact, cost breakdown, and peel-and-stick vs. traditional comparison." },
+  { title: "How Many Rolls of Wallpaper Do I Need?", url: "/blog/how-many-rolls-of-wallpaper-do-i-need.html", date: "2026-06-01", desc: "The formula, pattern repeat guide, and quick reference table for any room size. Get the exact roll count before you buy." },
+  { title: "How Much Does It Cost to Wallpaper a Room in 2026?", url: "/blog/how-much-does-it-cost-to-wallpaper-a-room.html", date: "2026-06-01", desc: "Wallpapering a room costs $300–$800 in materials and $300–$800 in labor. Full cost breakdown by wallpaper type and room size." },
+  { title: "How Much Gravel Do I Need for a Garden Bed?", url: "/blog/how-much-gravel-for-garden-bed.html", date: "2026-05-31", desc: "Calculate bags or cubic yards for any garden bed. Covers depth guide, gravel types, landscape fabric, and bags vs. bulk cost comparison." },
+  { title: "How Much Does a Gravel Driveway Cost in 2026?", url: "/blog/how-much-does-a-gravel-driveway-cost.html", date: "2026-05-31", desc: "A gravel driveway costs $300–$1,500 DIY or $1,000–$3,000 installed. Full cost breakdown by size, gravel type, and labor." },
+  { title: "How Much Gravel Do I Need? Complete Homeowner Guide", url: "/blog/how-much-gravel-do-i-need.html", date: "2026-05-31", desc: "Calculate cubic yards and tons for driveways, paths, and garden beds. Includes depth guide, gravel types, and bags vs. bulk cost comparison." },
+  { title: "How Much Does It Cost to Move in 2026? Complete Guide", url: "/blog/moving-cost-guide.html", date: "2026-05-01", desc: "Local moves average $800–$2,500. Cross-country runs $4,000–$10,000. Full breakdown by home size, distance, and service level." },
+  { title: "How to Calculate Flooring for Any Room (Step-by-Step)", url: "/blog/how-to-calculate-flooring-for-a-room.html", date: "2026-05-01", desc: "Measure, add waste factor, convert to boxes. Works for LVP, hardwood, tile, and carpet." },
+  { title: "How Much Mulch Do I Need? Complete Homeowner Guide", url: "/blog/how-much-mulch-do-i-need.html", date: "2026-05-01", desc: "The right depth, bags vs. bulk pricing, and the simple formula to calculate exactly how many bags to buy." },
+  { title: "10 Home Renovations That Add the Most Value in 2026", url: "/blog/home-renovations-that-add-the-most-value.html", date: "2026-05-01", desc: "Based on the 2025/2026 Cost vs. Value Report — the 10 projects with the highest ROI, ranked and explained." },
+  { title: "DIY vs. Hiring a Contractor: When to Do It Yourself", url: "/blog/diy-vs-hiring-a-contractor.html", date: "2026-05-01", desc: "Not every home project is worth DIYing. Here's how to decide — with cost comparisons for common projects." },
+  { title: "How Much Does It Cost to Tile a Floor in 2026?", url: "/blog/how-much-does-it-cost-to-tile-a-floor.html", date: "2026-05-01", desc: "Tiling a floor costs $7–$25 per sq ft installed. Full breakdown by tile type, room size, and labor costs." },
+  { title: "How Much Does a Bathroom Renovation Cost in 2026?", url: "/blog/how-much-does-a-bathroom-renovation-cost.html", date: "2026-05-01", desc: "A mid-range bathroom remodel costs $10,000–$25,000. Here's what drives the price and how to budget your project." },
+  { title: "How Much Does It Cost to Paint a Room in 2026?", url: "/blog/how-much-does-it-cost-to-paint-a-room.html", date: "2026-05-01", desc: "The average cost to paint a room ranges from $380 to $790 when hiring a pro, or $80–$150 in materials if you DIY." },
+];
+
+function renderBlogs(posts) {
+  const grid = document.getElementById('blogGrid');
+  const noResults = document.getElementById('noResults');
+  if (!posts.length) {
+    grid.innerHTML = '';
+    noResults.style.display = 'block';
+    return;
+  }
+  noResults.style.display = 'none';
+  grid.innerHTML = posts.map(p => {
+    const d = new Date(p.date);
+    const dateStr = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+    return `<a href="${p.url}" class="blog-card">
+      <div class="blog-card-body"><h3>${p.title}</h3><p class="blog-card-desc">${p.desc}</p></div>
+      <div class="blog-card-footer"><time>${dateStr}</time></div>
+    </a>`;
+  }).join('');
+}
+
+function filterBlogs() {
+  const q = document.getElementById('blogSearch').value.toLowerCase().trim();
+  if (!q) { renderBlogs(BLOG_POSTS); return; }
+  const filtered = BLOG_POSTS.filter(p =>
+    p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)
+  );
+  renderBlogs(filtered);
+}
+
+renderBlogs(BLOG_POSTS);
+</script>
 </body>
 </html>
