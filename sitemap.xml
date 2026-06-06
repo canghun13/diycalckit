@@ -27,6 +27,7 @@
   <url><loc>https://diycalckit.com/tools/garden-area-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://diycalckit.com/tools/mulch-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://diycalckit.com/tools/gravel-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/soil-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://diycalckit.com/tools/lawn-seed-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://diycalckit.com/tools/moving-cost-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://diycalckit.com/tools/storage-unit-size-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
@@ -36,14 +37,27 @@
   <url><loc>https://diycalckit.com/about.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://diycalckit.com/contact.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://diycalckit.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+  <!-- Blog -->
   <url><loc>https://diycalckit.com/blog/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-paint-a-room.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-a-bathroom-renovation-cost.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-tile-a-floor.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/diy-vs-hiring-a-contractor.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/home-renovations-that-add-the-most-value.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-mulch-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-to-calculate-flooring-for-a-room.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/moving-cost-guide.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://diycalckit.com/blog/how-much-gravel-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://diycalckit.com/blog/how-much-does-a-gravel-driveway-cost.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://diycalckit.com/blog/how-much-gravel-for-garden-bed.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-
-  <url><loc>https://diycalckit.com/tools/soil-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/blog/gravel-vs-mulch-for-garden-beds.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-to-build-a-gravel-driveway.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-wallpaper-a-room.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://diycalckit.com/blog/how-many-rolls-of-wallpaper-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://diycalckit.com/blog/how-much-wallpaper-for-accent-wall.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-soil-for-raised-bed.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/best-soil-for-raised-garden-beds.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-deep-should-raised-garden-bed-be.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
 
 </urlset>

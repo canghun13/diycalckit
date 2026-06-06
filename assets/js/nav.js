@@ -68,6 +68,11 @@ const BLOGS = [
   { name: "How Much Does It Cost to Wallpaper a Room in 2026?", url: "/blog/how-much-does-it-cost-to-wallpaper-a-room.html", date: "2026-06-01", desc: "Wallpapering a room costs $300–$800 in materials and $300–$800 in labor. Full cost breakdown by wallpaper type and room size." },
   { name: "How Many Rolls of Wallpaper Do I Need?", url: "/blog/how-many-rolls-of-wallpaper-do-i-need.html", date: "2026-06-01", desc: "The formula, pattern repeat guide, and quick reference table for any room size. Get the exact roll count before you buy." },
   { name: "How Much Wallpaper Do I Need for an Accent Wall?", url: "/blog/how-much-wallpaper-for-accent-wall.html", date: "2026-06-01", desc: "Roll count by wall size, pattern repeat impact, cost breakdown, and peel-and-stick vs. traditional comparison." },
+  { name: "How Much Soil Do I Need for a Raised Bed?", url: "/blog/how-much-soil-for-raised-bed.html", date: "2026-06-06", desc: "The cubic foot formula, bags vs. bulk cost comparison, and recommended soil depth by plant type." },
+  { name: "Best Soil for Raised Garden Beds in 2026", url: "/blog/best-soil-for-raised-garden-beds.html", date: "2026-06-06", desc: "Compare raised bed soil vs. topsoil, DIY mixes, and bagged options — with cost breakdown and recommendations." },
+  { name: "How Deep Should a Raised Garden Bed Be?", url: "/blog/how-deep-should-raised-garden-bed-be.html", date: "2026-06-06", desc: "Recommended depth by vegetable type, minimum depth for common plants, and how depth affects soil cost." },
+  { name: "Gravel vs. Mulch for Garden Beds: Which Should You Use?", url: "/blog/gravel-vs-mulch-for-garden-beds.html", date: "2026-05-31", desc: "Side-by-side comparison of gravel and mulch for drainage, weed suppression, cost, and plant types." },
+  { name: "How to Build a Gravel Driveway: Step-by-Step Guide", url: "/blog/how-to-build-a-gravel-driveway.html", date: "2026-05-31", desc: "Materials, tools, base preparation, and gravel depth — everything you need to install a gravel driveway yourself." },
 ];
 
 // ── 메뉴 렌더링 ─────────────────────────────────────────────
