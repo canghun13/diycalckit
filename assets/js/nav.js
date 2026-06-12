@@ -46,6 +46,7 @@ const TOOLS = [
   { name: "Gravel Calculator", url: "/tools/gravel-calculator.html" },
   { name: "Soil Calculator", url: "/tools/soil-calculator.html" },
   { name: "Lawn Seed Calculator", url: "/tools/lawn-seed-calculator.html" },
+  { name: "Stain Calculator", url: "/tools/stain-calculator.html" },
   // 이사
   { name: "Moving Cost Calculator", url: "/tools/moving-cost-calculator.html" },
   { name: "Storage Unit Size Calculator", url: "/tools/storage-unit-size-calculator.html" },
@@ -71,6 +72,9 @@ const BLOGS = [
   { name: "How Much Soil Do I Need for a Raised Bed?", url: "/blog/how-much-soil-for-raised-bed.html", date: "2026-06-06", desc: "The cubic foot formula, bags vs. bulk cost comparison, and recommended soil depth by plant type." },
   { name: "Best Soil for Raised Garden Beds in 2026", url: "/blog/best-soil-for-raised-garden-beds.html", date: "2026-06-06", desc: "Compare raised bed soil vs. topsoil, DIY mixes, and bagged options — with cost breakdown and recommendations." },
   { name: "How Deep Should a Raised Garden Bed Be?", url: "/blog/how-deep-should-raised-garden-bed-be.html", date: "2026-06-06", desc: "Recommended depth by vegetable type, minimum depth for common plants, and how depth affects soil cost." },
+  { name: "How to Hang Wallpaper: Step-by-Step Guide for Beginners", url: "/blog/how-to-hang-wallpaper.html", date: "2026-06-12", desc: "Wall prep, measuring, cutting, pasting, and finishing — the complete method that actually works, including corners and pattern matching." },
+  { name: "Wallpaper Calculator with Pattern Repeat: How to Get the Right Roll Count", url: "/blog/wallpaper-calculator-with-repeat.html", date: "2026-06-12", desc: "Pattern repeat is the most misunderstood part of buying wallpaper. Here's exactly how it affects your roll count — with examples and a reference table." },
+  { name: "How Much Peel and Stick Wallpaper Do I Need? Complete Guide", url: "/blog/peel-and-stick-wallpaper-calculator.html", date: "2026-06-12", desc: "Calculate rolls for any room or accent wall. Includes coverage by roll type, waste factor guide, and comparison with traditional wallpaper." },
   { name: "Gravel vs. Mulch for Garden Beds: Which Should You Use?", url: "/blog/gravel-vs-mulch-for-garden-beds.html", date: "2026-05-31", desc: "Side-by-side comparison of gravel and mulch for drainage, weed suppression, cost, and plant types." },
   { name: "How to Build a Gravel Driveway: Step-by-Step Guide", url: "/blog/how-to-build-a-gravel-driveway.html", date: "2026-05-31", desc: "Materials, tools, base preparation, and gravel depth — everything you need to install a gravel driveway yourself." },
 ];

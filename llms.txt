@@ -41,6 +41,7 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [Moving Cost Calculator](https://diycalckit.com/tools/moving-cost-calculator.html): Estimates moving costs based on home size, distance, and service level.
 - [Storage Unit Size Calculator](https://diycalckit.com/tools/storage-unit-size-calculator.html): Recommends the right storage unit size based on what you need to store.
 - [Packing Box Calculator](https://diycalckit.com/tools/packing-box-calculator.html): Estimates number of moving boxes needed by room count and home size.
+- [Stain Calculator](https://diycalckit.com/tools/stain-calculator.html): Calculates gallons of deck stain needed based on deck size, railings, number of coats, and wood condition.
 
 ## Cost Guides
 
@@ -63,6 +64,9 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [How Much Soil Do I Need for a Raised Bed?](https://diycalckit.com/blog/how-much-soil-for-raised-bed.html): Cubic foot formula, bags vs. bulk cost, and recommended soil depth by plant type.
 - [Best Soil for Raised Garden Beds in 2026](https://diycalckit.com/blog/best-soil-for-raised-garden-beds.html): Compare raised bed soil vs. topsoil, DIY mixes, and bagged options with cost breakdown.
 - [How Deep Should a Raised Garden Bed Be?](https://diycalckit.com/blog/how-deep-should-raised-garden-bed-be.html): Recommended depth by vegetable type, minimum depth guide, and how depth affects soil cost.
+- [How to Hang Wallpaper: Step-by-Step Guide for Beginners](https://diycalckit.com/blog/how-to-hang-wallpaper.html): Wall prep, measuring, cutting, pasting, and finishing — complete hanging method including corners and pattern matching.
+- [Wallpaper Calculator with Pattern Repeat: How to Get the Right Roll Count](https://diycalckit.com/blog/wallpaper-calculator-with-repeat.html): How pattern repeat affects roll count, straight vs. drop match explained, and manual calculation formula.
+- [How Much Peel and Stick Wallpaper Do I Need? Complete Guide](https://diycalckit.com/blog/peel-and-stick-wallpaper-calculator.html): Coverage by roll type, accent wall reference table, and comparison with traditional wallpaper.
 
 ## About
 

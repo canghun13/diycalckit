@@ -18,7 +18,7 @@
 <main>
   <div class="tool-page">
     <h1>How Many Rolls of Wallpaper Do I Need?</h1>
-    <p class="tool-desc">Enter your room dimensions and wallpaper roll size to calculate exactly how many rolls to buy, including waste for pattern matching.</p>
+    <p class="tool-desc">Enter your room dimensions and wallpaper roll size to calculate exactly how many rolls to buy — including pattern repeat waste, doors, and windows.</p>
     <div class="tool-box">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
         <div class="form-group"><label>Room Length (ft)</label><input type="number" id="l" placeholder="e.g. 12" min="0" step="0.1"></div>
@@ -44,9 +44,22 @@
     </div>
 
     <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:0.75rem;">How to Calculate Wallpaper Rolls</h2>
-    <p>Calculate total wall area by adding the perimeter of the room (length + width × 2) and multiplying by ceiling height. Subtract doors (roughly 21 sq ft each) and windows (roughly 15 sq ft each). Divide the net wall area by the usable square footage per roll, accounting for pattern repeat waste. Always round up and add at least one extra roll.</p>
+    <p>Multiply the room perimeter (length + width × 2) by the ceiling height to get total wall area. Subtract door area (roughly 21 sq ft each) and window area (roughly 15 sq ft each). Divide the net wall area by the usable square footage per roll — which depends on roll size and pattern repeat waste. Always round up and add at least one extra roll.</p>
     <p>The formula: <strong>(Perimeter × Height − Doors − Windows) ÷ Usable sq ft per roll = Rolls needed</strong></p>
-    <p>Pattern repeat waste matters more than most homeowners expect. A large repeat (over 12 inches) wastes 30–35% of each strip to align the pattern, which means you need significantly more rolls than the raw wall area suggests. The calculator accounts for this automatically.</p>
+    <p>For a 12×12 room with 8-ft ceilings, one door, and two windows: total wall area is (12+12) × 2 × 8 = 384 sq ft. Subtract 21 (door) + 30 (two windows) = 333 sq ft net. A standard US double roll covers about 35 usable sq ft with no pattern. That's 10 rolls before rounding up and adding a buffer — about 12 rolls total for a medium pattern repeat.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">How Pattern Repeat Affects Your Roll Count</h2>
+    <p>Pattern repeat is the vertical distance between identical points in the wallpaper design. When hanging, every strip must align with the one next to it — which means trimming off the top of each new strip until the pattern matches. That trimmed portion is wasted, and the waste compounds quickly across an entire room.</p>
+    <table>
+      <thead><tr><th>Pattern Repeat Type</th><th>Repeat Size</th><th>Waste per Strip</th><th>Extra Rolls (12×12 room)</th></tr></thead>
+      <tbody>
+        <tr><td>No repeat / random match</td><td>0"</td><td>None</td><td>0 extra</td></tr>
+        <tr><td>Small repeat</td><td>Under 6"</td><td>~18%</td><td>1–2 extra</td></tr>
+        <tr><td>Medium repeat</td><td>6–12"</td><td>~25%</td><td>2–3 extra</td></tr>
+        <tr><td>Large repeat</td><td>Over 12"</td><td>~35%</td><td>3–4 extra</td></tr>
+      </tbody>
+    </table>
+    <p>A large repeat (over 12 inches) wastes 30–35% of each strip. On a room requiring 10 base rolls, that translates to 13–14 rolls after waste. The pattern repeat is printed on the wallpaper label — always check before purchasing. "Straight match" repeats are easier to align than "drop match" repeats, which require every other strip to shift down by half the repeat distance.</p>
 
     <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Wallpaper Rolls Needed — Quick Reference</h2>
     <table>
@@ -57,12 +70,13 @@
         <tr><td>14×14 ft</td><td>8 ft</td><td>9 rolls</td><td>12 rolls</td><td>15 rolls</td></tr>
         <tr><td>12×12 ft</td><td>9 ft</td><td>9 rolls</td><td>12 rolls</td><td>15 rolls</td></tr>
         <tr><td>16×20 ft</td><td>9 ft</td><td>14 rolls</td><td>18 rolls</td><td>22 rolls</td></tr>
+        <tr><td>Accent wall (10 ft wide)</td><td>8 ft</td><td>3 rolls</td><td>4 rolls</td><td>5 rolls</td></tr>
       </tbody>
     </table>
-    <p>All figures assume US standard double rolls (20.5" wide × 27 ft) and include 1 extra roll buffer. Rooms with more doors and windows will need fewer rolls; accent walls only need 2–4 rolls depending on width.</p>
+    <p>All figures assume US standard double rolls (20.5" wide × 27 ft) and include a 1-roll buffer. Rooms with more doors and windows will need fewer rolls.</p>
 
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Wallpaper Cost Breakdown</h2>
-    <p>Wallpaper costs range from $30 per roll for basic peel-and-stick vinyl to $150+ per roll for designer grasscloth or fabric-backed options. Most US double rolls cover 25–30 usable square feet after pattern waste. Here's what to expect for a standard 12×12 bedroom:</p>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Wallpaper Cost by Type</h2>
+    <p>Wallpaper costs range from $30 per roll for basic peel-and-stick vinyl to $150+ per roll for designer grasscloth or fabric-backed options. Most US double rolls cover 25–35 usable square feet after pattern waste.</p>
     <table>
       <thead><tr><th>Wallpaper Type</th><th>Cost per Roll</th><th>12×12 Room (est. rolls)</th><th>Total Material Cost</th></tr></thead>
       <tbody>
@@ -72,14 +86,20 @@
         <tr><td>Designer / grasscloth</td><td>$150–$300+</td><td>10–12 rolls</td><td>$1,500–$3,600+</td></tr>
       </tbody>
     </table>
-    <p>Professional installation adds $1.50–$4.00 per square foot in labor — roughly $300–$800 for a standard bedroom. Complex patterns with large repeats take longer to align, increasing labor cost. Peel-and-stick is DIY-friendly; traditional paste wallpaper has a steeper learning curve.</p>
+    <p>Professional installation adds $1.50–$4.00 per square foot in labor — roughly $300–$800 for a standard bedroom. Complex patterns with large repeats increase labor cost because alignment takes significantly more time.</p>
 
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Wallpaper Buying Tips</h2>
-    <p>Always buy all rolls from the same dye lot (batch number printed on the label). Wallpaper color can vary slightly between production runs, and replacing a roll from a different batch mid-project will show a visible line. Most retailers allow returns of unopened rolls, so it's worth buying one extra.</p>
-    <p>Before hanging, prep the wall: patch any holes, sand smooth, and apply a wallpaper primer or sizing agent. Skipping this step — especially on new drywall — bonds the paper directly to the drywall facing, making future removal extremely destructive. A $15 gallon of wallpaper primer is the most important prep investment you can make.</p>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Before You Buy: What to Check on the Label</h2>
+    <p>Every wallpaper roll has a dye lot (batch) number printed on the label. Rolls from different lots can vary slightly in color — sometimes visibly. Buy all your rolls in one order and verify they share the same lot number. Most retailers allow returns on unopened rolls, so buying one extra is low-risk insurance.</p>
+    <p>Also check the hanging method printed on the label. Paste-the-wall paper is applied to the wall and hung dry — faster and more forgiving for beginners. Traditional paste-the-paper requires applying adhesive to the back, booking the strip, and waiting for the paste to soak in before hanging. Using the wrong method can cause the paper to bubble or not adhere properly.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How many square feet does a roll of wallpaper cover?</strong> A standard US double roll (20.5" × 27 ft) has about 46 gross square feet. After accounting for pattern repeat waste and trimming, usable coverage is typically 30–40 sq ft depending on the repeat size.</p>
+    <p><strong>How much extra wallpaper should I buy?</strong> Always buy at least one extra roll beyond the calculator's result. For large-repeat patterns or rooms with tricky angles, buy two extras. Extra rolls from the same lot are your only insurance against running short mid-project.</p>
+    <p><strong>Can I wallpaper just one wall?</strong> Yes — accent walls are one of the most popular wallpaper applications. For a single 10-ft wall at 8-ft ceilings, you'll typically need 3–4 rolls for a plain or small-repeat pattern, or 5 rolls for a large repeat.</p>
+    <p><strong>What's the difference between a single roll and a double roll?</strong> In the US, wallpaper is priced by the single roll but sold in double rolls. A single roll covers about 18–23 sq ft; a double roll covers 36–46 sq ft. Always calculate in double rolls to avoid buying twice as many packages as needed.</p>
 
     <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
-      <strong>Pro tip:</strong> For an accent wall only, divide the wall's square footage by your roll's usable coverage. A standard 10-ft accent wall at 8-ft ceiling height is 80 sq ft — usually 3–4 rolls depending on pattern repeat.
+      <strong>Pro tip:</strong> Before hanging, apply a coat of wallpaper primer to every wall. On new drywall especially, skipping primer bonds the paper directly to the drywall facing — making future removal extremely destructive. A $15 gallon of primer is the most important prep investment you can make.
     </div>
   </div>
 </main>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Deck Stain Do I Need? — Free Stain Calculator</title>
+  <meta name="description" content="Calculate exactly how many gallons of deck stain you need. Enter deck dimensions, number of coats, and wood condition. Free stain calculator — instant results, no signup.">
+  <link rel="canonical" href="https://diycalckit.com/tools/stain-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Deck Stain Calculator — How Much Stain Do I Need?","description":"Calculate how many gallons of deck stain you need based on deck size, number of coats, and wood condition.","url":"https://diycalckit.com/tools/stain-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Much Deck Stain Do I Need?</h1>
+    <p class="tool-desc">Enter your deck dimensions, number of coats, and wood condition to calculate exactly how many gallons of stain to buy — including a 10% buffer.</p>
+    <div class="tool-box">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Deck Length (ft)</label><input type="number" id="dl" placeholder="e.g. 20" min="0" step="0.1"></div>
+        <div class="form-group"><label>Deck Width (ft)</label><input type="number" id="dw" placeholder="e.g. 12" min="0" step="0.1"></div>
+      </div>
+      <div class="form-group">
+        <label>Include Railings?</label>
+        <select id="railings">
+          <option value="0">No railings</option>
+          <option value="0.3" selected>Yes — standard railings (~30% extra area)</option>
+          <option value="0.5">Yes — tall / detailed railings (~50% extra area)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Number of Coats</label>
+        <select id="coats">
+          <option value="1" selected>1 coat (maintenance / recent stain)</option>
+          <option value="2">2 coats (new wood or full restain)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Wood Condition</label>
+        <select id="condition">
+          <option value="200">New or smooth wood (~200 sq ft/gal)</option>
+          <option value="150" selected>Average condition (~150 sq ft/gal)</option>
+          <option value="100">Old, weathered, or porous (~100 sq ft/gal)</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="calcStain()" style="width:100%">Calculate Gallons Needed →</button>
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="gallons">—</div>
+        <div class="result-label">gallons of deck stain needed</div>
+        <div style="margin-top:0.75rem;font-size:0.85rem;color:var(--mid)" id="details"></div>
+        <p style="font-size:0.78rem;color:var(--mid);margin-top:0.75rem;">Result includes a 10% buffer. Always buy from the same batch number for consistent color.</p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:0.75rem;">How to Calculate Deck Stain</h2>
+    <p>Multiply deck length × width to get the base square footage. Add railings if applicable — standard railings typically add 25–35% to the total stainable area. Divide the total area by the stain's coverage rate (usually 150–200 sq ft per gallon for the first coat), then multiply by the number of coats.</p>
+    <p>The formula: <strong>(Deck sq ft × Railing factor) ÷ Coverage rate × Coats × 1.1 buffer = Gallons needed</strong></p>
+    <p>Coverage rate varies significantly by wood condition. New, smooth wood is denser and absorbs less stain — expect 175–200 sq ft per gallon. Weathered, porous wood soaks up much more — coverage can drop to 100 sq ft per gallon or less on the first coat. When in doubt, use the lower coverage estimate and buy accordingly.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Deck Stain Coverage — Quick Reference</h2>
+    <table>
+      <thead><tr><th>Deck Size</th><th>1 Coat (avg. wood)</th><th>2 Coats (avg. wood)</th><th>2 Coats (weathered wood)</th></tr></thead>
+      <tbody>
+        <tr><td>10×10 ft (100 sq ft)</td><td>1 gallon</td><td>2 gallons</td><td>3 gallons</td></tr>
+        <tr><td>12×16 ft (192 sq ft)</td><td>2 gallons</td><td>3 gallons</td><td>5 gallons</td></tr>
+        <tr><td>16×20 ft (320 sq ft)</td><td>3 gallons</td><td>5 gallons</td><td>7 gallons</td></tr>
+        <tr><td>20×24 ft (480 sq ft)</td><td>4 gallons</td><td>7 gallons</td><td>10 gallons</td></tr>
+        <tr><td>20×30 ft (600 sq ft)</td><td>5 gallons</td><td>9 gallons</td><td>13 gallons</td></tr>
+      </tbody>
+    </table>
+    <p>All figures assume average wood condition (~150 sq ft/gal) and include a 10% buffer. Add 25–35% for railings. Weathered or porous wood can reduce coverage to 100 sq ft/gal or less on the first coat.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Types of Deck Stain</h2>
+    <p>Deck stains range from transparent to solid, and from oil-based to water-based. Each type has different coverage rates, durability, and maintenance requirements.</p>
+    <table>
+      <thead><tr><th>Stain Type</th><th>Transparency</th><th>Durability</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td>Transparent / clear</td><td>100% see-through</td><td>1–2 years</td><td>New wood, showing grain</td></tr>
+        <tr><td>Semi-transparent</td><td>Shows grain</td><td>2–3 years</td><td>Most decks, natural look</td></tr>
+        <tr><td>Semi-solid</td><td>Partial coverage</td><td>3–4 years</td><td>Older wood with minor flaws</td></tr>
+        <tr><td>Solid / opaque</td><td>Full coverage</td><td>4–5 years</td><td>Weathered wood, color change</td></tr>
+      </tbody>
+    </table>
+    <p>Transparent stains require more frequent reapplication but are easier to maintain — just clean and recoat without stripping. Solid stains last longer but eventually peel and require full stripping before recoating. For most homeowners, semi-transparent is the best balance of appearance and maintenance.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Prep Work Before Staining</h2>
+    <p>Stain applied to a dirty or weathered deck won't penetrate properly and will peel within months. Proper prep is as important as the stain itself.</p>
+    <p>Start by cleaning the deck thoroughly — a deck cleaner or brightener removes gray oxidation and opens the wood grain for better stain penetration. Let the wood dry completely (at least 48 hours after washing). Sand rough spots and raised grain. Replace any split or severely weathered boards before staining.</p>
+    <p>If the existing stain is peeling or flaking, use a deck stripper to remove it before applying new stain. Applying over peeling stain guarantees the new coat will peel as well.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How often should I restain my deck?</strong> Transparent stains typically need reapplication every 1–2 years. Semi-transparent lasts 2–3 years. Semi-solid and solid stains can last 3–5 years. The best indicator is the water test — sprinkle water on the deck. If it beads up, the stain is still protecting the wood. If it soaks in, it's time to restain.</p>
+    <p><strong>How many sq ft does a 5-gallon bucket of deck stain cover?</strong> At average coverage (150 sq ft/gal), a 5-gallon bucket covers about 750 sq ft per coat — enough for a 25×30 deck in one coat. On weathered wood (100 sq ft/gal), the same bucket covers only 500 sq ft per coat.</p>
+    <p><strong>Can I apply deck stain with a roller?</strong> Yes, a roller is faster for large flat deck boards. Use a brush for railings, spindles, and any areas the roller can't reach. Some contractors use a pump sprayer followed by back-brushing to work the stain into the wood grain — this is faster but requires more care to avoid overspray.</p>
+    <p><strong>Should I use oil-based or water-based deck stain?</strong> Oil-based stains penetrate deeper and tend to last longer, especially on older, porous wood. Water-based (latex) stains are easier to clean up, dry faster, and have improved significantly in durability. For new wood or maintenance coats, water-based is a practical choice. For heavily weathered or porous decks, oil-based generally performs better.</p>
+
+    <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Stain in the shade or on a cool, overcast day. Direct sunlight causes stain to dry too fast, leaving lap marks and uneven penetration. The ideal temperature range is 50–90°F with no rain in the forecast for at least 24–48 hours.
+    </div>
+  </div>
+</main>
+<script>
+function calcStain() {
+  const dl = parseFloat(document.getElementById('dl').value);
+  const dw = parseFloat(document.getElementById('dw').value);
+  const railings = parseFloat(document.getElementById('railings').value);
+  const coats = parseInt(document.getElementById('coats').value);
+  const coverage = parseInt(document.getElementById('condition').value);
+  if (!dl || !dw) { alert('Please enter deck dimensions.'); return; }
+  const baseArea = dl * dw;
+  const totalArea = baseArea * (1 + railings);
+  const gallons = Math.ceil((totalArea / coverage) * coats * 1.1);
+  document.getElementById('gallons').textContent = gallons;
+  document.getElementById('details').textContent = `Deck area: ${Math.round(baseArea)} sq ft | Total stainable area (with railings): ${Math.round(totalArea)} sq ft`;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>
