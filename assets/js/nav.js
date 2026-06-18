@@ -51,6 +51,8 @@ const TOOLS = [
   { name: "Moving Cost Calculator", url: "/tools/moving-cost-calculator.html" },
   { name: "Storage Unit Size Calculator", url: "/tools/storage-unit-size-calculator.html" },
   { name: "Packing Box Calculator", url: "/tools/packing-box-calculator.html" },
+  // 리모델링 비용
+  { name: "Bathroom Remodel Cost Calculator", url: "/tools/bathroom-remodel-cost-calculator.html" },
 ];
 
 // ── 블로그 목록 (추가 시 여기만 수정) ──────────────────────
@@ -77,6 +79,9 @@ const BLOGS = [
   { name: "How Much Peel and Stick Wallpaper Do I Need? Complete Guide", url: "/blog/peel-and-stick-wallpaper-calculator.html", date: "2026-06-12", desc: "Calculate rolls for any room or accent wall. Includes coverage by roll type, waste factor guide, and comparison with traditional wallpaper." },
   { name: "Gravel vs. Mulch for Garden Beds: Which Should You Use?", url: "/blog/gravel-vs-mulch-for-garden-beds.html", date: "2026-05-31", desc: "Side-by-side comparison of gravel and mulch for drainage, weed suppression, cost, and plant types." },
   { name: "How to Build a Gravel Driveway: Step-by-Step Guide", url: "/blog/how-to-build-a-gravel-driveway.html", date: "2026-05-31", desc: "Materials, tools, base preparation, and gravel depth — everything you need to install a gravel driveway yourself." },
+  { name: "How Much Primer Do I Need? Complete Homeowner Guide", url: "/blog/how-much-primer-do-i-need.html", date: "2026-06-18", desc: "Coverage rates by surface type, how many coats, quick reference by room size, and tips to avoid waste." },
+  { name: "Do I Need to Prime Before Painting? When to Use Primer", url: "/blog/when-to-use-primer-before-painting.html", date: "2026-06-18", desc: "Exactly when primer is non-negotiable, when you can skip it, and which type to use for each situation." },
+  { name: "How Many Coats of Primer Do I Need? One vs. Two Coats Explained", url: "/blog/how-many-coats-of-primer-do-i-need.html", date: "2026-06-18", desc: "One coat or two? Clear guidance by surface type — bare drywall, stains, color changes, and wood." },
 ];
 
 // ── 메뉴 렌더링 ─────────────────────────────────────────────

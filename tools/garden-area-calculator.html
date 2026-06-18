@@ -105,70 +105,15 @@
     <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> For irregularly shaped beds, break them into smaller rectangles or circles, calculate each section, and add them together.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/mulch-calculator.html">Mulch Calculator</a></li>
+        <li><a href="/tools/gravel-calculator.html">Gravel Calculator</a></li>
+        <li><a href="/tools/soil-calculator.html">Soil Calculator</a></li>
+        <li><a href="/blog/how-much-mulch-do-i-need.html">How Much Mulch Do I Need?</a></li>
+        <li><a href="/blog/how-much-soil-for-raised-bed.html">How Much Soil Do I Need for a Raised Bed?</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-let currentShape = 'rect';
-const beds = [];
-
-function setShape(shape, btn) {
-  currentShape = shape;
-  document.querySelectorAll('.shape-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.shape-inputs').forEach(i => i.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(shape + '-inputs').classList.add('active');
-}
-
-function getArea() {
-  if (currentShape === 'rect') {
-    const l = parseFloat(document.getElementById('rect-l').value);
-    const w = parseFloat(document.getElementById('rect-w').value);
-    if (!l || !w) return null;
-    return { area: l * w, desc: `${l} × ${w} ft rectangle` };
-  } else if (currentShape === 'circle') {
-    const d = parseFloat(document.getElementById('circle-d').value);
-    if (!d) return null;
-    return { area: Math.PI * (d/2) * (d/2), desc: `${d} ft diameter circle` };
-  } else {
-    const b = parseFloat(document.getElementById('tri-b').value);
-    const h = parseFloat(document.getElementById('tri-h').value);
-    if (!b || !h) return null;
-    return { area: (b * h) / 2, desc: `${b} × ${h} ft triangle` };
-  }
-}
-
-function addBed() {
-  const res = getArea();
-  if (!res) { alert('Please enter valid dimensions.'); return; }
-  const name = document.getElementById('bed-name').value || `Bed ${beds.length + 1}`;
-  beds.push({ name, area: res.area, desc: res.desc });
-  renderBeds();
-}
-
-function renderBeds() {
-  const list = document.getElementById('beds-list');
-  list.innerHTML = beds.map((b, i) => `
-    <div class="bed-item">
-      <div>
-        <strong>${b.name}</strong>
-        <span style="color:var(--mid); margin-left:0.5rem">${b.desc}</span>
-      </div>
-      <div style="display:flex; align-items:center; gap:0.75rem;">
-        <strong>${b.area.toFixed(1)} sq ft</strong>
-        <button class="remove-btn" onclick="removeBed(${i})">✕</button>
-      </div>
-    </div>`).join('');
-}
-
-function removeBed(i) { beds.splice(i, 1); renderBeds(); }
-
-function calcTotal() {
-  if (beds.length === 0) { alert('Please add at least one bed.'); return; }
-  const total = beds.reduce((sum, b) => sum + b.area, 0);
-  document.getElementById('total-area').textContent = total.toFixed(1);
-  document.getElementById('bed-count').textContent = `${beds.length} bed${beds.length > 1 ? 's' : ''} added`;
-  document.getElementById('result').style.display = 'block';
-}
-</script>
-</body>
-</html>

@@ -104,29 +104,14 @@
     <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> Buy drywall in 4×12 sheets for rooms with standard 8-ft ceilings — you'll cover the entire height in one sheet and have fewer horizontal seams to tape.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator</a></li>
+        <li><a href="/tools/paint-calculator.html">Paint Calculator</a></li>
+        <li><a href="/tools/primer-calculator.html">Primer Calculator</a></li>
+        <li><a href="/tools/renovation-cost-estimator.html">Home Renovation Cost Estimator</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-function calcDrywall() {
-  const l = parseFloat(document.getElementById('length').value);
-  const w = parseFloat(document.getElementById('width').value);
-  const h = parseFloat(document.getElementById('height').value) || 8;
-  const doors = parseInt(document.getElementById('doors').value) || 0;
-  const windows = parseInt(document.getElementById('windows').value) || 0;
-  const sheetSqFt = parseInt(document.getElementById('sheet').value);
-  const ceiling = document.getElementById('ceiling').value;
-  if (!l || !w) { alert('Please enter room dimensions.'); return; }
-  const wallArea = (2 * (l + w) * h) - (doors * 21) - (windows * 15);
-  const ceilArea = l * w;
-  const wallSheets = Math.ceil((wallArea / sheetSqFt) * 1.1);
-  const ceilSheets = Math.ceil((ceilArea / sheetSqFt) * 1.1);
-  const total = wallSheets + (ceiling === 'yes' ? ceilSheets : 0);
-  document.getElementById('sheets').textContent = total;
-  document.getElementById('wall_sheets').textContent = wallSheets;
-  document.getElementById('ceil_sheets').textContent = ceilSheets;
-  document.getElementById('ceil_col').style.display = ceiling === 'yes' ? 'block' : 'none';
-  document.getElementById('result').style.display = 'block';
-}
-</script>
-</body>
-</html>

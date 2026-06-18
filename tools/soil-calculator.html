@@ -115,24 +115,15 @@
     <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> For raised beds, use a mix of roughly 60% topsoil, 30% compost, and 10% perlite or coarse sand for drainage. Pre-blended "Mel's Mix" style products are convenient but expensive — mixing your own from bulk components costs 40–60% less for large beds.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/garden-area-calculator.html">Garden Area Calculator</a></li>
+        <li><a href="/tools/mulch-calculator.html">Mulch Calculator</a></li>
+        <li><a href="/blog/how-much-soil-for-raised-bed.html">How Much Soil Do I Need for a Raised Bed?</a></li>
+        <li><a href="/blog/best-soil-for-raised-garden-beds.html">Best Soil for Raised Garden Beds in 2026</a></li>
+        <li><a href="/blog/how-deep-should-raised-garden-bed-be.html">How Deep Should a Raised Garden Bed Be?</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-function calcSoil() {
-  const l = parseFloat(document.getElementById('length').value);
-  const w = parseFloat(document.getElementById('width').value);
-  const d = parseFloat(document.getElementById('depth').value);
-  const bag = parseFloat(document.getElementById('bagsize').value);
-  if (!l || !w || l <= 0 || w <= 0) { alert('Please enter valid dimensions.'); return; }
-  const cubicFeet = l * w * (d / 12);
-  const withBuffer = cubicFeet * 1.1;
-  const cubicYards = withBuffer / 27;
-  const bags = Math.ceil(withBuffer / bag);
-  document.getElementById('cubicFeetResult').textContent = withBuffer.toFixed(1);
-  document.getElementById('cubicYardsResult').textContent = cubicYards.toFixed(2);
-  document.getElementById('bagsResult').textContent = bags;
-  document.getElementById('result').style.display = 'block';
-}
-</script>
-</body>
-</html>

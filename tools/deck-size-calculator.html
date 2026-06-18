@@ -54,22 +54,14 @@
     <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> Use ground-contact rated pressure-treated lumber (UC4B) for any post or beam touching or close to the ground. Regular PT lumber is for above-ground use only. Composite decking typically uses a hidden fastener system — factor in a box of fasteners ($50–$80 per 100 sq ft) when budgeting materials.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/stain-calculator.html">Deck Stain Calculator</a></li>
+        <li><a href="/tools/fence-calculator.html">Fence Calculator</a></li>
+        <li><a href="/tools/renovation-cost-estimator.html">Home Renovation Cost Estimator</a></li>
+        <li><a href="/blog/home-renovations-that-add-the-most-value.html">10 Home Renovations That Add the Most Value</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-function calcDeck(){
-  const l=parseFloat(document.getElementById('l').value),w=parseFloat(document.getElementById('w').value);
-  if(!l||!w){alert('Enter dimensions.');return;}
-  const bw=parseFloat(document.getElementById('bw').value)/12;
-  const js=parseInt(document.getElementById('js').value);
-  const sqft=l*w;
-  const boards=Math.ceil((w/bw)*1.1);
-  const joists=Math.ceil((l/(js/12))+1);
-  document.getElementById('boards').textContent=boards;
-  document.getElementById('joists').textContent=joists;
-  document.getElementById('sqft_detail').textContent=`Deck area: ${sqft.toFixed(0)} sq ft`;
-  document.getElementById('result').style.display='block';
-}
-</script>
-</body>
-</html>

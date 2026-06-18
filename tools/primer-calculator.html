@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How Much Primer Do I Need? — Free Primer Calculator</title>
-  <meta name="description" content="Calculate primer coverage for walls, ceilings, and bare surfaces. Get exact gallons needed in seconds. Free primer calculator — no signup required.">
+  <meta name="description" content="Calculate exactly how many gallons of primer you need for walls, ceilings, and bare surfaces. Free primer calculator — accounts for doors, windows, surface type, and number of coats.">
   <link rel="canonical" href="https://diycalckit.com/tools/primer-calculator.html">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/nav.js" defer></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Primer Calculator — How Much Primer Do I Need?","description":"Estimate primer coverage for walls and ceilings before painting, based on room dimensions and number of coats.","url":"https://diycalckit.com/tools/primer-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Primer Calculator — How Much Primer Do I Need?","description":"Estimate primer coverage for walls and ceilings before painting. Accounts for surface type, coats, doors and windows.","url":"https://diycalckit.com/tools/primer-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
 </head>
@@ -18,7 +18,7 @@
 <main>
   <div class="tool-page">
     <h1>How Much Primer Do I Need?</h1>
-    <p class="tool-desc">Enter your room dimensions to calculate exactly how many gallons of primer you need for walls and ceilings. Accounts for doors and windows.</p>
+    <p class="tool-desc">Enter your room dimensions to calculate exactly how many gallons of primer you need. Accounts for doors, windows, surface type, and number of coats.</p>
 
     <div class="tool-box">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
@@ -48,10 +48,18 @@
       <div class="form-group">
         <label>Surface Type</label>
         <select id="surface">
-          <option value="350">Previously painted (350 sq ft/gal)</option>
-          <option value="300">Lightly textured (300 sq ft/gal)</option>
-          <option value="250">Bare drywall / new surface (250 sq ft/gal)</option>
-          <option value="200">Heavily textured / porous (200 sq ft/gal)</option>
+          <option value="350">Previously painted — smooth (350 sq ft/gal)</option>
+          <option value="300">Previously painted — lightly textured (300 sq ft/gal)</option>
+          <option value="250" selected>Bare drywall / new construction (250 sq ft/gal)</option>
+          <option value="220">Bare wood or plaster (220 sq ft/gal)</option>
+          <option value="200">Heavily textured / high-porosity surface (200 sq ft/gal)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Number of Coats</label>
+        <select id="coats">
+          <option value="1">1 coat (standard repaint)</option>
+          <option value="2">2 coats (bare drywall, heavy stains, dark-to-light)</option>
         </select>
       </div>
       <div class="form-group">
@@ -66,23 +74,66 @@
       <div class="result-box" id="result" style="display:none">
         <div class="result-num" id="gallons">—</div>
         <div class="result-label">gallons of primer needed</div>
-        <div style="margin-top:1rem; font-size:0.85rem; color:var(--mid)" id="details"></div>
+        <div style="margin-top:0.5rem; font-size:0.9rem; color:var(--mid)" id="quarts"></div>
+        <div style="margin-top:1rem; font-size:0.82rem; color:var(--mid)" id="details"></div>
       </div>
     </div>
 
-    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How Much Primer Does a Room Need?</h2>
-    <p>A standard gallon of primer covers 350 square feet on a previously painted surface. For bare drywall or new construction, plan for 250 sq ft per gallon as the surface is more porous and absorbs more primer.</p>
-    <p>To calculate wall area: add up the perimeter of the room, multiply by ceiling height, then subtract 21 sq ft per door and 15 sq ft per window.</p>
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate How Much Primer You Need</h2>
+    <p>The formula is straightforward: total paintable area divided by coverage rate, multiplied by number of coats.</p>
+    <p><strong>Step 1 — Wall area:</strong> Multiply the room perimeter (length + width × 2) by the ceiling height. Subtract 21 sq ft per door and 15 sq ft per window.</p>
+    <p><strong>Step 2 — Ceiling area:</strong> Multiply room length × width if you're priming the ceiling.</p>
+    <p><strong>Step 3 — Divide by coverage rate:</strong> Most primers cover 200–350 sq ft per gallon depending on surface type (see table below). Always round up to the nearest quart.</p>
+    <p>Add a 10% buffer for touch-ups and roller waste. It's cheaper to have a partial gallon left over than to make a second hardware store trip mid-project.</p>
 
-    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Do I Need Primer Before Painting?</h2>
-    <p>Primer is essential when painting bare drywall, going from a dark to a light color, covering stains, or painting over glossy surfaces. For minor touch-ups on already-painted walls, you can often skip primer with a paint-and-primer combo product.</p>
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Primer Coverage by Surface Type</h2>
+    <table>
+      <thead><tr><th>Surface</th><th>Coverage per Gallon</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Previously painted, smooth</td><td>350 sq ft</td><td>Best-case coverage</td></tr>
+        <tr><td>Previously painted, textured</td><td>300 sq ft</td><td>Slight porosity increase</td></tr>
+        <tr><td>Bare drywall (new construction)</td><td>250 sq ft</td><td>Paper face absorbs primer</td></tr>
+        <tr><td>Bare wood / plaster</td><td>220 sq ft</td><td>Higher absorption</td></tr>
+        <tr><td>Heavy texture / masonry</td><td>200 sq ft</td><td>Most porous — buy extra</td></tr>
+      </tbody>
+    </table>
 
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">When Do You Actually Need Primer?</h2>
-    <p>Not every paint job needs a separate primer coat. Modern paint-and-primer-in-one products are sufficient for most repaints over existing paint in good condition. Dedicated primer is necessary when: painting new drywall (paper-faced drywall must be primed or the paint will absorb unevenly), making dramatic color changes (dark to light or vice versa), covering water stains, smoke, or grease stains, painting over high-gloss surfaces, or painting over bare wood or metal.</p>
-    <p>Using the wrong primer for the surface is a common mistake. Water-based (latex) primer works for most drywall and interior walls. Oil-based (alkyd) primer is better for stain blocking, bare wood with tannins, and surfaces that bleed through. Shellac-based primer is the gold standard for blocking severe stains, odors, and knots in wood — nothing else performs as well on problem surfaces.</p>
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Do You Actually Need Primer?</h2>
+    <p>Not every paint job needs a separate primer coat — but skipping it when you shouldn't is one of the most common DIY mistakes. Here's when primer is non-negotiable:</p>
+    <ul style="margin:0.75rem 0 1rem 1.25rem; line-height:1.85;">
+      <li><strong>New or bare drywall</strong> — the paper face is highly porous and will absorb paint unevenly, causing a blotchy "flashing" effect. Always prime bare drywall with PVA drywall primer first.</li>
+      <li><strong>Dark to light color change</strong> — without primer, you'll need 3–4 coats of light paint to cover a dark wall. A tinted primer (matched to your topcoat) gets you there in 2 coats and saves money.</li>
+      <li><strong>Water stains, smoke, or grease</strong> — regular latex paint won't block these. Use a stain-blocking primer (shellac-based for severe stains) or they'll bleed right through.</li>
+      <li><strong>Glossy surfaces</strong> — paint won't adhere well to high-gloss. Either sand it down or use a bonding primer.</li>
+      <li><strong>Bare wood</strong> — especially wood with tannins (cedar, redwood, pine knots) that can bleed yellow or brown through the topcoat.</li>
+    </ul>
+    <p>When can you skip primer? For a straight repaint in similar color on walls that are already in good condition, a quality paint-and-primer-in-one product is usually sufficient.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Types of Primer: Which One Do You Need?</h2>
+    <table>
+      <thead><tr><th>Primer Type</th><th>Best For</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>PVA Drywall Primer</td><td>New, bare drywall</td><td>Most affordable; seals paper face for even paint absorption</td></tr>
+        <tr><td>Latex (Water-Based) Primer</td><td>Most interior walls, previously painted surfaces</td><td>Low VOC, easy cleanup, dries fast</td></tr>
+        <tr><td>Oil-Based (Alkyd) Primer</td><td>Bare wood, high-tannin wood, exterior prep</td><td>Better stain blocking than latex; longer dry time</td></tr>
+        <tr><td>Shellac-Based Primer</td><td>Severe stains, smoke/odor, problem surfaces</td><td>Best stain blocker available; strong odor, needs denatured alcohol to clean</td></tr>
+        <tr><td>Bonding Primer</td><td>Glossy surfaces, tile, laminates</td><td>Promotes adhesion without sanding</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">How Many Coats of Primer Do I Need?</h2>
+    <p>One coat is standard for most interior repaints. Two coats are recommended when painting over bare drywall, covering water or smoke stains, making a dramatic color change, or working on highly porous surfaces like new plaster or raw wood. Applying a second coat thin is always better than applying one coat too thick — thick primer can sag, drip, and take much longer to dry.</p>
 
     <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
-      <strong>Pro tip:</strong> Always apply primer before painting bare drywall — skipping it leads to uneven color and extra coats of paint, costing more in the long run.
+      <strong>Pro tip:</strong> Always check the coverage rate on your specific primer's label — it varies by brand and product. Use 250 sq ft/gal as a safe starting estimate for bare surfaces and adjust from there.
+    </div>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/paint-calculator.html">Paint Calculator — How Much Paint Do I Need?</a></li>
+        <li><a href="/blog/how-much-does-it-cost-to-paint-a-room.html">How Much Does It Cost to Paint a Room in 2026?</a></li>
+      </ul>
     </div>
   </div>
 </main>
@@ -94,14 +145,31 @@ function calcPrimer() {
   const doors = parseInt(document.getElementById('doors').value) || 0;
   const windows = parseInt(document.getElementById('windows').value) || 0;
   const coverage = parseInt(document.getElementById('surface').value);
+  const coats = parseInt(document.getElementById('coats').value);
   const ceiling = document.getElementById('ceiling').value;
-  if (!l || !w || l <= 0 || w <= 0) { alert('Please enter valid dimensions.'); return; }
+  if (!l || !w || l <= 0 || w <= 0) { alert('Please enter valid room dimensions.'); return; }
   const wallArea = (2 * (l + w) * h) - (doors * 21) - (windows * 15);
   const ceilArea = ceiling === 'yes' ? l * w : 0;
   const totalArea = wallArea + ceilArea;
-  const gallons = Math.ceil((totalArea / coverage) * 10) / 10;
-  document.getElementById('gallons').textContent = gallons.toFixed(1);
-  document.getElementById('details').textContent = `Wall area: ${Math.round(wallArea)} sq ft${ceiling === 'yes' ? ` + Ceiling: ${Math.round(ceilArea)} sq ft` : ''} = ${Math.round(totalArea)} sq ft total`;
+  const rawGallons = (totalArea / coverage) * coats;
+  const buffered = rawGallons * 1.1;
+  const gallons = Math.ceil(buffered * 4) / 4; // round up to nearest quart
+  const wholeGallons = Math.floor(gallons);
+  const remainderQuarts = Math.round((gallons - wholeGallons) * 4);
+  let purchaseStr = '';
+  if (remainderQuarts === 0) {
+    purchaseStr = `Buy ${wholeGallons} gallon${wholeGallons !== 1 ? 's' : ''}`;
+  } else if (wholeGallons === 0) {
+    purchaseStr = `Buy ${remainderQuarts} quart${remainderQuarts !== 1 ? 's' : ''}`;
+  } else {
+    purchaseStr = `Buy ${wholeGallons} gallon${wholeGallons !== 1 ? 's' : ''} + ${remainderQuarts} quart${remainderQuarts !== 1 ? 's' : ''}`;
+  }
+  document.getElementById('gallons').textContent = gallons.toFixed(2);
+  document.getElementById('quarts').textContent = purchaseStr + ' (includes 10% buffer)';
+  document.getElementById('details').textContent =
+    `Wall area: ${Math.round(wallArea)} sq ft` +
+    (ceiling === 'yes' ? ` + Ceiling: ${Math.round(ceilArea)} sq ft` : '') +
+    ` = ${Math.round(totalArea)} sq ft × ${coats} coat${coats > 1 ? 's' : ''} ÷ ${coverage} sq ft/gal`;
   document.getElementById('result').style.display = 'block';
 }
 </script>

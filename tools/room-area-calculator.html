@@ -112,20 +112,14 @@
         <tr><td>Drywall (4×8 sheet)</td><td>32 sq ft per sheet</td><td>Add 10%</td></tr>
       </tbody>
     </table>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator (multi-room)</a></li>
+        <li><a href="/tools/flooring-calculator.html">Flooring Calculator</a></li>
+        <li><a href="/tools/paint-calculator.html">Paint Calculator</a></li>
+        <li><a href="/tools/wallpaper-calculator.html">Wallpaper Calculator</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-let shape = 'rect';
-function setShape(s,btn){shape=s;document.querySelectorAll('.shape-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.shape-inputs').forEach(i=>i.classList.remove('active'));btn.classList.add('active');document.getElementById(s+'-inputs').classList.add('active');}
-function calcArea(){
-  let area=0;
-  if(shape==='rect'){const l=parseFloat(document.getElementById('r-l').value),w=parseFloat(document.getElementById('r-w').value);if(!l||!w){alert('Enter dimensions.');return;}area=l*w;}
-  else if(shape==='lshape'){const al=parseFloat(document.getElementById('la-l').value),aw=parseFloat(document.getElementById('la-w').value),bl=parseFloat(document.getElementById('lb-l').value),bw=parseFloat(document.getElementById('lb-w').value);if(!al||!aw||!bl||!bw){alert('Enter all dimensions.');return;}area=(al*aw)+(bl*bw);}
-  else{const b=parseFloat(document.getElementById('t-b').value),h=parseFloat(document.getElementById('t-h').value);if(!b||!h){alert('Enter dimensions.');return;}area=(b*h)/2;}
-  document.getElementById('area').textContent=area.toFixed(1);
-  document.getElementById('sqyd').textContent=(area/9).toFixed(1)+' sq yd';
-  document.getElementById('result').style.display='block';
-}
-</script>
-</body>
-</html>

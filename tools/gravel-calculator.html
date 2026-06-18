@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How Much Gravel Do I Need? — Free Gravel Calculator</title>
-  <meta name="description" content="Calculate cubic yards or tons of gravel needed for driveways, paths, and garden beds. Supports all common gravel types and bag sizes. Free gravel calculator — instant results.">
+  <meta name="description" content="Calculate cubic yards, tons, and bags of gravel for driveways, paths, and garden beds. Includes depth guide and bags vs. bulk comparison. Free gravel calculator — instant results.">
   <link rel="canonical" href="https://diycalckit.com/tools/gravel-calculator.html">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/nav.js" defer></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gravel Calculator — How Much Gravel Do I Need?","description":"Calculate cubic yards, tons, and bags of gravel needed for driveways, paths, and garden beds.","url":"https://diycalckit.com/tools/gravel-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gravel Calculator — How Much Gravel Do I Need?","description":"Calculate cubic yards, tons, and bags of gravel for driveways, paths, and garden beds. Includes 10% buffer for settling and waste.","url":"https://diycalckit.com/tools/gravel-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
 </head>
@@ -21,25 +21,27 @@
     <p class="tool-desc">Enter your project dimensions and gravel depth to calculate cubic yards, tons, and bags needed — instantly. Works for driveways, paths, garden beds, and drainage projects.</p>
 
     <div class="tool-box">
-      <div class="form-group">
-        <label for="length">Length (feet)</label>
-        <input type="number" id="length" placeholder="e.g. 20" min="0" step="0.1">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Length (feet)</label>
+          <input type="number" id="length" placeholder="e.g. 20" min="0" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Width (feet)</label>
+          <input type="number" id="width" placeholder="e.g. 10" min="0" step="0.1">
+        </div>
       </div>
       <div class="form-group">
-        <label for="width">Width (feet)</label>
-        <input type="number" id="width" placeholder="e.g. 10" min="0" step="0.1">
-      </div>
-      <div class="form-group">
-        <label for="depth">Gravel Depth (inches)</label>
+        <label>Gravel Depth (inches)</label>
         <select id="depth">
-          <option value="2">2 inches (light foot traffic / garden beds)</option>
-          <option value="3">3 inches (walkways / landscaping)</option>
-          <option value="4" selected>4 inches (driveways — recommended)</option>
+          <option value="2">2 inches (decorative / garden beds)</option>
+          <option value="3">3 inches (walkways / paths)</option>
+          <option value="4" selected>4 inches (driveways — standard)</option>
           <option value="6">6 inches (heavy-duty / base layer)</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="gravelType">Gravel Type</label>
+        <label>Gravel Type</label>
         <select id="gravelType">
           <option value="1.4" selected>Pea Gravel (~1.4 tons/yd³)</option>
           <option value="1.5">Crushed Stone / #57 (~1.5 tons/yd³)</option>
@@ -67,14 +69,14 @@
             <div style="font-size:0.8rem; color:var(--mid)">0.5 cu ft bags</div>
           </div>
         </div>
-        <p style="font-size:0.8rem; color:var(--mid); margin-top:1rem;">Already includes 10% extra for waste and settling. For driveways, order by the ton from a bulk supplier — it's almost always cheaper than bags.</p>
+        <p style="font-size:0.8rem; color:var(--mid); margin-top:1rem;">Already includes 10% extra for waste and settling. For projects over 1 cubic yard, bulk delivery is almost always cheaper than bags.</p>
       </div>
     </div>
 
     <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate Gravel Needed</h2>
-    <p>To calculate gravel volume, multiply your area's length and width to get square footage, then multiply by gravel depth (converted to feet). Divide by 27 to convert cubic feet to cubic yards.</p>
-    <p>The formula is: <strong>(Length ft × Width ft × Depth inches ÷ 12) ÷ 27 = Cubic Yards</strong></p>
-    <p>For weight, multiply cubic yards by the gravel's density (typically 1.25–1.5 tons per cubic yard depending on type). Pea gravel runs about 1.4 tons per cubic yard; crushed stone is closer to 1.5 tons. Always add 10% to your final number to account for compaction and settling.</p>
+    <p>The formula: <strong>(Length ft × Width ft × Depth inches ÷ 12) ÷ 27 = Cubic Yards</strong></p>
+    <p>Multiply length by width to get square footage, multiply by depth in feet (depth in inches ÷ 12), then divide by 27 to convert cubic feet to cubic yards. For weight, multiply cubic yards by the gravel's density — typically 1.25–1.5 tons per cubic yard depending on type. Always add 10% to account for compaction and settling after the first rain.</p>
+    <p>Example: a 20×10 ft driveway at 4 inches deep = 20 × 10 × (4/12) / 27 = 2.47 cubic yards. With 10% buffer: 2.72 cubic yards, or roughly 3.8 tons of crushed stone.</p>
 
     <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Recommended Gravel Depth by Project</h2>
     <table>
@@ -85,24 +87,65 @@
         <tr><td>Residential driveway</td><td>4 inches</td><td>Standard passenger vehicles</td></tr>
         <tr><td>Base layer under pavers</td><td>4–6 inches</td><td>Compacted, then topped with sand</td></tr>
         <tr><td>Heavy-duty driveway</td><td>6 inches</td><td>Trucks, RVs, frequent use</td></tr>
+        <tr><td>French drain / drainage</td><td>6–12 inches</td><td>Use washed stone or #57</td></tr>
       </tbody>
     </table>
 
     <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Gravel Coverage Quick Reference</h2>
     <table>
-      <thead><tr><th>Area (sq ft)</th><th>3" Deep (cu yd)</th><th>4" Deep (cu yd)</th><th>4" Deep (tons, pea gravel)</th></tr></thead>
+      <thead><tr><th>Area (sq ft)</th><th>2\" Deep (cu yd)</th><th>3\" Deep (cu yd)</th><th>4\" Deep (cu yd)</th><th>4\" Deep (tons)</th></tr></thead>
       <tbody>
-        <tr><td>50 sq ft</td><td>0.46</td><td>0.62</td><td>0.87 tons</td></tr>
-        <tr><td>100 sq ft</td><td>0.93</td><td>1.23</td><td>1.73 tons</td></tr>
-        <tr><td>200 sq ft</td><td>1.85</td><td>2.47</td><td>3.46 tons</td></tr>
-        <tr><td>500 sq ft</td><td>4.63</td><td>6.17</td><td>8.64 tons</td></tr>
-        <tr><td>1,000 sq ft</td><td>9.26</td><td>12.35</td><td>17.29 tons</td></tr>
+        <tr><td>50 sq ft</td><td>0.31</td><td>0.46</td><td>0.62</td><td>~0.9 tons</td></tr>
+        <tr><td>100 sq ft</td><td>0.62</td><td>0.93</td><td>1.23</td><td>~1.7 tons</td></tr>
+        <tr><td>200 sq ft</td><td>1.23</td><td>1.85</td><td>2.47</td><td>~3.5 tons</td></tr>
+        <tr><td>500 sq ft</td><td>3.09</td><td>4.63</td><td>6.17</td><td>~8.6 tons</td></tr>
+        <tr><td>1,000 sq ft</td><td>6.17</td><td>9.26</td><td>12.35</td><td>~17.3 tons</td></tr>
+        <tr><td>2,000 sq ft</td><td>12.35</td><td>18.52</td><td>24.69</td><td>~34.6 tons</td></tr>
       </tbody>
     </table>
-    <p>One bulk cubic yard of gravel covers approximately 81 sq ft at 4 inches deep. For projects over 2 cubic yards, ordering bulk delivery from a local landscape or stone supplier is almost always cheaper than bagged gravel.</p>
+    <p>One bulk cubic yard covers approximately 162 sq ft at 2 inches, 108 sq ft at 3 inches, or 81 sq ft at 4 inches.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Gravel Types and Best Uses</h2>
+    <table>
+      <thead><tr><th>Type</th><th>Best For</th><th>Density (tons/yd³)</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Pea Gravel</td><td>Garden beds, playgrounds, paths</td><td>~1.4</td><td>Smooth, rounded; shifts underfoot</td></tr>
+        <tr><td>Crushed Stone (#57)</td><td>Driveways, drainage, base layers</td><td>~1.5</td><td>Angular; compacts and locks together</td></tr>
+        <tr><td>River Rock</td><td>Decorative beds, drainage</td><td>~1.35</td><td>Rounded, polished; higher cost</td></tr>
+        <tr><td>Decomposed Granite</td><td>Pathways, patios, desert landscaping</td><td>~1.5</td><td>Fines compact into firm surface</td></tr>
+        <tr><td>Lava Rock</td><td>Decorative, xeriscape</td><td>~1.25</td><td>Lightweight; retains heat, resists weeds</td></tr>
+        <tr><td>#411 / Dense Grade</td><td>Driveway base, parking pads</td><td>~1.5</td><td>Mix of stones and fines; best base material</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Bags vs. Bulk: Which Is Cheaper?</h2>
+    <p>For small projects under 0.5 cubic yards, bags are convenient and often cheaper when you factor in delivery minimums. For anything larger, bulk almost always wins.</p>
+    <table>
+      <thead><tr><th>Method</th><th>Unit Size</th><th>Approx. Cost</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td>Bagged (0.5 cu ft)</td><td>0.5 cubic feet</td><td>$4–$7/bag</td><td>Small fills under 0.5 cu yd</td></tr>
+        <tr><td>Bagged (0.5 cu ft)</td><td>Equivalent to 1 cu yd</td><td>$215–$375</td><td>No bulk supplier nearby</td></tr>
+        <tr><td>Bulk delivery</td><td>Per cubic yard</td><td>$35–$75/yd³ + delivery</td><td>Projects over 1 cu yd</td></tr>
+        <tr><td>Bulk pickup</td><td>Per ton</td><td>$25–$55/ton</td><td>Best unit cost with a truck</td></tr>
+      </tbody>
+    </table>
+    <p>A cubic yard of pea gravel from a landscape supplier costs $35–$75. The same volume in 0.5 cu ft bags runs $215–$375. If you can rent a pickup truck or have delivery available, bulk is the clear winner for any project over a cubic yard.</p>
 
     <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
-      <strong>Pro tip:</strong> For driveways, use two layers — a base of #57 crushed stone (4 inches, compacted) topped with 2 inches of pea gravel or decomposed granite. This gives you better drainage and a more stable surface than a single gravel type.
+      <strong>Pro tip:</strong> For driveways, use two layers — a base of #57 crushed stone (4 inches, compacted) topped with 2 inches of pea gravel or decomposed granite. This gives better drainage and a more stable surface than a single gravel type applied at once.
+    </div>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/blog/how-much-gravel-do-i-need.html">How Much Gravel Do I Need? Complete Homeowner Guide</a></li>
+        <li><a href="/blog/how-much-does-a-gravel-driveway-cost.html">How Much Does a Gravel Driveway Cost in 2026?</a></li>
+        <li><a href="/blog/how-to-build-a-gravel-driveway.html">How to Build a Gravel Driveway: Step-by-Step Guide</a></li>
+        <li><a href="/blog/how-much-gravel-for-garden-bed.html">How Much Gravel Do I Need for a Garden Bed?</a></li>
+        <li><a href="/blog/gravel-vs-mulch-for-garden-beds.html">Gravel vs. Mulch for Garden Beds: Which Should You Use?</a></li>
+        <li><a href="/tools/mulch-calculator.html">Mulch Calculator</a></li>
+        <li><a href="/tools/garden-area-calculator.html">Garden Area Calculator</a></li>
+      </ul>
     </div>
   </div>
 </main>

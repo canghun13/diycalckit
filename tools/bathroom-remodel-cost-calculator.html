@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bathroom Remodel Cost Calculator — Estimate Your Budget | DIYCalcKit</title>
+  <meta name="description" content="Estimate bathroom remodel costs by size, scope, and finish level. Free calculator based on 2026 national averages — from small refreshes to full gut renovations.">
+  <link rel="canonical" href="https://diycalckit.com/tools/bathroom-remodel-cost-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Bathroom Remodel Cost Calculator","description":"Estimate bathroom renovation costs by bathroom size, scope of work, and finish quality. Based on 2026 national contractor averages.","url":"https://diycalckit.com/tools/bathroom-remodel-cost-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Bathroom Remodel Cost Calculator</h1>
+    <p class="tool-desc">Get a realistic budget range for your bathroom renovation based on size, scope, and finish level. Uses 2026 national contractor averages.</p>
+
+    <div class="tool-box">
+      <div class="form-group">
+        <label>Bathroom Size</label>
+        <select id="size">
+          <option value="powder">Powder room / half bath (under 30 sq ft)</option>
+          <option value="small">Small full bathroom (30–50 sq ft)</option>
+          <option value="standard" selected>Standard full bathroom (50–80 sq ft)</option>
+          <option value="master">Master bathroom (80–120 sq ft)</option>
+          <option value="large">Large master suite (120+ sq ft)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Scope of Work</label>
+        <select id="scope">
+          <option value="refresh">Surface refresh — paint, fixtures, hardware only</option>
+          <option value="partial" selected>Partial remodel — new tile, vanity, toilet, no layout changes</option>
+          <option value="full">Full remodel — everything new, no plumbing/layout changes</option>
+          <option value="gut">Gut renovation — layout changes, plumbing moves, full rebuild</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Finish Level</label>
+        <select id="finish">
+          <option value="budget">Budget — builder-grade fixtures and ceramic tile</option>
+          <option value="mid" selected>Mid-range — porcelain tile, quality vanity, standard fixtures</option>
+          <option value="upscale">Upscale — natural stone, custom cabinetry, premium fixtures</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>DIY or Hire a Contractor?</label>
+        <select id="labor">
+          <option value="pro" selected>Hire a general contractor</option>
+          <option value="diy">DIY (materials only estimate)</option>
+          <option value="mixed">Mixed — DIY demo + contractor for trade work</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="calcBath()" style="width:100%">Estimate Cost →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; text-align:center;">
+          <div>
+            <div class="result-num" style="font-size:1.8rem" id="low">—</div>
+            <div class="result-label">low estimate</div>
+          </div>
+          <div>
+            <div class="result-num" style="font-size:1.8rem" id="high">—</div>
+            <div class="result-label">high estimate</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:1rem;" id="note"></p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">Bathroom Remodel Cost by Size (2026 Averages)</h2>
+    <p>Bathroom renovation costs vary significantly by size, but size alone doesn't determine price — scope and finish level often matter more. A small bathroom with a full gut renovation and premium tile can cost more than a large bathroom with a basic surface refresh.</p>
+
+    <table>
+      <thead><tr><th>Bathroom Type</th><th>Budget</th><th>Mid-Range</th><th>Upscale</th></tr></thead>
+      <tbody>
+        <tr><td>Powder room / half bath</td><td>$1,500–$4,000</td><td>$5,000–$10,000</td><td>$12,000–$20,000</td></tr>
+        <tr><td>Small full bath (30–50 sq ft)</td><td>$3,000–$6,000</td><td>$8,000–$15,000</td><td>$18,000–$30,000</td></tr>
+        <tr><td>Standard full bath (50–80 sq ft)</td><td>$4,500–$9,000</td><td>$10,000–$25,000</td><td>$25,000–$45,000</td></tr>
+        <tr><td>Master bath (80–120 sq ft)</td><td>$7,000–$15,000</td><td>$18,000–$35,000</td><td>$40,000–$80,000</td></tr>
+        <tr><td>Large master suite (120+ sq ft)</td><td>$12,000–$25,000</td><td>$30,000–$60,000</td><td>$60,000–$120,000+</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">What Drives Bathroom Remodel Costs?</h2>
+    <p><strong>Labor is the biggest line item.</strong> For a professionally contracted bathroom remodel, labor typically makes up 40–65% of the total cost. A tile setter, plumber, and electrician each have minimum charges, and small bathrooms don't cost much less in labor than larger ones for the same scope of work.</p>
+    <p><strong>Moving plumbing adds significant cost.</strong> If your remodel keeps the toilet, tub, and shower in their current positions, costs stay manageable. Moving a toilet requires a licensed plumber and often means cutting into the subfloor — add $500–$2,000 or more depending on the complexity. Moving a drain is one of the most common sources of budget overruns in bathroom renovations.</p>
+    <p><strong>Tile choice affects both material and labor cost.</strong> A simple 12×12 grid of ceramic tile installs faster and with less waste than a herringbone pattern in 3×6 subway tile. The tile itself may cost $2/sq ft vs $5/sq ft — but the labor difference between a straight lay and a complex pattern can be $3–$8 per square foot. Pattern complexity is where bathroom budgets quietly expand.</p>
+    <p><strong>Waterproofing is mandatory in wet areas.</strong> A proper shower installation requires a waterproofing membrane (like Schluter Kerdi or RedGard) before any tile goes up. This adds $400–$750 to the project and is non-negotiable if you want the shower to last. Contractors who quote shower work without mentioning waterproofing are either including it silently or skipping it — always ask explicitly.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Cost Breakdown by Component</h2>
+    <table>
+      <thead><tr><th>Component</th><th>Typical Cost Range</th></tr></thead>
+      <tbody>
+        <tr><td>Tile (floor + shower, installed)</td><td>$800–$4,500+</td></tr>
+        <tr><td>Vanity (cabinet + countertop)</td><td>$300–$3,000+</td></tr>
+        <tr><td>Toilet</td><td>$150–$800</td></tr>
+        <tr><td>Bathtub</td><td>$400–$3,500</td></tr>
+        <tr><td>Shower enclosure / door</td><td>$300–$2,500</td></tr>
+        <tr><td>Faucets and fixtures</td><td>$200–$1,500</td></tr>
+        <tr><td>Lighting</td><td>$150–$800</td></tr>
+        <tr><td>Exhaust fan</td><td>$100–$400</td></tr>
+        <tr><td>Plumbing labor</td><td>$500–$3,500</td></tr>
+        <tr><td>Electrical labor</td><td>$200–$1,200</td></tr>
+        <tr><td>Demo and disposal</td><td>$300–$1,200</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">How to Get the Most Accurate Estimate</h2>
+    <p>Calculator estimates give you a planning range, not a quote. The only way to get an accurate number is to get at least three itemized contractor quotes for your specific bathroom. When comparing quotes, make sure each one includes the same scope — demo, waterproofing, tile installation, fixtures, and cleanup. A low quote that excludes waterproofing or disposal isn't a bargain.</p>
+    <p>Always build a 15–20% contingency into your budget before starting. Bathroom renovations routinely uncover hidden issues once walls are opened: rotted subfloor, outdated plumbing connections, missing waterproofing on an existing shower, or electrical that doesn't meet current code. These aren't rare surprises — they're common enough that professionals expect them.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Get quotes from at least three licensed contractors. Labor costs for the same scope can vary 30–50% between contractors in the same market — comparison shopping is the single most effective way to control bathroom remodel costs.
+    </div>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/renovation-cost-estimator.html">Home Renovation Cost Estimator</a></li>
+        <li><a href="/tools/contractor-cost-calculator.html">Contractor Cost Calculator</a></li>
+        <li><a href="/tools/tile-calculator.html">Tile Calculator — How Many Tiles Do I Need?</a></li>
+        <li><a href="/blog/how-much-does-a-bathroom-renovation-cost.html">How Much Does a Bathroom Renovation Cost in 2026?</a></li>
+        <li><a href="/blog/home-renovations-that-add-the-most-value.html">10 Home Renovations That Add the Most Value</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+<script>
+function calcBath() {
+  const size = document.getElementById('size').value;
+  const scope = document.getElementById('scope').value;
+  const finish = document.getElementById('finish').value;
+  const labor = document.getElementById('labor').value;
+
+  // Base ranges by size [low, high] mid-range, full scope, pro labor
+  const base = {
+    powder:   [5000,  10000],
+    small:    [8000,  15000],
+    standard: [10000, 25000],
+    master:   [18000, 35000],
+    large:    [30000, 60000]
+  };
+
+  // Scope multipliers
+  const scopeMult = {
+    refresh: 0.20,
+    partial: 0.60,
+    full:    1.00,
+    gut:     1.45
+  };
+
+  // Finish multipliers
+  const finishMult = {
+    budget:  0.55,
+    mid:     1.00,
+    upscale: 2.10
+  };
+
+  // Labor multipliers
+  const laborMult = {
+    pro:    1.00,
+    mixed:  0.75,
+    diy:    0.30
+  };
+
+  let [low, high] = base[size];
+  const sm = scopeMult[scope];
+  const fm = finishMult[finish];
+  const lm = laborMult[labor];
+
+  low  = Math.round((low  * sm * fm * lm) / 500) * 500;
+  high = Math.round((high * sm * fm * lm) / 500) * 500;
+
+  // Ensure minimum sensible values
+  low  = Math.max(low,  1000);
+  high = Math.max(high, low + 1000);
+
+  document.getElementById('low').textContent  = '$' + low.toLocaleString();
+  document.getElementById('high').textContent = '$' + high.toLocaleString();
+
+  let noteText = 'Based on 2026 national contractor averages. ';
+  if (labor === 'diy') noteText += 'DIY estimate covers materials only — no labor costs. ';
+  noteText += 'Add 15–20% contingency for unexpected issues. Get at least 3 contractor quotes for an accurate number.';
+  document.getElementById('note').textContent = noteText;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

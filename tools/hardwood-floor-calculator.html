@@ -65,20 +65,14 @@
     <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> Let hardwood planks acclimate in the room for 3–5 days before installation. Hardwood expands and contracts with humidity — installing planks directly from a cold truck into a warm home causes gaps or buckling as the wood adjusts.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/flooring-calculator.html">Flooring Calculator</a></li>
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator</a></li>
+        <li><a href="/tools/stain-calculator.html">Deck Stain Calculator</a></li>
+        <li><a href="/blog/how-to-calculate-flooring-for-a-room.html">How to Calculate Flooring for Any Room</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-function calcHardwood() {
-  const l = parseFloat(document.getElementById('l').value);
-  const w = parseFloat(document.getElementById('w').value);
-  const waste = parseFloat(document.getElementById('angle').value);
-  if (!l||!w) { alert('Enter dimensions.'); return; }
-  const net = l*w;
-  const total = Math.ceil(net*(1+waste));
-  document.getElementById('sqft').textContent = total;
-  document.getElementById('details').textContent = `Net area: ${net.toFixed(1)} sq ft + ${Math.round(net*waste)} sq ft waste`;
-  document.getElementById('result').style.display='block';
-}
-</script>
-</body>
-</html>

@@ -101,23 +101,14 @@
     <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> Stain in the shade or on a cool, overcast day. Direct sunlight causes stain to dry too fast, leaving lap marks and uneven penetration. The ideal temperature range is 50–90°F with no rain in the forecast for at least 24–48 hours.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/deck-size-calculator.html">Deck Size Calculator</a></li>
+        <li><a href="/tools/fence-calculator.html">Fence Calculator</a></li>
+        <li><a href="/tools/paint-calculator.html">Paint Calculator</a></li>
+        <li><a href="/blog/home-renovations-that-add-the-most-value.html">10 Home Renovations That Add the Most Value</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-function calcStain() {
-  const dl = parseFloat(document.getElementById('dl').value);
-  const dw = parseFloat(document.getElementById('dw').value);
-  const railings = parseFloat(document.getElementById('railings').value);
-  const coats = parseInt(document.getElementById('coats').value);
-  const coverage = parseInt(document.getElementById('condition').value);
-  if (!dl || !dw) { alert('Please enter deck dimensions.'); return; }
-  const baseArea = dl * dw;
-  const totalArea = baseArea * (1 + railings);
-  const gallons = Math.ceil((totalArea / coverage) * coats * 1.1);
-  document.getElementById('gallons').textContent = gallons;
-  document.getElementById('details').textContent = `Deck area: ${Math.round(baseArea)} sq ft | Total stainable area (with railings): ${Math.round(totalArea)} sq ft`;
-  document.getElementById('result').style.display = 'block';
-}
-</script>
-</body>
-</html>

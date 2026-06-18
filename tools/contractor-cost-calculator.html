@@ -109,26 +109,14 @@
       <li><strong>Unusually low bids</strong> — Bids 30%+ below competitors often mean cutting corners, unlicensed subcontractors, or low-quality materials</li>
       <li><strong>Pressure to decide immediately</strong> — Legitimate contractors don't use high-pressure sales tactics</li>
     </ul>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/renovation-cost-estimator.html">Home Renovation Cost Estimator</a></li>
+        <li><a href="/tools/bathroom-remodel-cost-calculator.html">Bathroom Remodel Cost Calculator</a></li>
+        <li><a href="/tools/home-renovation-roi-calculator.html">Home Renovation ROI Calculator</a></li>
+        <li><a href="/blog/diy-vs-hiring-a-contractor.html">DIY vs. Hiring a Contractor: When to Do It Yourself</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-const RATES = {
-  general:{lo:50,hi:150},electrician:{lo:50,hi:130},plumber:{lo:45,hi:120},
-  hvac:{lo:75,hi:150},carpenter:{lo:35,hi:90},painter:{lo:25,hi:70},
-  tile:{lo:30,hi:80},flooring:{lo:25,hi:65},roofing:{lo:35,hi:85},
-  landscaper:{lo:25,hi:65},drywall:{lo:25,hi:70},concrete:{lo:30,hi:80}
-};
-function fmt(n){return '$'+Math.round(n).toLocaleString();}
-function calcContractor(){
-  const trade=document.getElementById('trade').value;
-  const hours=parseFloat(document.getElementById('hours').value)||8;
-  const loc=parseFloat(document.getElementById('location').value);
-  const {lo,hi}=RATES[trade];
-  document.getElementById('low').textContent=fmt(lo*hours*loc);
-  document.getElementById('high').textContent=fmt(hi*hours*loc);
-  document.getElementById('rate_detail').textContent=`Rate: $${Math.round(lo*loc)}–$${Math.round(hi*loc)}/hr × ${hours} hours`;
-  document.getElementById('result').style.display='block';
-}
-</script>
-</body>
-</html>

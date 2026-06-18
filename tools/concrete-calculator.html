@@ -117,47 +117,13 @@
     <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> Always add 5–10% extra concrete to account for spillage and uneven subbase. Running out mid-pour creates cold joints that weaken the slab.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator</a></li>
+        <li><a href="/tools/renovation-cost-estimator.html">Home Renovation Cost Estimator</a></li>
+        <li><a href="/tools/drywall-calculator.html">Drywall Calculator</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-let currentShape = 'slab';
-function setShape(shape, btn) {
-  currentShape = shape;
-  document.querySelectorAll('.shape-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.shape-inputs').forEach(i => i.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(shape + '-inputs').classList.add('active');
-}
-function calcConcrete() {
-  let cubicFeet = 0;
-  if (currentShape === 'slab') {
-    const l = parseFloat(document.getElementById('slab-l').value);
-    const w = parseFloat(document.getElementById('slab-w').value);
-    const t = parseFloat(document.getElementById('slab-t').value);
-    if (!l || !w) { alert('Please enter dimensions.'); return; }
-    cubicFeet = l * w * (t / 12);
-  } else if (currentShape === 'footing') {
-    const l = parseFloat(document.getElementById('foot-l').value);
-    const w = parseFloat(document.getElementById('foot-w').value);
-    const d = parseFloat(document.getElementById('foot-d').value);
-    if (!l || !w || !d) { alert('Please enter dimensions.'); return; }
-    cubicFeet = l * w * d;
-  } else {
-    const d = parseFloat(document.getElementById('col-d').value);
-    const h = parseFloat(document.getElementById('col-h').value);
-    const n = parseInt(document.getElementById('col-n').value) || 1;
-    if (!d || !h) { alert('Please enter dimensions.'); return; }
-    cubicFeet = Math.PI * Math.pow((d / 2) / 12, 2) * h * n;
-  }
-  const bagVol = parseFloat(document.getElementById('bag').value);
-  cubicFeet *= 1.08;
-  const cubicYards = cubicFeet / 27;
-  const bags = Math.ceil(cubicFeet / bagVol);
-  document.getElementById('bags').textContent = bags;
-  document.getElementById('cubic_yards').textContent = cubicYards.toFixed(2);
-  document.getElementById('cubic_feet').textContent = cubicFeet.toFixed(1);
-  document.getElementById('result').style.display = 'block';
-}
-</script>
-</body>
-</html>

@@ -132,33 +132,13 @@
     <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> Order boxes from Home Depot or U-Haul a week before moving. Buying used boxes from Facebook Marketplace can cut costs by 50%.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/moving-cost-calculator.html">Moving Cost Calculator</a></li>
+        <li><a href="/tools/storage-unit-size-calculator.html">Storage Unit Size Calculator</a></li>
+        <li><a href="/blog/moving-cost-guide.html">How Much Does It Cost to Move in 2026?</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-const COUNTS = { bedroom:1, kitchen:1, living:1, bathroom:1, dining:0, office:0, basement:0, garage:0 };
-const PER_ROOM = { bedroom:18, kitchen:20, living:12, bathroom:6, dining:10, office:15, basement:20, garage:18 };
-const NAMES = { bedroom:'Bedroom', kitchen:'Kitchen', living:'Living Room', bathroom:'Bathroom', dining:'Dining Room', office:'Home Office', basement:'Basement/Storage', garage:'Garage' };
-
-function adjust(room, delta) {
-  COUNTS[room] = Math.max(0, COUNTS[room] + delta);
-  document.getElementById(room).textContent = COUNTS[room];
-}
-
-function calcBoxes() {
-  let total = 0;
-  let lines = [];
-  for (const [room, count] of Object.entries(COUNTS)) {
-    if (count > 0) {
-      const boxes = Math.ceil(count * PER_ROOM[room] * 1.1);
-      total += boxes;
-      lines.push(`${NAMES[room]} (×${count}): ~${boxes} boxes`);
-    }
-  }
-  if (total === 0) { alert('Please add at least one room.'); return; }
-  document.getElementById('total_boxes').textContent = total;
-  document.getElementById('breakdown').innerHTML = lines.map(l => `<div style="padding:0.3rem 0; border-bottom:1px solid rgba(0,0,0,0.06)">${l}</div>`).join('');
-  document.getElementById('result').style.display = 'block';
-}
-</script>
-</body>
-</html>

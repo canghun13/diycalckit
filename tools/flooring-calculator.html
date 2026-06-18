@@ -107,49 +107,15 @@
     <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> Always buy 10% more than your calculated amount. Leftover flooring can be used for future repairs if a plank gets damaged.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator</a></li>
+        <li><a href="/tools/tile-calculator.html">Tile Calculator</a></li>
+        <li><a href="/tools/carpet-calculator.html">Carpet Calculator</a></li>
+        <li><a href="/tools/hardwood-floor-calculator.html">Hardwood Floor Calculator</a></li>
+        <li><a href="/blog/how-to-calculate-flooring-for-a-room.html">How to Calculate Flooring for Any Room</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-const rooms = [];
-
-function addRoom() {
-  const l = parseFloat(document.getElementById('length').value);
-  const w = parseFloat(document.getElementById('width').value);
-  if (!l || !w) { alert('Please enter room dimensions.'); return; }
-  const waste = parseFloat(document.getElementById('waste').value);
-  const name = document.getElementById('room-name').value || `Room ${rooms.length + 1}`;
-  rooms.push({ name, sqft: l * w, waste });
-  renderRooms();
-  document.getElementById('length').value = '';
-  document.getElementById('width').value = '';
-  document.getElementById('room-name').value = '';
-}
-
-function renderRooms() {
-  document.getElementById('room-list').innerHTML = rooms.map((r, i) => `
-    <div class="room-item">
-      <span><strong>${r.name}</strong> — ${r.sqft.toFixed(1)} sq ft</span>
-      <button class="remove-btn" onclick="removeRoom(${i})">✕</button>
-    </div>`).join('');
-}
-
-function removeRoom(i) { rooms.splice(i, 1); renderRooms(); }
-
-function calcFlooring() {
-  const l = parseFloat(document.getElementById('length').value);
-  const w = parseFloat(document.getElementById('width').value);
-  const waste = parseFloat(document.getElementById('waste').value);
-  let allRooms = [...rooms];
-  if (l && w) allRooms.push({ name: 'Current Room', sqft: l * w, waste });
-  if (allRooms.length === 0) { alert('Please enter room dimensions.'); return; }
-  const netTotal = allRooms.reduce((s, r) => s + r.sqft, 0);
-  const wasteBuf = allRooms.reduce((s, r) => s + r.sqft * r.waste, 0);
-  const total = netTotal + wasteBuf;
-  document.getElementById('total-sqft').textContent = Math.ceil(total);
-  document.getElementById('net-sqft').textContent = netTotal.toFixed(1);
-  document.getElementById('waste-sqft').textContent = wasteBuf.toFixed(1);
-  document.getElementById('result').style.display = 'block';
-}
-</script>
-</body>
-</html>

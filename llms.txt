@@ -42,6 +42,7 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [Storage Unit Size Calculator](https://diycalckit.com/tools/storage-unit-size-calculator.html): Recommends the right storage unit size based on what you need to store.
 - [Packing Box Calculator](https://diycalckit.com/tools/packing-box-calculator.html): Estimates number of moving boxes needed by room count and home size.
 - [Stain Calculator](https://diycalckit.com/tools/stain-calculator.html): Calculates gallons of deck stain needed based on deck size, railings, number of coats, and wood condition.
+- [Bathroom Remodel Cost Calculator](https://diycalckit.com/tools/bathroom-remodel-cost-calculator.html): Estimates bathroom renovation cost by bathroom size, scope of work, finish level, and DIY vs. contractor labor.
 
 ## Cost Guides
 
@@ -67,6 +68,9 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [How to Hang Wallpaper: Step-by-Step Guide for Beginners](https://diycalckit.com/blog/how-to-hang-wallpaper.html): Wall prep, measuring, cutting, pasting, and finishing — complete hanging method including corners and pattern matching.
 - [Wallpaper Calculator with Pattern Repeat: How to Get the Right Roll Count](https://diycalckit.com/blog/wallpaper-calculator-with-repeat.html): How pattern repeat affects roll count, straight vs. drop match explained, and manual calculation formula.
 - [How Much Peel and Stick Wallpaper Do I Need? Complete Guide](https://diycalckit.com/blog/peel-and-stick-wallpaper-calculator.html): Coverage by roll type, accent wall reference table, and comparison with traditional wallpaper.
+- [How Much Primer Do I Need? Complete Homeowner Guide](https://diycalckit.com/blog/how-much-primer-do-i-need.html): Coverage rates by surface type, how many coats, quick reference by room size, and waste reduction tips.
+- [Do I Need to Prime Before Painting? When to Use Primer](https://diycalckit.com/blog/when-to-use-primer-before-painting.html): Exactly when primer is required, when you can skip it, and which primer type to use for each situation.
+- [How Many Coats of Primer Do I Need? One vs. Two Coats Explained](https://diycalckit.com/blog/how-many-coats-of-primer-do-i-need.html): Clear guidance by surface type — bare drywall, stains, color changes, wood, and problem surfaces.
 
 ## About
 

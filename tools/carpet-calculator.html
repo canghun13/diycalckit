@@ -70,32 +70,14 @@
     <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> Carpet comes in 12-ft wide rolls. If your room is wider than 12 ft, you'll need a seam — factor this into your waste calculation and ask the installer where the seam will be placed. A well-placed seam in a low-traffic area is nearly invisible; a seam in a doorway or high-traffic path shows wear faster.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator</a></li>
+        <li><a href="/tools/flooring-calculator.html">Flooring Calculator</a></li>
+        <li><a href="/tools/hardwood-floor-calculator.html">Hardwood Floor Calculator</a></li>
+        <li><a href="/blog/how-to-calculate-flooring-for-a-room.html">How to Calculate Flooring for Any Room</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-const rooms = [];
-function addRoom() {
-  const l = parseFloat(document.getElementById('length').value);
-  const w = parseFloat(document.getElementById('width').value);
-  if (!l || !w) { alert('Enter dimensions.'); return; }
-  const waste = parseFloat(document.getElementById('waste').value);
-  const name = document.getElementById('name').value || `Room ${rooms.length+1}`;
-  rooms.push({name, sqft: l*w, waste});
-  document.getElementById('room-list').innerHTML = rooms.map((r,i) => `<div class="room-item"><span><strong>${r.name}</strong> — ${r.sqft.toFixed(1)} sq ft</span><button class="remove-btn" onclick="rooms.splice(${i},1);this.closest('.room-item').remove()">✕</button></div>`).join('');
-  document.getElementById('length').value=''; document.getElementById('width').value=''; document.getElementById('name').value='';
-}
-function calcCarpet() {
-  const l = parseFloat(document.getElementById('length').value);
-  const w = parseFloat(document.getElementById('width').value);
-  const waste = parseFloat(document.getElementById('waste').value);
-  let all = [...rooms];
-  if (l&&w) all.push({sqft:l*w, waste});
-  if (!all.length) { alert('Enter room dimensions.'); return; }
-  const total = all.reduce((s,r) => s + r.sqft*(1+r.waste), 0);
-  document.getElementById('sqyd').textContent = Math.ceil(total/9);
-  document.getElementById('sqft').textContent = Math.ceil(total) + ' sq ft';
-  document.getElementById('result').style.display='block';
-}
-</script>
-</body>
-</html>

@@ -75,20 +75,14 @@
     <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
       <strong>Pro tip:</strong> Soil temperature matters more than calendar date. Use a soil thermometer inserted 2–3 inches deep — cool-season grasses need 50–65°F, warm-season grasses need 65–70°F for reliable germination. Seeding too early or too late is the most common reason new lawns fail to establish.
     </div>
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/garden-area-calculator.html">Garden Area Calculator</a></li>
+        <li><a href="/tools/mulch-calculator.html">Mulch Calculator</a></li>
+        <li><a href="/tools/soil-calculator.html">Soil Calculator</a></li>
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator</a></li>
+      </ul>
+    </div>
   </div>
 </main>
-<script>
-function calcSeed(){
-  const l=parseFloat(document.getElementById('l').value),w=parseFloat(document.getElementById('w').value);
-  if(!l||!w){alert('Enter lawn dimensions.');return;}
-  const sqft=l*w;
-  const ratePerK=parseFloat(document.getElementById('grass').value);
-  const typeMult=parseFloat(document.getElementById('type').value);
-  const lbs=Math.ceil((sqft/1000)*ratePerK*typeMult);
-  document.getElementById('lbs').textContent=lbs;
-  document.getElementById('details').textContent=`Lawn area: ${sqft.toLocaleString()} sq ft`;
-  document.getElementById('result').style.display='block';
-}
-</script>
-</body>
-</html>

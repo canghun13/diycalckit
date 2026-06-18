@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Square Footage Calculator — Add Up Multiple Rooms Fast</title>
-  <meta name="description" content="Calculate total square footage for one room or an entire floor plan. Add multiple rooms instantly. Free square footage calculator — no signup required.">
+  <meta name="description" content="Calculate total square footage for one room or an entire floor plan. Add multiple rooms, handle L-shaped spaces, and instantly see waste-adjusted material estimates for flooring, tile, paint, and wallpaper.">
   <link rel="canonical" href="https://diycalckit.com/tools/square-footage-calculator.html">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/nav.js" defer></script>
   <style>.room-item{display:flex;justify-content:space-between;align-items:center;padding:.6rem .75rem;background:var(--steel);border-radius:var(--radius);margin-bottom:.5rem;font-size:.875rem}.remove-btn{background:none;border:none;cursor:pointer;color:var(--muted);font-size:1rem}.remove-btn:hover{color:#c62828}</style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Square Footage Calculator","description":"Calculate square footage for any rectangular or multi-room space in seconds.","url":"https://diycalckit.com/tools/square-footage-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Square Footage Calculator","description":"Calculate square footage for any rectangular or multi-room space. Add multiple rooms and get waste-adjusted material estimates for flooring, tile, and paint.","url":"https://diycalckit.com/tools/square-footage-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
 </head>
@@ -19,31 +19,37 @@
   <div class="tool-page">
     <h1>Square Footage Calculator</h1>
     <p class="tool-desc">Add multiple rooms to calculate total square footage for your home, renovation project, or floor plan. Results update instantly.</p>
+
     <div class="tool-box">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
         <div class="form-group"><label>Length (ft)</label><input type="number" id="l" placeholder="e.g. 12" min="0" step="0.1"></div>
         <div class="form-group"><label>Width (ft)</label><input type="number" id="w" placeholder="e.g. 10" min="0" step="0.1"></div>
       </div>
       <div class="form-group"><label>Room Name (optional)</label><input type="text" id="name" placeholder="e.g. Living Room"></div>
-      <div style="display:flex;gap:.75rem;">
+      <div style="display:flex; gap:.75rem;">
         <button class="btn-secondary" onclick="addRoom()" style="flex:1">+ Add Room</button>
         <button class="btn-primary" onclick="calcTotal()" style="flex:1">Calculate Total →</button>
       </div>
       <div id="room-list" style="margin-top:1rem;"></div>
-      <div class="result-box" id="result" style="display:none;margin-top:1rem;">
+      <div class="result-box" id="result" style="display:none; margin-top:1rem;">
         <div class="result-num" id="total">—</div>
         <div class="result-label">total square feet</div>
-        <div style="margin-top:.5rem;font-size:1rem;font-weight:600;color:var(--amber-dark)" id="rooms_count">—</div>
+        <div style="margin-top:.5rem; font-size:1rem; font-weight:600; color:var(--amber-dark)" id="rooms_count">—</div>
+        <div style="margin-top:1.25rem; border-top:1px solid #e2e6ea; padding-top:1rem;">
+          <div style="font-size:0.82rem; color:var(--mid); margin-bottom:0.5rem; font-weight:600;">Material estimates from this square footage:</div>
+          <div id="material_estimates" style="font-size:0.82rem; color:var(--mid); line-height:1.9;"></div>
+        </div>
       </div>
     </div>
 
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:.75rem;">How to Calculate Square Footage</h2>
-    <p>Multiply length × width for each rectangular room and add the totals together. For odd-shaped rooms, divide them into rectangles, calculate each section, and sum the results. For L-shaped rooms, split at the inside corner into two rectangles and add both areas.</p>
-    <p>Always measure at the widest points of each room. Don't subtract for furniture or built-ins — flooring and renovation materials run underneath or around these. Measure closets separately; a standard reach-in adds 8–12 sq ft, a walk-in adds 25–60 sq ft.</p>
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:.75rem;">How to Calculate Square Footage</h2>
+    <p>Multiply length × width for each rectangular room and add the totals together. Always measure at the widest points. Don't subtract for furniture, built-ins, or islands — flooring runs beneath these. Measure closets separately and add them to the room total.</p>
+    <p>For L-shaped rooms: stand at the inside corner of the L, divide the space into two rectangles, measure each, and add both areas. For triangular spaces: base × height ÷ 2.</p>
 
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">How to Measure a Floor Plan's Square Footage</h2>
-    <p>For a full floor plan, measure each room individually and record the dimensions. Add all the rooms together, including hallways, closets, and any finished spaces. Exclude garages, unfinished basements, and areas with ceilings under 7 feet — these are not counted as livable square footage for real estate purposes.</p>
-    <p>For an open floor plan where the kitchen flows into the dining room, measure the entire combined space as one large rectangle rather than trying to split it. If the space is irregular, measure the longest length and longest width of the combined area and subtract any obvious cutouts.</p>
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 .75rem;">How to Measure a Floor Plan's Square Footage</h2>
+    <p>For a full floor plan, measure each room individually — including hallways and closets. Add all finished spaces together. Exclude garages, unfinished basements, and areas with ceilings under 7 feet; these don't count as livable square footage for real estate purposes.</p>
+    <p>For open floor plans where kitchen flows into dining, measure the entire combined space as one large rectangle rather than trying to divide it. If the shape is irregular, measure the longest length and width, calculate as a rectangle, then subtract any obvious cutouts.</p>
+
     <table>
       <thead><tr><th>Space Type</th><th>Include in sq ft?</th><th>Notes</th></tr></thead>
       <tbody>
@@ -57,7 +63,20 @@
       </tbody>
     </table>
 
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Common Room Sizes — Quick Reference</h2>
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 .75rem;">How to Measure Irregular Rooms</h2>
+    <table>
+      <thead><tr><th>Room Shape</th><th>How to Calculate</th></tr></thead>
+      <tbody>
+        <tr><td>Rectangle</td><td>Length × Width</td></tr>
+        <tr><td>L-shape</td><td>Divide into 2 rectangles, add both areas</td></tr>
+        <tr><td>Triangle / angled corner</td><td>Base × Height ÷ 2</td></tr>
+        <tr><td>Room with closet</td><td>Measure room + closet separately, add totals</td></tr>
+        <tr><td>Open plan (kitchen + dining)</td><td>Measure the full combined space as one rectangle</td></tr>
+        <tr><td>Bay window</td><td>Add as separate rectangle to main room</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 .75rem;">Common Room Sizes — Quick Reference</h2>
     <table>
       <thead><tr><th>Room Type</th><th>Small</th><th>Average</th><th>Large</th></tr></thead>
       <tbody>
@@ -72,7 +91,7 @@
       </tbody>
     </table>
 
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Average Home Square Footage by Type</h2>
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 .75rem;">Average Home Square Footage by Type</h2>
     <table>
       <thead><tr><th>Home Type</th><th>Typical Range</th><th>US Average</th></tr></thead>
       <tbody>
@@ -85,50 +104,81 @@
       </tbody>
     </table>
 
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">What to Use Square Footage For</h2>
-    <p>Square footage is the starting point for most home improvement estimates. Here's how it feeds into common projects:</p>
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 .75rem;">Square Footage Waste Factors by Project</h2>
+    <p>Square footage is the starting point for nearly every renovation material estimate. After calculating your area, apply the appropriate waste factor before ordering.</p>
     <table>
-      <thead><tr><th>Project</th><th>How sq ft is used</th><th>Waste factor</th></tr></thead>
+      <thead><tr><th>Project</th><th>Base Measurement</th><th>Waste Factor to Add</th></tr></thead>
       <tbody>
-        <tr><td>Flooring (tile)</td><td>Floor sq ft</td><td>Add 10%</td></tr>
-        <tr><td>Flooring (LVP / hardwood)</td><td>Floor sq ft</td><td>Add 5–8%</td></tr>
-        <tr><td>Carpet</td><td>Floor sq ft</td><td>Add 10%</td></tr>
+        <tr><td>Tile (straight lay)</td><td>Floor sq ft</td><td>+10%</td></tr>
+        <tr><td>Tile (diagonal / herringbone)</td><td>Floor sq ft</td><td>+15–20%</td></tr>
+        <tr><td>LVP / hardwood flooring</td><td>Floor sq ft</td><td>+5–8%</td></tr>
+        <tr><td>Carpet</td><td>Floor sq ft</td><td>+10%</td></tr>
         <tr><td>Paint (walls)</td><td>Perimeter × ceiling height</td><td>Subtract doors/windows</td></tr>
-        <tr><td>Wallpaper</td><td>Wall sq ft</td><td>Add 10–35% for pattern repeat</td></tr>
-        <tr><td>Renovation cost estimate</td><td>Room sq ft</td><td>Multiply by per-sq-ft rate</td></tr>
-      </tbody>
-    </table>
-    <p>For real estate purposes, finished square footage excludes garages, unfinished basements, and spaces with ceilings under 7 feet. When buying or selling, verify the recorded square footage against your own measurements — discrepancies of 5–10% are not uncommon in older listings.</p>
-
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">How to Measure Irregular Rooms</h2>
-    <p>Break any irregular room into simple rectangles, measure each, and add the totals. For an L-shaped room, stand at the inside corner of the L and divide the space into two rectangles — measure each section independently.</p>
-    <table>
-      <thead><tr><th>Room Shape</th><th>How to Calculate</th></tr></thead>
-      <tbody>
-        <tr><td>Rectangle</td><td>Length × Width</td></tr>
-        <tr><td>L-shape</td><td>Divide into 2 rectangles, add both areas</td></tr>
-        <tr><td>Triangle / angled corner</td><td>Base × Height ÷ 2</td></tr>
-        <tr><td>Room with closet</td><td>Measure room + closet separately, add totals</td></tr>
-        <tr><td>Open plan (kitchen + dining)</td><td>Measure the full combined space as one rectangle</td></tr>
+        <tr><td>Wallpaper (no pattern)</td><td>Wall sq ft</td><td>+10%</td></tr>
+        <tr><td>Wallpaper (large pattern repeat)</td><td>Wall sq ft</td><td>+35%</td></tr>
+        <tr><td>Hardwood (herringbone)</td><td>Floor sq ft</td><td>+15%</td></tr>
       </tbody>
     </table>
 
-    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
-    <p><strong>How do I calculate square footage of an L-shaped room?</strong> Divide the L-shape into two rectangles at the inside corner. Measure each rectangle's length and width, calculate each area, then add them together. This works for any irregular shape — just keep breaking it into rectangles.</p>
-    <p><strong>Do I include walls when calculating square footage?</strong> No. Square footage refers to floor area only. Wall thickness is not included. For renovation cost estimates and flooring, you want floor square footage. For paint and wallpaper, calculate wall area separately (perimeter × ceiling height).</p>
-    <p><strong>How accurate does my measurement need to be?</strong> Within a few inches is fine for most renovation projects. For flooring, material orders are typically rounded up to the nearest box anyway. For real estate or permit purposes, measure to the nearest inch.</p>
-    <p><strong>Should I measure inside or outside dimensions?</strong> For interior projects like flooring, paint, and wallpaper, always measure inside dimensions — from wall surface to wall surface at floor level. Outside dimensions include wall thickness and will overestimate your interior square footage.</p>
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How do I calculate square footage of an L-shaped room?</strong> Divide the L into two rectangles at the inside corner. Measure each separately, calculate each area, then add them together.</p>
+    <p><strong>Do I include walls when calculating square footage?</strong> No — square footage is floor area only. For paint and wallpaper, calculate wall area separately: perimeter × ceiling height, minus doors and windows.</p>
+    <p><strong>Should I measure inside or outside dimensions?</strong> Always inside dimensions for interior projects — from wall surface to wall surface at floor level. Outside dimensions include wall thickness and will overestimate your usable space.</p>
+    <p><strong>How accurate do I need to be?</strong> Within a few inches is fine for renovation projects. For real estate or permit purposes, measure to the nearest inch. For flooring, materials are typically ordered in boxes — rounding up is built into the process.</p>
 
-    <div style="margin-top:2rem;padding:1.25rem;background:var(--amber-light);border-radius:var(--radius);border-left:4px solid var(--amber);">
-      <strong>Pro tip:</strong> For flooring projects, measure each room separately and add closets individually. Apply the waste factor to the combined total, not room by room — this reduces over-ordering on smaller rooms while still covering cuts and irregularities.
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> For flooring projects, add closets individually and apply the waste factor to the combined total — not room by room. This reduces over-ordering on smaller rooms while still covering cuts and irregularities across the full install.
+    </div>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/flooring-calculator.html">Flooring Calculator — How Much Flooring Do I Need?</a></li>
+        <li><a href="/tools/tile-calculator.html">Tile Calculator — How Many Tiles Do I Need?</a></li>
+        <li><a href="/tools/carpet-calculator.html">Carpet Calculator</a></li>
+        <li><a href="/tools/paint-calculator.html">Paint Calculator</a></li>
+        <li><a href="/tools/wallpaper-calculator.html">Wallpaper Calculator</a></li>
+        <li><a href="/tools/room-area-calculator.html">Room Area Calculator</a></li>
+        <li><a href="/blog/how-to-calculate-flooring-for-a-room.html">How to Calculate Flooring for Any Room</a></li>
+      </ul>
     </div>
   </div>
 </main>
 <script>
-const rooms=[];
-function addRoom(){const l=parseFloat(document.getElementById('l').value),w=parseFloat(document.getElementById('w').value);if(!l||!w){alert('Enter dimensions.');return;}const name=document.getElementById('name').value||`Room ${rooms.length+1}`;rooms.push({name,sqft:l*w});renderRooms();document.getElementById('l').value='';document.getElementById('w').value='';document.getElementById('name').value='';}
-function renderRooms(){document.getElementById('room-list').innerHTML=rooms.map((r,i)=>`<div class="room-item"><span><strong>${r.name}</strong> — ${r.sqft.toFixed(1)} sq ft</span><button class="remove-btn" onclick="rooms.splice(${i},1);renderRooms()">✕</button></div>`).join('');}
-function calcTotal(){const l=parseFloat(document.getElementById('l').value),w=parseFloat(document.getElementById('w').value);let all=[...rooms];if(l&&w)all.push({name:'Current',sqft:l*w});if(!all.length){alert('Add at least one room.');return;}const total=all.reduce((s,r)=>s+r.sqft,0);document.getElementById('total').textContent=total.toFixed(1);document.getElementById('rooms_count').textContent=`${all.length} room${all.length>1?'s':''}`;document.getElementById('result').style.display='block';}
+const rooms = [];
+function addRoom() {
+  const l = parseFloat(document.getElementById('l').value);
+  const w = parseFloat(document.getElementById('w').value);
+  if (!l || !w) { alert('Enter dimensions.'); return; }
+  const name = document.getElementById('name').value || `Room ${rooms.length + 1}`;
+  rooms.push({ name, sqft: l * w });
+  renderRooms();
+  document.getElementById('l').value = '';
+  document.getElementById('w').value = '';
+  document.getElementById('name').value = '';
+}
+function renderRooms() {
+  document.getElementById('room-list').innerHTML = rooms.map((r, i) =>
+    `<div class="room-item"><span><strong>${r.name}</strong> — ${r.sqft.toFixed(1)} sq ft</span><button class="remove-btn" onclick="rooms.splice(${i},1);renderRooms()">✕</button></div>`
+  ).join('');
+}
+function calcTotal() {
+  const l = parseFloat(document.getElementById('l').value);
+  const w = parseFloat(document.getElementById('w').value);
+  let all = [...rooms];
+  if (l && w) all.push({ name: 'Current', sqft: l * w });
+  if (!all.length) { alert('Add at least one room.'); return; }
+  const total = all.reduce((s, r) => s + r.sqft, 0);
+  document.getElementById('total').textContent = total.toFixed(1);
+  document.getElementById('rooms_count').textContent = `${all.length} room${all.length > 1 ? 's' : ''}`;
+  const t = total;
+  document.getElementById('material_estimates').innerHTML =
+    `Tile (straight lay, +10%): <strong>${Math.ceil(t * 1.1)} sq ft</strong><br>` +
+    `LVP / Hardwood (+7%): <strong>${Math.ceil(t * 1.07)} sq ft</strong><br>` +
+    `Carpet (+10%): <strong>${Math.ceil(t * 1.1)} sq ft</strong><br>` +
+    `Tile diagonal (+15%): <strong>${Math.ceil(t * 1.15)} sq ft</strong>`;
+  document.getElementById('result').style.display = 'block';
+}
 </script>
 </body>
 </html>
