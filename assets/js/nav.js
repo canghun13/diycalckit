@@ -45,6 +45,9 @@ const TOOLS = [
   { name: "Moving Cost Calculator", url: "/tools/moving-cost-calculator.html" },
   { name: "Storage Unit Size Calculator", url: "/tools/storage-unit-size-calculator.html" },
   { name: "Packing Box Calculator", url: "/tools/packing-box-calculator.html" },
+  { name: "Grout Calculator", url: "/tools/grout-calculator.html" },
+  { name: "Paint Cost Calculator", url: "/tools/paint-cost-calculator.html" },
+  { name: "Raised Garden Bed Calculator", url: "/tools/raised-garden-bed-calculator.html" },
 ];
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────

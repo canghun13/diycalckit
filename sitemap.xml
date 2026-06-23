@@ -39,6 +39,10 @@
   <url><loc>https://diycalckit.com/tools/packing-box-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
 
   <!-- Pages -->
+  <url><loc>https://diycalckit.com/tools/grout-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/paint-cost-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/raised-garden-bed-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+
   <url><loc>https://diycalckit.com/about.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://diycalckit.com/contact.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://diycalckit.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>

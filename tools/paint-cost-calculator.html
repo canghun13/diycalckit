@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Does It Cost to Paint a Room? — Free Paint Cost Calculator</title>
+  <meta name="description" content="Estimate the total cost to paint a room — paint, primer, supplies, and optional labor. Free paint cost calculator with 2026 pricing. Instant results, no signup.">
+  <link rel="canonical" href="https://diycalckit.com/tools/paint-cost-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Paint Cost Calculator — How Much Does It Cost to Paint a Room?","description":"Estimate the total cost to paint a room including paint, primer, supplies, and optional labor. Updated 2026 pricing.","url":"https://diycalckit.com/tools/paint-cost-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Much Does It Cost to Paint a Room?</h1>
+    <p class="tool-desc">Enter your room dimensions and paint quality to estimate total cost — materials and optional professional labor. Updated 2026 pricing.</p>
+
+    <div class="tool-box">
+      <p style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;">Room Dimensions</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label>Length (ft)</label>
+          <input type="number" id="length" placeholder="e.g. 12" min="0" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Width (ft)</label>
+          <input type="number" id="width" placeholder="e.g. 10" min="0" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Ceiling Height (ft)</label>
+          <input type="number" id="height" placeholder="e.g. 8" min="0" step="0.1" value="8">
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label>Doors</label>
+          <input type="number" id="doors" min="0" value="1">
+        </div>
+        <div class="form-group">
+          <label>Windows</label>
+          <input type="number" id="windows" min="0" value="2">
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label>Number of Coats</label>
+          <select id="coats">
+            <option value="1">1 coat</option>
+            <option value="2" selected>2 coats (recommended)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Include Ceiling?</label>
+          <select id="ceiling">
+            <option value="yes">Yes</option>
+            <option value="no">No — walls only</option>
+          </select>
+        </div>
+      </div>
+
+      <p style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin:0.75rem 0;">Paint Quality</p>
+      <div class="form-group">
+        <label>Paint Grade</label>
+        <select id="paint-grade">
+          <option value="budget">Budget / contractor grade — $20–$30/gal</option>
+          <option value="mid" selected>Mid-range — $35–$55/gal</option>
+          <option value="premium">Premium (e.g. Benjamin Moore, Sherwin-Williams) — $60–$85/gal</option>
+        </select>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label>Add Primer Cost?</label>
+          <select id="primer">
+            <option value="no">No (repainting same color)</option>
+            <option value="yes" selected>Yes (new drywall or color change)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Include Labor?</label>
+          <select id="labor">
+            <option value="no" selected>No — DIY</option>
+            <option value="yes">Yes — hire a painter</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="calcPaintCost()" style="width:100%">Calculate Paint Cost →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="total-cost">—</div>
+        <div class="result-label" id="cost-label">estimated total cost</div>
+        <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center;">
+          <div>
+            <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="gallons">—</div>
+            <div style="font-size:0.78rem;color:var(--mid)">gallons of paint</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="paint-cost">—</div>
+            <div style="font-size:0.78rem;color:var(--mid)">paint & primer</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="supply-cost">—</div>
+            <div style="font-size:0.78rem;color:var(--mid)">supplies</div>
+          </div>
+        </div>
+        <div id="labor-row" style="display:none;margin-top:0.75rem;text-align:center;">
+          <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="labor-cost">—</div>
+          <div style="font-size:0.78rem;color:var(--mid)">professional labor (estimate)</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:0.75rem;">What's Included in This Estimate</h2>
+    <p><strong>Paint:</strong> Calculated at 350 sq ft per gallon per coat. The calculator accounts for wall area minus doors and windows, plus ceiling if selected.</p>
+    <p><strong>Primer:</strong> One coat at 300 sq ft per gallon, budget grade (~$22/gal). Only added when selected — skip it if you're repainting the same color over sound existing paint.</p>
+    <p><strong>Supplies:</strong> Roller covers, painter's tape, drop cloth, tray, and brushes. Estimated at a flat $40–$60 for a typical room. Reusable supplies are cheaper if you already have them.</p>
+    <p><strong>Labor:</strong> Professional painters charge $2–$4 per sq ft for walls only, or $3–$6 per sq ft including ceilings and trim. The estimate uses the midpoint of current 2026 rates.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 0.75rem;">Paint Cost Quick Reference (2026)</h2>
+    <table>
+      <thead><tr><th>Room Size</th><th>Paint Grade</th><th>DIY Total</th><th>Professional Total</th></tr></thead>
+      <tbody>
+        <tr><td>Small bedroom (10×10)</td><td>Mid-range</td><td>$80–$130</td><td>$350–$600</td></tr>
+        <tr><td>Standard bedroom (12×12)</td><td>Mid-range</td><td>$100–$160</td><td>$450–$750</td></tr>
+        <tr><td>Large bedroom (14×16)</td><td>Mid-range</td><td>$130–$200</td><td>$600–$950</td></tr>
+        <tr><td>Living room (16×20)</td><td>Mid-range</td><td>$170–$260</td><td>$800–$1,300</td></tr>
+        <tr><td>Standard bedroom (12×12)</td><td>Premium</td><td>$160–$240</td><td>$520–$850</td></tr>
+        <tr><td>Living room (16×20)</td><td>Premium</td><td>$270–$390</td><td>$900–$1,430</td></tr>
+      </tbody>
+    </table>
+    <p>All estimates include 2 coats + primer. Professional rates vary by region — urban areas tend to run 20–30% higher than rural averages.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 0.75rem;">Paint Grade Comparison</h2>
+    <table>
+      <thead><tr><th>Grade</th><th>Price/Gallon</th><th>Coverage</th><th>Durability</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td>Budget / contractor</td><td>$20–$30</td><td>300–350 sq ft</td><td>3–5 years</td><td>Rental units, temporary spaces</td></tr>
+        <tr><td>Mid-range</td><td>$35–$55</td><td>350–400 sq ft</td><td>6–10 years</td><td>Most homeowners — best value</td></tr>
+        <tr><td>Premium</td><td>$60–$85</td><td>350–400 sq ft</td><td>10–15 years</td><td>High-traffic areas, long-term homes</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:2rem;padding:1.25rem;background:#f8f9fb;border-radius:var(--radius);border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem;line-height:2;">
+        <li><a href="/tools/paint-calculator.html">Paint Calculator — How Many Gallons Do I Need?</a></li>
+        <li><a href="/tools/primer-calculator.html">Primer Calculator</a></li>
+        <li><a href="/blog/how-much-does-it-cost-to-paint-a-room.html">How Much Does It Cost to Paint a Room in 2026?</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+<script>
+function calcPaintCost() {
+  const length = parseFloat(document.getElementById('length').value);
+  const width  = parseFloat(document.getElementById('width').value);
+  const height = parseFloat(document.getElementById('height').value) || 8;
+  const doors  = parseInt(document.getElementById('doors').value) || 0;
+  const windows= parseInt(document.getElementById('windows').value) || 0;
+  const coats  = parseInt(document.getElementById('coats').value);
+  const inclCeiling = document.getElementById('ceiling').value === 'yes';
+  const grade  = document.getElementById('paint-grade').value;
+  const inclPrimer = document.getElementById('primer').value === 'yes';
+  const inclLabor  = document.getElementById('labor').value === 'yes';
+
+  if (!length || !width) { alert('Please enter room dimensions.'); return; }
+
+  const wallArea = 2 * (length + width) * height - (doors * 20) - (windows * 15);
+  const ceilArea = inclCeiling ? length * width : 0;
+  const totalArea = wallArea + ceilArea;
+
+  // Paint gallons
+  const coveragePerGal = 375;
+  const gallons = Math.ceil((totalArea * coats) / coveragePerGal);
+
+  // Paint cost per gallon by grade
+  const paintPrice = { budget: 25, mid: 45, premium: 72 };
+  const paintCost = gallons * paintPrice[grade];
+
+  // Primer
+  let primerCost = 0;
+  if (inclPrimer) {
+    const primerGallons = Math.ceil(totalArea / 300);
+    primerCost = primerGallons * 22;
+  }
+
+  // Supplies (flat estimate)
+  const supplyCost = 50;
+
+  // Labor: $3/sqft walls, $3.5/sqft with ceiling
+  let laborCost = 0;
+  if (inclLabor) {
+    const rate = inclCeiling ? 3.5 : 3.0;
+    laborCost = totalArea * rate;
+  }
+
+  const materialTotal = paintCost + primerCost + supplyCost;
+  const grandTotal = materialTotal + laborCost;
+
+  const fmt = n => '$' + Math.round(n).toLocaleString();
+
+  document.getElementById('gallons').textContent = gallons + ' gal';
+  document.getElementById('paint-cost').textContent = fmt(paintCost + primerCost);
+  document.getElementById('supply-cost').textContent = fmt(supplyCost);
+  document.getElementById('total-cost').textContent = fmt(grandTotal * 0.9) + '–' + fmt(grandTotal * 1.1);
+  document.getElementById('cost-label').textContent = inclLabor ? 'estimated total (materials + labor)' : 'estimated materials cost';
+
+  if (inclLabor) {
+    document.getElementById('labor-cost').textContent = fmt(laborCost * 0.9) + '–' + fmt(laborCost * 1.1);
+    document.getElementById('labor-row').style.display = 'block';
+  } else {
+    document.getElementById('labor-row').style.display = 'none';
+  }
+
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

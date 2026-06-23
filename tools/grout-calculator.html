@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Grout Do I Need? — Free Grout Calculator</title>
+  <meta name="description" content="Calculate exactly how many bags of grout you need for tile floors, walls, or showers. Works for sanded, unsanded, and epoxy grout. Free grout calculator — instant results.">
+  <link rel="canonical" href="https://diycalckit.com/tools/grout-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Grout Calculator — How Much Grout Do I Need?","description":"Calculate exactly how many bags of grout you need for tile floors, walls, or showers. Works for sanded, unsanded, and epoxy grout.","url":"https://diycalckit.com/tools/grout-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>How Much Grout Do I Need?</h1>
+    <p class="tool-desc">Enter your tile size, joint width, and total area to find out exactly how many bags of grout to buy — with waste included.</p>
+
+    <div class="tool-box">
+      <p style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;">Project Area</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label>Area Length (ft)</label>
+          <input type="number" id="area-l" placeholder="e.g. 10" min="0" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Area Width (ft)</label>
+          <input type="number" id="area-w" placeholder="e.g. 8" min="0" step="0.1">
+        </div>
+      </div>
+
+      <p style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin:0.75rem 0;">Tile Size</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label>Tile Length (in)</label>
+          <input type="number" id="tile-l" placeholder="e.g. 12" min="1" step="0.5" value="12">
+        </div>
+        <div class="form-group">
+          <label>Tile Width (in)</label>
+          <input type="number" id="tile-w" placeholder="e.g. 12" min="1" step="0.5" value="12">
+        </div>
+        <div class="form-group">
+          <label>Tile Thickness (in)</label>
+          <select id="tile-t">
+            <option value="0.25">¼" — Glass / mosaic</option>
+            <option value="0.375" selected>⅜" — Standard ceramic</option>
+            <option value="0.5">½" — Porcelain</option>
+            <option value="0.625">⅝" — Natural stone / slate</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label>Joint Width (in)</label>
+          <select id="joint-w">
+            <option value="0.0625">1/16" — Rectified / glass</option>
+            <option value="0.125" selected>⅛" — Standard</option>
+            <option value="0.1875">3/16" — Common</option>
+            <option value="0.25">¼" — Most popular</option>
+            <option value="0.375">⅜" — Rustic / natural stone</option>
+            <option value="0.5">½" — Wide / large format</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Grout Type</label>
+          <select id="grout-type">
+            <option value="sanded">Sanded (joints ⅛"+ )</option>
+            <option value="unsanded">Unsanded (joints under ⅛")</option>
+            <option value="epoxy">Epoxy (wet areas / commercial)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Bag Size</label>
+        <select id="bag-size">
+          <option value="5">5 lb bag — small repairs / accent areas</option>
+          <option value="10" selected>10 lb bag — standard bathroom / backsplash</option>
+          <option value="25">25 lb bag — large floors / cost-effective</option>
+          <option value="50">50 lb bag — commercial / large projects</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" onclick="calcGrout()" style="width:100%">Calculate Grout Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="bags">—</div>
+        <div class="result-label" id="bag-label">bags needed (including 10% waste)</div>
+        <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center;">
+          <div>
+            <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="total-lbs">—</div>
+            <div style="font-size:0.78rem;color:var(--mid)">lbs of grout</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="sqft">—</div>
+            <div style="font-size:0.78rem;color:var(--mid)">sq ft to grout</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="cost-range">—</div>
+            <div style="font-size:0.78rem;color:var(--mid)">est. material cost</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:0.75rem;">How to Calculate Grout Needed</h2>
+    <p>The amount of grout depends on tile size, joint width, tile thickness, and grout type density. The industry-standard formula from the TCNA Handbook calculates total joint volume, converts it to pounds using grout-specific density, adds a 10% waste buffer, then divides by your bag size for an exact count.</p>
+    <p><strong>Key insight:</strong> Joint width has far more impact than tile size. A ¼" joint uses roughly twice as much grout as a ⅛" joint on the same tile. Always buy at least 10% extra — grout is sold in production batches, and color can vary between batches.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 0.75rem;">Sanded vs. Unsanded vs. Epoxy Grout</h2>
+    <table>
+      <thead><tr><th>Type</th><th>Best For</th><th>Joint Width</th><th>Sealing Required?</th></tr></thead>
+      <tbody>
+        <tr><td>Sanded</td><td>Floors, large-format tiles, natural stone</td><td>⅛" and wider</td><td>Yes — annually</td></tr>
+        <tr><td>Unsanded</td><td>Wall tiles, polished stone, glass, small joints</td><td>Under ⅛"</td><td>Yes — annually</td></tr>
+        <tr><td>Epoxy</td><td>Showers, kitchens, pools, commercial</td><td>Any width</td><td>No — stain-proof</td></tr>
+      </tbody>
+    </table>
+    <p>Never use sanded grout on polished marble or glass tile — the sand particles will permanently scratch the surface. Use unsanded or epoxy for those applications.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 0.75rem;">Grout Quick Reference by Tile Size</h2>
+    <table>
+      <thead><tr><th>Tile Size</th><th>Joint Width</th><th>~Lbs per 100 sq ft</th><th>10 lb bags needed</th></tr></thead>
+      <tbody>
+        <tr><td>4×4"</td><td>⅛"</td><td>~18 lbs</td><td>2 bags</td></tr>
+        <tr><td>6×6"</td><td>3/16"</td><td>~14 lbs</td><td>2 bags</td></tr>
+        <tr><td>12×12"</td><td>¼"</td><td>~11 lbs</td><td>2 bags</td></tr>
+        <tr><td>12×24"</td><td>¼"</td><td>~9 lbs</td><td>1 bag</td></tr>
+        <tr><td>18×18"</td><td>⅜"</td><td>~10 lbs</td><td>1 bag</td></tr>
+        <tr><td>24×24"</td><td>¼"</td><td>~7 lbs</td><td>1 bag</td></tr>
+        <tr><td>2×2" mosaic</td><td>⅛"</td><td>~35 lbs</td><td>4 bags</td></tr>
+      </tbody>
+    </table>
+    <p>All figures per 100 sq ft, including 10% waste. Actual usage varies by tile porosity, joint depth, and application technique. Always confirm with the product data sheet for your specific grout brand.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 0.75rem;">Grout Cost by Type (2026)</h2>
+    <table>
+      <thead><tr><th>Grout Type</th><th>10 lb bag</th><th>25 lb bag</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Sanded cement</td><td>$10–$18</td><td>$22–$35</td><td>Most affordable, seal annually</td></tr>
+        <tr><td>Unsanded cement</td><td>$12–$20</td><td>$25–$38</td><td>For narrow joints and wall tile</td></tr>
+        <tr><td>Epoxy (2-part)</td><td>$30–$50</td><td>$60–$90</td><td>No sealing, stain-proof, harder to apply</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:2rem;padding:1.25rem;background:#f8f9fb;border-radius:var(--radius);border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem;line-height:2;">
+        <li><a href="/tools/tile-calculator.html">Tile Calculator — How Many Tiles Do I Need?</a></li>
+        <li><a href="/tools/bathroom-remodel-cost-calculator.html">Bathroom Remodel Cost Calculator</a></li>
+        <li><a href="/blog/how-much-does-it-cost-to-tile-a-floor.html">How Much Does It Cost to Tile a Floor in 2026?</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+<script>
+function calcGrout() {
+  const areaL = parseFloat(document.getElementById('area-l').value);
+  const areaW = parseFloat(document.getElementById('area-w').value);
+  const tileL = parseFloat(document.getElementById('tile-l').value);
+  const tileW = parseFloat(document.getElementById('tile-w').value);
+  const tileT = parseFloat(document.getElementById('tile-t').value);
+  const jointW = parseFloat(document.getElementById('joint-w').value);
+  const groutType = document.getElementById('grout-type').value;
+  const bagSize = parseFloat(document.getElementById('bag-size').value);
+
+  if (!areaL || !areaW || !tileL || !tileW) {
+    alert('Please enter area and tile dimensions.');
+    return;
+  }
+
+  // Density by grout type (lbs/in³)
+  const density = { sanded: 0.1875, unsanded: 0.165, epoxy: 0.22 };
+
+  const sqft = areaL * areaW;
+  const sqin = sqft * 144;
+
+  // TCNA formula: joint volume ratio
+  const jointRatio = ((tileL + tileW) / (tileL * tileW)) * jointW * tileT;
+  const groutVolIn3 = sqin * jointRatio;
+  const groutLbs = groutVolIn3 * density[groutType];
+  const withWaste = groutLbs * 1.10;
+  const bags = Math.ceil(withWaste / bagSize);
+
+  // Cost estimates per bag
+  const costPerBag = {
+    sanded:   { 5: 8,  10: 14, 25: 28, 50: 50 },
+    unsanded: { 5: 9,  10: 16, 25: 31, 50: 55 },
+    epoxy:    { 5: 18, 10: 40, 25: 75, 50: 130 },
+  };
+  const unitCost = costPerBag[groutType][bagSize];
+  const totalCost = bags * unitCost;
+
+  document.getElementById('bags').textContent = bags;
+  document.getElementById('bag-label').textContent = `× ${bagSize} lb bags needed (including 10% waste)`;
+  document.getElementById('total-lbs').textContent = Math.ceil(withWaste) + ' lbs';
+  document.getElementById('sqft').textContent = sqft.toFixed(0) + ' sq ft';
+  document.getElementById('cost-range').textContent = '$' + (totalCost * 0.85).toFixed(0) + '–$' + (totalCost * 1.15).toFixed(0);
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

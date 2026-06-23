@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raised Garden Bed Calculator — Soil, Compost & Cost</title>
+  <meta name="description" content="Calculate exactly how much soil, compost, and materials you need to fill a raised garden bed. Free raised garden bed calculator with 2026 pricing — instant results.">
+  <link rel="canonical" href="https://diycalckit.com/tools/raised-garden-bed-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Raised Garden Bed Calculator — Soil, Compost & Cost","description":"Calculate exactly how much soil, compost, and materials you need to fill a raised garden bed. Includes 2026 cost estimates.","url":"https://diycalckit.com/tools/raised-garden-bed-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Raised Garden Bed Calculator</h1>
+    <p class="tool-desc">Enter your bed dimensions and fill mix to find out exactly how much soil you need — plus cubic feet, bags, and estimated cost.</p>
+
+    <div class="tool-box">
+      <p style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;">Bed Dimensions</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label>Length (ft)</label>
+          <input type="number" id="bed-l" placeholder="e.g. 4" min="0" step="0.5">
+        </div>
+        <div class="form-group">
+          <label>Width (ft)</label>
+          <input type="number" id="bed-w" placeholder="e.g. 8" min="0" step="0.5">
+        </div>
+        <div class="form-group">
+          <label>Depth (in)</label>
+          <select id="bed-d">
+            <option value="6">6" — herbs, lettuce, flowers</option>
+            <option value="8">8" — most vegetables</option>
+            <option value="10">10" — tomatoes, peppers, deep roots</option>
+            <option value="12" selected>12" — all vegetables, best results</option>
+            <option value="18">18" — deep-rooted crops, root vegetables</option>
+            <option value="24">24" — raised bed on concrete / no ground</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Number of Beds</label>
+        <input type="number" id="num-beds" min="1" value="1">
+      </div>
+
+      <p style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin:0.75rem 0;">Fill Mix</p>
+      <div class="form-group">
+        <label>Fill Type</label>
+        <select id="fill-type">
+          <option value="premix">Pre-mixed raised bed soil (bagged)</option>
+          <option value="mel" selected>Mel's Mix — ⅓ compost / ⅓ peat / ⅓ vermiculite</option>
+          <option value="topsoil">Topsoil + compost blend (60/40)</option>
+          <option value="bulk">Bulk garden mix (cubic yard delivery)</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" onclick="calcBed()" style="width:100%">Calculate Soil Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="total-cuft">—</div>
+        <div class="result-label">cubic feet of fill needed</div>
+        <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center;">
+          <div>
+            <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="cu-yards">—</div>
+            <div style="font-size:0.78rem;color:var(--mid)">cubic yards</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="bags">—</div>
+            <div style="font-size:0.78rem;color:var(--mid)" id="bag-label">1.5 cu ft bags</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem;font-weight:600;color:var(--amber-dark)" id="est-cost">—</div>
+            <div style="font-size:0.78rem;color:var(--mid)">est. material cost</div>
+          </div>
+        </div>
+        <div id="mel-breakdown" style="display:none;margin-top:1rem;padding:0.75rem;background:#f8f9fb;border-radius:8px;font-size:0.85rem;color:var(--mid);text-align:left;">
+          <strong style="color:var(--slate);">Mel's Mix breakdown:</strong>
+          <span id="mel-detail"></span>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:0.75rem;">How Deep Should a Raised Bed Be?</h2>
+    <table>
+      <thead><tr><th>Depth</th><th>Best For</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>6 inches</td><td>Herbs, lettuce, spinach, flowers</td><td>Minimum depth — works for shallow-rooted crops only</td></tr>
+        <tr><td>8–10 inches</td><td>Most vegetables — tomatoes, peppers, beans</td><td>Good all-purpose depth for most home gardens</td></tr>
+        <tr><td>12 inches</td><td>All vegetables</td><td>Most recommended depth — comfortable root space for everything</td></tr>
+        <tr><td>18–24 inches</td><td>Root vegetables — carrots, parsnips, potatoes</td><td>Required for deep-rooted crops; also needed over concrete or hardscape</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 0.75rem;">Soil Volume Quick Reference</h2>
+    <table>
+      <thead><tr><th>Bed Size</th><th>6" Deep</th><th>12" Deep</th><th>18" Deep</th></tr></thead>
+      <tbody>
+        <tr><td>4×4 ft</td><td>8 cu ft (6 bags)</td><td>16 cu ft (11 bags)</td><td>24 cu ft (16 bags)</td></tr>
+        <tr><td>4×8 ft</td><td>16 cu ft (11 bags)</td><td>32 cu ft (22 bags)</td><td>48 cu ft (32 bags)</td></tr>
+        <tr><td>4×12 ft</td><td>24 cu ft (16 bags)</td><td>48 cu ft (32 bags)</td><td>72 cu ft (48 bags)</td></tr>
+        <tr><td>3×6 ft</td><td>9 cu ft (6 bags)</td><td>18 cu ft (12 bags)</td><td>27 cu ft (18 bags)</td></tr>
+        <tr><td>5×10 ft</td><td>25 cu ft (17 bags)</td><td>50 cu ft (34 bags)</td><td>75 cu ft (50 bags)</td></tr>
+      </tbody>
+    </table>
+    <p>Bag count assumes standard 1.5 cu ft bags. Actual bag sizes vary — check the label. For large beds, bulk delivery by the cubic yard is usually cheaper above 3–4 cubic yards.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 0.75rem;">Fill Type Comparison (2026)</h2>
+    <table>
+      <thead><tr><th>Fill Type</th><th>Cost per Cu Ft</th><th>Best For</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Pre-mixed raised bed soil (bagged)</td><td>$5–$9</td><td>Small beds, convenience</td><td>Ready to use, consistent quality</td></tr>
+        <tr><td>Mel's Mix (⅓ compost / ⅓ peat / ⅓ vermiculite)</td><td>$6–$10</td><td>Best plant performance</td><td>Lightweight, excellent drainage, retains moisture</td></tr>
+        <tr><td>Topsoil + compost 60/40</td><td>$3–$6</td><td>Budget option, larger beds</td><td>Heavier, may compact over time</td></tr>
+        <tr><td>Bulk garden mix</td><td>$35–$55/cu yd ($1.30–$2/cu ft)</td><td>Large beds, multiple beds</td><td>Cheapest per cu ft above 3 cu yd</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:2rem;padding:1.25rem;background:#f8f9fb;border-radius:var(--radius);border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem;line-height:2;">
+        <li><a href="/tools/soil-calculator.html">Soil Calculator</a></li>
+        <li><a href="/tools/mulch-calculator.html">Mulch Calculator</a></li>
+        <li><a href="/tools/garden-area-calculator.html">Garden Area Calculator</a></li>
+        <li><a href="/blog/how-much-soil-for-raised-bed.html">How Much Soil Do I Need for a Raised Bed?</a></li>
+        <li><a href="/blog/best-soil-for-raised-garden-beds.html">Best Soil for Raised Garden Beds in 2026</a></li>
+        <li><a href="/blog/how-deep-should-raised-garden-bed-be.html">How Deep Should a Raised Garden Bed Be?</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+<script>
+function calcBed() {
+  const l = parseFloat(document.getElementById('bed-l').value);
+  const w = parseFloat(document.getElementById('bed-w').value);
+  const dIn = parseFloat(document.getElementById('bed-d').value);
+  const numBeds = parseInt(document.getElementById('num-beds').value) || 1;
+  const fillType = document.getElementById('fill-type').value;
+
+  if (!l || !w) { alert('Please enter bed dimensions.'); return; }
+
+  const dFt = dIn / 12;
+  const cuft = l * w * dFt * numBeds;
+  const cuYards = cuft / 27;
+
+  // Bag size 1.5 cu ft standard
+  const bagSize = 1.5;
+  const bags = Math.ceil(cuft / bagSize);
+
+  // Cost estimate
+  const costPerCuft = { premix: 7, mel: 8, topsoil: 4.5, bulk: 1.6 };
+  const cost = cuft * costPerCuft[fillType];
+
+  // Format
+  const fmt = n => '$' + Math.round(n).toLocaleString();
+
+  document.getElementById('total-cuft').textContent = cuft.toFixed(1) + ' cu ft';
+  document.getElementById('cu-yards').textContent = cuYards.toFixed(2) + ' cu yd';
+  document.getElementById('bags').textContent = bags;
+  document.getElementById('est-cost').textContent = fmt(cost * 0.85) + '–' + fmt(cost * 1.15);
+
+  const bagLabels = {
+    premix: '1.5 cu ft bags (pre-mix)',
+    mel: '1.5 cu ft bags (each component)',
+    topsoil: '1.5 cu ft bags',
+    bulk: '—  order by cubic yard'
+  };
+  document.getElementById('bag-label').textContent = bagLabels[fillType];
+
+  // Mel's mix breakdown
+  if (fillType === 'mel') {
+    const third = cuft / 3;
+    document.getElementById('mel-detail').textContent =
+      ` ${third.toFixed(1)} cu ft compost (${Math.ceil(third/bagSize)} bags) + ${third.toFixed(1)} cu ft peat moss (${Math.ceil(third/bagSize)} bags) + ${third.toFixed(1)} cu ft vermiculite (${Math.ceil(third/bagSize)} bags)`;
+    document.getElementById('mel-breakdown').style.display = 'block';
+  } else {
+    document.getElementById('mel-breakdown').style.display = 'none';
+  }
+
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>
