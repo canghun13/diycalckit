@@ -1,7 +1,7 @@
 /* ============================================================
    DIYCalcKit — nav.js
    헤더/푸터/GA 자동 삽입
-   툴 또는 블로그 추가 시 아래 배열만 수정하면 됨
+   툴, 블로그, 프로젝트 추가 시 아래 배열만 수정하면 됨
    ============================================================ */
 
 // ── GA ──────────────────────────────────────────────────────
@@ -22,8 +22,10 @@ const TOOLS = [
   { name: "Paint Calculator", url: "/tools/paint-calculator.html" },
   { name: "Wallpaper Calculator", url: "/tools/wallpaper-calculator.html" },
   { name: "Primer Calculator", url: "/tools/primer-calculator.html" },
+  { name: "Paint Cost Calculator", url: "/tools/paint-cost-calculator.html" },
   { name: "Flooring Calculator", url: "/tools/flooring-calculator.html" },
   { name: "Tile Calculator", url: "/tools/tile-calculator.html" },
+  { name: "Grout Calculator", url: "/tools/grout-calculator.html" },
   { name: "Carpet Calculator", url: "/tools/carpet-calculator.html" },
   { name: "Hardwood Floor Calculator", url: "/tools/hardwood-floor-calculator.html" },
   { name: "Room Area Calculator", url: "/tools/room-area-calculator.html" },
@@ -41,44 +43,35 @@ const TOOLS = [
   { name: "Mulch Calculator", url: "/tools/mulch-calculator.html" },
   { name: "Gravel Calculator", url: "/tools/gravel-calculator.html" },
   { name: "Soil Calculator", url: "/tools/soil-calculator.html" },
+  { name: "Raised Garden Bed Calculator", url: "/tools/raised-garden-bed-calculator.html" },
   { name: "Lawn Seed Calculator", url: "/tools/lawn-seed-calculator.html" },
   { name: "Moving Cost Calculator", url: "/tools/moving-cost-calculator.html" },
   { name: "Storage Unit Size Calculator", url: "/tools/storage-unit-size-calculator.html" },
   { name: "Packing Box Calculator", url: "/tools/packing-box-calculator.html" },
-  { name: "Grout Calculator", url: "/tools/grout-calculator.html" },
-  { name: "Paint Cost Calculator", url: "/tools/paint-cost-calculator.html" },
-  { name: "Raised Garden Bed Calculator", url: "/tools/raised-garden-bed-calculator.html" },
 ];
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
-  // 2026-06-23 신규
   { name: "How Much Carpet Do I Need? Complete Homeowner Guide", url: "/blog/how-much-carpet-do-i-need.html", date: "2026-06-23", desc: "Calculate carpet square footage for any room. Covers waste factor, roll widths, seam placement, and cost by carpet type." },
   { name: "How Much Deck Stain Do I Need?", url: "/blog/how-much-deck-stain-do-i-need.html", date: "2026-06-23", desc: "Calculate gallons of deck stain by deck size, coats, railing coverage, and wood condition — with a quick-reference table." },
   { name: "How to Calculate Square Footage of a House", url: "/blog/how-to-calculate-square-footage.html", date: "2026-06-23", desc: "Step-by-step guide to measuring every room, handling L-shapes and open plans, and what counts as livable square footage." },
-  // 2026-06-18
   { name: "How Much Primer Do I Need? Complete Homeowner Guide", url: "/blog/how-much-primer-do-i-need.html", date: "2026-06-18", desc: "Coverage rates by surface type, how many coats, quick reference by room size, and tips to avoid waste." },
   { name: "Do I Need to Prime Before Painting? When to Use Primer", url: "/blog/when-to-use-primer-before-painting.html", date: "2026-06-18", desc: "Exactly when primer is non-negotiable, when you can skip it, and which type to use for each situation." },
   { name: "How Many Coats of Primer Do I Need? One vs. Two Coats Explained", url: "/blog/how-many-coats-of-primer-do-i-need.html", date: "2026-06-18", desc: "One coat or two? Clear guidance by surface type — bare drywall, stains, color changes, and wood." },
-  // 2026-06-12
   { name: "How to Hang Wallpaper: Step-by-Step Guide for Beginners", url: "/blog/how-to-hang-wallpaper.html", date: "2026-06-12", desc: "Wall prep, measuring, cutting, pasting, and finishing — the complete method that actually works, including corners and pattern matching." },
   { name: "Wallpaper Calculator with Pattern Repeat: How to Get the Right Roll Count", url: "/blog/wallpaper-calculator-with-repeat.html", date: "2026-06-12", desc: "Pattern repeat is the most misunderstood part of buying wallpaper. Here's exactly how it affects your roll count — with examples and a reference table." },
   { name: "How Much Peel and Stick Wallpaper Do I Need? Complete Guide", url: "/blog/peel-and-stick-wallpaper-calculator.html", date: "2026-06-12", desc: "Calculate rolls for any room or accent wall. Includes coverage by roll type, waste factor guide, and comparison with traditional wallpaper." },
-  // 2026-06-06
   { name: "How Much Soil Do I Need for a Raised Bed?", url: "/blog/how-much-soil-for-raised-bed.html", date: "2026-06-06", desc: "The cubic foot formula, bags vs. bulk cost comparison, and recommended soil depth by plant type." },
   { name: "Best Soil for Raised Garden Beds in 2026", url: "/blog/best-soil-for-raised-garden-beds.html", date: "2026-06-06", desc: "Compare raised bed soil vs. topsoil, DIY mixes, and bagged options — with cost breakdown and recommendations." },
   { name: "How Deep Should a Raised Garden Bed Be?", url: "/blog/how-deep-should-raised-garden-bed-be.html", date: "2026-06-06", desc: "Recommended depth by vegetable type, minimum depth for common plants, and how depth affects soil cost." },
-  // 2026-06-01
   { name: "How Much Wallpaper Do I Need for an Accent Wall?", url: "/blog/how-much-wallpaper-for-accent-wall.html", date: "2026-06-01", desc: "Roll count by wall size, pattern repeat impact, cost breakdown, and peel-and-stick vs. traditional comparison." },
   { name: "How Many Rolls of Wallpaper Do I Need?", url: "/blog/how-many-rolls-of-wallpaper-do-i-need.html", date: "2026-06-01", desc: "The formula, pattern repeat guide, and quick reference table for any room size. Get the exact roll count before you buy." },
   { name: "How Much Does It Cost to Wallpaper a Room in 2026?", url: "/blog/how-much-does-it-cost-to-wallpaper-a-room.html", date: "2026-06-01", desc: "Wallpapering a room costs $300–$800 in materials and $300–$800 in labor. Full cost breakdown by wallpaper type and room size." },
-  // 2026-05-31
   { name: "How Much Gravel Do I Need for a Garden Bed?", url: "/blog/how-much-gravel-for-garden-bed.html", date: "2026-05-31", desc: "Calculate bags or cubic yards for any garden bed. Covers depth guide, gravel types, landscape fabric, and bags vs. bulk cost comparison." },
   { name: "How Much Does a Gravel Driveway Cost in 2026?", url: "/blog/how-much-does-a-gravel-driveway-cost.html", date: "2026-05-31", desc: "A gravel driveway costs $300–$1,500 DIY or $1,000–$3,000 installed. Full cost breakdown by size, gravel type, and labor." },
   { name: "How Much Gravel Do I Need? Complete Homeowner Guide", url: "/blog/how-much-gravel-do-i-need.html", date: "2026-05-31", desc: "Calculate cubic yards and tons for driveways, paths, and garden beds. Includes depth guide, gravel types, and bags vs. bulk cost comparison." },
   { name: "Gravel vs. Mulch for Garden Beds: Which Should You Use?", url: "/blog/gravel-vs-mulch-for-garden-beds.html", date: "2026-05-31", desc: "Side-by-side comparison of gravel and mulch for drainage, weed suppression, cost, and plant types." },
   { name: "How to Build a Gravel Driveway: Step-by-Step Guide", url: "/blog/how-to-build-a-gravel-driveway.html", date: "2026-05-31", desc: "Materials, tools, base preparation, and gravel depth — everything you need to install a gravel driveway yourself." },
-  // 2026-05-01
   { name: "How Much Does It Cost to Move in 2026? Complete Guide", url: "/blog/moving-cost-guide.html", date: "2026-05-01", desc: "Local moves average $800–$2,500. Cross-country runs $4,000–$10,000. Full breakdown by home size, distance, and service level." },
   { name: "How to Calculate Flooring for Any Room (Step-by-Step)", url: "/blog/how-to-calculate-flooring-for-a-room.html", date: "2026-05-01", desc: "Measure, add waste factor, convert to boxes. Works for LVP, hardwood, tile, and carpet." },
   { name: "How Much Mulch Do I Need? Complete Homeowner Guide", url: "/blog/how-much-mulch-do-i-need.html", date: "2026-05-01", desc: "The right depth, bags vs. bulk pricing, and the simple formula to calculate exactly how many bags to buy." },
@@ -87,6 +80,36 @@ const BLOGS = [
   { name: "How Much Does It Cost to Tile a Floor in 2026?", url: "/blog/how-much-does-it-cost-to-tile-a-floor.html", date: "2026-05-01", desc: "Tiling a floor costs $7–$25 per sq ft installed. Full breakdown by tile type, room size, and labor costs." },
   { name: "How Much Does a Bathroom Renovation Cost in 2026?", url: "/blog/how-much-does-a-bathroom-renovation-cost.html", date: "2026-05-01", desc: "A mid-range bathroom remodel costs $10,000–$25,000. Here's what drives the price and how to budget your project." },
   { name: "How Much Does It Cost to Paint a Room in 2026?", url: "/blog/how-much-does-it-cost-to-paint-a-room.html", date: "2026-05-01", desc: "The average cost to paint a room ranges from $380 to $790 when hiring a pro, or $80–$150 in materials if you DIY." },
+];
+
+// ── 프로젝트 목록 ────────────────────────────────────────────
+const PROJECTS = [
+  // Paint & Wall
+  { name: "How to Paint a Room", url: "/projects/how-to-paint-a-room.html", cat: "paint", icon: "🖌️", desc: "Calculate materials, prep walls, prime, and paint — with step-by-step guidance and a built-in paint calculator." },
+  { name: "How to Wallpaper a Room", url: "/projects/how-to-wallpaper-a-room.html", cat: "paint", icon: "🧱", desc: "Measure, order the right rolls, prep walls, and hang wallpaper — including pattern matching and corners." },
+  // Flooring
+  { name: "How to Install LVP Flooring", url: "/projects/how-to-install-lvp-flooring.html", cat: "flooring", icon: "🪵", desc: "Subfloor prep, acclimation, layout planning, click-lock installation, and transitions — full DIY guide." },
+  { name: "How to Install Hardwood Flooring", url: "/projects/how-to-install-hardwood-flooring.html", cat: "flooring", icon: "🌲", desc: "Acclimation, nailing vs. gluing, layout, and finishing — everything for a professional hardwood install." },
+  { name: "How to Install Carpet", url: "/projects/how-to-install-carpet.html", cat: "flooring", icon: "🟫", desc: "Tack strips, padding, cutting, stretching, and seaming — the complete carpet installation guide." },
+  { name: "How to Install Carpet Tiles", url: "/projects/how-to-install-carpet-tiles.html", cat: "flooring", icon: "⬛", desc: "Layout planning, adhesive vs. peel-and-stick, cutting around obstacles, and finishing edges." },
+  // Tile
+  { name: "How to Tile a Floor", url: "/projects/how-to-tile-a-floor.html", cat: "tile", icon: "⬜", desc: "Substrate prep, layout, thinset, tile placement, grouting, and sealing — with a built-in tile calculator." },
+  { name: "How to Install a Backsplash", url: "/projects/how-to-install-a-backsplash.html", cat: "tile", icon: "🍳", desc: "Planning, tile selection, adhesive, cutting around outlets, grouting, and sealing a kitchen backsplash." },
+  { name: "How to Grout Tile", url: "/projects/how-to-grout-tile.html", cat: "tile", icon: "🪣", desc: "Mixing, applying, wiping, sealing, and fixing grout — the complete guide with common mistake fixes." },
+  // Structural
+  { name: "How to Install Drywall", url: "/projects/how-to-install-drywall.html", cat: "structural", icon: "🏗️", desc: "Hanging, taping, mudding, sanding, and priming drywall — with a material calculator built in." },
+  { name: "How to Pour a Concrete Slab", url: "/projects/how-to-pour-a-concrete-slab.html", cat: "structural", icon: "⬛", desc: "Site prep, forming, mixing, pouring, finishing, and curing a concrete slab for patios, sheds, or walkways." },
+  { name: "How to Install Insulation", url: "/projects/how-to-install-insulation.html", cat: "structural", icon: "🌡️", desc: "R-value guide, batt vs. blown-in, attic and wall installation, vapor barriers, and safety tips." },
+  // Outdoor
+  { name: "How to Build a Fence", url: "/projects/how-to-build-a-fence.html", cat: "outdoor", icon: "🪟", desc: "Layout, post setting, panel installation, and gates — with a fence calculator for posts and panels." },
+  { name: "How to Build a Deck", url: "/projects/how-to-build-a-deck.html", cat: "outdoor", icon: "🏡", desc: "Planning, footings, framing, decking boards, railings, and finishing — full deck build guide." },
+  { name: "How to Stain a Deck", url: "/projects/how-to-stain-a-deck.html", cat: "outdoor", icon: "🪵", desc: "Cleaning, sanding, choosing stain type, applying, and maintaining — with a built-in stain calculator." },
+  { name: "How to Build a Raised Garden Bed", url: "/projects/how-to-build-a-raised-garden-bed.html", cat: "outdoor", icon: "🌱", desc: "Materials, dimensions, assembly, lining, filling with soil mix, and planting — complete build guide." },
+  { name: "How to Lay Mulch", url: "/projects/how-to-lay-mulch.html", cat: "outdoor", icon: "🍂", desc: "Prep the bed, calculate depth, spread mulch, and maintain it — with a mulch calculator built in." },
+  { name: "How to Plan a Garden", url: "/projects/how-to-plan-a-garden.html", cat: "outdoor", icon: "🌿", desc: "Site selection, layout, soil prep, plant spacing, and bed sizing — with area and soil calculators." },
+  // Moving & Renovation
+  { name: "How to Move House", url: "/projects/how-to-move-house.html", cat: "moving", icon: "🚚", desc: "Timeline, packing strategy, hiring movers vs. DIY, and cost estimates — the complete moving guide." },
+  { name: "How to Plan a Home Renovation", url: "/projects/how-to-plan-a-home-renovation.html", cat: "moving", icon: "📋", desc: "Scope, budget, contractor vs. DIY, timeline, permits, and ROI — everything before you swing a hammer." },
 ];
 
 // ── 헬퍼: 날짜 내림차순 정렬 ────────────────────────────────
@@ -98,20 +121,17 @@ function sortByDate(arr) {
 document.addEventListener('DOMContentLoaded', function () {
 
   const recentBlogs = sortByDate(BLOGS).slice(0, 6);
-  const blogItems = recentBlogs.map(b =>
-    `<li><a href="${b.url}">${b.name}</a></li>`
-  ).join('');
 
-  // ── PC 헤더: Tools/Blog는 드롭다운 없이 바로 링크 ──────────
+  // ── PC 헤더: Home 제거, Projects 추가 ───────────────────────
   const header = `
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="logo">DIYCalc<span>Kit</span></a>
       <nav class="main-nav" id="mainNav">
         <ul class="nav-list">
-          <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/tools/" class="nav-link">Tools</a></li>
           <li><a href="/blog/" class="nav-link">Blog</a></li>
+          <li><a href="/projects/" class="nav-link">Projects</a></li>
           <li><a href="/about.html" class="nav-link">About</a></li>
         </ul>
       </nav>
@@ -128,11 +148,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const mobileBlogItems = sortByDate(BLOGS).map(b =>
     `<li><a href="${b.url}">${b.name}</a></li>`
   ).join('');
+  const mobileProjectItems = PROJECTS.map(p =>
+    `<li><a href="${p.url}">${p.name}</a></li>`
+  ).join('');
 
   const mobileNav = `
   <nav class="mobile-nav" id="mobileNav">
     <ul class="nav-list">
-      <li><a href="/" class="nav-link">Home</a></li>
       <li class="nav-has-dropdown">
         <button class="nav-link nav-btn" aria-expanded="false">Tools ▾</button>
         <ul class="nav-dropdown">
@@ -147,17 +169,26 @@ document.addEventListener('DOMContentLoaded', function () {
           ${mobileBlogItems}
         </ul>
       </li>
+      <li class="nav-has-dropdown">
+        <button class="nav-link nav-btn" aria-expanded="false">Projects ▾</button>
+        <ul class="nav-dropdown">
+          <li><a href="/projects/" class="nav-dropdown-all">View All Projects →</a></li>
+          ${mobileProjectItems}
+        </ul>
+      </li>
       <li><a href="/about.html" class="nav-link">About</a></li>
     </ul>
   </nav>
   <div class="nav-overlay" id="navOverlay"></div>`;
+
+  const recentProjects = PROJECTS.slice(0, 6);
 
   const footer = `
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo">DIYCalc<span>Kit</span></a>
-        <p>Free home improvement calculators for every project — paint, flooring, renovation, and more.</p>
+        <p>Free home improvement calculators, step-by-step project guides, and cost breakdowns for every project.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
@@ -175,11 +206,18 @@ document.addEventListener('DOMContentLoaded', function () {
           </ul>
         </div>
         <div class="footer-col">
+          <h4>Projects</h4>
+          <ul>
+            ${recentProjects.map(p => `<li><a href="${p.url}">${p.name}</a></li>`).join('')}
+            <li><a href="/projects/">View All Projects →</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
           <h4>Site</h4>
           <ul>
-            <li><a href="/">Home</a></li>
             <li><a href="/tools/">Tools</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/projects/">Projects</a></li>
             <li><a href="/about.html">About</a></li>
             <li><a href="/privacy-policy.html">Privacy Policy</a></li>
             <li><a href="/contact.html">Contact</a></li>
@@ -192,7 +230,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </footer>`;
 
-  // 삽입
   document.body.insertAdjacentHTML('afterbegin', header);
   document.querySelector('.site-header').insertAdjacentHTML('afterend', mobileNav);
   document.body.insertAdjacentHTML('beforeend', footer);
@@ -219,23 +256,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }).join('');
   }
 
-  // 현재 페이지 active
+  // 프로젝트 카드 자동 렌더링
+  const projectGrid = document.getElementById('project-grid');
+  if (projectGrid && PROJECTS.length > 0) {
+    projectGrid.innerHTML = PROJECTS.map(p => `
+      <a href="${p.url}" class="tool-card">
+        <div class="tool-card-icon">${p.icon}</div>
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <span class="tool-card-arrow">See guide →</span>
+      </a>
+    `).join('');
+  }
+
+  // active 링크
   document.querySelectorAll('a.nav-link').forEach(a => {
     const href = a.getAttribute('href');
-    if (href === currentPath || (href === '/' && (currentPath === '/' || currentPath === '/index.html'))) {
-      a.classList.add('active');
-    }
-    // /tools/ 하위 페이지일 때 Tools 링크 active
-    if (href === '/tools/' && currentPath.startsWith('/tools/')) {
-      a.classList.add('active');
-    }
-    // /blog/ 하위 페이지일 때 Blog 링크 active
-    if (href === '/blog/' && currentPath.startsWith('/blog/')) {
-      a.classList.add('active');
-    }
+    if (href === '/tools/' && currentPath.startsWith('/tools/')) a.classList.add('active');
+    if (href === '/blog/' && currentPath.startsWith('/blog/')) a.classList.add('active');
+    if (href === '/projects/' && currentPath.startsWith('/projects/')) a.classList.add('active');
+    if (href === '/about.html' && currentPath === '/about.html') a.classList.add('active');
   });
 
-  // 모바일 드롭다운 토글
+  // 모바일 드롭다운
   document.querySelectorAll('.nav-has-dropdown').forEach(li => {
     const trigger = li.querySelector('.nav-btn');
     if (!trigger) return;
