@@ -80,4 +80,28 @@
   <url><loc>https://diycalckit.com/blog/how-much-does-a-bathroom-renovation-cost.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-paint-a-room.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
 
+
+  <!-- Projects -->
+  <url><loc>https://diycalckit.com/projects/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-paint-a-room.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-wallpaper-a-room.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-lvp-flooring.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-hardwood-flooring.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-carpet.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-carpet-tiles.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-tile-a-floor.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-a-backsplash.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-grout-tile.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-drywall.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-pour-a-concrete-slab.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-insulation.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-build-a-fence.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-build-a-deck.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-stain-a-deck.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-build-a-raised-garden-bed.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-lay-mulch.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-plan-a-garden.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-move-house.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-plan-a-home-renovation.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+
 </urlset>
