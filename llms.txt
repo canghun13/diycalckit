@@ -1,76 +1,125 @@
 # DIYCalcKit
 
-> Free home improvement calculators and cost guides for US homeowners. Covers painting, flooring, tiling, renovation, outdoor projects, and moving.
+> Free home improvement calculators, step-by-step project guides, and cost breakdowns for US homeowners. Covers painting, flooring, tiling, renovation, outdoor projects, and moving.
 
-DIYCalcKit provides free, instant calculators that help homeowners estimate material quantities and project costs — no signup required. Each tool pairs with a detailed cost guide covering real 2026 pricing, bags vs. bulk comparisons, and practical tips for DIY projects.
+DIYCalcKit provides free, instant calculators that help homeowners estimate material quantities and project costs — no signup required. Each tool pairs with detailed cost guides and step-by-step project guides covering real 2026 pricing and practical DIY tips.
 
 ## Calculators
 
 ### Paint & Wall
 - [Paint Calculator](https://diycalckit.com/tools/paint-calculator.html): Calculates gallons of paint needed based on room dimensions, number of coats, and door/window deductions.
-- [Wallpaper Calculator](https://diycalckit.com/tools/wallpaper-calculator.html): Calculates number of wallpaper rolls needed for a room, accounting for pattern repeat and waste.
+- [Paint Cost Calculator](https://diycalckit.com/tools/paint-cost-calculator.html): Estimates total cost to paint a room including paint, primer, supplies, and optional professional labor.
+- [Paint Coverage Calculator](https://diycalckit.com/tools/paint-coverage-calculator.html): Calculates how far a gallon of paint covers, or how many gallons are needed for a specific area.
 - [Primer Calculator](https://diycalckit.com/tools/primer-calculator.html): Estimates primer coverage for walls and ceilings before painting.
+- [Wallpaper Calculator](https://diycalckit.com/tools/wallpaper-calculator.html): Calculates number of wallpaper rolls needed for a room, accounting for pattern repeat and waste.
+- [Window Treatment Calculator](https://diycalckit.com/tools/window-treatment-calculator.html): Calculates curtain panels, fabric yardage, or blind dimensions for any window — inside and outside mount.
 
 ### Flooring
 - [Flooring Calculator](https://diycalckit.com/tools/flooring-calculator.html): Calculates square footage and boxes of flooring needed for any room, with waste factor.
 - [Tile Calculator](https://diycalckit.com/tools/tile-calculator.html): Calculates number of tiles needed for floors or walls, including grout joint and waste allowance.
-- [Carpet Calculator](https://diycalckit.com/tools/carpet-calculator.html): Estimates square yards of carpet needed for a room.
+- [Grout Calculator](https://diycalckit.com/tools/grout-calculator.html): Calculates exact bags of grout needed based on tile size, joint width, tile thickness, and grout type.
+- [Carpet Calculator](https://diycalckit.com/tools/carpet-calculator.html): Estimates square yards of carpet needed for a room, with seam and waste factored in.
 - [Hardwood Floor Calculator](https://diycalckit.com/tools/hardwood-floor-calculator.html): Calculates square footage and board count for hardwood flooring installation.
 
 ### Area & Structural
-- [Room Area Calculator](https://diycalckit.com/tools/room-area-calculator.html): Calculates room square footage for planning flooring, paint, or renovation projects.
-- [Square Footage Calculator](https://diycalckit.com/tools/square-footage-calculator.html): Calculates square footage for any rectangular or multi-room space.
+- [Room Area Calculator](https://diycalckit.com/tools/room-area-calculator.html): Calculates room square footage for rectangular, L-shaped, and triangular rooms.
+- [Square Footage Calculator](https://diycalckit.com/tools/square-footage-calculator.html): Calculates total square footage for multiple rooms or an entire floor plan.
 - [Drywall Calculator](https://diycalckit.com/tools/drywall-calculator.html): Estimates number of drywall sheets needed for walls and ceilings.
-- [Concrete Calculator](https://diycalckit.com/tools/concrete-calculator.html): Calculates bags of concrete needed for slabs, footings, and posts.
+- [Concrete Calculator](https://diycalckit.com/tools/concrete-calculator.html): Calculates cubic yards or bags of concrete needed for slabs, footings, and posts.
 
 ### Renovation & Cost
 - [Renovation Cost Estimator](https://diycalckit.com/tools/renovation-cost-estimator.html): Estimates home renovation costs by room type and scope of work.
+- [Bathroom Remodel Cost Calculator](https://diycalckit.com/tools/bathroom-remodel-cost-calculator.html): Estimates bathroom renovation cost by size, scope, finish level, and DIY vs. contractor.
 - [Contractor Cost Calculator](https://diycalckit.com/tools/contractor-cost-calculator.html): Estimates contractor labor costs based on project type and size.
 - [Home Renovation ROI Calculator](https://diycalckit.com/tools/home-renovation-roi-calculator.html): Calculates return on investment for common home improvement projects based on national averages.
 
 ### Garden & Outdoor
+- [Raised Garden Bed Calculator](https://diycalckit.com/tools/raised-garden-bed-calculator.html): Calculates soil, compost, and fill volume needed for any raised garden bed size and depth. Includes Mel's Mix breakdown.
 - [Fence Calculator](https://diycalckit.com/tools/fence-calculator.html): Calculates fence posts, panels, and materials needed for any fence length and style.
 - [Deck Size Calculator](https://diycalckit.com/tools/deck-size-calculator.html): Estimates lumber and materials needed for a deck build.
+- [Deck Stain Calculator](https://diycalckit.com/tools/stain-calculator.html): Calculates gallons of deck stain needed based on deck size, railings, number of coats, and wood condition.
 - [Garden Area Calculator](https://diycalckit.com/tools/garden-area-calculator.html): Calculates garden bed area for soil, mulch, or planting planning.
 - [Mulch Calculator](https://diycalckit.com/tools/mulch-calculator.html): Calculates cubic yards or bags of mulch needed based on bed dimensions and depth.
-- [Gravel Calculator](https://diycalckit.com/tools/gravel-calculator.html): Calculates cubic yards, tons, and bags of gravel needed for driveways, paths, and garden beds.
-- [Soil Calculator](https://diycalckit.com/tools/soil-calculator.html): Calculate cubic feet, cubic yards, and bags of soil needed for raised garden beds, planters, and in-ground garden beds.
+- [Gravel Calculator](https://diycalckit.com/tools/gravel-calculator.html): Calculates cubic yards, tons, and bags of gravel for driveways, paths, and garden beds.
+- [Soil Calculator](https://diycalckit.com/tools/soil-calculator.html): Calculates cubic feet, cubic yards, and bags of soil for raised beds, planters, and garden beds.
 - [Lawn Seed Calculator](https://diycalckit.com/tools/lawn-seed-calculator.html): Calculates pounds of grass seed needed for new lawns or overseeding.
 
 ### Moving
 - [Moving Cost Calculator](https://diycalckit.com/tools/moving-cost-calculator.html): Estimates moving costs based on home size, distance, and service level.
 - [Storage Unit Size Calculator](https://diycalckit.com/tools/storage-unit-size-calculator.html): Recommends the right storage unit size based on what you need to store.
 - [Packing Box Calculator](https://diycalckit.com/tools/packing-box-calculator.html): Estimates number of moving boxes needed by room count and home size.
-- [Stain Calculator](https://diycalckit.com/tools/stain-calculator.html): Calculates gallons of deck stain needed based on deck size, railings, number of coats, and wood condition.
-- [Bathroom Remodel Cost Calculator](https://diycalckit.com/tools/bathroom-remodel-cost-calculator.html): Estimates bathroom renovation cost by bathroom size, scope of work, finish level, and DIY vs. contractor labor.
 
-## Cost Guides
+## Project Guides
 
-- [How Much Does It Cost to Paint a Room in 2026?](https://diycalckit.com/blog/how-much-does-it-cost-to-paint-a-room.html): Pro painting runs $380–$790 per room; DIY materials cost $80–$150. Breakdown by room size and paint quality.
-- [How Much Does a Bathroom Renovation Cost in 2026?](https://diycalckit.com/blog/how-much-does-a-bathroom-renovation-cost.html): Mid-range bathroom remodel costs $10,000–$25,000. Full breakdown by scope and finishes.
-- [How Much Does It Cost to Tile a Floor in 2026?](https://diycalckit.com/blog/how-much-does-it-cost-to-tile-a-floor.html): Tiling a floor costs $7–$25 per sq ft installed. Breakdown by tile type and labor.
-- [DIY vs. Hiring a Contractor: When to Do It Yourself](https://diycalckit.com/blog/diy-vs-hiring-a-contractor.html): Decision guide with cost comparisons for common home improvement projects.
+Step-by-step DIY project guides with built-in calculator links.
+
+### Paint & Wall
+- [How to Paint a Room](https://diycalckit.com/projects/how-to-paint-a-room.html): Calculate materials, prep walls, prime, cut in, roll, and finish — complete guide.
+- [How to Wallpaper a Room](https://diycalckit.com/projects/how-to-wallpaper-a-room.html): Measure, order rolls, prep walls, hang, and finish — including pattern matching and corners.
+
+### Flooring
+- [How to Install LVP Flooring](https://diycalckit.com/projects/how-to-install-lvp-flooring.html): Subfloor prep, acclimation, layout, click-lock installation, and transitions.
+- [How to Install Hardwood Flooring](https://diycalckit.com/projects/how-to-install-hardwood-flooring.html): Acclimation, subfloor prep, nail-down installation, and finishing.
+- [How to Install Carpet](https://diycalckit.com/projects/how-to-install-carpet.html): Tack strips, padding, cutting, stretching, and seaming.
+- [How to Install Carpet Tiles](https://diycalckit.com/projects/how-to-install-carpet-tiles.html): Layout, adhesive vs. peel-and-stick, cutting, and finishing.
+
+### Tile
+- [How to Tile a Floor](https://diycalckit.com/projects/how-to-tile-a-floor.html): Substrate prep, layout, thinset, tile placement, grouting, and sealing.
+- [How to Install a Backsplash](https://diycalckit.com/projects/how-to-install-a-backsplash.html): Planning, adhesive, cutting around outlets, grouting, and sealing.
+- [How to Grout Tile](https://diycalckit.com/projects/how-to-grout-tile.html): Mixing, applying, cleaning, sealing, and fixing common problems.
+
+### Structural
+- [How to Install Drywall](https://diycalckit.com/projects/how-to-install-drywall.html): Hanging, taping, mudding, sanding, and priming.
+- [How to Pour a Concrete Slab](https://diycalckit.com/projects/how-to-pour-a-concrete-slab.html): Site prep, forming, mixing, pouring, finishing, and curing.
+- [How to Install Insulation](https://diycalckit.com/projects/how-to-install-insulation.html): R-value guide, batt vs. blown-in, vapor barriers, and safety.
+
+### Outdoor
+- [How to Build a Fence](https://diycalckit.com/projects/how-to-build-a-fence.html): Layout, post setting, panel installation, and gates.
+- [How to Build a Deck](https://diycalckit.com/projects/how-to-build-a-deck.html): Planning, permits, footings, framing, decking, railings, and finishing.
+- [How to Stain a Deck](https://diycalckit.com/projects/how-to-stain-a-deck.html): Cleaning, stripping, sanding, applying, and maintaining deck stain.
+- [How to Build a Raised Garden Bed](https://diycalckit.com/projects/how-to-build-a-raised-garden-bed.html): Materials, assembly, lining, filling with soil mix, and planting.
+- [How to Lay Mulch](https://diycalckit.com/projects/how-to-lay-mulch.html): Bed prep, depth guide, spreading, and maintenance.
+- [How to Plan a Garden](https://diycalckit.com/projects/how-to-plan-a-garden.html): Site selection, layout, soil prep, plant selection, and bed sizing.
+
+### Moving & Renovation
+- [How to Move House](https://diycalckit.com/projects/how-to-move-house.html): Timeline, packing strategy, movers vs. DIY, and moving day guide.
+- [How to Plan a Home Renovation](https://diycalckit.com/projects/how-to-plan-a-home-renovation.html): Scope, budget, permits, hiring contractors, and project management.
+
+## Cost Guides & Blog
+
+- [How Much Does It Cost to Build a Deck in 2026?](https://diycalckit.com/blog/how-much-does-it-cost-to-build-a-deck.html): A 12x16 ft PT deck costs $4,800–$9,600 installed. Full breakdown by size and material.
+- [How Much Does It Cost to Build a Fence in 2026?](https://diycalckit.com/blog/how-much-does-it-cost-to-build-a-fence.html): Wood privacy fence runs $15–$35 per linear foot installed. Breakdown by material and length.
+- [What Size Storage Unit Do I Need?](https://diycalckit.com/blog/what-size-storage-unit-do-i-need.html): From 5x5 to 10x30 — what fits in each size, cost guide, and packing tips.
+- [How Much Grout Do I Need? Complete Guide](https://diycalckit.com/blog/how-much-grout-do-i-need.html): Coverage rates by tile size and joint width, sanded vs unsanded guide, and bag count reference.
+- [How Much Does It Cost to Lay Flooring in 2026?](https://diycalckit.com/blog/how-much-does-it-cost-to-lay-flooring.html): LVP installs for $3.50–$10/sq ft; hardwood $9–$23/sq ft. Full breakdown by material.
+- [How Much Carpet Do I Need?](https://diycalckit.com/blog/how-much-carpet-do-i-need.html): Waste factor, roll widths, seam placement, and cost by carpet type.
+- [How Much Deck Stain Do I Need?](https://diycalckit.com/blog/how-much-deck-stain-do-i-need.html): Coverage rates by wood condition, coats, and railing factor — with quick-reference table.
+- [How to Calculate Square Footage of a House](https://diycalckit.com/blog/how-to-calculate-square-footage.html): Room-by-room measurement guide including L-shapes and what counts as livable sq ft.
+- [How Much Does It Cost to Paint a Room in 2026?](https://diycalckit.com/blog/how-much-does-it-cost-to-paint-a-room.html): Pro painting runs $380–$790 per room; DIY materials $80–$150. Breakdown by room size.
+- [How Much Does a Bathroom Renovation Cost in 2026?](https://diycalckit.com/blog/how-much-does-a-bathroom-renovation-cost.html): Mid-range remodel costs $10,000–$25,000. Full breakdown by scope and finishes.
+- [How Much Does It Cost to Tile a Floor in 2026?](https://diycalckit.com/blog/how-much-does-it-cost-to-tile-a-floor.html): Tiling costs $7–$25 per sq ft installed. Breakdown by tile type and labor.
+- [DIY vs. Hiring a Contractor: When to Do It Yourself](https://diycalckit.com/blog/diy-vs-hiring-a-contractor.html): Decision framework with cost comparisons for common home improvement projects.
 - [10 Home Renovations That Add the Most Value in 2026](https://diycalckit.com/blog/home-renovations-that-add-the-most-value.html): Top ROI projects based on the 2025/2026 Cost vs. Value Report.
 - [How Much Mulch Do I Need?](https://diycalckit.com/blog/how-much-mulch-do-i-need.html): Depth guide, bags vs. bulk pricing, and formula for calculating mulch quantity.
 - [How to Calculate Flooring for Any Room](https://diycalckit.com/blog/how-to-calculate-flooring-for-a-room.html): Step-by-step measurement guide for LVP, hardwood, tile, and carpet.
-- [How Much Does It Cost to Move in 2026?](https://diycalckit.com/blog/moving-cost-guide.html): Local moves average $800–$2,500; cross-country runs $4,000–$10,000. Full breakdown.
-- [How Much Gravel Do I Need?](https://diycalckit.com/blog/how-much-gravel-do-i-need.html): Formula, depth guide, gravel types, and bags vs. bulk cost comparison for driveways and garden beds.
-- [How Much Does a Gravel Driveway Cost in 2026?](https://diycalckit.com/blog/how-much-does-a-gravel-driveway-cost.html): DIY costs $300–$1,500; installed runs $1,000–$3,000. Breakdown by size, gravel type, and labor.
-- [How Much Gravel Do I Need for a Garden Bed?](https://diycalckit.com/blog/how-much-gravel-for-garden-bed.html): Covers depth, gravel types, landscape fabric, and bags vs. bulk cost for garden bed projects.
-- [Gravel vs. Mulch for Garden Beds: Which Should You Use?](https://diycalckit.com/blog/gravel-vs-mulch-for-garden-beds.html): Side-by-side comparison of gravel and mulch for drainage, weed suppression, cost, and plant types.
-- [How to Build a Gravel Driveway: Step-by-Step Guide](https://diycalckit.com/blog/how-to-build-a-gravel-driveway.html): Materials, tools, base preparation, and gravel depth for a DIY gravel driveway installation.
-- [How Much Does It Cost to Wallpaper a Room in 2026?](https://diycalckit.com/blog/how-much-does-it-cost-to-wallpaper-a-room.html): Wallpapering a room costs $300–$800 in materials and $300–$800 in labor. Full breakdown by wallpaper type and room size.
-- [How Many Rolls of Wallpaper Do I Need?](https://diycalckit.com/blog/how-many-rolls-of-wallpaper-do-i-need.html): Formula, pattern repeat guide, and quick reference table for any room size.
-- [How Much Wallpaper Do I Need for an Accent Wall?](https://diycalckit.com/blog/how-much-wallpaper-for-accent-wall.html): Roll count by wall size, pattern repeat impact, cost breakdown, and peel-and-stick vs. traditional comparison.
-- [How Much Soil Do I Need for a Raised Bed?](https://diycalckit.com/blog/how-much-soil-for-raised-bed.html): Cubic foot formula, bags vs. bulk cost, and recommended soil depth by plant type.
-- [Best Soil for Raised Garden Beds in 2026](https://diycalckit.com/blog/best-soil-for-raised-garden-beds.html): Compare raised bed soil vs. topsoil, DIY mixes, and bagged options with cost breakdown.
-- [How Deep Should a Raised Garden Bed Be?](https://diycalckit.com/blog/how-deep-should-raised-garden-bed-be.html): Recommended depth by vegetable type, minimum depth guide, and how depth affects soil cost.
-- [How to Hang Wallpaper: Step-by-Step Guide for Beginners](https://diycalckit.com/blog/how-to-hang-wallpaper.html): Wall prep, measuring, cutting, pasting, and finishing — complete hanging method including corners and pattern matching.
-- [Wallpaper Calculator with Pattern Repeat: How to Get the Right Roll Count](https://diycalckit.com/blog/wallpaper-calculator-with-repeat.html): How pattern repeat affects roll count, straight vs. drop match explained, and manual calculation formula.
-- [How Much Peel and Stick Wallpaper Do I Need? Complete Guide](https://diycalckit.com/blog/peel-and-stick-wallpaper-calculator.html): Coverage by roll type, accent wall reference table, and comparison with traditional wallpaper.
-- [How Much Primer Do I Need? Complete Homeowner Guide](https://diycalckit.com/blog/how-much-primer-do-i-need.html): Coverage rates by surface type, how many coats, quick reference by room size, and waste reduction tips.
-- [Do I Need to Prime Before Painting? When to Use Primer](https://diycalckit.com/blog/when-to-use-primer-before-painting.html): Exactly when primer is required, when you can skip it, and which primer type to use for each situation.
-- [How Many Coats of Primer Do I Need? One vs. Two Coats Explained](https://diycalckit.com/blog/how-many-coats-of-primer-do-i-need.html): Clear guidance by surface type — bare drywall, stains, color changes, wood, and problem surfaces.
+- [How Much Does It Cost to Move in 2026?](https://diycalckit.com/blog/moving-cost-guide.html): Local moves average $800–$2,500; cross-country $4,000–$10,000.
+- [How Much Gravel Do I Need?](https://diycalckit.com/blog/how-much-gravel-do-i-need.html): Formula, depth guide, gravel types, and bags vs. bulk cost comparison.
+- [How Much Does a Gravel Driveway Cost in 2026?](https://diycalckit.com/blog/how-much-does-a-gravel-driveway-cost.html): DIY $300–$1,500; installed $1,000–$3,000.
+- [How Much Gravel Do I Need for a Garden Bed?](https://diycalckit.com/blog/how-much-gravel-for-garden-bed.html): Depth guide, gravel types, and bags vs. bulk cost for garden beds.
+- [Gravel vs. Mulch for Garden Beds](https://diycalckit.com/blog/gravel-vs-mulch-for-garden-beds.html): Side-by-side comparison for drainage, weed suppression, cost, and plant types.
+- [How to Build a Gravel Driveway](https://diycalckit.com/blog/how-to-build-a-gravel-driveway.html): Materials, base prep, and gravel depth for DIY installation.
+- [How Much Does It Cost to Wallpaper a Room in 2026?](https://diycalckit.com/blog/how-much-does-it-cost-to-wallpaper-a-room.html): Materials $300–$800, labor $300–$800. Breakdown by wallpaper type and room size.
+- [How Many Rolls of Wallpaper Do I Need?](https://diycalckit.com/blog/how-many-rolls-of-wallpaper-do-i-need.html): Formula, pattern repeat guide, and quick reference table.
+- [How Much Wallpaper for an Accent Wall?](https://diycalckit.com/blog/how-much-wallpaper-for-accent-wall.html): Roll count by wall size, pattern repeat impact, and peel-and-stick comparison.
+- [How Much Soil Do I Need for a Raised Bed?](https://diycalckit.com/blog/how-much-soil-for-raised-bed.html): Cubic foot formula, bags vs. bulk cost, and soil depth by plant type.
+- [Best Soil for Raised Garden Beds in 2026](https://diycalckit.com/blog/best-soil-for-raised-garden-beds.html): Raised bed soil vs. topsoil, DIY mixes, and bagged options with cost breakdown.
+- [How Deep Should a Raised Garden Bed Be?](https://diycalckit.com/blog/how-deep-should-raised-garden-bed-be.html): Recommended depth by vegetable type and how depth affects soil cost.
+- [How to Hang Wallpaper: Step-by-Step](https://diycalckit.com/blog/how-to-hang-wallpaper.html): Wall prep, measuring, cutting, pasting, and finishing.
+- [Wallpaper Calculator with Pattern Repeat](https://diycalckit.com/blog/wallpaper-calculator-with-repeat.html): How pattern repeat affects roll count, straight vs. drop match explained.
+- [How Much Peel and Stick Wallpaper Do I Need?](https://diycalckit.com/blog/peel-and-stick-wallpaper-calculator.html): Coverage by roll type and comparison with traditional wallpaper.
+- [How Much Primer Do I Need?](https://diycalckit.com/blog/how-much-primer-do-i-need.html): Coverage rates by surface type, coats guide, and room size reference.
+- [Do I Need to Prime Before Painting?](https://diycalckit.com/blog/when-to-use-primer-before-painting.html): When primer is required, when to skip it, and which type to use.
+- [How Many Coats of Primer Do I Need?](https://diycalckit.com/blog/how-many-coats-of-primer-do-i-need.html): One vs. two coats by surface type — bare drywall, stains, color changes, and wood.
 
 ## About
 
