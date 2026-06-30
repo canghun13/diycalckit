@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window Treatment Calculator — Curtains, Blinds & Shades</title>
+  <meta name="description" content="Calculate how much fabric, how many panels, or what size blinds you need for any window. Free window treatment calculator for curtains, drapes, roller shades, and blinds.">
+  <link rel="canonical" href="https://diycalckit.com/tools/window-treatment-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Window Treatment Calculator","description":"Calculate fabric, panels, or blind sizes for any window. Covers curtains, drapes, roller shades, and blinds.","url":"https://diycalckit.com/tools/window-treatment-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How wide should curtains be for a window?","acceptedAnswer":{"@type":"Answer","text":"Curtains should be 1.5–3x the window width for a full, gathered look. For a standard 36-inch window, use curtains totaling 54–108 inches in width. Two panels of 54 inches each (108 inches total) gives a generous fullness factor of 3x — the most common choice for living rooms and bedrooms."}},
+{"@type":"Question","name":"How long should curtains be?","acceptedAnswer":{"@type":"Answer","text":"Floor-length curtains should fall within 0.5 inches of the floor for a tailored look, or puddle 3–6 inches for a dramatic effect. Sill-length curtains end at the windowsill. Apron-length curtains end 4 inches below the sill. Measure from the rod to the desired endpoint."}},
+{"@type":"Question","name":"How do I measure for blinds?","acceptedAnswer":{"@type":"Answer","text":"For inside mount blinds, measure the exact window opening width at the top, middle, and bottom — use the narrowest measurement. For height, measure from top to sill at left, center, and right — use the longest. For outside mount, add 2–4 inches on each side and top for light blockage."}},
+{"@type":"Question","name":"What is the standard curtain rod placement height?","acceptedAnswer":{"@type":"Answer","text":"Mount the curtain rod 4–6 inches above the window frame (or higher — up to the ceiling — to make the room feel taller). Extend the rod 6–12 inches beyond the window frame on each side so the curtains stack clear of the glass when open and maximize natural light."}}
+]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Window Treatment Calculator</h1>
+    <p class="tool-desc">Calculate curtain panels, fabric yardage, or blind dimensions for any window. Covers inside mount and outside mount installations.</p>
+
+    <div class="tool-box">
+      <div class="form-group">
+        <label>Treatment Type</label>
+        <select id="type" onchange="updateUI()">
+          <option value="curtain">Curtains / Drapes (panels)</option>
+          <option value="fabric">Fabric Yardage (custom drapes)</option>
+          <option value="blind">Blinds / Roller Shades</option>
+        </select>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label>Window Width (in)</label>
+          <input type="number" id="win-w" placeholder="e.g. 36" min="1" step="0.5">
+        </div>
+        <div class="form-group">
+          <label>Window Height (in)</label>
+          <input type="number" id="win-h" placeholder="e.g. 48" min="1" step="0.5">
+        </div>
+      </div>
+
+      <div id="curtain-options">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group">
+            <label>Fullness Factor</label>
+            <select id="fullness">
+              <option value="1.5">1.5x — Minimal / flat</option>
+              <option value="2" selected>2x — Standard fullness</option>
+              <option value="2.5">2.5x — Full / luxurious</option>
+              <option value="3">3x — Very full / formal</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Mount Type</label>
+            <select id="mount">
+              <option value="outside" selected>Outside mount (rod beyond frame)</option>
+              <option value="inside">Inside mount (within frame)</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group">
+            <label>Rod Extension Each Side (in)</label>
+            <input type="number" id="extension" value="8" min="0" step="1">
+          </div>
+          <div class="form-group">
+            <label>Drop Length</label>
+            <select id="drop">
+              <option value="sill">To sill</option>
+              <option value="apron">Below sill (apron)</option>
+              <option value="floor" selected>Floor length</option>
+              <option value="puddle">Puddle (floor + 6 in)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Panel Width (in) — standard panels</label>
+          <select id="panel-w">
+            <option value="42">42 inches</option>
+            <option value="50">50 inches</option>
+            <option value="54" selected>54 inches</option>
+            <option value="84">84 inches (wide panels)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="fabric-options" style="display:none">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group">
+            <label>Fabric Width (in)</label>
+            <input type="number" id="fab-w" value="54" min="20" step="1">
+          </div>
+          <div class="form-group">
+            <label>Fullness Factor</label>
+            <select id="fab-fullness">
+              <option value="2" selected>2x — Standard</option>
+              <option value="2.5">2.5x — Full</option>
+              <option value="3">3x — Very full</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group">
+            <label>Hem Allowance (in)</label>
+            <input type="number" id="hem" value="16" min="0" step="1">
+          </div>
+          <div class="form-group">
+            <label>Number of Windows</label>
+            <input type="number" id="num-win" value="1" min="1" step="1">
+          </div>
+        </div>
+      </div>
+
+      <div id="blind-options" style="display:none">
+        <div class="form-group">
+          <label>Mount Type</label>
+          <select id="blind-mount">
+            <option value="inside" selected>Inside mount (exact window size)</option>
+            <option value="outside">Outside mount (add overlap)</option>
+          </select>
+        </div>
+        <div class="form-group" id="overlap-row" style="display:none">
+          <label>Overlap Each Side (in)</label>
+          <input type="number" id="overlap" value="2" min="0" step="0.5">
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="calcWindow()" style="width:100%">Calculate →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="main-result">—</div>
+        <div class="result-label" id="main-label">—</div>
+        <div id="sub-results" style="margin-top:1rem;font-size:.9rem;color:var(--mid);line-height:1.8;"></div>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin-bottom:.75rem;">Curtain Sizing Guide</h2>
+    <p>The most important number in curtain sizing is the rod width, not the window width. Mount the rod 6–12 inches beyond the window frame on each side so curtains stack clear of the glass when open. A 36-inch window with a rod extending 8 inches on each side = 52-inch rod width. With 2x fullness, you need 104 inches of curtain coverage — two 54-inch panels.</p>
+    <table>
+      <thead><tr><th>Window Width</th><th>Rod Width (8 in each side)</th><th>2x Fullness Needed</th><th>Standard Panels</th></tr></thead>
+      <tbody>
+        <tr><td>24 in (2 ft)</td><td>40 in</td><td>80 in</td><td>2 × 42 in panels</td></tr>
+        <tr><td>36 in (3 ft)</td><td>52 in</td><td>104 in</td><td>2 × 54 in panels</td></tr>
+        <tr><td>48 in (4 ft)</td><td>64 in</td><td>128 in</td><td>3 × 54 in panels</td></tr>
+        <tr><td>60 in (5 ft)</td><td>76 in</td><td>152 in</td><td>3 × 54 in panels</td></tr>
+        <tr><td>72 in (6 ft)</td><td>88 in</td><td>176 in</td><td>4 × 54 in panels</td></tr>
+        <tr><td>96 in (8 ft)</td><td>112 in</td><td>224 in</td><td>4–5 × 54 in panels</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Standard Curtain Lengths</h2>
+    <table>
+      <thead><tr><th>Length</th><th>Drop</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td>63 inches</td><td>To sill (for 8 ft ceilings, rod at 80 in)</td><td>Kitchen, casual spaces</td></tr>
+        <tr><td>84 inches</td><td>Apron or near-floor (most common)</td><td>Bedrooms, living rooms</td></tr>
+        <tr><td>96 inches</td><td>Floor length (for 9 ft ceilings)</td><td>Formal living rooms</td></tr>
+        <tr><td>108 inches</td><td>Floor length (for 10 ft ceilings)</td><td>Formal dining, high ceilings</td></tr>
+        <tr><td>Custom</td><td>Exact floor or puddle</td><td>Made-to-measure drapes</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Inside vs. Outside Mount Blinds</h2>
+    <table>
+      <thead><tr><th>Mount Type</th><th>How to Measure</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td>Inside mount</td><td>Exact window opening width and height — measure 3 points, use narrowest/longest</td><td>Clean look, deep window sills</td></tr>
+        <tr><td>Outside mount</td><td>Add 2–4 in each side for width; add 2–3 in above frame for height</td><td>Light blockage, shallow sills, privacy</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How wide should curtains be for a window?</strong></p>
+    <p>Curtains should be 1.5–3x the rod width for a full, gathered look. For a standard 36-inch window with rod extending 8 inches each side (52-inch rod), two 54-inch panels (108 inches total) gives a 2x fullness — the most common choice for living rooms and bedrooms.</p>
+    <p><strong>How long should curtains be?</strong></p>
+    <p>Floor-length curtains should fall within 0.5 inches of the floor for a tailored look. Measure from the rod to the floor, not from the window frame. Standard pre-made lengths are 63, 84, 96, and 108 inches — choose based on your ceiling height and rod placement.</p>
+    <p><strong>How do I measure for inside mount blinds?</strong></p>
+    <p>Measure the window opening width at the top, middle, and bottom — use the narrowest measurement. Measure height at left, center, and right — use the longest. Most blind manufacturers deduct a small amount from the width for proper fit; check the manufacturer's instructions.</p>
+    <p><strong>What is the standard curtain rod placement height?</strong></p>
+    <p>Mount the rod 4–6 inches above the window frame, or higher to make the room feel taller. Extend the rod 6–12 inches beyond the window frame on each side so curtains clear the glass when open and maximize natural light.</p>
+
+    <div style="margin-top:2rem;padding:1.25rem;background:#f8f9fb;border-radius:var(--radius);border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:.5rem 0 0 1.25rem;line-height:2;">
+        <li><a href="/tools/room-area-calculator.html">Room Area Calculator</a></li>
+        <li><a href="/tools/paint-calculator.html">Paint Calculator</a></li>
+        <li><a href="/tools/renovation-cost-estimator.html">Renovation Cost Estimator</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+<script>
+function updateUI() {
+  const t = document.getElementById('type').value;
+  document.getElementById('curtain-options').style.display = t === 'curtain' ? 'block' : 'none';
+  document.getElementById('fabric-options').style.display = t === 'fabric' ? 'block' : 'none';
+  document.getElementById('blind-options').style.display = t === 'blind' ? 'block' : 'none';
+}
+
+document.getElementById('blind-mount').addEventListener('change', function() {
+  document.getElementById('overlap-row').style.display = this.value === 'outside' ? 'block' : 'none';
+});
+
+function calcWindow() {
+  const type = document.getElementById('type').value;
+  const winW = parseFloat(document.getElementById('win-w').value);
+  const winH = parseFloat(document.getElementById('win-h').value);
+  if (!winW || !winH) { alert('Please enter window dimensions.'); return; }
+
+  let mainResult = '', mainLabel = '', subHTML = '';
+
+  if (type === 'curtain') {
+    const ext = parseFloat(document.getElementById('extension').value) || 8;
+    const fullness = parseFloat(document.getElementById('fullness').value);
+    const panelW = parseFloat(document.getElementById('panel-w').value);
+    const drop = document.getElementById('drop').value;
+    const mount = document.getElementById('mount').value;
+
+    const rodW = mount === 'outside' ? winW + ext * 2 : winW;
+    const totalFabricW = rodW * fullness;
+    const panels = Math.ceil(totalFabricW / panelW);
+
+    let dropIn = winH;
+    if (drop === 'apron') dropIn = winH + 8;
+    else if (drop === 'floor') dropIn = winH + 12;
+    else if (drop === 'puddle') dropIn = winH + 18;
+
+    mainResult = panels;
+    mainLabel = `panels needed (${panelW}" wide each)`;
+    subHTML = `Rod width: ${rodW}" &nbsp;|&nbsp; Total coverage needed: ${totalFabricW.toFixed(0)}" &nbsp;|&nbsp; Recommended panel length: ${dropIn}"`;
+  }
+
+  else if (type === 'fabric') {
+    const fabW = parseFloat(document.getElementById('fab-w').value) || 54;
+    const fullness = parseFloat(document.getElementById('fab-fullness').value);
+    const hem = parseFloat(document.getElementById('hem').value) || 16;
+    const numWin = parseInt(document.getElementById('num-win').value) || 1;
+
+    const widthNeeded = winW * fullness;
+    const widths = Math.ceil(widthNeeded / fabW);
+    const lengthPerWidth = winH + hem;
+    const totalIn = widths * lengthPerWidth * numWin;
+    const totalYards = Math.ceil((totalIn / 36) * 10) / 10;
+
+    mainResult = totalYards + ' yd';
+    mainLabel = 'of fabric needed';
+    subHTML = `Fabric widths per window: ${widths} &nbsp;|&nbsp; Cut length per width: ${lengthPerWidth}" &nbsp;|&nbsp; Windows: ${numWin}`;
+  }
+
+  else if (type === 'blind') {
+    const mount = document.getElementById('blind-mount').value;
+    const overlap = parseFloat(document.getElementById('overlap').value) || 2;
+    let blindW = winW;
+    let blindH = winH;
+    if (mount === 'outside') {
+      blindW = winW + overlap * 2;
+      blindH = winH + 3;
+    }
+    mainResult = `${blindW}" × ${blindH}"`;
+    mainLabel = 'blind / shade size to order';
+    subHTML = mount === 'inside'
+      ? 'Inside mount: order exact size — manufacturer will deduct clearance'
+      : `Outside mount: adds ${overlap}" each side + 3" height for coverage`;
+  }
+
+  document.getElementById('main-result').textContent = mainResult;
+  document.getElementById('main-label').textContent = mainLabel;
+  document.getElementById('sub-results').innerHTML = subHTML;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>
