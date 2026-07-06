@@ -49,6 +49,16 @@
 
   <!-- Blog -->
   <url><loc>https://diycalckit.com/blog/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <!-- 신규 2026-07-06 -->
+  <url><loc>https://diycalckit.com/blog/how-to-calculate-room-area.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-to-measure-a-garden-bed.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-hardwood-flooring-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-many-boxes-do-i-need-to-move.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-many-square-feet-does-a-gallon-of-paint-cover.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-fabric-do-i-need-for-curtains.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-grass-seed-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-drywall-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-concrete-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <!-- 신규 2026-06-23 -->
   <url><loc>https://diycalckit.com/blog/how-much-carpet-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://diycalckit.com/blog/how-much-deck-stain-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>

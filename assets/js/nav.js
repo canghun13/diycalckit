@@ -54,6 +54,15 @@ const TOOLS = [
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "How to Calculate Room Area for Flooring, Paint & Tile", url: "/blog/how-to-calculate-room-area.html", date: "2026-07-06", desc: "Calculate room area correctly for any material — square feet for paint, square yards for carpet — with L-shaped room and closet guidance." },
+  { name: "How to Measure a Garden Bed for Planning", url: "/blog/how-to-measure-a-garden-bed.html", date: "2026-07-06", desc: "Measure rectangular, circular, and irregular garden beds, and see how square footage feeds into soil, mulch, and plant spacing." },
+  { name: "How Much Hardwood Flooring Do I Need?", url: "/blog/how-much-hardwood-flooring-do-i-need.html", date: "2026-07-06", desc: "Calculate hardwood flooring by room size and installation pattern, with waste allowance by layout type." },
+  { name: "How Many Boxes Do I Need to Move?", url: "/blog/how-many-boxes-do-i-need-to-move.html", date: "2026-07-06", desc: "Estimate moving boxes by room and home size, with a guide to box sizes and specialty boxes." },
+  { name: "How Many Square Feet Does a Gallon of Paint Cover?", url: "/blog/how-many-square-feet-does-a-gallon-of-paint-cover.html", date: "2026-07-06", desc: "A gallon covers 350-400 sq ft per coat on average — see how surface type and color change affect real coverage." },
+  { name: "How Much Fabric Do I Need for Curtains?", url: "/blog/how-much-fabric-do-i-need-for-curtains.html", date: "2026-07-06", desc: "Calculate curtain fabric by window size and fullness ratio, with length and hem allowance guidance." },
+  { name: "How Much Grass Seed Do I Need to Reseed a Lawn?", url: "/blog/how-much-grass-seed-do-i-need.html", date: "2026-07-06", desc: "Calculate grass seed by lawn size and grass type, covering new seeding vs. overseeding rates." },
+  { name: "How Much Drywall Do I Need? Sheet Count Guide", url: "/blog/how-much-drywall-do-i-need.html", date: "2026-07-06", desc: "Calculate exactly how many drywall sheets you need for walls and ceilings, plus joint compound and tape." },
+  { name: "How Much Concrete Do I Need? Slab & Footing Calculator Guide", url: "/blog/how-much-concrete-do-i-need.html", date: "2026-07-06", desc: "Calculate cubic yards of concrete for slabs, footings, and sidewalks, with bag counts by project type." },
   { name: "How Much Carpet Do I Need? Complete Homeowner Guide", url: "/blog/how-much-carpet-do-i-need.html", date: "2026-06-23", desc: "Calculate carpet square footage for any room. Covers waste factor, roll widths, seam placement, and cost by carpet type." },
   { name: "How Much Deck Stain Do I Need?", url: "/blog/how-much-deck-stain-do-i-need.html", date: "2026-06-23", desc: "Calculate gallons of deck stain by deck size, coats, railing coverage, and wood condition — with a quick-reference table." },
   { name: "How to Calculate Square Footage of a House", url: "/blog/how-to-calculate-square-footage.html", date: "2026-06-23", desc: "Step-by-step guide to measuring every room, handling L-shapes and open plans, and what counts as livable square footage." },
