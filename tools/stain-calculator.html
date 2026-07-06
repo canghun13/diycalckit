@@ -125,3 +125,23 @@
     </div>
   </div>
 </main>
+
+<script>
+function calcStain() {
+  const dl = parseFloat(document.getElementById('dl').value);
+  const dw = parseFloat(document.getElementById('dw').value);
+  const railings = parseFloat(document.getElementById('railings').value);
+  const coats = parseFloat(document.getElementById('coats').value);
+  const coverage = parseFloat(document.getElementById('condition').value);
+  if (!dl || !dw) { alert('Please enter deck length and width.'); return; }
+  const baseArea = dl * dw;
+  const totalArea = baseArea * (1 + railings);
+  const gallons = ((totalArea / coverage) * coats) * 1.1;
+  document.getElementById('gallons').textContent = gallons.toFixed(1);
+  document.getElementById('details').textContent = Math.round(totalArea) + ' sq ft to cover, ' + coats + ' coat(s).';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

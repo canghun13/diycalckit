@@ -153,3 +153,22 @@
     </div>
   </div>
 </main>
+
+<script>
+function calcFence() {
+  const length = parseFloat(document.getElementById('length').value);
+  const spacing = parseFloat(document.getElementById('spacing').value);
+  const gates = parseFloat(document.getElementById('gates').value) || 0;
+  if (!length) { alert('Please enter total fence length.'); return; }
+  const panels = Math.ceil(length / spacing);
+  const posts = panels + 1 + gates;
+  const concreteBags = posts * 2;
+  document.getElementById('posts').textContent = posts;
+  document.getElementById('panels').textContent = panels;
+  document.getElementById('concrete_bags').textContent = concreteBags;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

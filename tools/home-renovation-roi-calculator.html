@@ -136,3 +136,39 @@
     </div>
   </div>
 </main>
+
+<script>
+const ROI_DATA = {
+  garage_door: { cost: 2000, roi: 0.95 },
+  stone_veneer: { cost: 10500, roi: 0.90 },
+  entry_door: { cost: 2200, roi: 0.85 },
+  minor_kitchen: { cost: 28000, roi: 0.75 },
+  deck_wood: { cost: 18000, roi: 0.70 },
+  siding_vinyl: { cost: 18000, roi: 0.70 },
+  bathroom_mid: { cost: 25000, roi: 0.65 },
+  window_vinyl: { cost: 21000, roi: 0.65 },
+  roofing: { cost: 30000, roi: 0.60 },
+  major_kitchen: { cost: 80000, roi: 0.55 },
+  bathroom_upscale: { cost: 45000, roi: 0.55 },
+  master_suite: { cost: 150000, roi: 0.50 },
+  deck_composite: { cost: 22000, roi: 0.65 },
+  sunroom: { cost: 80000, roi: 0.45 },
+  pool: { cost: 65000, roi: 0.40 }
+};
+function calcROI() {
+  const project = document.getElementById('project').value;
+  const customCost = parseFloat(document.getElementById('cost').value);
+  const data = ROI_DATA[project];
+  const cost = customCost || data.cost;
+  const valueAdded = cost * data.roi;
+  const netCost = cost - valueAdded;
+  document.getElementById('roi_pct').textContent = Math.round(data.roi * 100) + '%';
+  document.getElementById('cost_display').textContent = '$' + Math.round(cost).toLocaleString();
+  document.getElementById('value_added').textContent = '$' + Math.round(valueAdded).toLocaleString();
+  document.getElementById('net_cost').textContent = '$' + Math.round(netCost).toLocaleString();
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

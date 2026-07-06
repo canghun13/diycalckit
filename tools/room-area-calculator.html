@@ -145,3 +145,41 @@
     </div>
   </div>
 </main>
+
+<script>
+let currentRoomShape = 'rect';
+function setShape(shape, btn) {
+  document.querySelectorAll('.shape-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.shape-inputs').forEach(el => el.classList.remove('active'));
+  document.getElementById(shape + '-inputs').classList.add('active');
+  currentRoomShape = shape;
+}
+function calcArea() {
+  let area = 0;
+  if (currentRoomShape === 'rect') {
+    const l = parseFloat(document.getElementById('r-l').value);
+    const w = parseFloat(document.getElementById('r-w').value);
+    if (!l || !w) { alert('Please enter length and width.'); return; }
+    area = l * w;
+  } else if (currentRoomShape === 'lshape') {
+    const al = parseFloat(document.getElementById('la-l').value) || 0;
+    const aw = parseFloat(document.getElementById('la-w').value) || 0;
+    const bl = parseFloat(document.getElementById('lb-l').value) || 0;
+    const bw = parseFloat(document.getElementById('lb-w').value) || 0;
+    area = (al*aw) + (bl*bw);
+    if (!area) { alert('Please enter both sections.'); return; }
+  } else {
+    const b = parseFloat(document.getElementById('t-b').value);
+    const h = parseFloat(document.getElementById('t-h').value);
+    if (!b || !h) { alert('Please enter base and height.'); return; }
+    area = 0.5 * b * h;
+  }
+  document.getElementById('area').textContent = Math.round(area);
+  document.getElementById('sqyd').textContent = (area / 9).toFixed(1);
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

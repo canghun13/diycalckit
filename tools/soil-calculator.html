@@ -140,3 +140,23 @@
     </div>
   </div>
 </main>
+
+<script>
+function calcSoil() {
+  const length = parseFloat(document.getElementById('length').value);
+  const width = parseFloat(document.getElementById('width').value);
+  const depthIn = parseFloat(document.getElementById('depth').value);
+  const bagSize = parseFloat(document.getElementById('bagsize').value);
+  if (!length || !width) { alert('Please enter length and width.'); return; }
+  const cubicFeet = length * width * (depthIn / 12) * 1.1;
+  const cubicYards = cubicFeet / 27;
+  const bags = Math.ceil(cubicFeet / bagSize);
+  document.getElementById('bagsResult').textContent = bags;
+  document.getElementById('cubicFeetResult').textContent = cubicFeet.toFixed(1);
+  document.getElementById('cubicYardsResult').textContent = cubicYards.toFixed(2);
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

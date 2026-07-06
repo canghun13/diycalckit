@@ -132,3 +132,41 @@
     </div>
   </div>
 </main>
+
+<script>
+let flooringRooms = [];
+function addRoom() {
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  const name = document.getElementById('room-name').value || ('Room ' + (flooringRooms.length + 1));
+  if (!l || !w) { alert('Please enter room length and width.'); return; }
+  flooringRooms.push({ name, l, w });
+  renderFlooringRooms();
+  document.getElementById('length').value = '';
+  document.getElementById('width').value = '';
+  document.getElementById('room-name').value = '';
+}
+function renderFlooringRooms() {
+  const list = document.getElementById('room-list');
+  list.innerHTML = flooringRooms.map((r, i) =>
+    '<div class="room-item"><span>' + r.name + ': ' + r.l + '&times;' + r.w + ' ft (' + Math.round(r.l*r.w) + ' sq ft)</span><button class="remove-btn" onclick="removeFlooringRoom(' + i + ')">✕</button></div>'
+  ).join('');
+}
+function removeFlooringRoom(i) { flooringRooms.splice(i, 1); renderFlooringRooms(); }
+function calcFlooring() {
+  let net = flooringRooms.reduce((s, r) => s + (r.l * r.w), 0);
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  if (l && w) net += l * w;
+  if (!net) { alert('Please enter at least one room.'); return; }
+  const waste = parseFloat(document.getElementById('waste').value);
+  const withWaste = net * (1 + waste);
+  document.getElementById('total-sqft').textContent = Math.round(withWaste);
+  document.getElementById('net-sqft').textContent = Math.round(net);
+  document.getElementById('waste-sqft').textContent = Math.round(withWaste - net);
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

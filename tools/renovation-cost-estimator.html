@@ -137,3 +137,32 @@
     </div>
   </div>
 </main>
+
+<script>
+const RENO_BASE = {
+  kitchen_minor: [8000,15000], kitchen_major: [40000,80000],
+  bathroom_mid: [10000,25000], bathroom_upscale: [25000,50000],
+  basement: [20000,45000], bedroom: [3000,8000],
+  living_room: [5000,12000], painting_interior: [2000,6000],
+  flooring: [5000,15000], roof: [8000,18000],
+  siding: [10000,20000], windows: [5000,12000],
+  hvac: [6000,15000], deck: [8000,20000]
+};
+const RENO_SCOPE = { small:0.6, medium:1.0, large:1.6 };
+const RENO_QUALITY = { budget:0.75, mid:1.0, upscale:1.5 };
+function calcReno() {
+  const room = document.getElementById('room').value;
+  const scope = RENO_SCOPE[document.getElementById('scope').value];
+  const quality = RENO_QUALITY[document.getElementById('quality').value];
+  const [baseLow, baseHigh] = RENO_BASE[room];
+  const mult = scope * quality;
+  const low = baseLow * mult;
+  const high = baseHigh * mult;
+  document.getElementById('low').textContent = '$' + Math.round(low).toLocaleString();
+  document.getElementById('high').textContent = '$' + Math.round(high).toLocaleString();
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

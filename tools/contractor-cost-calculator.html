@@ -133,3 +133,23 @@
     </div>
   </div>
 </main>
+
+<script>
+const CONTRACTOR_RATES = { general:65, electrician:90, plumber:85, hvac:85, carpenter:70, painter:45, tile:65, flooring:60, roofing:65, landscaper:50, drywall:55, concrete:65 };
+function calcContractor() {
+  const trade = document.getElementById('trade').value;
+  const hours = parseFloat(document.getElementById('hours').value);
+  const locMult = parseFloat(document.getElementById('location').value);
+  if (!hours) { alert('Please enter estimated hours.'); return; }
+  const rate = CONTRACTOR_RATES[trade] * locMult;
+  const low = rate * 0.85 * hours;
+  const high = rate * 1.3 * hours;
+  document.getElementById('low').textContent = '$' + Math.round(low).toLocaleString();
+  document.getElementById('high').textContent = '$' + Math.round(high).toLocaleString();
+  document.getElementById('rate_detail').textContent = 'Based on roughly $' + Math.round(rate*0.85) + '–$' + Math.round(rate*1.3) + ' per hour for this trade and location.';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

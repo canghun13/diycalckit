@@ -90,3 +90,21 @@
     </div>
   </div>
 </main>
+
+<script>
+function calcHardwood() {
+  const l = parseFloat(document.getElementById('l').value);
+  const w = parseFloat(document.getElementById('w').value);
+  const waste = parseFloat(document.getElementById('angle').value);
+  const bw = document.getElementById('bw').value;
+  if (!l || !w) { alert('Please enter room length and width.'); return; }
+  const area = l * w;
+  const sqft = area * (1 + waste);
+  document.getElementById('sqft').textContent = Math.round(sqft);
+  document.getElementById('details').textContent = Math.round(area) + ' sq ft floor area, ' + bw + '" board width, ' + Math.round(waste*100) + '% waste allowance.';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

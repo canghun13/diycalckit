@@ -100,3 +100,21 @@
     </div>
   </div>
 </main>
+
+<script>
+function calcSeed() {
+  const l = parseFloat(document.getElementById('l').value);
+  const w = parseFloat(document.getElementById('w').value);
+  const rate = parseFloat(document.getElementById('grass').value);
+  const typeMult = parseFloat(document.getElementById('type').value);
+  if (!l || !w) { alert('Please enter lawn length and width.'); return; }
+  const area = l * w;
+  const lbs = (area / 1000) * rate * typeMult;
+  document.getElementById('lbs').textContent = lbs.toFixed(1);
+  document.getElementById('details').textContent = Math.round(area) + ' sq ft lawn area.';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

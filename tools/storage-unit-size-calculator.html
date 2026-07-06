@@ -117,3 +117,28 @@
     </div>
   </div>
 </main>
+
+<script>
+function toggleItem(checkbox) {
+  checkbox.closest('.item-check').style.background = checkbox.checked ? 'var(--amber-light)' : '';
+}
+function calcStorage() {
+  const checked = document.querySelectorAll('#itemGrid input:checked');
+  let totalSqFt = 0;
+  checked.forEach(c => totalSqFt += parseFloat(c.value));
+  if (!totalSqFt) { alert('Please select at least one item.'); return; }
+  const needed = totalSqFt * 1.3;
+  const sizes = [
+    {name:'5×5', sqft:25}, {name:'5×10', sqft:50}, {name:'10×10', sqft:100},
+    {name:'10×15', sqft:150}, {name:'10×20', sqft:200}, {name:'10×25', sqft:250}, {name:'10×30', sqft:300}
+  ];
+  let match = sizes.find(s => s.sqft >= needed) || sizes[sizes.length - 1];
+  document.getElementById('unit_cards').innerHTML =
+    '<div class="result-box" style="margin:0;"><div class="result-num">' + match.name + ' ft</div><div class="result-label">recommended unit size</div>' +
+    '<p style="font-size:0.8rem;color:var(--mid);margin-top:0.5rem;">Estimated ' + Math.round(totalSqFt) + ' sq ft of items, with room to walk around and access boxes.</p></div>';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

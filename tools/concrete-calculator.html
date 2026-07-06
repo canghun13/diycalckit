@@ -141,3 +141,46 @@
     </div>
   </div>
 </main>
+
+<script>
+let currentConcreteShape = 'slab';
+function setShape(shape, btn) {
+  document.querySelectorAll('.shape-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.shape-inputs').forEach(el => el.classList.remove('active'));
+  document.getElementById(shape + '-inputs').classList.add('active');
+  currentConcreteShape = shape;
+}
+function calcConcrete() {
+  let cubicFeet = 0;
+  if (currentConcreteShape === 'slab') {
+    const l = parseFloat(document.getElementById('slab-l').value);
+    const w = parseFloat(document.getElementById('slab-w').value);
+    const t = parseFloat(document.getElementById('slab-t').value) / 12;
+    if (!l || !w) { alert('Please enter length and width.'); return; }
+    cubicFeet = l * w * t;
+  } else if (currentConcreteShape === 'footing') {
+    const l = parseFloat(document.getElementById('foot-l').value);
+    const w = parseFloat(document.getElementById('foot-w').value);
+    const d = parseFloat(document.getElementById('foot-d').value);
+    if (!l || !w || !d) { alert('Please enter length, width, and depth.'); return; }
+    cubicFeet = l * w * d;
+  } else {
+    const dia = parseFloat(document.getElementById('col-d').value) / 12;
+    const h = parseFloat(document.getElementById('col-h').value);
+    const n = parseFloat(document.getElementById('col-n').value) || 1;
+    if (!dia || !h) { alert('Please enter diameter and depth.'); return; }
+    cubicFeet = Math.PI * (dia/2) * (dia/2) * h * n;
+  }
+  const cubicYards = cubicFeet / 27;
+  const bagSize = parseFloat(document.getElementById('bag').value);
+  const bags = Math.ceil(cubicFeet / bagSize);
+  document.getElementById('bags').textContent = bags;
+  document.getElementById('cubic_yards').textContent = cubicYards.toFixed(2);
+  document.getElementById('cubic_feet').textContent = cubicFeet.toFixed(1);
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

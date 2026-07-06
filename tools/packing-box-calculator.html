@@ -156,3 +156,34 @@
     </div>
   </div>
 </main>
+
+<script>
+const PACKING_ROOM_KEYS = ['bedroom','kitchen','living','bathroom','dining','office','basement','garage'];
+const PACKING_BOXES_PER_ROOM = { bedroom:8, kitchen:14, living:9, bathroom:4, dining:6, office:7, basement:10, garage:8 };
+const PACKING_LABELS = { bedroom:'Bedroom', kitchen:'Kitchen', living:'Living Room', bathroom:'Bathroom', dining:'Dining Room', office:'Home Office', basement:'Basement/Storage', garage:'Garage' };
+function adjust(room, delta) {
+  const el = document.getElementById(room);
+  let val = parseInt(el.textContent) + delta;
+  if (val < 0) val = 0;
+  el.textContent = val;
+}
+function calcBoxes() {
+  let total = 0;
+  let breakdown = [];
+  PACKING_ROOM_KEYS.forEach(r => {
+    const count = parseInt(document.getElementById(r).textContent) || 0;
+    if (count > 0) {
+      const boxes = Math.round(count * PACKING_BOXES_PER_ROOM[r] * 1.1);
+      total += boxes;
+      breakdown.push(PACKING_LABELS[r] + ' (×' + count + '): ~' + boxes + ' boxes');
+    }
+  });
+  if (!total) { alert('Please select at least one room.'); return; }
+  document.getElementById('total_boxes').textContent = total;
+  document.getElementById('breakdown').innerHTML = breakdown.join('<br>');
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

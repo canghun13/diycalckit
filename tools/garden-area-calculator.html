@@ -131,3 +131,56 @@
     </div>
   </div>
 </main>
+
+<script>
+let currentGardenShape = 'rect';
+let gardenBeds = [];
+function setShape(shape, btn) {
+  document.querySelectorAll('.shape-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.shape-inputs').forEach(el => el.classList.remove('active'));
+  document.getElementById(shape + '-inputs').classList.add('active');
+  currentGardenShape = shape;
+}
+function currentGardenArea() {
+  if (currentGardenShape === 'rect') {
+    const l = parseFloat(document.getElementById('rect-l').value);
+    const w = parseFloat(document.getElementById('rect-w').value);
+    return (l && w) ? l * w : 0;
+  } else if (currentGardenShape === 'circle') {
+    const d = parseFloat(document.getElementById('circle-d').value);
+    return d ? Math.PI * (d/2) * (d/2) : 0;
+  } else {
+    const b = parseFloat(document.getElementById('tri-b').value);
+    const h = parseFloat(document.getElementById('tri-h').value);
+    return (b && h) ? 0.5 * b * h : 0;
+  }
+}
+function addBed() {
+  const area = currentGardenArea();
+  if (!area) { alert('Please enter dimensions for this bed shape.'); return; }
+  const name = document.getElementById('bed-name').value || ('Bed ' + (gardenBeds.length + 1));
+  gardenBeds.push({ name, area });
+  document.getElementById('beds-list').innerHTML = gardenBeds.map((b, i) =>
+    '<div class="room-item"><span>' + b.name + ': ' + Math.round(b.area) + ' sq ft</span><button class="remove-btn" onclick="removeGardenBed(' + i + ')">✕</button></div>'
+  ).join('');
+  document.getElementById('bed-name').value = '';
+}
+function removeGardenBed(i) {
+  gardenBeds.splice(i, 1);
+  document.getElementById('beds-list').innerHTML = gardenBeds.map((b, idx) =>
+    '<div class="room-item"><span>' + b.name + ': ' + Math.round(b.area) + ' sq ft</span><button class="remove-btn" onclick="removeGardenBed(' + idx + ')">✕</button></div>'
+  ).join('');
+}
+function calcTotal() {
+  let total = gardenBeds.reduce((s, b) => s + b.area, 0);
+  total += currentGardenArea();
+  if (!total) { alert('Please add at least one bed.'); return; }
+  document.getElementById('total-area').textContent = Math.round(total);
+  document.getElementById('bed-count').textContent = (gardenBeds.length || 1) + ' bed(s) included';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

@@ -129,3 +129,28 @@
     </div>
   </div>
 </main>
+
+<script>
+function calcDrywall() {
+  const length = parseFloat(document.getElementById('length').value);
+  const width = parseFloat(document.getElementById('width').value);
+  const height = parseFloat(document.getElementById('height').value);
+  const doors = parseFloat(document.getElementById('doors').value) || 0;
+  const windows = parseFloat(document.getElementById('windows').value) || 0;
+  const sheetSize = parseFloat(document.getElementById('sheet').value);
+  const includeCeiling = document.getElementById('ceiling').value === 'yes';
+  if (!length || !width || !height) { alert('Please enter room dimensions.'); return; }
+  const wallArea = (2 * (length + width) * height) - (doors * 21) - (windows * 15);
+  const ceilArea = includeCeiling ? length * width : 0;
+  const wallSheets = Math.ceil((wallArea * 1.1) / sheetSize);
+  const ceilSheets = includeCeiling ? Math.ceil((ceilArea * 1.1) / sheetSize) : 0;
+  document.getElementById('sheets').textContent = wallSheets + ceilSheets;
+  document.getElementById('wall_sheets').textContent = wallSheets;
+  document.getElementById('ceil_col').style.display = includeCeiling ? 'block' : 'none';
+  document.getElementById('ceil_sheets').textContent = ceilSheets;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

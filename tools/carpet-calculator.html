@@ -103,3 +103,40 @@
     </div>
   </div>
 </main>
+
+<script>
+let carpetRooms = [];
+function addRoom() {
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  const name = document.getElementById('name').value || ('Room ' + (carpetRooms.length + 1));
+  if (!l || !w) { alert('Please enter room length and width.'); return; }
+  carpetRooms.push({ name, l, w });
+  renderCarpetRooms();
+  document.getElementById('length').value = '';
+  document.getElementById('width').value = '';
+  document.getElementById('name').value = '';
+}
+function renderCarpetRooms() {
+  const list = document.getElementById('room-list');
+  list.innerHTML = carpetRooms.map((r, i) =>
+    '<div class="room-item"><span>' + r.name + ': ' + r.l + '&times;' + r.w + ' ft (' + Math.round(r.l*r.w) + ' sq ft)</span><button class="remove-btn" onclick="removeCarpetRoom(' + i + ')">✕</button></div>'
+  ).join('');
+}
+function removeCarpetRoom(i) { carpetRooms.splice(i, 1); renderCarpetRooms(); }
+function calcCarpet() {
+  let totalSqFt = carpetRooms.reduce((s, r) => s + (r.l * r.w), 0);
+  const l = parseFloat(document.getElementById('length').value);
+  const w = parseFloat(document.getElementById('width').value);
+  if (l && w) totalSqFt += l * w;
+  if (!totalSqFt) { alert('Please enter at least one room.'); return; }
+  const waste = parseFloat(document.getElementById('waste').value);
+  const sqftWithWaste = totalSqFt * (1 + waste);
+  document.getElementById('sqyd').textContent = (sqftWithWaste / 9).toFixed(1);
+  document.getElementById('sqft').textContent = Math.round(sqftWithWaste);
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
