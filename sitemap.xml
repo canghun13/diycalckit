@@ -49,6 +49,8 @@
 
   <!-- Blog -->
   <url><loc>https://diycalckit.com/blog/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <!-- 신규 2026-07-09 -->
+  <url><loc>https://diycalckit.com/blog/how-much-does-a-gallon-of-paint-cost.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <!-- 신규 2026-07-06 -->
   <url><loc>https://diycalckit.com/blog/how-to-calculate-room-area.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://diycalckit.com/blog/how-to-measure-a-garden-bed.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>

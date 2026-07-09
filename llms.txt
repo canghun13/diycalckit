@@ -87,6 +87,8 @@ Step-by-step DIY project guides with built-in calculator links.
 
 ## Cost Guides & Blog
 
+- [How Much Does a Gallon of Paint Cost? (2026 Price Guide)](https://diycalckit.com/blog/how-much-does-a-gallon-of-paint-cost.html): Paint costs $20-$80/gallon on average, depending on brand and quality tier. Price by brand, finish, and can size.
+
 - [How to Calculate Room Area for Flooring, Paint & Tile](https://diycalckit.com/blog/how-to-calculate-room-area.html): Room area for any material — square feet for paint, square yards for carpet — plus L-shaped rooms and closets.
 - [How to Measure a Garden Bed for Planning](https://diycalckit.com/blog/how-to-measure-a-garden-bed.html): Rectangular, circular, and irregular bed measurement, and how area feeds into soil and mulch calculations.
 - [How Much Hardwood Flooring Do I Need?](https://diycalckit.com/blog/how-much-hardwood-flooring-do-i-need.html): Waste allowance by installation pattern, plus bundle coverage guidance.

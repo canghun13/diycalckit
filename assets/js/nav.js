@@ -54,6 +54,7 @@ const TOOLS = [
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "How Much Does a Gallon of Paint Cost? (2026 Price Guide)", url: "/blog/how-much-does-a-gallon-of-paint-cost.html", date: "2026-07-09", desc: "A gallon of paint costs $20-$80 on average in 2026, depending on brand and quality tier. See prices by brand, finish, and can size." },
   { name: "How to Calculate Room Area for Flooring, Paint & Tile", url: "/blog/how-to-calculate-room-area.html", date: "2026-07-06", desc: "Calculate room area correctly for any material — square feet for paint, square yards for carpet — with L-shaped room and closet guidance." },
   { name: "How to Measure a Garden Bed for Planning", url: "/blog/how-to-measure-a-garden-bed.html", date: "2026-07-06", desc: "Measure rectangular, circular, and irregular garden beds, and see how square footage feeds into soil, mulch, and plant spacing." },
   { name: "How Much Hardwood Flooring Do I Need?", url: "/blog/how-much-hardwood-flooring-do-i-need.html", date: "2026-07-06", desc: "Calculate hardwood flooring by room size and installation pattern, with waste allowance by layout type." },
