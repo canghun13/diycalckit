@@ -19,6 +19,8 @@ gtag('config', GA_ID);
 
 // ── 툴 목록 ─────────────────────────────────────────────────
 const TOOLS = [
+  { name: "Roofing Calculator", url: "/tools/roofing-calculator.html" },
+  { name: "Insulation Calculator", url: "/tools/insulation-calculator.html" },
   { name: "Paint Calculator", url: "/tools/paint-calculator.html" },
   { name: "Wallpaper Calculator", url: "/tools/wallpaper-calculator.html" },
   { name: "Primer Calculator", url: "/tools/primer-calculator.html" },
@@ -54,6 +56,8 @@ const TOOLS = [
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "How Much Insulation Do I Need? Attic & Wall Guide", url: "/blog/how-much-insulation-do-i-need.html", date: "2026-07-11", desc: "Calculate bags or rolls of insulation by area and R-value. Covers recommended R-values by area and blown-in vs. batt." },
+  { name: "How Many Shingles Do I Need? Roofing Calculator Guide", url: "/blog/how-many-shingles-do-i-need.html", date: "2026-07-11", desc: "Calculate roofing squares and shingle bundles from your roof footprint and pitch." },
   { name: "How Much Does a Gallon of Paint Cost? (2026 Price Guide)", url: "/blog/how-much-does-a-gallon-of-paint-cost.html", date: "2026-07-09", desc: "A gallon of paint costs $20-$80 on average in 2026, depending on brand and quality tier. See prices by brand, finish, and can size." },
   { name: "How to Calculate Room Area for Flooring, Paint & Tile", url: "/blog/how-to-calculate-room-area.html", date: "2026-07-06", desc: "Calculate room area correctly for any material — square feet for paint, square yards for carpet — with L-shaped room and closet guidance." },
   { name: "How to Measure a Garden Bed for Planning", url: "/blog/how-to-measure-a-garden-bed.html", date: "2026-07-06", desc: "Measure rectangular, circular, and irregular garden beds, and see how square footage feeds into soil, mulch, and plant spacing." },

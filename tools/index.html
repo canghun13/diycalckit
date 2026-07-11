@@ -71,6 +71,7 @@
       <button class="filter-btn" onclick="setFilter('cost', this)">💰 Renovation Cost</button>
       <button class="filter-btn" onclick="setFilter('garden', this)">🌿 Garden & Outdoor</button>
       <button class="filter-btn" onclick="setFilter('moving', this)">🚚 Moving</button>
+      <button class="filter-btn" onclick="setFilter('roofing', this)">🏠 Roofing & Insulation</button>
     </div>
 
     <div id="toolsGrid"></div>
@@ -116,6 +117,9 @@ const TOOLS_DATA = [
   { name: "Moving Cost Calculator", url: "/tools/moving-cost-calculator.html", icon: "🚛", desc: "Estimate local or long-distance moving costs based on home size and distance.", cat: "moving" },
   { name: "Storage Unit Size Calculator", url: "/tools/storage-unit-size-calculator.html", icon: "📦", desc: "Find the right storage unit size for your furniture and belongings.", cat: "moving" },
   { name: "Packing Box Calculator", url: "/tools/packing-box-calculator.html", icon: "🗃️", desc: "How many boxes do you need to pack your home? Get a room-by-room estimate.", cat: "moving" },
+  // Roofing & Insulation
+  { name: "Roofing Calculator", url: "/tools/roofing-calculator.html", icon: "🏠", desc: "Shingle bundles, roofing squares, and underlayment from footprint and pitch.", cat: "roofing" },
+  { name: "Insulation Calculator", url: "/tools/insulation-calculator.html", icon: "🧊", desc: "Bags or rolls of insulation needed by area, type, and target R-value.", cat: "roofing" },
 ];
 
 const CATEGORY_LABELS = {
@@ -125,6 +129,7 @@ const CATEGORY_LABELS = {
   cost:    "💰 Renovation Cost",
   garden:  "🌿 Garden & Outdoor",
   moving:  "🚚 Moving",
+  roofing: "🏠 Roofing & Insulation",
 };
 
 let currentFilter = 'all';

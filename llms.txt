@@ -6,6 +6,10 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 
 ## Calculators
 
+### Roofing & Insulation
+- [Roofing Calculator](https://diycalckit.com/tools/roofing-calculator.html): Calculates roofing squares, shingle bundles, and underlayment rolls from roof footprint and pitch.
+- [Insulation Calculator](https://diycalckit.com/tools/insulation-calculator.html): Calculates bags or rolls of insulation needed for attic, wall, or floor by area and target R-value.
+
 ### Paint & Wall
 - [Paint Calculator](https://diycalckit.com/tools/paint-calculator.html): Calculates gallons of paint needed based on room dimensions, number of coats, and door/window deductions.
 - [Paint Cost Calculator](https://diycalckit.com/tools/paint-cost-calculator.html): Estimates total cost to paint a room including paint, primer, supplies, and optional professional labor.
@@ -86,6 +90,9 @@ Step-by-step DIY project guides with built-in calculator links.
 - [How to Plan a Home Renovation](https://diycalckit.com/projects/how-to-plan-a-home-renovation.html): Scope, budget, permits, hiring contractors, and project management.
 
 ## Cost Guides & Blog
+
+- [How Much Insulation Do I Need? Attic & Wall Guide](https://diycalckit.com/blog/how-much-insulation-do-i-need.html): Bags or rolls of insulation by area and R-value. Recommended R-values by area, blown-in vs. batt.
+- [How Many Shingles Do I Need? Roofing Calculator Guide](https://diycalckit.com/blog/how-many-shingles-do-i-need.html): Roofing squares and shingle bundles from roof footprint and pitch.
 
 - [How Much Does a Gallon of Paint Cost? (2026 Price Guide)](https://diycalckit.com/blog/how-much-does-a-gallon-of-paint-cost.html): Paint costs $20-$80/gallon on average, depending on brand and quality tier. Price by brand, finish, and can size.
 

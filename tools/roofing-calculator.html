@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roofing Calculator — How Many Shingles Do I Need?</title>
+  <meta name="description" content="Calculate roofing squares, shingle bundles, and underlayment rolls from your roof footprint and pitch. Free roofing calculator — instant results, no signup.">
+  <link rel="canonical" href="https://diycalckit.com/tools/roofing-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Roofing Calculator — How Many Shingles Do I Need?","description":"Calculate roofing squares, shingle bundles, and underlayment rolls from roof footprint and pitch.","url":"https://diycalckit.com/tools/roofing-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many bundles of shingles do I need per square?","acceptedAnswer":{"@type":"Answer","text":"Most standard 3-tab and architectural asphalt shingles come 3 bundles per square (100 sq ft). Heavier wood shake typically needs 4 bundles per square."}},{"@type":"Question","name":"How does roof pitch affect the amount of shingles I need?","acceptedAnswer":{"@type":"Answer","text":"A steeper pitch means more actual roof surface area than the home's footprint suggests. A 6:12 pitch adds about 12% more area than the flat footprint; a 12:12 pitch adds about 41%."}},{"@type":"Question","name":"What is a roofing square?","acceptedAnswer":{"@type":"Answer","text":"A roofing square equals 100 square feet of roof surface. It's the standard unit roofers and suppliers use to price and order materials."}},{"@type":"Question","name":"How much waste should I add for a roofing job?","acceptedAnswer":{"@type":"Answer","text":"Add 10% for a simple gable roof, and 15% for roofs with hips, valleys, or dormers, since those features create more angled cuts and offcuts."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Roofing Calculator — How Many Shingles Do I Need?</h1>
+    <p class="tool-desc">Enter your roof footprint and pitch to get shingle bundles, roofing squares, and underlayment rolls needed.</p>
+
+    <div class="tool-box">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Roof Footprint Length (ft)</label><input type="number" id="roof-l" placeholder="e.g. 40" min="0" step="0.1"></div>
+        <div class="form-group"><label>Roof Footprint Width (ft)</label><input type="number" id="roof-w" placeholder="e.g. 30" min="0" step="0.1"></div>
+      </div>
+      <div class="form-group">
+        <label>Roof Pitch</label>
+        <select id="pitch">
+          <option value="1.0">Flat / Low slope</option>
+          <option value="1.031">3:12</option>
+          <option value="1.054">4:12</option>
+          <option value="1.083" selected>5:12 — Most common</option>
+          <option value="1.118">6:12</option>
+          <option value="1.158">7:12</option>
+          <option value="1.202">8:12</option>
+          <option value="1.25">9:12</option>
+          <option value="1.302">10:12</option>
+          <option value="1.414">12:12 — Steep</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Shingle Type</label>
+        <select id="shingle-type">
+          <option value="3">3-Tab Asphalt (3 bundles/square)</option>
+          <option value="3" selected>Architectural Asphalt (3 bundles/square)</option>
+          <option value="4">Wood Shake (4 bundles/square)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Waste Factor</label>
+        <select id="waste">
+          <option value="0.10" selected>10% — Simple gable roof</option>
+          <option value="0.15">15% — Hips, valleys, or dormers</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" onclick="calcRoofing()" style="width:100%">Calculate Shingles Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="bundles">—</div>
+        <div class="result-label">shingle bundles needed</div>
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="squares">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">roofing squares</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="underlayment">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">underlayment rolls</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;" id="area_detail"></p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">How to Calculate Roofing Materials</h2>
+    <p>Start with your roof's footprint (the house dimensions from above, not the actual sloped surface). Multiply length × width to get the footprint area, then multiply by a pitch factor to get the true roof surface area — a steeper roof has more actual surface than its footprint suggests.</p>
+    <p>Divide the roof area by 100 to get roofing squares (the standard unit roofers use), then multiply by bundles-per-square for your shingle type. Always add a waste factor for cuts at ridges, valleys, and edges.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Roof Pitch Multipliers</h2>
+    <table>
+      <thead><tr><th>Pitch</th><th>Multiplier</th><th>Extra Area vs. Footprint</th></tr></thead>
+      <tbody>
+        <tr><td>3:12</td><td>1.031</td><td>+3%</td></tr>
+        <tr><td>5:12</td><td>1.083</td><td>+8%</td></tr>
+        <tr><td>6:12</td><td>1.118</td><td>+12%</td></tr>
+        <tr><td>8:12</td><td>1.202</td><td>+20%</td></tr>
+        <tr><td>10:12</td><td>1.302</td><td>+30%</td></tr>
+        <tr><td>12:12</td><td>1.414</td><td>+41%</td></tr>
+      </tbody>
+    </table>
+    <p>A 2,000 sq ft footprint at a 6:12 pitch has roughly 2,236 sq ft of actual roof surface — that's the number your shingle order needs to be based on, not the footprint.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Order slightly more than your calculated amount and keep the extra bundles — matching discontinued shingle color and texture for future repairs is often impossible.
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How many bundles of shingles do I need per square?</strong></p>
+    <p>Most standard 3-tab and architectural asphalt shingles come 3 bundles per square (100 sq ft). Heavier wood shake typically needs 4 bundles per square.</p>
+    <p><strong>How does roof pitch affect the amount of shingles I need?</strong></p>
+    <p>A steeper pitch means more actual roof surface area than the home's footprint suggests. A 6:12 pitch adds about 12% more area than the flat footprint; a 12:12 pitch adds about 41%.</p>
+    <p><strong>What is a roofing square?</strong></p>
+    <p>A roofing square equals 100 square feet of roof surface. It's the standard unit roofers and suppliers use to price and order materials.</p>
+    <p><strong>How much waste should I add for a roofing job?</strong></p>
+    <p>Add 10% for a simple gable roof, and 15% for roofs with hips, valleys, or dormers, since those features create more angled cuts and offcuts.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/blog/how-many-shingles-do-i-need.html">How Many Shingles Do I Need? Roofing Guide</a></li>
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator</a></li>
+        <li><a href="/tools/insulation-calculator.html">Insulation Calculator</a></li>
+        <li><a href="/tools/renovation-cost-estimator.html">Renovation Cost Estimator</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<script>
+function calcRoofing() {
+  const l = parseFloat(document.getElementById('roof-l').value);
+  const w = parseFloat(document.getElementById('roof-w').value);
+  const pitch = parseFloat(document.getElementById('pitch').value);
+  const bundlesPerSquare = parseFloat(document.getElementById('shingle-type').value);
+  const waste = parseFloat(document.getElementById('waste').value);
+  if (!l || !w) { alert('Please enter roof footprint length and width.'); return; }
+  const footprint = l * w;
+  const roofArea = footprint * pitch;
+  const squares = (roofArea / 100) * (1 + waste);
+  const bundles = Math.ceil(squares * bundlesPerSquare);
+  const underlaymentRolls = Math.ceil(squares / 4);
+  document.getElementById('bundles').textContent = bundles;
+  document.getElementById('squares').textContent = squares.toFixed(1);
+  document.getElementById('underlayment').textContent = underlaymentRolls;
+  document.getElementById('area_detail').textContent = Math.round(footprint) + ' sq ft footprint → ' + Math.round(roofArea) + ' sq ft actual roof surface at this pitch.';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insulation Calculator — How Much Insulation Do I Need?</title>
+  <meta name="description" content="Calculate bags or rolls of insulation for your attic, wall, or floor by area and target R-value. Free insulation calculator — instant results, no signup.">
+  <link rel="canonical" href="https://diycalckit.com/tools/insulation-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Insulation Calculator — How Much Insulation Do I Need?","description":"Calculate bags or rolls of insulation for attic, wall, or floor by area and target R-value.","url":"https://diycalckit.com/tools/insulation-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What R-value do I need for my attic?","acceptedAnswer":{"@type":"Answer","text":"Most US climate zones recommend R-38 to R-60 for attic insulation. Colder northern climates need the higher end; warmer southern climates can use R-30 to R-38."}},{"@type":"Question","name":"How many bags of blown-in insulation do I need for an attic?","acceptedAnswer":{"@type":"Answer","text":"Coverage per bag depends on your target R-value and insulation type — a bag of blown-in fiberglass covers roughly 32 sq ft at R-30, but only about 20 sq ft at R-49, since more material is needed per square foot at higher R-values."}},{"@type":"Question","name":"Is blown-in or batt insulation better for an attic?","acceptedAnswer":{"@type":"Answer","text":"Blown-in insulation fills gaps and irregular spaces around joists and wiring more completely, making it the more common choice for attics. Batt insulation is easier to install without special equipment and works well for open, regularly-shaped wall cavities."}},{"@type":"Question","name":"Do I need to remove old insulation before adding new insulation?","acceptedAnswer":{"@type":"Answer","text":"Not usually. New insulation can typically be added directly on top of existing insulation, as long as the old material is dry and not damaged by mold or pests."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Insulation Calculator — How Much Insulation Do I Need?</h1>
+    <p class="tool-desc">Enter your area, insulation type, and target R-value to get the bags or packages needed.</p>
+
+    <div class="tool-box">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Area Length (ft)</label><input type="number" id="ins-l" placeholder="e.g. 40" min="0" step="0.1"></div>
+        <div class="form-group"><label>Area Width (ft)</label><input type="number" id="ins-w" placeholder="e.g. 30" min="0" step="0.1"></div>
+      </div>
+      <div class="form-group">
+        <label>Insulation Type</label>
+        <select id="ins-type" onchange="updateRValueOptions()">
+          <option value="blown_fiberglass">Blown-In Fiberglass</option>
+          <option value="blown_cellulose">Blown-In Cellulose</option>
+          <option value="batt">Batt / Roll (Fiberglass)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Target R-Value</label>
+        <select id="ins-rvalue"></select>
+      </div>
+
+      <button class="btn-primary" onclick="calcInsulation()" style="width:100%">Calculate Insulation Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="bags">—</div>
+        <div class="result-label" id="unit-label">bags needed</div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;" id="area_detail"></p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">How to Calculate Insulation Needed</h2>
+    <p>Insulation coverage isn't just about square footage — it's about square footage at a specific thickness (R-value). The same bag of blown-in insulation covers far more area at R-30 than it does at R-49, because higher R-values require a thicker, denser layer.</p>
+    <p>Calculate your area (length × width), choose your insulation type and target R-value for your climate zone, and the coverage-per-bag figure for that specific combination determines how many bags or packages you need.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Recommended R-Values by Area</h2>
+    <table>
+      <thead><tr><th>Area</th><th>Recommended R-Value</th></tr></thead>
+      <tbody>
+        <tr><td>Attic (most US climates)</td><td>R-38 to R-60</td></tr>
+        <tr><td>Exterior walls</td><td>R-13 to R-21</td></tr>
+        <tr><td>Floors over unheated space</td><td>R-25 to R-30</td></tr>
+        <tr><td>Basement walls</td><td>R-10 to R-19</td></tr>
+      </tbody>
+    </table>
+    <p>Colder northern climate zones need the higher end of each range; warmer southern climates can typically use the lower end. Check your local energy code for the exact requirement in your area.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Seal air leaks (around recessed lights, plumbing stacks, and the attic hatch) before adding insulation. Insulation slows heat transfer, but it doesn't stop moving air — sealing gaps first makes the insulation far more effective.
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>What R-value do I need for my attic?</strong></p>
+    <p>Most US climate zones recommend R-38 to R-60 for attic insulation. Colder northern climates need the higher end; warmer southern climates can use R-30 to R-38.</p>
+    <p><strong>How many bags of blown-in insulation do I need for an attic?</strong></p>
+    <p>Coverage per bag depends on your target R-value and insulation type — a bag of blown-in fiberglass covers roughly 32 sq ft at R-30, but only about 20 sq ft at R-49, since more material is needed per square foot at higher R-values.</p>
+    <p><strong>Is blown-in or batt insulation better for an attic?</strong></p>
+    <p>Blown-in insulation fills gaps and irregular spaces around joists and wiring more completely, making it the more common choice for attics. Batt insulation is easier to install without special equipment and works well for open, regularly-shaped wall cavities.</p>
+    <p><strong>Do I need to remove old insulation before adding new insulation?</strong></p>
+    <p>Not usually. New insulation can typically be added directly on top of existing insulation, as long as the old material is dry and not damaged by mold or pests.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/blog/how-much-insulation-do-i-need.html">How Much Insulation Do I Need? Attic Guide</a></li>
+        <li><a href="/tools/roofing-calculator.html">Roofing Calculator</a></li>
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator</a></li>
+        <li><a href="/tools/drywall-calculator.html">Drywall Calculator</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<script>
+const INSULATION_COVERAGE = {
+  blown_fiberglass: { "13":65, "19":45, "30":32.5, "38":25.7, "49":19.7, "60":16 },
+  blown_cellulose:  { "13":60, "19":41, "30":27,   "38":21,   "49":16,   "60":13.5 },
+  batt:             { "13":88, "19":49, "21":45, "30":40 }
+};
+const INSULATION_UNIT_LABEL = { blown_fiberglass: 'bags needed', blown_cellulose: 'bags needed', batt: 'packages needed' };
+
+function updateRValueOptions() {
+  const type = document.getElementById('ins-type').value;
+  const rSelect = document.getElementById('ins-rvalue');
+  const options = Object.keys(INSULATION_COVERAGE[type]);
+  rSelect.innerHTML = options.map(r => `<option value="${r}">R-${r}</option>`).join('');
+}
+updateRValueOptions();
+
+function calcInsulation() {
+  const l = parseFloat(document.getElementById('ins-l').value);
+  const w = parseFloat(document.getElementById('ins-w').value);
+  const type = document.getElementById('ins-type').value;
+  const rvalue = document.getElementById('ins-rvalue').value;
+  if (!l || !w) { alert('Please enter area length and width.'); return; }
+  const area = l * w;
+  const coveragePerBag = INSULATION_COVERAGE[type][rvalue];
+  const bags = Math.ceil(area / coveragePerBag);
+  document.getElementById('bags').textContent = bags;
+  document.getElementById('unit-label').textContent = INSULATION_UNIT_LABEL[type];
+  document.getElementById('area_detail').textContent = Math.round(area) + ' sq ft at R-' + rvalue + ' (~' + coveragePerBag + ' sq ft per unit).';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
