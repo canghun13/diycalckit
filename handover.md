@@ -56,7 +56,7 @@
 - **Coverage**: 색인 39(발견19+크롤링17+리디렉션3) vs 완료 55, 6/13부터 6/30(데이터 마지막날)까지 정체 — sitemap.xml(105) = 실제 html 파일 수(105) 정확히 일치, 고아 페이지 없음. 코드로 고칠 이슈 아니라 시간+백링크로 자연 해소 대기, 다음 리포트에서 재확인.
 - **Performance 999개 검색어 전수 필터링** → 기존 33툴/44블로그/20프로젝트 키워드와 안 겹치는 후보 34개 추출, 전부 노출 2~26회의 초저볼륨 롱테일(외국어 쿼리 포함)이라 신규 콘텐츠 임계치 미달 → **이번 라운드 신규 콘텐츠 없음**. ("deck mud calculator" 23회, "job/contract rate" 계열은 이미 스킵 확정된 labor-rate 클러스터와 동일 카테고리라 재확인 없이 스킵)
 - **CTR 개선 실행 완료**: `blog/home-renovations-that-add-the-most-value.html` — 순위 15.3위/노출 105회인데 클릭 0 (같은 순위대 정상 CTR이면 기대클릭 2~3인데 0). title/meta를 숫자 훅 강화("Garage Doors Return 194%")로 교체. H1·JSON-LD headline은 유지(구조 변경 아님, 텍스트만 변경이라 사용자 확인 불필요).
-- **CTR 관찰만(액션 보류)**: gravel-for-garden-bed(순위12.8/노출35), bathroom-renovation-cost(순위18.5/노출23) — 표본이 너무 작아(기대클릭 ~1건) 노이즈일 가능성 높음. 다음 GSC export에서 데이터 누적되면 재검토.
+- **CTR 개선 실행 완료(2차)**: gravel-for-garden-bed(순위12.8/노출35), bathroom-renovation-cost(순위18.5/노출23) — "표본 작아서 보류" 판단했다가 사용자 지적으로 즉시 실행 전환. bulk vs bag 절약폭(gravel, ~60%)과 저예산 진입점($3K, bathroom) 숫자훅으로 title/meta 교체 완료.
 - **의도 불일치 확인, 액션 없음**: "1 gallon paint price" 계열 쿼리(총 노출 ~100, 순위 1위, 클릭 0)는 paint-calculator.html(수량 계산기)이 랭크하고 있는데 실제 유저 의도는 가격 정보 — 이미 `how-much-does-a-gallon-of-paint-cost.html` 블로그로 내부링크 연결되어 있어 인프라는 정상. 이건 구글 알고리즘이 시간 지나며 올바른 페이지로 재배정할 문제라 지금 손댈 게 없음.
 - 사이트 트래픽 전반이 아직 매우 작음(기간 내 총 클릭 10건, 모바일 CTR 0.41%/데스크톱 0.07%) — 이번 라운드는 신규 제작보다 기존 자산 손실 방지(CTR) 위주로 판단.
 
