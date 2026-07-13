@@ -37,9 +37,9 @@
 - 벽지 블로그 3개, primer 블로그 3개에서 `<div class="blog-content">` 래퍼/`</div>` 누락으로 CSS 안 먹던 버그 있었음, 수정 완료.
 - FAQ 리치 스니펫은 2026-05-07부로 Google이 완전 폐지함 — FAQ 콘텐츠는 계속 넣되 "리치스니펫용"이라고 생각하지 말 것, Rich Results Test로 검증할 필요 없음.
 
-## 현재 콘텐츠 (2026-07-11)
-- 툴 33개 (카테고리: Roofing & Insulation[신규], Paint & Wall, Flooring, Space & Area, Renovation Cost, Garden & Outdoor, Moving) — 전 툴 FAQ 있음
-- 블로그 44개, 프로젝트 20개(전부 보강 완료: 시간/비용/체크리스트/흔한실수 섹션 포함)
+## 현재 콘텐츠 (2026-07-13)
+- 툴 34개 (카테고리: Roofing & Insulation[Gutter Calculator 추가로 3개], Paint & Wall, Flooring, Space & Area, Renovation Cost, Garden & Outdoor, Moving) — 전 툴 FAQ 있음
+- 블로그 46개, 프로젝트 20개(전부 보강 완료: 시간/비용/체크리스트/흔한실수 섹션 포함)
 - 최근 트렌드: 평균 게재순위 85~88위(6월말) → 37~46위(7월초)로 개선 중. 클릭 하루 1~2건 발생 시작. 색인 안 된 페이지(발견됨19/크롤링됨17)는 계속 지켜봐야 함.
 
 ## GSC 분석 워크플로우
