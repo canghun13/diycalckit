@@ -70,3 +70,4 @@
   - nav.js, tools/index.html(TOOLS_DATA), index.html(카드+개수 33→34), llms.txt, sitemap.xml 전부 업데이트 완료
   - **주의**: 이번 컨테이너 네트워크에서 Puppeteer Chrome 다운로드가 막혀있어(googleapis.com 미허용) 실제 headless 브라우저 클릭 테스트를 못 함. 대신 계산 로직을 Node로 직접 추출해 여러 입력값 조합으로 수동 검증(결과값이 실제 업계 가격대와 일치하는지 확인)함. **다음 세션에서 가능하면 실제 페이지를 브라우저로 한번 열어서 버튼 클릭 확인 권장.**
   - target keyword: "gutter calculator", "how much gutter do i need", "how many feet of gutter do i need"
+  - (추가) 짝꿍 블로그 `/blog/how-much-gutter-do-i-need.html` 누락됐던 걸 사용자가 지적해서 바로 추가함 — 앞으로 신규 툴 만들 때 블로그 짝꿍 빠뜨리지 말 것. 툴↔블로그 양방향 링크, nav.js/blog index/llms.txt/sitemap 전부 반영 완료.
