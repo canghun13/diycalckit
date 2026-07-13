@@ -21,6 +21,7 @@ gtag('config', GA_ID);
 const TOOLS = [
   { name: "Roofing Calculator", url: "/tools/roofing-calculator.html" },
   { name: "Insulation Calculator", url: "/tools/insulation-calculator.html" },
+  { name: "Gutter Calculator", url: "/tools/gutter-calculator.html" },
   { name: "Paint Calculator", url: "/tools/paint-calculator.html" },
   { name: "Wallpaper Calculator", url: "/tools/wallpaper-calculator.html" },
   { name: "Primer Calculator", url: "/tools/primer-calculator.html" },

@@ -9,6 +9,7 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 ### Roofing & Insulation
 - [Roofing Calculator](https://diycalckit.com/tools/roofing-calculator.html): Calculates roofing squares, shingle bundles, and underlayment rolls from roof footprint and pitch.
 - [Insulation Calculator](https://diycalckit.com/tools/insulation-calculator.html): Calculates bags or rolls of insulation needed for attic, wall, or floor by area and target R-value.
+- [Gutter Calculator](https://diycalckit.com/tools/gutter-calculator.html): Calculates linear feet of gutter, downspouts, and hangers needed based on home size and roof type (gable or hip).
 
 ### Paint & Wall
 - [Paint Calculator](https://diycalckit.com/tools/paint-calculator.html): Calculates gallons of paint needed based on room dimensions, number of coats, and door/window deductions.

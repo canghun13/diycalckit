@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gutter Calculator — How Many Feet of Gutter Do I Need?</title>
+  <meta name="description" content="Calculate linear feet of gutter, downspouts, and hangers needed for your home. Free gutter calculator — instant results by roof type and home size.">
+  <link rel="canonical" href="https://diycalckit.com/tools/gutter-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gutter Calculator — How Many Feet of Gutter Do I Need?","description":"Calculate linear feet of gutter, downspouts, and hangers needed based on home size and roof type.","url":"https://diycalckit.com/tools/gutter-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I measure how much gutter I need?","acceptedAnswer":{"@type":"Answer","text":"Measure the total length of every roof eave — the horizontal edges where water runs off. For a simple gable roof, that's usually the two long sides only. For a hip roof, gutters typically run along all four sides."}},{"@type":"Question","name":"How many downspouts do I need?","acceptedAnswer":{"@type":"Answer","text":"Plan on one downspout for every 30-35 feet of gutter run, with a minimum of two per home so water has more than one place to drain."}},{"@type":"Question","name":"Does a gable roof or hip roof need more gutter?","acceptedAnswer":{"@type":"Answer","text":"A hip roof needs more gutter because all four sides slope and drain, so gutters typically run around the entire perimeter. A gable roof only needs gutters on the two long eave sides."}},{"@type":"Question","name":"What size gutter should I buy, 5-inch or 6-inch?","acceptedAnswer":{"@type":"Answer","text":"5-inch K-style gutters handle most residential roofs up to around 5,500 sq ft of roof area. 6-inch gutters drain about 40% more water and are worth the upgrade for steep roofs, large roof areas, or regions with heavy rainfall."}},{"@type":"Question","name":"How much do new gutters cost?","acceptedAnswer":{"@type":"Answer","text":"Vinyl runs $3-5 per foot, seamless aluminum $6-12 per foot, galvanized steel $8-14 per foot, and copper $25-45 per foot, including standard downspouts and hangers. Professional installation typically adds $3-8 per foot on top of materials."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Gutter Calculator — How Many Feet of Gutter Do I Need?</h1>
+    <p class="tool-desc">Enter your home's dimensions and roof type to get linear feet of gutter, downspouts, and hangers needed.</p>
+
+    <div class="tool-box">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Home Length (ft) — eave side</label><input type="number" id="gutter-l" placeholder="e.g. 50" min="0" step="0.1"></div>
+        <div class="form-group"><label>Home Width (ft)</label><input type="number" id="gutter-w" placeholder="e.g. 30" min="0" step="0.1"></div>
+      </div>
+      <div class="form-group">
+        <label>Roof Type</label>
+        <select id="roof-type">
+          <option value="gable" selected>Gable (gutters on 2 long sides)</option>
+          <option value="hip">Hip (gutters all the way around)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Number of Stories</label>
+        <select id="stories">
+          <option value="10">1 story</option>
+          <option value="15" selected>1.5 stories</option>
+          <option value="20">2 stories</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Gutter Material</label>
+        <select id="material">
+          <option value="4">Vinyl ($3–5/ft)</option>
+          <option value="9" selected>Seamless Aluminum ($6–12/ft)</option>
+          <option value="11">Galvanized Steel ($8–14/ft)</option>
+          <option value="35">Copper ($25–45/ft)</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" onclick="calcGutter()" style="width:100%">Calculate Gutter Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="gutter-ft">—</div>
+        <div class="result-label">linear feet of gutter</div>
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="downspouts">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">downspouts</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="hangers">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">hangers</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;" id="gutter-detail"></p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">How to Calculate Gutter Materials</h2>
+    <p>Start by measuring the eaves — the horizontal roof edges where rainwater runs off, not the gable ends where the roof peaks. On a simple gable roof, that's usually just the two long sides of the house. On a hip roof, every side slopes, so gutters typically run around the full perimeter.</p>
+    <p>Add roughly 5% to your total run for corner pieces and cuts, then divide by 30–35 ft to get your downspout count (minimum two per home), and by 2 ft to get the number of hangers needed to support the run.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Gutter Material Price Comparison</h2>
+    <table>
+      <thead><tr><th>Material</th><th>Price per Linear Foot</th><th>Lifespan</th></tr></thead>
+      <tbody>
+        <tr><td>Vinyl</td><td>$3–5</td><td>10–20 years</td></tr>
+        <tr><td>Seamless Aluminum</td><td>$6–12</td><td>20–30 years</td></tr>
+        <tr><td>Galvanized Steel</td><td>$8–14</td><td>20–25 years</td></tr>
+        <tr><td>Copper</td><td>$25–45</td><td>50+ years</td></tr>
+      </tbody>
+    </table>
+    <p>Seamless aluminum is the most common choice — it resists rust, comes in many colors, and is custom-cut on-site so there are no seams for leaks to start.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Downspouts placed too far apart can overflow during heavy storms even if your total gutter length is correct. When in doubt, add an extra downspout rather than stretching the spacing past 35 ft.
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How do I measure how much gutter I need?</strong></p>
+    <p>Measure the total length of every roof eave — the horizontal edges where water runs off. For a simple gable roof, that's usually the two long sides only. For a hip roof, gutters typically run along all four sides.</p>
+    <p><strong>How many downspouts do I need?</strong></p>
+    <p>Plan on one downspout for every 30-35 feet of gutter run, with a minimum of two per home so water has more than one place to drain.</p>
+    <p><strong>Does a gable roof or hip roof need more gutter?</strong></p>
+    <p>A hip roof needs more gutter because all four sides slope and drain, so gutters typically run around the entire perimeter. A gable roof only needs gutters on the two long eave sides.</p>
+    <p><strong>What size gutter should I buy, 5-inch or 6-inch?</strong></p>
+    <p>5-inch K-style gutters handle most residential roofs up to around 5,500 sq ft of roof area. 6-inch gutters drain about 40% more water and are worth the upgrade for steep roofs, large roof areas, or regions with heavy rainfall.</p>
+    <p><strong>How much do new gutters cost?</strong></p>
+    <p>Vinyl runs $3-5 per foot, seamless aluminum $6-12 per foot, galvanized steel $8-14 per foot, and copper $25-45 per foot, including standard downspouts and hangers. Professional installation typically adds $3-8 per foot on top of materials.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/roofing-calculator.html">Roofing Calculator</a></li>
+        <li><a href="/tools/insulation-calculator.html">Insulation Calculator</a></li>
+        <li><a href="/tools/square-footage-calculator.html">Square Footage Calculator</a></li>
+        <li><a href="/tools/renovation-cost-estimator.html">Renovation Cost Estimator</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<script>
+function calcGutter() {
+  const l = parseFloat(document.getElementById('gutter-l').value);
+  const w = parseFloat(document.getElementById('gutter-w').value);
+  const roofType = document.getElementById('roof-type').value;
+  const dropPerDownspout = parseFloat(document.getElementById('stories').value);
+  const pricePerFt = parseFloat(document.getElementById('material').value);
+  if (!l || !w) { alert('Please enter home length and width.'); return; }
+
+  const runLength = roofType === 'hip' ? 2 * (l + w) : 2 * l;
+  const gutterFt = Math.ceil(runLength * 1.05);
+  const downspouts = Math.max(2, Math.ceil(gutterFt / 32));
+  const downspoutFt = downspouts * dropPerDownspout;
+  const hangers = Math.ceil(gutterFt / 2);
+  const costLow = Math.round((gutterFt + downspoutFt) * pricePerFt * 0.85);
+  const costHigh = Math.round((gutterFt + downspoutFt) * pricePerFt * 1.15);
+
+  document.getElementById('gutter-ft').textContent = gutterFt;
+  document.getElementById('downspouts').textContent = downspouts;
+  document.getElementById('hangers').textContent = hangers;
+  document.getElementById('gutter-detail').textContent = 'Includes ~' + Math.round(downspoutFt) + ' ft of downspout drops. Estimated materials cost: $' + costLow.toLocaleString() + '–$' + costHigh.toLocaleString() + '.';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
