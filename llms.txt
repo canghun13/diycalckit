@@ -94,6 +94,7 @@ Step-by-step DIY project guides with built-in calculator links.
 
 - [How Much Insulation Do I Need? Attic & Wall Guide](https://diycalckit.com/blog/how-much-insulation-do-i-need.html): Bags or rolls of insulation by area and R-value. Recommended R-values by area, blown-in vs. batt.
 - [How Many Shingles Do I Need? Roofing Calculator Guide](https://diycalckit.com/blog/how-many-shingles-do-i-need.html): Roofing squares and shingle bundles from roof footprint and pitch.
+- [How Much Gutter Do I Need? Gutter Calculator Guide](https://diycalckit.com/blog/how-much-gutter-do-i-need.html): Linear feet of gutter, downspouts, and hangers from home size and roof type.
 
 - [How Much Does a Gallon of Paint Cost? (2026 Price Guide)](https://diycalckit.com/blog/how-much-does-a-gallon-of-paint-cost.html): Paint costs $20-$80/gallon on average, depending on brand and quality tier. Price by brand, finish, and can size.
 
