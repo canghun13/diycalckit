@@ -59,3 +59,14 @@
 - **CTR 관찰만(액션 보류)**: gravel-for-garden-bed(순위12.8/노출35), bathroom-renovation-cost(순위18.5/노출23) — 표본이 너무 작아(기대클릭 ~1건) 노이즈일 가능성 높음. 다음 GSC export에서 데이터 누적되면 재검토.
 - **의도 불일치 확인, 액션 없음**: "1 gallon paint price" 계열 쿼리(총 노출 ~100, 순위 1위, 클릭 0)는 paint-calculator.html(수량 계산기)이 랭크하고 있는데 실제 유저 의도는 가격 정보 — 이미 `how-much-does-a-gallon-of-paint-cost.html` 블로그로 내부링크 연결되어 있어 인프라는 정상. 이건 구글 알고리즘이 시간 지나며 올바른 페이지로 재배정할 문제라 지금 손댈 게 없음.
 - 사이트 트래픽 전반이 아직 매우 작음(기간 내 총 클릭 10건, 모바일 CTR 0.41%/데스크톱 0.07%) — 이번 라운드는 신규 제작보다 기존 자산 손실 방지(CTR) 위주로 판단.
+
+## 2026-07-13 추가 작업 (같은 세션, 사용자 재요청)
+- 사용자가 "정말 신규 안 해도 되냐" 재확인 요청 → GSC 기존 노출 쿼리 필터링 방식은 "이미 어느 정도 걸리는" 쿼리만 잡아서 완전 신규 카테고리는 원천적으로 못 찾는다는 한계 재확인. 경쟁사(Omni Calculator, Home Project Calculator, HowMuchStuff 등) 카테고리 대비 갭 웹서치로 재탐색.
+- **AC/HVAC 사이즈 계산기(BTU calculator)**: 검색해봤지만 Carrier/American Standard 등 대형 HVAC 브랜드 + This Old House/HomeGuide 같은 대형 리드젠 사이트가 완전 장악 — moving-cost급 경쟁, 스킵.
+- **Paver calculator / retaining wall calculator**: Omni Calculator, concrete-calculator.org 등 이미 전용 계산기 사이트가 다수 존재, 성숙한 니치라 스킵.
+- **Gutter calculator**: 검색 결과 대부분 소규모 계산기 사이트(SMACNA 전문가용 제외)라 기존에 성공한 fence/deck/concrete와 비슷한 "중경쟁" 등급 판단 → **신규 툴로 결정, 제작 완료**.
+  - `/tools/gutter-calculator.html` 추가 (Roofing & Insulation 카테고리 확장, 3번째 툴)
+  - 입력: 집 길이/너비, 지붕형태(gable/hip), 층수, 자재(vinyl/aluminum/steel/copper) → 출력: 거터 길이(ft), 다운스파우트 개수, 행어 개수, 비용 견적
+  - nav.js, tools/index.html(TOOLS_DATA), index.html(카드+개수 33→34), llms.txt, sitemap.xml 전부 업데이트 완료
+  - **주의**: 이번 컨테이너 네트워크에서 Puppeteer Chrome 다운로드가 막혀있어(googleapis.com 미허용) 실제 headless 브라우저 클릭 테스트를 못 함. 대신 계산 로직을 Node로 직접 추출해 여러 입력값 조합으로 수동 검증(결과값이 실제 업계 가격대와 일치하는지 확인)함. **다음 세션에서 가능하면 실제 페이지를 브라우저로 한번 열어서 버튼 클릭 확인 권장.**
+  - target keyword: "gutter calculator", "how much gutter do i need", "how many feet of gutter do i need"
