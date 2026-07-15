@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-13 | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-15 | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -51,6 +51,13 @@
 - labor/hourly rate 계산기 클러스터 (순위 65~96위, 경쟁 심함)
 - 광범위 "cost guide"류 키워드 전반
 - GSC "리디렉션 포함 페이지" 3개 (사용자 지시로 무시)
+- AC/HVAC BTU 계산기 (대형 HVAC 브랜드 + 리드젠 사이트 장악)
+- Paver calculator / retaining wall calculator (전용 계산기 사이트 다수, 성숙 니치)
+- 베이스보드/트림(몰딩) 계산기 — RemodelCalculators, CalcNimbus, ConstructionCalc, BuildItCalc, HomeDecorCalc, Turn2Engineering, Inch Calculator, DIYProject.ai 등 전용 계산기 사이트 8개+ 확인, 완전 포화 (2026-07-15)
+- Sod(잔디 롤) 계산기 — Omni Calculator, Inch Calculator 포함 잔디농장 자체 계산기까지 다수, 포화 (2026-07-15)
+- 에폭시/차고 바닥 코팅 계산기 — RemodelCalculators, HowMuchStuff, Pourla, best-calculators.com 등 전용 계산기 다수, 포화 (2026-07-15)
+- 외벽 페인트(exterior paint) 계산기 — Behr/HomeAdvisor 등 대형 브랜드 + RemodelCalculators/PaintCalculation.com 전용 계산기, 포화 (2026-07-15)
+- 조경용 리버락/랜드스케이프 락 계산기 — Omni Calculator, HomeAdvisor, Inch Calculator 등 river-rock 전용 계산기 7개+ 확인, 포화 (2026-07-15)
 
 ## 2026-07-13 작업 (GSC 2026-07-13 export + GA 6/15-7/12 기준)
 - **Coverage**: 색인 39(발견19+크롤링17+리디렉션3) vs 완료 55, 6/13부터 6/30(데이터 마지막날)까지 정체 — sitemap.xml(105) = 실제 html 파일 수(105) 정확히 일치, 고아 페이지 없음. 코드로 고칠 이슈 아니라 시간+백링크로 자연 해소 대기, 다음 리포트에서 재확인.
@@ -71,3 +78,20 @@
   - **주의**: 이번 컨테이너 네트워크에서 Puppeteer Chrome 다운로드가 막혀있어(googleapis.com 미허용) 실제 headless 브라우저 클릭 테스트를 못 함. 대신 계산 로직을 Node로 직접 추출해 여러 입력값 조합으로 수동 검증(결과값이 실제 업계 가격대와 일치하는지 확인)함. **다음 세션에서 가능하면 실제 페이지를 브라우저로 한번 열어서 버튼 클릭 확인 권장.**
   - target keyword: "gutter calculator", "how much gutter do i need", "how many feet of gutter do i need"
   - (추가) 짝꿍 블로그 `/blog/how-much-gutter-do-i-need.html` 누락됐던 걸 사용자가 지적해서 바로 추가함 — 앞으로 신규 툴 만들 때 블로그 짝꿍 빠뜨리지 말 것. 툴↔블로그 양방향 링크, nav.js/blog index/llms.txt/sitemap 전부 반영 완료.
+
+## 2026-07-15 작업 (GSC 2026-07-15 export, 지난 3개월 기준)
+- **Coverage**: 색인 45(직전 39) vs 완료 63(직전 55), 6/30→7/1 사이 개선폭 있었고 이후 정체. sitemap.xml=107=실제 html 파일 수, 고아 페이지 없음. 계속 자연 해소 대기 상태, 이번 라운드 조치 없음.
+- **Performance 999개 검색어 전수 필터링** (기존 34툴/47블로그/21프로젝트 슬러그와 토큰 매칭) → 미매칭 70개 중 순수 신규 기회는 0개. 전부 (a) 기존 스킵 확정된 labor/moving-cost 클러스터, (b) 외국어 쿼리(네덜란드어 타일 검색 등), (c) 노출 1~5회 초저볼륨 롱테일. 총 클릭 여전히 10건(3개월 누적) 수준, 트래픽 절대량 작음.
+- **신규 콘텐츠 후보 5개 웹검색 경쟁강도 확인 → 전부 스킵 결정** (아래 스킵 확정 리스트에 반영):
+  1. 베이스보드/트림 계산기 — 전용 계산기 사이트 8개+ 확인 (완전 포화)
+  2. Sod(잔디) 계산기 — Omni/Inch Calculator + 잔디농장 자체 계산기 다수
+  3. 에폭시/차고바닥 코팅 계산기 — 전용 계산기 4개+ 확인
+  4. 외벽 페인트 계산기 — Behr/HomeAdvisor 대형 브랜드 장악
+  5. 리버락/랜드스케이프 락 계산기 — 전용 계산기 7개+ 확인 (기존 gravel-calculator와도 주제 겹침)
+  - 결론: DIY 계산기 니치 전반이 "calculator farm" 사이트(RemodelCalculators, CalcNimbus, HowMuchStuff, best-calculators.com, ConstructionCalc, Turn2Engineering 등)로 급격히 포화됨. gutter-calculator(2026-07-13 추가) 정도의 "중경쟁" 니치를 다시 찾기 어려운 상황 — 다음 세션에서도 신규 툴 후보는 반드시 5개 이상 사이트 검색으로 재확인 후 결정할 것.
+- **CTR 개선 실행 완료**: 0클릭 + 순위 30위 이내 페이지 중 신규 케이스 2건 title/meta 교체
+  - `blog/how-much-primer-do-i-need.html` (노출117/순위24.6/클릭0) — 제목에 "1 Gallon Covers ~400 Sq Ft" 수치 훅 추가
+  - `tools/fence-calculator.html` (노출115/순위21.1/클릭0) — "in Seconds" + 목재/비닐/체인링크 펜스 대응 명시로 설명 강화
+  - `blog/how-much-does-it-cost-to-paint-a-room.html` (노출367/순위27.5/클릭0, 사이트 내 최대 미전환 노출 페이지)는 이미 07-13에 가격훅 title 적용된 상태라 추가 수정 보류 — 순위 27위대는 CTR 기대치 자체가 낮아(1~2%) 표본 변동 가능성 있음, 다음 리포트에서 재확인.
+  - H1·JSON-LD headline 유지, title/meta 텍스트만 변경이라 사용자 확인 불필요.
+  - home-renovations-that-add-the-most-value / gravel-for-garden-bed / bathroom-renovation-cost (07-13 수정분)는 GSC 데이터 반영 지연 감안해 이번 라운드 재판단 보류.
