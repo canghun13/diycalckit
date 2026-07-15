@@ -1,135 +1,135 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://diycalckit.com/</loc>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-13</lastmod><changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Tools Index -->
-  <url><loc>https://diycalckit.com/tools/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  
+  <url><loc>https://diycalckit.com/tools/</loc><lastmod>2026-07-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
-  <!-- Tools -->
-  <url><loc>https://diycalckit.com/tools/roofing-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/insulation-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/gutter-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/paint-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/wallpaper-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/primer-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/flooring-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/tile-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/carpet-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/hardwood-floor-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/room-area-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/square-footage-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/drywall-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/concrete-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/renovation-cost-estimator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/bathroom-remodel-cost-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/contractor-cost-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/home-renovation-roi-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/fence-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/deck-size-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/stain-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/garden-area-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/mulch-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/gravel-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/soil-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/lawn-seed-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/moving-cost-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/storage-unit-size-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/packing-box-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  
+  <url><loc>https://diycalckit.com/tools/roofing-calculator.html</loc><lastmod>2026-07-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/insulation-calculator.html</loc><lastmod>2026-07-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/gutter-calculator.html</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/paint-calculator.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/wallpaper-calculator.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/primer-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/flooring-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/tile-calculator.html</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/carpet-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/hardwood-floor-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/room-area-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/square-footage-calculator.html</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/drywall-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/concrete-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/renovation-cost-estimator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/bathroom-remodel-cost-calculator.html</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/contractor-cost-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/home-renovation-roi-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/fence-calculator.html</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/deck-size-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/stain-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/garden-area-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/mulch-calculator.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/gravel-calculator.html</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/soil-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/lawn-seed-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/moving-cost-calculator.html</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/storage-unit-size-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/packing-box-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Pages -->
-  <url><loc>https://diycalckit.com/tools/grout-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/paint-cost-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/raised-garden-bed-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  
+  <url><loc>https://diycalckit.com/tools/grout-calculator.html</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/paint-cost-calculator.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/raised-garden-bed-calculator.html</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url><loc>https://diycalckit.com/about.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://diycalckit.com/contact.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://diycalckit.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://diycalckit.com/about.html</loc><lastmod>2026-06-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://diycalckit.com/contact.html</loc><lastmod>2026-06-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://diycalckit.com/privacy-policy.html</loc><lastmod>2026-06-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
-  <!-- Blog -->
-  <url><loc>https://diycalckit.com/blog/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <!-- 신규 2026-07-11 -->
-  <url><loc>https://diycalckit.com/blog/how-much-insulation-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-many-shingles-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-gutter-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <!-- 신규 2026-07-09 -->
-  <url><loc>https://diycalckit.com/blog/how-much-does-a-gallon-of-paint-cost.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <!-- 신규 2026-07-06 -->
-  <url><loc>https://diycalckit.com/blog/how-to-calculate-room-area.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-to-measure-a-garden-bed.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-hardwood-flooring-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-many-boxes-do-i-need-to-move.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-many-square-feet-does-a-gallon-of-paint-cover.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-fabric-do-i-need-for-curtains.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-grass-seed-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-drywall-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-concrete-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <!-- 신규 2026-06-23 -->
-  <url><loc>https://diycalckit.com/blog/how-much-carpet-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-deck-stain-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-to-calculate-square-footage.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <!-- 기존 -->
-  <url><loc>https://diycalckit.com/blog/how-much-primer-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/when-to-use-primer-before-painting.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-many-coats-of-primer-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-to-hang-wallpaper.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/wallpaper-calculator-with-repeat.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/peel-and-stick-wallpaper-calculator.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-soil-for-raised-bed.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/best-soil-for-raised-garden-beds.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-deep-should-raised-garden-bed-be.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-wallpaper-for-accent-wall.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-many-rolls-of-wallpaper-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-wallpaper-a-room.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-gravel-for-garden-bed.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-does-a-gravel-driveway-cost.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-gravel-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/gravel-vs-mulch-for-garden-beds.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-to-build-a-gravel-driveway.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/moving-cost-guide.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-to-calculate-flooring-for-a-room.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-mulch-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/home-renovations-that-add-the-most-value.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/diy-vs-hiring-a-contractor.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-tile-a-floor.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-does-a-bathroom-renovation-cost.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-paint-a-room.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  
+  <url><loc>https://diycalckit.com/blog/</loc><lastmod>2026-07-13</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  
+  <url><loc>https://diycalckit.com/blog/how-much-insulation-do-i-need.html</loc><lastmod>2026-07-11</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-many-shingles-do-i-need.html</loc><lastmod>2026-07-11</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-gutter-do-i-need.html</loc><lastmod>2026-07-13</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  
+  <url><loc>https://diycalckit.com/blog/how-much-does-a-gallon-of-paint-cost.html</loc><lastmod>2026-07-09</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  
+  <url><loc>https://diycalckit.com/blog/how-to-calculate-room-area.html</loc><lastmod>2026-07-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-to-measure-a-garden-bed.html</loc><lastmod>2026-07-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-hardwood-flooring-do-i-need.html</loc><lastmod>2026-07-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-many-boxes-do-i-need-to-move.html</loc><lastmod>2026-07-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-many-square-feet-does-a-gallon-of-paint-cover.html</loc><lastmod>2026-07-09</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-fabric-do-i-need-for-curtains.html</loc><lastmod>2026-07-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-grass-seed-do-i-need.html</loc><lastmod>2026-07-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-drywall-do-i-need.html</loc><lastmod>2026-07-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-concrete-do-i-need.html</loc><lastmod>2026-07-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  
+  <url><loc>https://diycalckit.com/blog/how-much-carpet-do-i-need.html</loc><lastmod>2026-06-23</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-deck-stain-do-i-need.html</loc><lastmod>2026-06-23</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-to-calculate-square-footage.html</loc><lastmod>2026-06-23</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  
+  <url><loc>https://diycalckit.com/blog/how-much-primer-do-i-need.html</loc><lastmod>2026-07-15</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/when-to-use-primer-before-painting.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-many-coats-of-primer-do-i-need.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-to-hang-wallpaper.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/wallpaper-calculator-with-repeat.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/peel-and-stick-wallpaper-calculator.html</loc><lastmod>2026-07-09</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-soil-for-raised-bed.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/best-soil-for-raised-garden-beds.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-deep-should-raised-garden-bed-be.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-wallpaper-for-accent-wall.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-many-rolls-of-wallpaper-do-i-need.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-wallpaper-a-room.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-gravel-for-garden-bed.html</loc><lastmod>2026-07-13</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-a-gravel-driveway-cost.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-gravel-do-i-need.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/gravel-vs-mulch-for-garden-beds.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-to-build-a-gravel-driveway.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/moving-cost-guide.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-to-calculate-flooring-for-a-room.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-mulch-do-i-need.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/home-renovations-that-add-the-most-value.html</loc><lastmod>2026-07-13</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/diy-vs-hiring-a-contractor.html</loc><lastmod>2026-07-09</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-tile-a-floor.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-a-bathroom-renovation-cost.html</loc><lastmod>2026-07-13</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-paint-a-room.html</loc><lastmod>2026-07-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
 
 
-  <!-- Projects -->
-  <url><loc>https://diycalckit.com/projects/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-paint-a-room.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-wallpaper-a-room.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-install-lvp-flooring.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-install-hardwood-flooring.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-install-carpet.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-install-carpet-tiles.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-tile-a-floor.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-install-a-backsplash.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-grout-tile.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-install-drywall.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-pour-a-concrete-slab.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-install-insulation.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-build-a-fence.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-build-a-deck.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-stain-a-deck.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-build-a-raised-garden-bed.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-lay-mulch.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-plan-a-garden.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-move-house.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/projects/how-to-plan-a-home-renovation.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  
+  <url><loc>https://diycalckit.com/projects/</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-paint-a-room.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-wallpaper-a-room.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-lvp-flooring.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-hardwood-flooring.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-carpet.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-carpet-tiles.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-tile-a-floor.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-a-backsplash.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-grout-tile.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-drywall.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-pour-a-concrete-slab.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-install-insulation.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-build-a-fence.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-build-a-deck.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-stain-a-deck.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-build-a-raised-garden-bed.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-lay-mulch.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-plan-a-garden.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-move-house.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/projects/how-to-plan-a-home-renovation.html</loc><lastmod>2026-07-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
 
-  <!-- 신규 2026-06-29 -->
-  <url><loc>https://diycalckit.com/tools/window-treatment-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/tools/paint-coverage-calculator.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-build-a-deck.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-build-a-fence.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/what-size-storage-unit-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-grout-do-i-need.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-lay-flooring.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  
+  <url><loc>https://diycalckit.com/tools/window-treatment-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/tools/paint-coverage-calculator.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-build-a-deck.html</loc><lastmod>2026-06-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-build-a-fence.html</loc><lastmod>2026-06-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/what-size-storage-unit-do-i-need.html</loc><lastmod>2026-06-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-grout-do-i-need.html</loc><lastmod>2026-06-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://diycalckit.com/blog/how-much-does-it-cost-to-lay-flooring.html</loc><lastmod>2026-06-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
 
 </urlset>
