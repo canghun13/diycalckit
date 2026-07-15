@@ -105,3 +105,15 @@
   - **조치**: 3개 허브 페이지 전부에 `<noscript><ul><li><a href=...>` 정적 링크 목록 추가(blog 46개, tools 34개, projects 20개) — 기존 검색/필터 JS 기능은 전혀 안 건드림, raw HTML에 크롤링 가능한 링크 즉시 확보.
   - **부수 발견**: tools/index.html의 `TOOLS_DATA` 배열에 `paint-coverage-calculator`, `window-treatment-calculator` 2개가 통째로 빠져있었음(nav.js와 index.html 홈페이지에는 있었으나 tools 허브 페이지에는 없었음) → 추가 완료, Paint & Wallpaper 카테고리로 분류. tools/index.html의 "23 free calculators" stale 카피도 "34 free calculators"로 수정.
 - 다음 GSC 리포트에서 이번 lastmod+noscript 조치 이후 42개 비색인 페이지 수가 줄었는지 최우선으로 확인할 것.
+
+## 2026-07-15 추가 작업 (같은 세션, 사용자가 "보강 그리고 신규 왜 안 하냐" 재요청)
+- **비색인 페이지 실제 콘텐츠 보강 (3건)**: 비색인 41개 중 가장 얇은 페이지들(600~680단어, 색인된 페이지 평균보다 짧음) 중 3개를 실질적으로 보강함. 링크/lastmod 같은 구조적 조치가 아니라 진짜 본문 내용 추가.
+  - `blog/how-much-drywall-do-i-need.html`: "비용" 섹션 + "주문 시 흔한 실수" 섹션 + FAQ 1개 추가 (619→861단어)
+  - `blog/how-much-hardwood-flooring-do-i-need.html`: "솔리드 vs 엔지니어드" 비교 섹션 + FAQ 1개 추가 (598→744단어)
+  - `blog/how-much-grass-seed-do-i-need.html`: "흔한 실수" 섹션 + "발아 기간" 섹션 추가 (618→826단어)
+  - 3개 파일 전부 dateModified/sitemap lastmod을 2026-07-15로 갱신해서 재크롤링 신호 명시적으로 보냄.
+- **신규 블로그 1건 제작**: `blog/how-many-tiles-do-i-need.html`
+  - 근거: GSC Performance 999개 검색어 중 "how many tiles do i need"류 6개 변형(how many tiles do i need/calculator, calculate how many tiles i need, how many floor tiles do i need, work out how many tiles i need, how to calculate how many tiles i need)이 합계 노출 ~134회인데, 이 수요를 받아주는 페이지가 tile-calculator.html(툴)과 how-much-does-it-cost-to-tile-a-floor.html(비용 블로그)뿐이고 "개수/수량" 자체를 다루는 블로그가 없었음 — 신규 툴 경쟁조사 없이도 바로 판단 가능한 명확한 기존 자산 보강형 기회.
+  - 내용: 타일 크기별 개수표, 방 종류별 quick reference, 박스 단위 환산(반올림 실수 포함), 레이아웃별 waste factor, 흔한 실수 4가지, FAQ 4개. tile-calculator.html 콘텐츠와 겹치지 않게 각도(수량 계산 상세 가이드 vs 계산기 자체)를 다르게 잡음.
+  - nav.js(BLOGS 최상단), blog/index.html(BLOG_POSTS + noscript 재생성), tools/tile-calculator.html(역링크 추가), llms.txt, sitemap.xml(108번째 URL) 전부 반영 완료. HTML 무결성/JSON-LD/내부링크 존재 여부 전부 검증 후 push.
+- **참고**: 신규 "계산기(툴)" 자체는 여전히 안 만듦 — 이건 앞서 확인한 대로 웹서치 경쟁조사에서 계속 포화로 나왔기 때문. 대신 이미 있는 tile-calculator를 받쳐주는 블로그를 신규로 만든 것. 다음에 신규 "툴"을 만들 근거가 필요하면 이번처럼 GSC 노출 쿼리 클러스터가 100회 이상 쌓인 게 있는지부터 확인할 것 (이번 tile 케이스가 그 기준의 예시).
