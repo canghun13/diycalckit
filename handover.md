@@ -33,6 +33,7 @@
 
 ## 사고 이력 (재발 방지)
 - ads.txt 파일이 사이트 오픈 이후 계속 없었음(2026-07-15에야 발견/추가). 애드센스 관련 세션은 시작할 때 `ls ads.txt` 먼저 확인할 것.
+- 툴 페이지 31개가 입력창/결과 그리드를 인라인 스타일로 `grid-template-columns:1fr 1fr` 고정해두고 좁은 화면 대응이 없어서 모바일에서 텍스트 잘림 발생(2026-07-15 발견/수정, style.css에 480px 이하 전역 override 추가). **신규 툴 페이지 만들 때 입력창/결과 그리드는 반드시 모바일 반응형(1열 collapse) 확인할 것.**
 - **31개 툴 중 17개가 원본부터 계산 로직(`<script>`) 자체가 없어서 통째로 고장 상태였음** (carpet, concrete, contractor-cost, deck-size, drywall, fence, flooring, garden-area, hardwood-floor, home-renovation-roi, lawn-seed, packing-box, renovation-cost-estimator, room-area, soil, stain, storage-unit-size). 전부 수정+검증 완료.
 - lawn-seed-calculator: 드롭다운/페이지표/블로그글 수치가 서로 안 맞았던 적 있음 → 여러 곳에 같은 수치 쓸 땐 항상 상호 대조.
 - 벽지 블로그 3개, primer 블로그 3개에서 `<div class="blog-content">` 래퍼/`</div>` 누락으로 CSS 안 먹던 버그 있었음, 수정 완료.
