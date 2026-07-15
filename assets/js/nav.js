@@ -57,6 +57,7 @@ const TOOLS = [
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "How Many Tiles Do I Need? Tile Count by Room Size", url: "/blog/how-many-tiles-do-i-need.html", date: "2026-07-15", desc: "Calculate exactly how many tiles you need for any floor or wall, by tile size and layout pattern." },
   { name: "How Much Insulation Do I Need? Attic & Wall Guide", url: "/blog/how-much-insulation-do-i-need.html", date: "2026-07-11", desc: "Calculate bags or rolls of insulation by area and R-value. Covers recommended R-values by area and blown-in vs. batt." },
   { name: "How Many Shingles Do I Need? Roofing Calculator Guide", url: "/blog/how-many-shingles-do-i-need.html", date: "2026-07-11", desc: "Calculate roofing squares and shingle bundles from your roof footprint and pitch." },
   { name: "How Much Gutter Do I Need? Gutter Calculator Guide", url: "/blog/how-much-gutter-do-i-need.html", date: "2026-07-13", desc: "Calculate linear feet of gutter, downspouts, and hangers from home size and roof type." },

@@ -93,6 +93,7 @@ Step-by-step DIY project guides with built-in calculator links.
 ## Cost Guides & Blog
 
 - [How Much Insulation Do I Need? Attic & Wall Guide](https://diycalckit.com/blog/how-much-insulation-do-i-need.html): Bags or rolls of insulation by area and R-value. Recommended R-values by area, blown-in vs. batt.
+- [How Many Tiles Do I Need? Tile Count by Room Size](https://diycalckit.com/blog/how-many-tiles-do-i-need.html): Tile count by tile size, layout pattern, and room type, with box-coverage guidance.
 - [How Many Shingles Do I Need? Roofing Calculator Guide](https://diycalckit.com/blog/how-many-shingles-do-i-need.html): Roofing squares and shingle bundles from roof footprint and pitch.
 - [How Much Gutter Do I Need? Gutter Calculator Guide](https://diycalckit.com/blog/how-much-gutter-do-i-need.html): Linear feet of gutter, downspouts, and hangers from home size and roof type.
 
