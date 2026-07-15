@@ -936,4 +936,11 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 480px) {
   .footer-inner { grid-template-columns: 1fr; }
   .header-inner { padding: 0 1.25rem; }
+
+  /* Fix: 31 tool pages hardcode 2-col/3-col grids via inline style with no
+     responsive fallback, causing cramped/truncated fields and result stats
+     on narrow phones. Collapse any inline 2+ column grid to 1 column here. */
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
 }
