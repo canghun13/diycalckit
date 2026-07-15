@@ -32,6 +32,7 @@
 - nav.js / 인라인 JS `node --check` 문법 확인
 
 ## 사고 이력 (재발 방지)
+- ads.txt 파일이 사이트 오픈 이후 계속 없었음(2026-07-15에야 발견/추가). 애드센스 관련 세션은 시작할 때 `ls ads.txt` 먼저 확인할 것.
 - **31개 툴 중 17개가 원본부터 계산 로직(`<script>`) 자체가 없어서 통째로 고장 상태였음** (carpet, concrete, contractor-cost, deck-size, drywall, fence, flooring, garden-area, hardwood-floor, home-renovation-roi, lawn-seed, packing-box, renovation-cost-estimator, room-area, soil, stain, storage-unit-size). 전부 수정+검증 완료.
 - lawn-seed-calculator: 드롭다운/페이지표/블로그글 수치가 서로 안 맞았던 적 있음 → 여러 곳에 같은 수치 쓸 땐 항상 상호 대조.
 - 벽지 블로그 3개, primer 블로그 3개에서 `<div class="blog-content">` 래퍼/`</div>` 누락으로 CSS 안 먹던 버그 있었음, 수정 완료.
@@ -117,3 +118,9 @@
   - 내용: 타일 크기별 개수표, 방 종류별 quick reference, 박스 단위 환산(반올림 실수 포함), 레이아웃별 waste factor, 흔한 실수 4가지, FAQ 4개. tile-calculator.html 콘텐츠와 겹치지 않게 각도(수량 계산 상세 가이드 vs 계산기 자체)를 다르게 잡음.
   - nav.js(BLOGS 최상단), blog/index.html(BLOG_POSTS + noscript 재생성), tools/tile-calculator.html(역링크 추가), llms.txt, sitemap.xml(108번째 URL) 전부 반영 완료. HTML 무결성/JSON-LD/내부링크 존재 여부 전부 검증 후 push.
 - **참고**: 신규 "계산기(툴)" 자체는 여전히 안 만듦 — 이건 앞서 확인한 대로 웹서치 경쟁조사에서 계속 포화로 나왔기 때문. 대신 이미 있는 tile-calculator를 받쳐주는 블로그를 신규로 만든 것. 다음에 신규 "툴"을 만들 근거가 필요하면 이번처럼 GSC 노출 쿼리 클러스터가 100회 이상 쌓인 게 있는지부터 확인할 것 (이번 tile 케이스가 그 기준의 예시).
+
+## 2026-07-15 추가 작업 (같은 세션, 사용자가 "애드센스 신청중인데 끝이냐" 재질문)
+- **ads.txt 파일이 사이트에 아예 없었음** — 발견 즉시 조치. `/ads.txt`에 `google.com, pub-5592663499707350, DIRECT, f08c47fec0942fa0` 한 줄 추가 후 push, 배포 성공 확인.
+  - 이건 GSC 색인/CTR과 무관하게 **애드센스 심사·승인 후 광고 채움률(fill rate)에 직접 영향**을 주는 항목이라 이번 세션에서 발견한 것 중 가장 애드센스에 직결되는 조치였음. `curl diycalckit.com/ads.txt`로 실제 라이브 반영 여부는 이 컨테이너 네트워크에서 확인 불가(diycalckit.com 미허용 도메인) — 사용자가 브라우저로 직접 확인 필요.
+  - 확인 김에 privacy-policy.html(쿠키/애드센스 고지, GA·Ad Settings 옵트아웃 링크 포함)과 robots.txt(전체 허용 + sitemap 링크)는 이미 정상이라 추가 조치 없음.
+- 앞으로 애드센스 관련 세션 시작 시 ads.txt 존재 여부는 매번 확인할 것(재발 방지 항목으로 등록).
