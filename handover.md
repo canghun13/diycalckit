@@ -95,3 +95,14 @@
   - `blog/how-much-does-it-cost-to-paint-a-room.html` (노출367/순위27.5/클릭0, 사이트 내 최대 미전환 노출 페이지)는 이미 07-13에 가격훅 title 적용된 상태라 추가 수정 보류 — 순위 27위대는 CTR 기대치 자체가 낮아(1~2%) 표본 변동 가능성 있음, 다음 리포트에서 재확인.
   - H1·JSON-LD headline 유지, title/meta 텍스트만 변경이라 사용자 확인 불필요.
   - home-renovations-that-add-the-most-value / gravel-for-garden-bed / bathroom-renovation-cost (07-13 수정분)는 GSC 데이터 반영 지연 감안해 이번 라운드 재판단 보류.
+
+## 2026-07-15 추가 작업 (같은 세션, 사용자가 "색인 안된 페이지 보강" 재요청)
+- **비색인 페이지 특정**: GSC Coverage export는 URL 목록을 안 주기 때문에, sitemap.xml 107개 URL과 Performance 리포트에 노출이 1건이라도 있는 67개 URL을 대조해 **3개월간 노출 0인 41개 URL**을 추출 (Coverage의 발견됨14+크롤링됨28=42와 거의 일치 — 사실상 이게 비색인 목록).
+- **원인 1 (확인, 조치완료) — 계산기 고장 이력**: 비색인 tools 중 garden-area-calculator, home-renovation-roi-calculator, renovation-cost-estimator, storage-unit-size-calculator 4개는 내부링크 8~18개로 충분한데도 안 걸림 → git log 확인 결과 **2026-05-18 추가 후 2026-07-06까지 7주간 계산 로직(JS) 자체가 고장 상태**였음(기존 사고 이력의 "17개 툴 고장" 사건). Google이 그 기간에 크롤링하며 저품질로 학습했을 가능성. → sitemap.xml에 lastmod 추가해 07-06 수정일을 명시적으로 신호 보냄(아래 조치 참고).
+- **원인 2 (확인, 조치완료) — sitemap.xml에 lastmod 전무**: 107개 URL 전부 `<lastmod>` 태그가 없었고 changefreq도 103/107이 "yearly"로 박혀있어 Google에 "이 페이지 거의 안 바뀜" 신호를 주고 있었음. → git 최종 커밋일 기준으로 전체 lastmod 추가, tools/* changefreq를 yearly→monthly로, index/tools/blog 허브 페이지는 weekly로 조정.
+- **원인 3 (확인, 조치완료) — 비색인 blog/project 페이지는 내부링크가 평균 2.8개로 인덱싱된 페이지(평균 4.86개)보다 뚜렷이 적음**: 18개 페이지가 인바운드 링크 2개 이하(사실상 페어 계산기 1개 + nav 검색 정도). 근본 원인은 아래 원인4.
+- **원인 4 (가장 크고 확인, 조치완료) — blog/index.html, tools/index.html, projects/index.html 3개 허브 페이지의 카드 목록이 전부 순수 JS 렌더링**: `BLOG_POSTS`/`TOOLS_DATA`/`PROJECTS` 배열을 JS가 `innerHTML`로 주입하는 구조라 **원본 HTML에는 개별 글/툴 링크가 단 하나도 없었음**(각 파일에 `<a href>`가 딱 1개, 그것도 템플릿 리터럴 안). Googlebot은 1차 크롤링(HTML raw fetch)에서 이 페이지들의 링크를 전혀 못 보고, JS 렌더링 큐(2차 웨이브, 수일~수주 소요)를 기다려야만 개별 페이지를 이 허브를 통해 발견 가능 → 신규/약한링크 페이지의 지연 색인 원인.
+  - **조치**: 3개 허브 페이지 전부에 `<noscript><ul><li><a href=...>` 정적 링크 목록 추가(blog 46개, tools 34개, projects 20개) — 기존 검색/필터 JS 기능은 전혀 안 건드림, raw HTML에 크롤링 가능한 링크 즉시 확보.
+  - **부수 발견**: tools/index.html의 `TOOLS_DATA` 배열에 `paint-coverage-calculator`, `window-treatment-calculator` 2개가 통째로 빠져있었음(nav.js와 index.html 홈페이지에는 있었으나 tools 허브 페이지에는 없었음) → 추가 완료, Paint & Wallpaper 카테고리로 분류. tools/index.html의 "23 free calculators" stale 카피도 "34 free calculators"로 수정.
+- **알았지만 이번 세션에 손 안 댄 것**: header/footer 전체(`assets/js/nav.js`)가 모든 107개 페이지에서 `insertAdjacentHTML`로 JS 주입되는 구조라, 사실상 전 페이지가 1차 크롤링 시점엔 헤더 네비게이션이 안 보임. 이건 인덱싱된 페이지도 똑같이 겪는 구조라 "왜 특정 페이지만 비색인인지"의 직접 원인은 아니지만, 사이트 전체의 크롤링 효율에는 영향 줄 수 있는 더 큰 리팩터 대상. 107개 페이지 전체에 영향 미치는 변경이라 실수 시 파급 크므로 이번엔 보류 — 다음 세션에서 정적 header/footer 삽입 방식으로 전환 고려 (예: 빌드 스크립트로 각 HTML에 header/footer를 직접 삽입, JS는 활성 상태 표시/모바일 토글 등 인터랙션만 담당).
+- 다음 GSC 리포트에서 이번 lastmod+noscript 조치 이후 42개 비색인 페이지 수가 줄었는지 최우선으로 확인할 것.
