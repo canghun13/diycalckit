@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-15 | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-17 | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -23,6 +23,7 @@
 5. **신규 계산기(툴)는 반드시 실제 작동 JS 로직 + Puppeteer로 클릭 테스트 후 push** (아래 사고 이력 참고). alert() 뜨면 headless가 무한대기하니 `page.on('dialog', d=>d.dismiss())` 필수.
 6. **사용자는 영어 모름** — 확인 요청 시 "이건 UI 새로 생겨서 봐야 함 / 이건 텍스트만 바뀐 거라 안 봐도 됨"으로 명확히 구분해서 알려줄 것.
 7. 구조적으로 큰 변경(신규 카테고리 등)은 실행 전 제안, 단순 보강/버그수정은 바로 진행.
+8. **AI 검색 대응 원칙(2026-07-17 사용자 지시)**: AI 검색(초록/답변형)은 도메인 권위보다 콘텐츠 자체의 문제해결력/비교분석력을 더 중시하는 경향. 페이지 보강 시 "Common Mistakes"(실수 사례), "A vs B 비교표"류 섹션을 우선 고려할 것. 신규 툴 34개 중 이런 섹션이 있는 건 7개뿐(mulch/tile/carpet/packing-box/paint/primer/wallpaper) — 나머지 27개가 순차 보강 후보. 단, 이미 사이트에 없던 "신규 비교형 블로그"를 만들 때도 경쟁강도 확인은 동일하게 적용(예: "LVP vs hardwood flooring cost"는 calcsmart.io 등 계산기 전문 비교사이트가 이미 장악 확인, 2026-07-17 스킵).
 
 ## 검증 체크리스트 (매 push 전)
 - HTML 태그 무결성 (Python HTMLParser로 open/close 짝 확인)
@@ -130,3 +131,27 @@
 - **블로그 47개+프로젝트 20개 전체 단어수 감사**: projects/ 폴더 전체가 구조적으로 얇음(평균 550~600단어, 블로그 평균 809단어 대비 확연히 짧음)을 발견. 원인 확인해보니 **20개 프로젝트 전부 FAQ 섹션이 아예 없었음**(블로그는 전부 있음 — 프로젝트 콘텐츠 만들 때 이 섹션만 빠뜨린 패턴).
 - **20개 프로젝트 전부에 FAQ 3문항씩 배치 추가**: 각 프로젝트 주제에 맞는 실제로 유용한 질문(퍼밋 필요 여부, 양생/건조 시간, 자재 선택 기준 등)으로 작성, 기존 CTA 박스 바로 위에 삽입. 평균 단어수 580→709(+22%). 20개 파일 전부 HTML 태그 무결성 + JSON-LD 파싱 검증 통과, sitemap.xml lastmod도 20개 전부 갱신 후 push.
 - 앞으로 신규 프로젝트 페이지 만들 때 FAQ 섹션 빠뜨리지 말 것(신규 툴 만들 때 짝꿍 블로그 빠뜨리지 말라는 기존 규칙과 동일한 성격의 체크리스트 항목으로 추가).
+
+## 2026-07-17 작업 (GSC 2026-07-17 export, "AI검색은 콘텐츠가 도메인 권위보다 중요 → 비교분석/문제해결 위주로" 신규 지시 반영)
+- **Coverage**: 심각한 문제 45(발견됨14+크롤링됨28+리디렉션3, 직전 07-15 45와 거의 동일) — 정체 지속. sitemap=108=실제 html 파일 수, 고아 페이지 없음. 계속 자연 해소 대기, 이번 라운드 조치 없음.
+- **Performance 1000개 검색어 전수 필터링** (34툴/47블로그/20프로젝트 슬러그 토큰 매칭) → 미매칭 14개 전부 네덜란드어 타일 쿼리(hoeveel tegels 등)나 노출 1~6회 쓰레기성 쿼리 → **신규 콘텐츠 후보 0개** (기존 패턴과 동일).
+- **웹서치로 신규 기회 재확인**: "LVP vs hardwood flooring cost" 비교 콘텐츠를 검토했으나, calcsmart.io 등 계산기 전문 비교 사이트가 이미 이 각도로 심층 콘텐츠를 다수 보유 — 포화 확인, 스킵. (신규 "툴"뿐 아니라 신규 "비교형 블로그"도 이미 레드오션인 주제는 피해야 한다는 판단 기준을 이번에 명시적으로 적용함.)
+- **결론: 신규 페이지 없음, 대신 기존 자산 보강에 집중** — 트래픽이 이미 발생 중인(노출 있는) 페이지를 강화하는 것이 신규 저볼륨 롱테일 페이지를 만드는 것보다 수익화 관점에서 우선순위가 높다고 판단.
+- **사이트 전체 감사 — "Common Mistakes/비교" 섹션 부재 패턴 발견**: 34개 툴 페이지 중 "Common Mistakes"류 섹션이 있는 곳은 3개(paint/primer/wallpaper)뿐 — FAQ 섹션 누락이 프로젝트 전체의 패턴이었던 것과 같은 성격의 사이트 전역 콘텐츠 갭. AI 검색(초록/답변형 검색)은 도메인 권위보다 "문제해결형·비교분석형" 콘텐츠를 인용하는 경향이 강하다는 사용자 지시에 따라, 노출량 상위 4개 툴에 실질적 보강 진행(필러 아님 — 실제 유용한 실수 사례/비교표):
+  - `tools/mulch-calculator.html` (노출509, 사이트 내 툴 2위) — **버그 발견/수정**: FAQPage 스키마(JSON-LD)는 있는데 페이지에 보이는 FAQ 섹션이 없는 유일한 페이지였음(스키마-화면 불일치, 34개 툴 전수 스캔으로 확인). 시각적 FAQ 섹션 추가 + "Common Mulching Mistakes to Avoid"(멀치 화산현상, 과도한 깊이, 대량 시 벌크 대비 봉지 구매 손해 등 5개) 추가.
+  - `tools/tile-calculator.html` (노출472) — "Common Tile Ordering Mistakes"(반올림 실수, 니치/커브/스텝 누락, 패턴 시공인데 직선시공 waste% 적용, 트림/불노즈 누락, 보수용 여분 미확보) 5개 추가.
+  - `tools/carpet-calculator.html` (노출364) — "Broadloom Carpet vs. Carpet Tiles" 비교표(설치난이도/waste/보수/적합공간) + how-to-install-carpet-tiles.html 프로젝트로 상호링크 신설 + "Common Carpet Ordering Mistakes"(계단 누락, nap 방향, 롤 단위 반올림, 클로젯 누락) 4개 추가.
+  - `tools/packing-box-calculator.html` (노출250) — "Common Packing Mistakes to Avoid"(과적재, 부족적재로 인한 찌그러짐, 라벨 누락, 접시 눕혀담기, open-first 박스 부재) 5개 추가.
+  - contractor-cost-calculator(노출336)는 이미 red-flag 리스트/hourly+sqft 비교표/quote 가이드가 충실해서 이번 라운드는 skip(수확체감 판단).
+- **CTR 개선 실행 완료**: 0클릭 + 포지션 양호한데 안 눌리는 페이지 4건, title/meta에 숫자 훅 추가 (H1·JSON-LD headline 유지, 텍스트만 변경이라 화면 확인 불필요)
+  - `tools/packing-box-calculator.html` (노출250/순위31.76/클릭0) — "(60–80 for 3BR)" 훅 추가
+  - `blog/peel-and-stick-wallpaper-calculator.html` (순위11.07인데 CTR 0.7%인 이례적 케이스 — 포지션 대비 완전 손실 구간) — "Rolls Needed by Brand (Free)" 훅으로 교체
+  - `blog/how-much-does-it-cost-to-tile-a-floor.html` (노출173/순위37.01/클릭0) — 제목에 "$7–$25/Sq Ft" 가격대 훅 추가
+  - `blog/how-much-soil-for-raised-bed.html` (노출58/순위33.59/클릭0, 기존 제목이 아예 훅 없이 사이트명만 붙어있던 케이스) — "(Formula + Chart)" 훅 추가
+- **sitemap.xml**: 위 7개 파일 lastmod 2026-07-17로 갱신. 블로그 3개는 changefreq가 07-15 조치(tools만 yearly→monthly 변경) 때 빠져서 여전히 yearly였던 걸 발견, monthly로 같이 수정.
+- HTML 태그 무결성(HTMLParser) + JSON-LD 파싱 + 내부링크 존재 여부 전부 스크립트로 검증 후 push, Actions 배포 success 확인.
+- **다음 세션 참고**: mulch-calculator처럼 "FAQ 스키마는 있는데 화면에 안 보이는" 케이스가 다른 페이지에도 또 있을 수 있으니, 새 GSC 리포트 받으면 이번에 쓴 전수 스캔 스크립트(스키마 유무 vs "Frequently Asked Questions" 텍스트 유무 grep 대조)를 먼저 돌려서 재확인할 것. "Common Mistakes" 섹션도 34개 툴 중 3개만 있는 상태라 나머지 페이지들(특히 다음 라운드에 노출 늘어나는 페이지)도 순차적으로 채워나갈 것.
+
+## 현재 콘텐츠 (2026-07-17)
+- 툴 34개, 블로그 47개, 프로젝트 20개 — 전 페이지 FAQ 있음(시각적으로 노출, 스키마와 일치 확인됨)
+- "Common Mistakes/비교" 섹션 있는 툴: mulch/tile/carpet/packing-box/paint/primer/wallpaper 7개 — 나머지 27개는 아직 없음(다음 보강 후보)
