@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-17 | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-17 (2차) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -152,6 +152,14 @@
 - HTML 태그 무결성(HTMLParser) + JSON-LD 파싱 + 내부링크 존재 여부 전부 스크립트로 검증 후 push, Actions 배포 success 확인.
 - **다음 세션 참고**: mulch-calculator처럼 "FAQ 스키마는 있는데 화면에 안 보이는" 케이스가 다른 페이지에도 또 있을 수 있으니, 새 GSC 리포트 받으면 이번에 쓴 전수 스캔 스크립트(스키마 유무 vs "Frequently Asked Questions" 텍스트 유무 grep 대조)를 먼저 돌려서 재확인할 것. "Common Mistakes" 섹션도 34개 툴 중 3개만 있는 상태라 나머지 페이지들(특히 다음 라운드에 노출 늘어나는 페이지)도 순차적으로 채워나갈 것.
 
-## 현재 콘텐츠 (2026-07-17)
+## 2026-07-17 추가 작업 (같은 세션, 사용자가 "신규 너무 안 한다, 확장을 최대해라" 재요청)
+- **7개 신규 카테고리 추가 웹서치**: deck mud calculator(RemodelCalculators/HomeDecorCalc/johnbridge 등 이미 장악 — 07-13에 labor-rate 클러스터로 잘못 분류돼 스킵됐던 걸 재확인했는데 결론은 동일하게 스킵), backsplash tile calculator(타일 소매업체 다수 자체 계산기 보유), vinyl siding calculator(Lowe's까지 포함 10개+ 경쟁), compost calculator(compost.tools 하나가 계산기 10종 보유), artificial turf calculator(터프 업계 사이트 다수), concrete 양생시간 가이드(8개+ 경쟁, slabcalc.co 등 계산기 비교 전문사이트 포함), grout 양생/실런트 대기시간 가이드(Bob Vila 등 대형 매체 포함 7개+), 소형 욕실 리타일 번들형 콘텐츠(This Old House/Modernize 등 리드젠 대기업 다수, remodelcostcalc.com은 "5x7/5x8 욕실" 특정 사이즈 앵글까지 이미 선점) — **전부 포화 확인, 스킵**.
+- **결론**: 2026년 기준 홈임프루브먼트 계산기+정보성 가이드 니치 전체가 계산기 전문사이트(calc-farm)와 대형 홈서비스 리드젠 업체(Angi/HomeAdvisor/Modernize류) 양쪽에 의해 극도로 포화된 상태. "신규 페이지"로 미개척 키워드를 찾는 접근 자체가 한계에 도달했다고 판단, 아래로 전략 전환.
+- **전략 전환 — 리인포스먼트 확대 실행**: 지난 라운드(mulch/tile/carpet/packing-box 4개)에 이어 노출량 상위 나머지 10개 툴에 동일하게 "Common Mistakes"류 섹션 추가 완료: wallpaper-calculator(392노출), concrete-calculator(191), lawn-seed-calculator(133), fence-calculator(117), hardwood-floor-calculator(99), stain-calculator(90), bathroom-remodel-cost-calculator(86), soil-calculator(82), paint-coverage-calculator(75), drywall-calculator(58). **34개 툴 중 16개 완료(기존 paint/primer 포함), 18개 남음** — 다음 세션도 노출량 순으로 계속 이어갈 것(다음 후보: room-area-calculator, moving-cost-calculator[단 moving은 콘텐츠 자체보다 시장 포화 이슈라 우선순위 낮음], gutter-calculator, insulation-calculator, roofing-calculator, garden-area-calculator, gravel-calculator 등).
+- **검색의도 불일치 건 실제 조치**: "1 gallon paint price" 계열 쿼리(노출~100, 순위 1위, 클릭 0)를 07-13/07-15에는 "구글이 알아서 재배정할 것"이라며 방치했었는데, 이번엔 **직접 조치**함 — paint-calculator.html(수량계산기) H1 바로 아래에 가격 답변 콜아웃 박스 추가("$20–$80" + how-much-does-a-gallon-of-paint-cost.html 블로그·paint-cost-calculator.html 링크). 순위 1위인 페이지를 그냥 놀리지 않고 실제 클릭 전환을 시도한 케이스. **이건 새 UI 요소라 사용자 화면 확인 필요.**
+- **다음 세션 참고**: "신규 카테고리 있는지" 재확인 요청이 오면, 이번 세션에서 이미 15개+ 카테고리(누적)를 웹서치로 확인한 상태이므로 완전히 새로운 각도(예: 멀티툴 프로젝트 번들형 인터랙티브 콘텐츠, 또는 GSC에 실제 노출되는데 서비스 안 되는 초저볼륨 쿼리)가 아니면 반복 확인보다 리인포스먼트 심화(Common Mistakes 나머지 23개 툴 + FAQ누락 재스캔)에 우선순위를 둘 것.
+
+## 현재 콘텐츠 (2026-07-17, 세션 종료 시점)
 - 툴 34개, 블로그 47개, 프로젝트 20개 — 전 페이지 FAQ 있음(시각적으로 노출, 스키마와 일치 확인됨)
-- "Common Mistakes/비교" 섹션 있는 툴: mulch/tile/carpet/packing-box/paint/primer/wallpaper 7개 — 나머지 27개는 아직 없음(다음 보강 후보)
+- "Common Mistakes/비교" 섹션 있는 툴: **16/34** — paint, primer(기존) + mulch, tile, carpet, packing-box(1차) + wallpaper, concrete, lawn-seed, fence, hardwood-floor, stain, bathroom-remodel-cost, soil, paint-coverage, drywall(2차, 이번 세션). 남은 18개는 노출량 순으로 다음 세션 계속 진행.
+- paint-calculator.html에 "gallon of paint price" 검색의도 대응 콜아웃 박스 추가(신규 UI, 사용자 확인 필요).
