@@ -57,6 +57,8 @@ const TOOLS = [
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "Self-Leveling Compound vs. Plywood Underlayment: Which Do You Need?", url: "/blog/self-leveling-compound-vs-plywood-underlayment.html", date: "2026-07-19", desc: "What each product actually fixes, cost comparison, and when a subfloor needs both before LVP, hardwood, or tile." },
+  { name: "1/2\" vs. 5/8\" Drywall: Which Do You Need for Walls & Ceilings?", url: "/blog/1-2-vs-5-8-drywall.html", date: "2026-07-19", desc: "Weight, sag resistance, fire rating, and cost compared — plus when building code requires 5/8\" Type X." },
   { name: "How Many Tiles Do I Need? Tile Count by Room Size", url: "/blog/how-many-tiles-do-i-need.html", date: "2026-07-15", desc: "Calculate exactly how many tiles you need for any floor or wall, by tile size and layout pattern." },
   { name: "How Much Insulation Do I Need? Attic & Wall Guide", url: "/blog/how-much-insulation-do-i-need.html", date: "2026-07-11", desc: "Calculate bags or rolls of insulation by area and R-value. Covers recommended R-values by area and blown-in vs. batt." },
   { name: "How Many Shingles Do I Need? Roofing Calculator Guide", url: "/blog/how-many-shingles-do-i-need.html", date: "2026-07-11", desc: "Calculate roofing squares and shingle bundles from your roof footprint and pitch." },
