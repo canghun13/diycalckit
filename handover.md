@@ -226,3 +226,15 @@
 - 툴 34개, 블로그 **49개**(+2, 이번 세션), 프로젝트 20개
 - "Common Mistakes/비교" 섹션 있는 툴: 30/34, 남은 4개는 노출 0
 - 신규 블로그 2개: self-leveling-compound-vs-plywood-underlayment, 1-2-vs-5-8-drywall — 둘 다 "판단/비교"형 콘텐츠로 계산기 포화 니치를 우회한 케이스
+
+## 2026-07-19 세션 3 (같은 날, 사용자가 "더 할 거 없냐" 재질문 후 능동 진행)
+- **전수 버그 스캔 실행** (핸드오버에 남겨둔 "다음 세션 참고" 항목 실행): 툴/블로그/프로젝트 103개 페이지 전체를 "Frequently Asked Questions" H2 중복 여부 + FAQPage 스키마-화면 문항 수 불일치 여부로 스캔.
+  - **`tools/stain-calculator.html`에서 동일한 FAQ 중복 버그 추가 발견** (노출 110회/분기) — square-footage-calculator와 완전히 같은 패턴(서로 다른 Q&A 4개씩, 총 8개, 겹침 없음, 이전 보강 작업 때 기존 섹션 안 지우고 새로 얹은 것으로 추정). 하나로 병합, JSON-LD 8개 전부 동기화. 검증 통과 후 push, 배포 성공 확인.
+  - 나머지 101개 페이지에서는 추가 발견 없음 — 이 버그 패턴은 이제 사이트 전체에서 해결된 것으로 판단.
+- **"판단/비교"형 신규 콘텐츠 추가 탐색 (콘크리트/타일/지붕 카테고리)**: 세션2에서 예고한 대로 3개 후보 웹서치
+  1. Sanded vs unsanded grout — Bob Vila, Marshalltown, Rubi, MTCopeland, Houzz, Apollotile, GroutMedic 등 7개+ 확인, 포화. **게다가 우리 grout-calculator.html에 이미 "Sanded vs. Unsanded vs. Epoxy Grout" 비교 섹션으로 커버 중** — 스킵.
+  2. Thinset vs mastic 타일 접착제 — ClayImports, TileTools, GeorgeCeramic, ContractorsDirect, SaranaTile, D and G Flooring 등 6개+ 확인, 포화, 스킵.
+  3. 펠트 vs 합성 지붕 언더레이먼트 — Western States, Benjamin Obdyke, Sheffield Metals, Bill Ragan, KPost, Warner Roofing, Reimagine Roofing 등 8개+ 지붕업체 블로그 확인, 포화, 스킵.
+  4. (추가 확인) Quarter round vs shoe molding — Metrie, Lowe's, Craftsman Blog, Handyman's Daughter, Moulding Company, GoFlooring, WFM, ReallyCheapFloors, LA Floor Coverings 등 10개+ 확인, 완전 포화, 스킵.
+  - **결론**: "판단/비교"형 각도도 무한정 열려있는 건 아님 — 콘크리트/타일/지붕처럼 이미 산업 자체가 큰 카테고리는 비교 콘텐츠까지 이미 업체 블로그들이 장악한 경우가 많음. 세션2에서 찾은 self-leveling/drywall-thickness 같은 "빈자리"는 상대적으로 틈새(서브플로어 준비, 특정 두께 선택)였기 때문에 가능했던 것으로 보임 — 다음에 이 각도로 더 찾을 때는 큰 산업 카테고리(타일/지붕/콘크리트 전체)보다 그 안의 세부 시공 디테일(우리가 이미 다루는 tile-calculator, roofing-calculator, concrete-calculator의 "다음 단계" 질문들)을 노려볼 것.
+- 이번 라운드는 신규 콘텐츠 추가 없이 버그 수정 1건으로 마무리.
