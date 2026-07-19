@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-19 | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-19 (2차) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -197,3 +197,32 @@
 - "Common Mistakes/비교" 섹션 있는 툴: **30/34** (실질적으로 거의 완료). 남은 4개(garden-area, home-renovation-roi, insulation, renovation-cost-estimator)는 전부 노출 0 — 노출 생기면 우선 처리.
 - CTR 텍스트 훅 적용 누적: fence-calculator, carpet-tiles 프로젝트, raised-bed-depth 블로그(이번 세션) + gravel-for-garden-bed, primer, fence 등(이전 세션) — 대부분 데이터 반영 시차 있어 다음 리포트에서 클릭 발생 여부 확인 필요.
 - square-footage-calculator.html FAQ 중복 버그 수정 완료 — 유사 버그가 다른 페이지에도 있을 가능성, 다음 세션 전수 스캔 권장.
+
+## 2026-07-19 세션 2 (같은 날, 사용자가 "신규를 너무 안 한다, 롱테일로 공격적으로 선점해라, 카테고리 넓혀도 된다" 재요청)
+- **문제 인식**: 지금까지 "완전히 새로운 카테고리(계산기)"만 찾아왔는데, 홈임프루브먼트 "계산기" 니치 자체가 이미 calc-farm 사이트들(전용 계산기 사이트 5~10개씩)로 완전 포화된 상태라 이 방식으로는 5세션 연속 신규 0건이었음. 전략을 바꿔서 "계산기(수량 계산)"가 아니라 "비교/판단(어떤 걸 써야 하나)" 콘텐츠 각도로 재탐색 — 계산기 사이트들은 대부분 이 각도를 커버하지 않음.
+- **웹서치로 9개 후보 신규 검토**:
+  1. 클로짓/셀빙 계산기 — homewyse, localservicecalculator, designingidea, toolcroze 등 4개+ 전용 계산기, 포화, 스킵
+  2. 제너레이터 사이징 계산기 — generatorfixer, builditcalc, iscsales, homegeneratorcalculator, electriciancalc, friendlycalc, Generac(브랜드) 7개+ 확인, 포화, 스킵
+  3. 장작(firewood cord) 계산기 — treeplantation, omnicalculator, firewood-for-life, cordofwoodcalculator, firewoodflex, chimneyworks, firepitsurplus, firewoodcalc 8개+ 확인, 포화, 스킵
+  4. 데크 발러스터(baluster) 계산기 — decks.com, inchcalculator, deckorators, decksdirect(2개), omnicalculator, arnoldwood, activecalculator, calculatorcove 9개+ 확인, 포화, 스킵
+  5. 파이어핏 자갈 계산기 — stone-calculator.org, hellogravel, calculatoryard, builditcalc, camperupgrade, landscapebarn, homedepot 7개+ 확인, 포화, 스킵
+  6. 캐비닛 리페이싱 vs 교체 비교 — Angi, Kitchen Cabinet Guys, Custom Kitchen Cabinets, 180Kitchens, Southwest Kitchen, HomeAdvisor 등 8개+ 전문 아티클 확인, 포화 + 우리 사이트에 캐비닛 관련 툴 자체가 없어서 적합성도 낮음, 스킵
+  7. 에그쉘 vs 새틴 페인트 마감 비교 — Family Handyman, Toolstation, 21oak, bernardospainting, paintprosmart, sherwoodpaint, AOL 등 8개+ 확인, 포화. **게다가 우리 paint-calculator.html에 이미 "Paint Finish Guide: Which Sheen for Which Room?" 섹션으로 커버 중** — 중복 콘텐츠 방지 차원에서도 스킵
+  8. 토양(topsoil vs garden soil vs potting soil) 비교 — savvygardening, bobvila, almanac, rosysoil, gardeningknowhow, hgtv, mccartymulch, thedirtbag, AOL 등 10개+ 원예 미디어 확인, 완전 포화, 스킵
+  9. 무빙트럭 사이즈 계산기 — extraspace, agoyu, movingplace, movingtrucksize.com(2개), reputationmovers, movingmuscle, oregontrailmoving 8개+ 확인, 기존에 스킵 확정된 moving 클러스터와 동일 성격, 스킵
+- **실제 빈자리 2건 발견 → 신규 블로그 2개 제작**:
+  1. `blog/self-leveling-compound-vs-plywood-underlayment.html` — "어떤 서브플로어 보강재를 써야 하나" 판단형 콘텐츠. 웹서치 결과 이 주제는 포럼(DIYChatroom, Houzz, FlooringForum)과 오래된 업계 기술문서뿐, 깔끔한 현대식 DIY 가이드가 없었음 — **순수 신규 발견**(계산기 자체는 self-leveling-compound-calculator류로 이미 9개+ 포화 확인했지만, "어느 걸 써야 하나" 판단 콘텐츠는 완전히 다른 검색의도라 비어있었음). flooring-calculator.html, hardwood-floor-calculator.html과 양방향 링크.
+  2. `blog/1-2-vs-5-8-drywall.html` — "1/2인치 vs 5/8인치 드라이월 중 뭘 써야 하나" 판단형 콘텐츠. 경쟁은 중간 수준(dgfloors, mudcopro, mchughbuildersnj 등 업체 블로그 3개 + 포럼 다수, calc-farm급 포화는 아님) — 사용자가 지시한 "경쟁이 세면 롱테일로 뚫어라" 원칙 적용. **참고**: drywall-calculator.html과 how-much-drywall-do-i-need.html에 이미 이 질문에 대한 한 줄짜리 FAQ 답변("1/2인치는 벽, 5/8인치는 차고용")이 있었음 — 완전 백지 상태는 아니고, 기존 한 줄 답변을 비교표/새깅 메커니즘/화재등급 코드 세부사항/스크류 길이 실수 등을 포함한 완전한 가이드로 심화 확장한 것. drywall-calculator.html과 양방향 링크.
+- **두 글 모두**: 비교표, Common Mistakes 섹션, FAQ 4개, Article+FAQPage JSON-LD 스키마 포함 — 07-17 세션 지시(AI검색은 문제해결/비교분석 콘텐츠 우대) 원칙 그대로 적용.
+- **사이트 전역 반영**: nav.js(BLOGS 배열 최상단), blog/index.html(BLOG_POSTS 배열 + noscript 정적 링크), llms.txt, sitemap.xml(110 URL = 실제 파일 수 110개 정확히 일치) 전부 업데이트. 상호 참조 페이지(flooring-calculator, hardwood-floor-calculator, drywall-calculator, how-much-drywall-do-i-need, how-to-install-drywall 프로젝트, how-to-calculate-flooring-for-a-room, how-much-hardwood-flooring-do-i-need) 7곳에 양방향 링크 추가.
+- **검증**: HTML 태그 무결성 + JSON-LD 파싱 + 내부링크 존재 + sitemap.xml 유효성 + nav.js/blog-index 인라인 스크립트 `node --check` 전부 통과 후 push, Actions 배포 success 확인.
+- **다음 세션 참고**:
+  1. "계산기(수량)" 각도는 완전히 막혀있음(9세션 누적 20개+ 카테고리 확인, 전부 포화) — 신규 아이디어가 더 필요하면 "판단/비교" 각도(어느 자재/방법을 써야 하나)로 계속 찾을 것. 이 각도가 이번에 2건 성공했음.
+  2. 판단형 콘텐츠 후보를 찾을 때는 검색 결과에 "계산기 사이트"가 아니라 "포럼/오래된 기술문서/개별 업체 블로그"만 나오는지 확인하는 게 빈자리 판별 기준 — 이번 self-leveling 사례가 그 예시.
+  3. 신규 글을 만들기 전엔 반드시 기존 사이트에 관련 언급이 있는지(FAQ 한 줄짜리라도) grep으로 확인할 것 — 이번 drywall 건처럼 완전 백지가 아니라 "얕은 기존 언급의 심화"인 경우가 있을 수 있음, 이 경우도 신규 가치가 있으면 진행하되 handover에 정확히 기록.
+  4. 아직 못 찾은 "판단형" 후보 방향: 다른 카테고리(콘크리트, 타일, 지붕)에서도 유사한 "A자재 vs B자재, 언제 뭘 쓰나" 질문이 남아있을 수 있음 — 다음 세션에 이어서 탐색 가능.
+
+## 현재 콘텐츠 (2026-07-19, 세션 2 종료 시점 — 최종)
+- 툴 34개, 블로그 **49개**(+2, 이번 세션), 프로젝트 20개
+- "Common Mistakes/비교" 섹션 있는 툴: 30/34, 남은 4개는 노출 0
+- 신규 블로그 2개: self-leveling-compound-vs-plywood-underlayment, 1-2-vs-5-8-drywall — 둘 다 "판단/비교"형 콘텐츠로 계산기 포화 니치를 우회한 케이스
