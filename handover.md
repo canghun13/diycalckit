@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-19 (2차) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-19 (4차, 세션 종료) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -238,3 +238,13 @@
   4. (추가 확인) Quarter round vs shoe molding — Metrie, Lowe's, Craftsman Blog, Handyman's Daughter, Moulding Company, GoFlooring, WFM, ReallyCheapFloors, LA Floor Coverings 등 10개+ 확인, 완전 포화, 스킵.
   - **결론**: "판단/비교"형 각도도 무한정 열려있는 건 아님 — 콘크리트/타일/지붕처럼 이미 산업 자체가 큰 카테고리는 비교 콘텐츠까지 이미 업체 블로그들이 장악한 경우가 많음. 세션2에서 찾은 self-leveling/drywall-thickness 같은 "빈자리"는 상대적으로 틈새(서브플로어 준비, 특정 두께 선택)였기 때문에 가능했던 것으로 보임 — 다음에 이 각도로 더 찾을 때는 큰 산업 카테고리(타일/지붕/콘크리트 전체)보다 그 안의 세부 시공 디테일(우리가 이미 다루는 tile-calculator, roofing-calculator, concrete-calculator의 "다음 단계" 질문들)을 노려볼 것.
 - 이번 라운드는 신규 콘텐츠 추가 없이 버그 수정 1건으로 마무리.
+
+## 2026-07-19 세션 4 (같은 날, 사용자가 "네가 판단해서 진행해" 요청 — 능동 진행)
+- **노출 0이라 미뤄뒀던 마지막 4개 툴 처리 결정**: 트래픽 없어도 콘텐츠는 미리 준비해두는 게 맞다고 판단(신규 저권위 툴이라 노출이 늦게 붙는 것뿐, 노출이 붙기 시작했을 때 콘텐츠가 없으면 그 타이밍을 놓침 + 34개 전체 일관성이 AI검색 인용 관점에서 유리).
+  - `garden-area-calculator.html` — "Common Garden Bed Sizing Mistakes" 추가 (폭이 너무 넓어 중앙 손 안 닿음, 통로 공간 누락, 삼각형 면적 눈대중 과대추정, 일조량 확인 전에 사이즈 확정, 성장 후 확산 폭 무시)
+  - `insulation-calculator.html` — "Common Insulation Mistakes" 추가 (배트 단열재 압착, 에어실링 순서, 소핏 벤트 막힘, 봉지 커버리지를 깊이 기준 대신 면적 기준으로만 계산, 방습층 위치 오류)
+  - `renovation-cost-estimator.html` — "Common Renovation Budgeting Mistakes" 추가 (컨틴전시 생략, 견적 범위 안 맞는 비교, 검사 전 마감공사 진행, 변경주문 비용, 허가비 누락)
+  - `home-renovation-roi-calculator.html` — 검토 결과 이미 "Projects That Often Disappoint at Resale" 섹션으로 실질적 커버 중, 앞서 contractor-cost/bathroom-remodel-cost와 동일하게 그대로 둠.
+  - **결과: 34개 툴 전체가 Common Mistakes/비교 콘텐츠를 갖춤 (34/34 완료)**.
+  - 검증(HTML/JSON-LD/링크/sitemap) 통과 후 push, 배포 성공 확인.
+- 다음 세션에서는 "34/34 완료" 상태를 전제로, 새 GSC 리포트가 들어오면 이 4개 툴에 노출이 붙기 시작했는지부터 확인할 것.
