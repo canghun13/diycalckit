@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-17 (2차) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-19 | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -163,3 +163,37 @@
 - 툴 34개, 블로그 47개, 프로젝트 20개 — 전 페이지 FAQ 있음(시각적으로 노출, 스키마와 일치 확인됨)
 - "Common Mistakes/비교" 섹션 있는 툴: **16/34** — paint, primer(기존) + mulch, tile, carpet, packing-box(1차) + wallpaper, concrete, lawn-seed, fence, hardwood-floor, stain, bathroom-remodel-cost, soil, paint-coverage, drywall(2차, 이번 세션). 남은 18개는 노출량 순으로 다음 세션 계속 진행.
 - paint-calculator.html에 "gallon of paint price" 검색의도 대응 콜아웃 박스 추가(신규 UI, 사용자 확인 필요).
+
+## 2026-07-19 작업 (GSC 2026-07-19 export, "AI검색은 콘텐츠 문제해결력이 핵심 + 롱테일 전략 + 애드센스 수익화 관점 우선순위" 지시 반영)
+- **Coverage**: 심각한 문제 45(발견됨14+크롤링됨28+리디렉션3) — 07-17과 완전 동일, 계속 정체. 조치 지시받은 적 없는 리디렉션 3건은 계속 무시. 자연 해소 대기 지속.
+- **Performance 1000개 검색어 전수 필터링** (34툴/47블로그/20프로젝트 슬러그 토큰 매칭, coverage 40% 미만 & 노출 5+ 조건) → 후보 18개 중 실사용 가능한 신규 기회 0개. 전부 (a) 기존 blog(diy-vs-hiring-a-contractor)와 문구만 다른 동일 의도("hire a contractor or do it yourself" 88회 — 이미 커버 중), (b) tile-calculator.html에 이미 보강된 "타일 오버리지" 의도, (c) 네덜란드어 타일 쿼리, (d) 노출 5~14회 초저볼륨. **신규 콘텐츠 후보 0개** (5세션 연속 동일 결론).
+- **웹서치로 신규 카테고리 2건 추가 확인 → 둘 다 스킵**:
+  1. 카운터탑(countertop) 계산기 — squarefootcalculator.org, toolcr.com, countertop-calculator.com(도메인 2개), graniteselection.com 등 전용 계산기·화강암 소매업체 6개+가 이미 정교하게 장악(waste factor, sink cutout까지 반영). 완전 포화.
+  2. "타일 오버리지 얼마나 사야 하나" 단독 블로그 — HomeAdvisor, cletile.com, tilesnstone.com 등 다수가 이미 상세히 다룸 + 우리 tile-calculator.html의 "Common Tile Ordering Mistakes" 섹션이 이미 이 의도를 커버 중(신규 페이지 만들 근거 없음, 기존 자산으로 충분).
+  - **결론**: 신규 페이지 계속 없음. 리인포스먼트(기존 자산 강화)에 계속 집중하는 게 맞다는 판단 재확인.
+- **버그 발견/수정 — square-footage-calculator.html에 FAQ 섹션 중복**: "Frequently Asked Questions" H2가 두 번, 서로 다른 Q&A 4개씩(총 8개, 겹침 없음)이 따로 있었음 — 이전 보강 작업 때 기존 섹션을 지우지 않고 새 섹션만 추가해서 생긴 버그로 추정. 8개 질문 전부 살려서 하나의 FAQ로 병합, JSON-LD FAQPage 스키마도 8개 전부로 동기화(기존엔 4개만 반영돼 화면-스키마 불일치 상태였음).
+- **콘텐츠 보강 — "Common Mistakes" 섹션 없는 34개 툴 중 실제 공백 재조사**: 지난 세션 기록엔 "18개 남음"으로 돼 있었으나, 이번에 확장된 패턴(Mistake/Comparison/Wrong/Red Flag/Avoid/vs.)으로 전수 재스캔한 결과 **실제 공백은 11개**였음(기존 기록이 "Red Flags", "Where Budgets Go Wrong" 같은 동의어 섹션을 놓치고 있었음). 이 중 노출량 있는 5개를 이번 세션에 처리:
+  - `primer-calculator.html` (노출576, 사이트 내 1위) — Common Primer Mistakes 5개 추가 (흰색 프라이머+진한색 위에 칠하기, 페인트 커버리지 기준으로 잘못 계산, 보수 부위 프라이머 생략 등)
+  - `square-footage-calculator.html` (노출422) — 위 버그 수정 + Common Square Footage Mistakes 5개 추가
+  - `paint-calculator.html` (노출179) — Common Paint Buying Mistakes 5개 추가 (반내림 구매, 배치 안 맞춰 사기, 트림용 별도 페인트 누락 등)
+  - `flooring-calculator.html` (노출60) — Common Flooring Ordering Mistakes 5개 추가 (아클리메이션 생략, 균일 waste factor 오적용, 서브플로어 평탄도 미확인 등)
+  - `roofing-calculator.html` (노출29) — Common Roofing Estimate Mistakes 5개 추가 (풋프린트=지붕면적 착각, 릿지캡/스타터 누락, underlayment 예산 누락 등)
+  - **재확인/스킵**: `contractor-cost-calculator.html`(노출379)는 "Contractor Red Flags to Watch For" 섹션이 이미 있어서 실질적으로 커버됨, `bathroom-remodel-cost-calculator.html`(노출128)도 "Where Bathroom Remodel Budgets Go Wrong" 섹션이 이미 있어서 스킵 — 둘 다 지난 세션 기록의 "미완료" 표시가 틀렸던 케이스.
+  - **노출 0인 나머지 4개(garden-area, home-renovation-roi, insulation, renovation-cost-estimator)는 이번 라운드 보류** — 사용자가 명시한 "애드센스 수익화 관점 우선순위" 지시에 따라, 검색 노출이 전혀 없는 페이지보다 실제 노출 발생 중인 페이지 강화가 클릭 전환 가능성이 높다고 판단. 다음 세션에 노출이 생겼는지 먼저 확인 후 순서 결정할 것.
+- **CTR 개선 실행** (title/meta 텍스트만 변경, H1·JSON-LD headline 유지 — 화면 확인 불필요):
+  - `tools/fence-calculator.html` (순위20.91/노출117/클릭0, 포지션 상위인데 0클릭인 명확한 손실 구간) — "+ Total Cost (Free)" 훅 추가
+  - `projects/how-to-install-carpet-tiles.html` (순위42.82/노출128/클릭0) — "DIY in a Weekend, No Glue Needed" 훅으로 교체(peel-and-stick 각도 강조)
+  - `blog/how-deep-should-raised-garden-bed-be.html` (순위36.35/노출46/클릭0) — "(6-24" by Plant)" 숫자 훅 추가, 페이지 본문의 실제 깊이 범위(4~24인치, FAQ의 "최대 유효 깊이 24인치")와 대조해 정확성 확인 후 적용
+  - `blog/how-much-gravel-for-garden-bed.html` (순위11.63/노출49/클릭0, 사이트 내 최고 포지션인데 0클릭) — **재수정 보류**: 이미 07-13/07-15에 "60% cheaper" 훅이 적용된 상태고, 노출 자체가 48시간 이내에 반영되기엔 시간이 부족(3개월 누적 데이터라 최신 타이틀의 효과가 아직 거의 반영 안 됐을 가능성 높음). 노출 49회 자체도 표본이 작아 포지션 11위라도 0클릭이 통계적으로 이례적이지 않음 — 다음 리포트에서 재확인.
+- **sitemap.xml**: 위 8개 파일(primer/paint/square-footage/flooring/roofing-calculator, fence-calculator, how-to-install-carpet-tiles, how-deep-should-raised-garden-bed-be) lastmod 2026-07-19로 갱신. how-deep-should-raised-garden-bed-be.html은 JSON-LD dateModified도 동기화.
+- **검증**: HTML 태그 무결성(HTMLParser, open/close 스택 확인) + JSON-LD `json.loads()` 파싱(전 파일 통과) + 내부링크 실제 파일 존재 확인 + sitemap.xml `xml.etree.ElementTree.parse()` 유효성(108 URL = 실제 html 파일 수 108개 정확히 일치, 고아 페이지 없음) + `node --check`로 수정 파일들의 인라인 `<script>` 문법 확인 — 전부 통과 후 push, Actions 배포 success 확인.
+- **다음 세션 참고**:
+  1. "Common Mistakes/비교" 섹션 진짜 공백은 이제 4개뿐(garden-area, home-renovation-roi, insulation, renovation-cost-estimator) — 전부 노출 0. 다음 GSC 리포트에서 이 4개 중 노출이 생긴 게 있으면 그것부터 처리.
+  2. 앞으로 "Common Mistakes 있는지" 스캔할 때는 "Mistake/Comparison" 뿐 아니라 "Wrong/Red Flag/Avoid/vs." 패턴까지 넓게 검색할 것 — 좁은 패턴으로 스캔하면 이번처럼 이미 커버된 페이지를 "미완료"로 잘못 표시하게 됨.
+  3. 신규 콘텐츠는 5세션 연속 후보 0건 — 니치 자체가 포화 상태이므로, 다음에도 "신규 왜 안 하냐" 재요청이 오면 반복 재확인보다 (a) 노출 0인 나머지 페이지 보강, (b) CTR 최적화 잔여 대상 스캔, (c) 사이트 구조적 버그 재점검(이번 FAQ 중복 버그처럼 — 다른 페이지에도 유사 중복이 있을 수 있으니 전수 스캔 스크립트를 34+47+20개 전체에 돌려볼 것)에 우선순위.
+
+## 현재 콘텐츠 (2026-07-19, 세션 종료 시점)
+- 툴 34개, 블로그 47개, 프로젝트 20개 (신규 없음, 5세션 연속) — 전 페이지 FAQ 있음
+- "Common Mistakes/비교" 섹션 있는 툴: **30/34** (실질적으로 거의 완료). 남은 4개(garden-area, home-renovation-roi, insulation, renovation-cost-estimator)는 전부 노출 0 — 노출 생기면 우선 처리.
+- CTR 텍스트 훅 적용 누적: fence-calculator, carpet-tiles 프로젝트, raised-bed-depth 블로그(이번 세션) + gravel-for-garden-bed, primer, fence 등(이전 세션) — 대부분 데이터 반영 시차 있어 다음 리포트에서 클릭 발생 여부 확인 필요.
+- square-footage-calculator.html FAQ 중복 버그 수정 완료 — 유사 버그가 다른 페이지에도 있을 가능성, 다음 세션 전수 스캔 권장.
