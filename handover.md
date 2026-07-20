@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-19 (4차, 세션 종료) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-21 (세션 종료) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -248,3 +248,36 @@
   - **결과: 34개 툴 전체가 Common Mistakes/비교 콘텐츠를 갖춤 (34/34 완료)**.
   - 검증(HTML/JSON-LD/링크/sitemap) 통과 후 push, 배포 성공 확인.
 - 다음 세션에서는 "34/34 완료" 상태를 전제로, 새 GSC 리포트가 들어오면 이 4개 툴에 노출이 붙기 시작했는지부터 확인할 것.
+
+## 2026-07-21 작업 (GSC 2026-07-21 export, 3개월 기준. "AI검색은 콘텐츠가 도메인권위보다 중요 + 문제해결/비교분석형 콘텐츠 + 롱테일 전략 + 애드센스 수익화 관점 우선순위" 지시 반영)
+- **Coverage**: 심각한 문제 45(발견됨14+크롤링됨28+리디렉션3) — 07-17/07-19와 완전 동일, 계속 정체. sitemap=110=실제 html 파일 수(루트 4개 포함) 정확히 일치, 고아 페이지 없음. 계속 자연 해소 대기, 이번 라운드 조치 없음. 노출 0이던 마지막 4개 툴(garden-area, insulation, renovation-cost-estimator, home-renovation-roi)은 이번에도 페이지 리포트에 아예 등장하지 않음(여전히 노출 0) — 07-19 세션4에서 미리 콘텐츠 채워둔 게 맞는 판단이었는지는 계속 지켜볼 것.
+- **Performance 1000+개 검색어 전수 필터링** (34툴/49블로그/20프로젝트 슬러그 토큰 매칭, 노출 5+ 조건) → 미매칭 18개 후보 전부 (a) 기존 blog(diy-vs-hiring-a-contractor)와 동일 의도("hire a contractor or do it yourself" 90회, "diy or hire a pro" 31회 — 이미 커버), (b) tile-calculator.html에 이미 보강된 "타일 오버리지" 의도("calculating tile overage" 13회, "tile overage percentage" 10회), (c) 무빙 관련(기존 스킵 확정 클러스터), (d) 네덜란드어 타일 쿼리(vloercalculator, hoeveel tegels 등). **신규 콘텐츠 후보 0개 — 7세션 연속 동일 결론.**
+- **CTR 개선 후보 재확인, 이번 라운드 조치 없음**: 0클릭+순위 40위 이내 페이지 10개(paint-a-room 비용/packing-box/primer 블로그/tile-a-floor 비용/home-renovations-ROI/fence/soil-for-raised-bed/gravel-for-garden-bed/raised-bed-depth/moving-cost-guide) 전부 이전 세션들(07-13~07-19)에 title/meta 훅이 이미 적용된 상태. 사이트 전체 3개월 누적 클릭이 여전히 11건(모바일 7+데스크톱4)뿐이라 표본이 너무 작아 추가 판단 근거 없음 — 다음 리포트에서 재확인.
+  - 참고: 모바일 CTR(0.25%)/평균순위(32.5)가 데스크톱(0.06%/65.4)보다 뚜렷이 우수한 추세 계속 유지.
+- **웹서치로 신규 기회 재확인 (사이트 내 최고노출 카테고리 기준)**: "latex primer vs oil-based primer"(primer-calculator가 사이트 내 노출 1위, 605회/분기라 이 카테고리 우선 검토) → Craftsman Blog, Lowe's, Fine Homebuilding, True Value, Birla White, A Piece of Rainbow, Mrs. Ashley French, No Drip Painting, Supershade South 등 9개+ 매체가 이미 latex/oil/shellac 3종 비교를 상세히 커버, 완전 포화 확인 후 스킵. (mulch bulk-vs-bag, drywall 1/2·5/8 비교 등은 이미 사이트에 반영돼 있음을 grep으로 재확인.)
+- **전략 전환 — 내부링크 구조 결함 발견/수정 (신규 액션 유형)**: "Common Mistakes"(34/34)·CTR 훅·FAQ 중복 버그 등 기존 보강 루틴이 사실상 소진된 상태라, 이번엔 103개 페이지 전체의 **내부링크 개수**를 스크립트로 전수 스캔(페이지당 평균 5.25개, 최소 2개). 그 결과:
+  - **`tools/primer-calculator.html`(사이트 내 노출 1위, 605회)가 관련링크 단 2개뿐**이었고, 그마저도 자신의 짝꿍 블로그 3개(how-much-primer-do-i-need, how-many-coats-of-primer-do-i-need, when-to-use-primer-before-painting)로 가는 링크가 하나도 없었음 — 반대로 그 블로그 3개는 전부 primer-calculator로 링크가 걸려 있어서 **일방통행 구조**였음(사용자가 blog에서 tool로는 갈 수 있지만, tool에서 blog로는 못 감 — 방문자가 제일 많이 들어오는 페이지에서 다음 페이지로 이동할 경로가 없었던 것).
+  - 같은 성격의 결함을 사이트 내 노출 상위 페이지 위주로 스캔해 총 **11개 파일**에서 발견/수정:
+    - `tools/primer-calculator.html` — 짝꿍 블로그 3개 추가
+    - `tools/tile-calculator.html` — how-to-tile-a-floor, how-to-grout-tile 프로젝트 추가
+    - `tools/concrete-calculator.html` — how-to-pour-a-concrete-slab 프로젝트 추가
+    - `tools/wallpaper-calculator.html` — how-to-wallpaper-a-room 프로젝트 추가
+    - `tools/mulch-calculator.html` — how-to-lay-mulch 프로젝트 추가
+    - `tools/paint-calculator.html` — paint-coverage-calculator, 커버리지 블로그, how-to-paint-a-room 프로젝트 추가
+    - `tools/paint-coverage-calculator.html` — 가격 블로그(how-much-does-a-gallon-of-paint-cost) 추가
+    - `blog/how-much-does-it-cost-to-paint-a-room.html`(사이트 내 블로그 노출 1위, 471회) — paint-coverage-calculator, 커버리지 블로그, 가격 블로그 3개 추가
+    - `blog/how-much-does-it-cost-to-tile-a-floor.html` — how-to-grout-tile 프로젝트 추가
+    - `blog/best-soil-for-raised-garden-beds.html` — raised-garden-bed-calculator, gravel-vs-mulch-for-garden-beds, how-to-plan-a-garden 추가
+    - `projects/how-to-pour-a-concrete-slab.html`(기존 관련링크 1개뿐이었음) — how-much-concrete-do-i-need 블로그, square-footage-calculator 추가
+  - **판단 근거(애드센스 수익화 관점)**: 신규 저볼륨 페이지를 새로 만드는 것보다, 이미 노출/방문이 발생 중인 최상위 페이지에서 사용자가 다음 페이지로 못 넘어가고 이탈하는 구조적 손실을 막는 게 세션당 페이지뷰(=광고 노출 수)에 더 직접적으로 기여한다고 판단. 부수적으로 색인 안 된 42개 페이지 쪽으로도 내부링크가 일부 뻗어있어 크롤링 발견에도 도움.
+  - **검증**: HTML 태그 무결성(HTMLParser open/close 스택) + JSON-LD 파싱 + 내부링크 대상 파일 실제 존재 여부 + sitemap.xml lastmod 11개 파일 2026-07-21 갱신(+ 그중 3개는 changefreq도 stale yearly→monthly로 같이 정리) + `xml.etree.ElementTree` 유효성(110 URL = 루트4+tools34+blog49+projects20+각 index 3 = 실제 파일 수 110개 정확히 일치) 전부 통과 후 push, Actions 배포 success 확인.
+- **다음 세션 참고**:
+  1. 이번에 스캔한 "내부링크 개수 전수 스캔" 스크립트는 임계값을 노출 상위 페이지 위주(관련링크 ≤3개, 또는 짝꿍 콘텐츠 누락)로만 적용했음 — 노출이 낮은 나머지 페이지들도 같은 패턴(일방통행 링크, 관련링크 2~3개)이 남아있을 가능성 높음. 다음 세션에서 전체 103개 페이지로 스캔 범위를 넓혀 계속 이어갈 것 (이번 세션 스캔 스크립트: `re.findall(r'href="/(tools|blog|projects)/([a-z0-9\-]+)\.html"', content)`로 슬러그 추출 후 파일명 토큰 매칭으로 "명백히 관련 있는데 링크 없는 페이지" 찾는 방식).
+  2. 신규 콘텐츠는 7세션 연속 후보 0건 — 니치 자체가 포화. 웹서치는 매 세션 사이트 내 최고노출 카테고리 1~2개로 좁혀서 확인하는 정도로 계속하되, 반복 재확인보다 (a) 내부링크 결함 스캔 확장, (b) 노출 붙기 시작한 페이지(특히 07-19 세션4에서 처리한 4개 툴) 확인, (c) CTR 표본이 쌓였는지(총 클릭 11건→더 늘었는지) 확인에 우선순위.
+  3. GA 데이터(2026-06-23~07-20): 활성사용자 75명, (direct)/(none) 57명이 압도적 1위, google/organic 9명 — 아직 유기 검색 트래픽 자체가 매우 작은 초기 단계. 신규 콘텐츠보다 구조적 개선(내부링크, 색인)이 앞으로도 몇 세션은 더 유효한 우선순위일 것으로 판단.
+
+## 현재 콘텐츠 (2026-07-21, 세션 종료 시점)
+- 툴 34개, 블로그 49개, 프로젝트 20개 (신규 없음, 7세션 연속) — 전 페이지 FAQ 있음, Common Mistakes/비교 34/34 완료
+- 이번 세션 신규 액션 유형: 내부링크(관련 콘텐츠 크로스링크) 결함 11개 파일 수정 — 사이트 전체 스캔은 아직 노출 상위 위주만 완료, 나머지는 다음 세션 계속
+- 사이트 전체 트래픽 여전히 매우 작음(3개월 누적 클릭 11건) — 구조적 개선(내부링크/색인) 우선순위가 계속 유효
+
