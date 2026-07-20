@@ -11,6 +11,9 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [Insulation Calculator](https://diycalckit.com/tools/insulation-calculator.html): Calculates bags or rolls of insulation needed for attic, wall, or floor by area and target R-value.
 - [Gutter Calculator](https://diycalckit.com/tools/gutter-calculator.html): Calculates linear feet of gutter, downspouts, and hangers needed based on home size and roof type (gable or hip).
 
+### Holiday & Seasonal
+- [Christmas Lights Calculator](https://diycalckit.com/tools/christmas-lights-calculator.html): Calculates total feet, strand count, and bulb count of Christmas lights needed for roofline, windows, doors, and trees.
+
 ### Paint & Wall
 - [Paint Calculator](https://diycalckit.com/tools/paint-calculator.html): Calculates gallons of paint needed based on room dimensions, number of coats, and door/window deductions.
 - [Paint Cost Calculator](https://diycalckit.com/tools/paint-cost-calculator.html): Estimates total cost to paint a room including paint, primer, supplies, and optional professional labor.
@@ -92,6 +95,7 @@ Step-by-step DIY project guides with built-in calculator links.
 
 ## Cost Guides & Blog
 
+- [How Many Christmas Lights Do I Need? Roofline, Tree & Window Guide](https://diycalckit.com/blog/how-many-christmas-lights-do-i-need.html): Formulas to calculate feet, strands, and bulbs for roofline, windows, doors, and trees.
 - [How Much Insulation Do I Need? Attic & Wall Guide](https://diycalckit.com/blog/how-much-insulation-do-i-need.html): Bags or rolls of insulation by area and R-value. Recommended R-values by area, blown-in vs. batt.
 - [How Many Tiles Do I Need? Tile Count by Room Size](https://diycalckit.com/blog/how-many-tiles-do-i-need.html): Tile count by tile size, layout pattern, and room type, with box-coverage guidance.
 - [How Many Shingles Do I Need? Roofing Calculator Guide](https://diycalckit.com/blog/how-many-shingles-do-i-need.html): Roofing squares and shingle bundles from roof footprint and pitch.

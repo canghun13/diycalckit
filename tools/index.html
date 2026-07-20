@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Home Improvement Calculators — DIYCalcKit</title>
-  <meta name="description" content="34 free home improvement calculators for paint, flooring, tile, renovation costs, garden, roofing, and moving. Instant results, no sign-up required.">
+  <meta name="description" content="35 free home improvement calculators for paint, flooring, tile, renovation costs, garden, roofing, moving, and seasonal decor. Instant results, no sign-up required.">
   <link rel="canonical" href="https://diycalckit.com/tools/">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -55,7 +55,7 @@
   <div class="hero" style="padding:3.5rem 2rem 3rem;">
     <div class="hero-inner">
       <h1 style="font-size:clamp(1.8rem,4vw,2.8rem)">Home Improvement <em>Calculators</em></h1>
-      <p class="hero-sub">34 free calculators — paint, flooring, tile, renovation costs, garden, roofing, and moving. Instant results, no sign-up.</p>
+      <p class="hero-sub">35 free calculators — paint, flooring, tile, renovation costs, garden, roofing, moving, and seasonal. Instant results, no sign-up.</p>
     </div>
   </div>
 
@@ -72,6 +72,7 @@
       <button class="filter-btn" onclick="setFilter('garden', this)">🌿 Garden & Outdoor</button>
       <button class="filter-btn" onclick="setFilter('moving', this)">🚚 Moving</button>
       <button class="filter-btn" onclick="setFilter('roofing', this)">🏠 Roofing & Insulation</button>
+      <button class="filter-btn" onclick="setFilter('seasonal', this)">🎄 Holiday & Seasonal</button>
     </div>
 
     <div id="toolsGrid"></div>
@@ -110,6 +111,7 @@
 <li><a href="/tools/roofing-calculator.html">Roofing Calculator</a></li>
 <li><a href="/tools/insulation-calculator.html">Insulation Calculator</a></li>
 <li><a href="/tools/gutter-calculator.html">Gutter Calculator</a></li>
+<li><a href="/tools/christmas-lights-calculator.html">Christmas Lights Calculator</a></li>
 </ul></noscript>
         <p class="no-results" id="noResults">No calculators found. Try a different keyword.</p>
   </section>
@@ -159,6 +161,8 @@ const TOOLS_DATA = [
   { name: "Roofing Calculator", url: "/tools/roofing-calculator.html", icon: "🏠", desc: "Shingle bundles, roofing squares, and underlayment from footprint and pitch.", cat: "roofing" },
   { name: "Insulation Calculator", url: "/tools/insulation-calculator.html", icon: "🧊", desc: "Bags or rolls of insulation needed by area, type, and target R-value.", cat: "roofing" },
   { name: "Gutter Calculator", url: "/tools/gutter-calculator.html", icon: "🌧️", desc: "Linear feet of gutter, downspouts, and hangers needed by home size and roof type.", cat: "roofing" },
+  // Holiday & Seasonal
+  { name: "Christmas Lights Calculator", url: "/tools/christmas-lights-calculator.html", icon: "🎄", desc: "How many feet, strands, and bulbs of Christmas lights for your roofline, windows, doors, and trees.", cat: "seasonal" },
 ];
 
 const CATEGORY_LABELS = {
@@ -169,6 +173,7 @@ const CATEGORY_LABELS = {
   garden:  "🌿 Garden & Outdoor",
   moving:  "🚚 Moving",
   roofing: "🏠 Roofing & Insulation",
+  seasonal:"🎄 Holiday & Seasonal",
 };
 
 let currentFilter = 'all';

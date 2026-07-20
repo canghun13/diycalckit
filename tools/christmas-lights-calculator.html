@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Lights Calculator — How Many Feet Do I Need?</title>
+  <meta name="description" content="Calculate exactly how many feet, strands, and bulbs of Christmas lights you need for your roofline, windows, doors, and trees. Free instant estimate.">
+  <link rel="canonical" href="https://diycalckit.com/tools/christmas-lights-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Christmas Lights Calculator — How Many Feet Do I Need?","description":"Calculate linear feet, strand count, and bulb count of Christmas lights needed for roofline, windows, doors, and trees.","url":"https://diycalckit.com/tools/christmas-lights-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many feet of Christmas lights do I need for my house?","acceptedAnswer":{"@type":"Answer","text":"Start by measuring your roofline (the horizontal eaves, not the sloped edges), then add roughly 10% for corners and overlap. A typical single-story home needs 100-150 feet for the roofline alone; add more for windows, doors, and trees."}},{"@type":"Question","name":"How many strands of lights do I need?","acceptedAnswer":{"@type":"Answer","text":"Divide your total linear feet by the strand length. Standard mini-light strands run about 33 feet (100 count at 4-inch spacing), while C9 bulb strands typically run 25 feet at 12-inch spacing. A 150 ft roofline needs about 5 mini-light strands or 6 C9 strands."}},{"@type":"Question","name":"How many lights does a 6-foot Christmas tree need?","acceptedAnswer":{"@type":"Answer","text":"For medium coverage, plan on roughly 100 mini lights per vertical foot of tree — about 600 lights for a 6-foot tree. Dense, professional-looking coverage runs closer to 150 lights per foot (900 for a 6-foot tree), while sparse accent coverage can use as few as 60 per foot."}},{"@type":"Question","name":"Mini lights or C9 bulbs — which uses fewer feet?","acceptedAnswer":{"@type":"Answer","text":"C9 bulbs need fewer total lights because they're spaced further apart (12 inches vs. 4 inches for minis), but mini lights create denser, twinklier coverage per foot. C9s are the classic bold roofline look; minis are better for wrapping trees, railings, and bushes."}},{"@type":"Question","name":"Can I plug multiple strands of lights together?","acceptedAnswer":{"@type":"Answer","text":"Most incandescent strands can be connected end-to-end up to 3-5 strands (200-350 lights) before voltage drop dims the far end. LED strands can typically be connected 40-50+ strands because they draw far less current. Check the tag on your specific lights for the exact end-to-end limit."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Christmas Lights Calculator — How Many Feet Do I Need?</h1>
+    <p class="tool-desc">Enter your roofline, windows, doors, and any trees to get the exact footage, strand count, and bulb count for your holiday light display.</p>
+
+    <div class="tool-box">
+      <div class="form-group"><label>Roofline Length (ft) — total eave perimeter you'll decorate</label><input type="number" id="cl-roofline" placeholder="e.g. 120" min="0" step="1"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Corners / Peaks</label><input type="number" id="cl-corners" placeholder="e.g. 4" min="0" step="1" value="4"></div>
+        <div class="form-group"><label>Windows to Outline</label><input type="number" id="cl-windows" placeholder="e.g. 3" min="0" step="1" value="0"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Doors to Outline</label><input type="number" id="cl-doors" placeholder="e.g. 1" min="0" step="1" value="0"></div>
+        <div class="form-group"><label>Tree Height (ft, 0 if none)</label><input type="number" id="cl-tree" placeholder="e.g. 6" min="0" step="0.5" value="0"></div>
+      </div>
+      <div class="form-group">
+        <label>Tree Coverage Density</label>
+        <select id="cl-density">
+          <option value="60">Sparse (accent glow)</option>
+          <option value="100" selected>Medium (standard full look)</option>
+          <option value="150">Dense (professional/showstopper)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Light Type</label>
+        <select id="cl-type">
+          <option value="mini" selected>Mini Lights (4" spacing, ~33 ft/strand)</option>
+          <option value="c9">C9 Bulbs (12" spacing, ~25 ft/strand)</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" onclick="calcLights()" style="width:100%">Calculate Lights Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="cl-feet">—</div>
+        <div class="result-label">total feet of lights</div>
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="cl-strands">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">strands needed</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="cl-bulbs">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">bulbs total</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;" id="cl-detail"></p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">How to Measure for Christmas Lights</h2>
+    <p>Measure the roofline along the eaves — the horizontal edges where the roof overhangs the wall — not the sloped gable ends. Walk the perimeter with a tape measure or measuring wheel, or trace it on Google Maps satellite view and use the measure-distance tool for a rough estimate without a ladder.</p>
+    <p>Add about 10% to your roofline total for corner wraps, plug-in slack, and clip spacing loss. Each corner or peak typically eats up an extra 6-10 feet of usable light run because bulbs bunch up going around the turn.</p>
+    <p>For windows, measure the outer trim perimeter (roughly 18 ft for a standard window). For doors, use about 20 ft for the frame. For trees, the density you choose matters more than the exact formula — walk around a decorated tree at a neighbor's house or in a store display to gauge how full you want yours to look before you commit to "dense."</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Mini Lights vs. C9 Bulbs</h2>
+    <table>
+      <thead><tr><th></th><th>Mini Lights</th><th>C9 Bulbs</th></tr></thead>
+      <tbody>
+        <tr><td>Bulb spacing</td><td>~4 inches</td><td>~12 inches</td></tr>
+        <tr><td>Typical strand length</td><td>~33 ft (100 ct)</td><td>~25 ft (25 ct)</td></tr>
+        <tr><td>Best for</td><td>Trees, bushes, railings, dense wraps</td><td>Rooflines, classic bold look</td></tr>
+        <tr><td>End-to-end runs (incandescent)</td><td>3-5 strands max</td><td>3-5 strands max</td></tr>
+        <tr><td>Cost per foot</td><td>$0.20–0.40</td><td>$0.45–0.90</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Common Christmas Light Mistakes to Avoid</h2>
+    <ul style="margin:0.75rem 0 1rem 1.25rem; line-height:1.85;">
+      <li><strong>Underestimating corners and peaks.</strong> A roofline total that ignores the extra length used up wrapping each corner almost always comes up short by one full strand.</li>
+      <li><strong>Daisy-chaining too many incandescent strands.</strong> Voltage drop makes the far end of the run visibly dimmer past 3-5 connected strands — run a separate extension cord to the far side of a long roofline instead.</li>
+      <li><strong>Using indoor-rated lights outside.</strong> Always check for an outdoor (wet-location) rating; indoor strands aren't sealed against rain and snow and can short out or become a shock hazard.</li>
+      <li><strong>Mixing old strand voltages with new LED strands.</strong> LEDs and incandescents shouldn't be connected end-to-end on the same run — their draw is too different and can trip a breaker or damage the LEDs.</li>
+      <li><strong>Not testing every strand before hanging it.</strong> Finding one bad bulb after the lights are clipped to a two-story roofline is a much worse afternoon than finding it on the ground.</li>
+    </ul>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Buy 10-15% more lights than your calculation shows. Extra strands become spare parts for burnt-out bulbs mid-season and give you slack to redo a section that looks uneven the first time you plug in.
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How many feet of Christmas lights do I need for my house?</strong></p>
+    <p>Start by measuring your roofline (the horizontal eaves, not the sloped edges), then add roughly 10% for corners and overlap. A typical single-story home needs 100-150 feet for the roofline alone; add more for windows, doors, and trees.</p>
+    <p><strong>How many strands of lights do I need?</strong></p>
+    <p>Divide your total linear feet by the strand length. Standard mini-light strands run about 33 feet (100 count at 4-inch spacing), while C9 bulb strands typically run 25 feet at 12-inch spacing. A 150 ft roofline needs about 5 mini-light strands or 6 C9 strands.</p>
+    <p><strong>How many lights does a 6-foot Christmas tree need?</strong></p>
+    <p>For medium coverage, plan on roughly 100 mini lights per vertical foot of tree — about 600 lights for a 6-foot tree. Dense, professional-looking coverage runs closer to 150 lights per foot (900 for a 6-foot tree), while sparse accent coverage can use as few as 60 per foot.</p>
+    <p><strong>Mini lights or C9 bulbs — which uses fewer feet?</strong></p>
+    <p>C9 bulbs need fewer total lights because they're spaced further apart (12 inches vs. 4 inches for minis), but mini lights create denser, twinklier coverage per foot. C9s are the classic bold roofline look; minis are better for wrapping trees, railings, and bushes.</p>
+    <p><strong>Can I plug multiple strands of lights together?</strong></p>
+    <p>Most incandescent strands can be connected end-to-end up to 3-5 strands (200-350 lights) before voltage drop dims the far end. LED strands can typically be connected 40-50+ strands because they draw far less current. Check the tag on your specific lights for the exact end-to-end limit.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/blog/how-many-christmas-lights-do-i-need.html">How Many Christmas Lights Do I Need? Complete Guide</a></li>
+        <li><a href="/tools/gutter-calculator.html">Gutter Calculator — How Many Feet of Gutter Do I Need?</a></li>
+        <li><a href="/tools/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<script>
+function calcLights() {
+  const roofline = parseFloat(document.getElementById('cl-roofline').value) || 0;
+  const corners = parseFloat(document.getElementById('cl-corners').value) || 0;
+  const windows = parseFloat(document.getElementById('cl-windows').value) || 0;
+  const doors = parseFloat(document.getElementById('cl-doors').value) || 0;
+  const treeHeight = parseFloat(document.getElementById('cl-tree').value) || 0;
+  const density = parseFloat(document.getElementById('cl-density').value);
+  const type = document.getElementById('cl-type').value;
+
+  if (!roofline && !treeHeight && !windows && !doors) {
+    alert('Please enter at least a roofline length, tree height, or window/door count.');
+    return;
+  }
+
+  const rooflineFt = roofline * 1.1;
+  const cornerFt = corners * 8;
+  const windowFt = windows * 18;
+  const doorFt = doors * 20;
+  // treeHeight * density(bulbs per vertical ft) converted to feet based on bulb spacing
+  const bulbsPerFt = type === 'mini' ? 3 : 1;
+  const strandLength = type === 'mini' ? 33 : 25;
+  const treeBulbs = treeHeight * density;
+  const treeFt = treeBulbs / bulbsPerFt;
+
+  const totalFt = Math.ceil(rooflineFt + cornerFt + windowFt + doorFt + treeFt);
+  const totalBulbs = Math.round(totalFt * bulbsPerFt);
+  const strands = Math.max(1, Math.ceil(totalFt / strandLength));
+  const costPerFt = type === 'mini' ? 0.3 : 0.65;
+  const costLow = Math.round(totalFt * costPerFt * 0.8);
+  const costHigh = Math.round(totalFt * costPerFt * 1.2);
+
+  document.getElementById('cl-feet').textContent = totalFt.toLocaleString();
+  document.getElementById('cl-strands').textContent = strands;
+  document.getElementById('cl-bulbs').textContent = totalBulbs.toLocaleString();
+  document.getElementById('cl-detail').textContent = 'Based on ' + strandLength + ' ft strands. Estimated cost: $' + costLow.toLocaleString() + '–$' + costHigh.toLocaleString() + '.';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

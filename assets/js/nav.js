@@ -53,10 +53,12 @@ const TOOLS = [
   { name: "Packing Box Calculator", url: "/tools/packing-box-calculator.html" },
   { name: "Window Treatment Calculator", url: "/tools/window-treatment-calculator.html" },
   { name: "Paint Coverage Calculator", url: "/tools/paint-coverage-calculator.html" },
+  { name: "Christmas Lights Calculator", url: "/tools/christmas-lights-calculator.html" },
 ];
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "How Many Christmas Lights Do I Need? Roofline, Tree & Window Guide", url: "/blog/how-many-christmas-lights-do-i-need.html", date: "2026-07-21", desc: "Free formulas to calculate feet, strands, and bulbs for roofline, windows, doors, and trees." },
   { name: "Self-Leveling Compound vs. Plywood Underlayment: Which Do You Need?", url: "/blog/self-leveling-compound-vs-plywood-underlayment.html", date: "2026-07-19", desc: "What each product actually fixes, cost comparison, and when a subfloor needs both before LVP, hardwood, or tile." },
   { name: "1/2\" vs. 5/8\" Drywall: Which Do You Need for Walls & Ceilings?", url: "/blog/1-2-vs-5-8-drywall.html", date: "2026-07-19", desc: "Weight, sag resistance, fire rating, and cost compared — plus when building code requires 5/8\" Type X." },
   { name: "How Many Tiles Do I Need? Tile Count by Room Size", url: "/blog/how-many-tiles-do-i-need.html", date: "2026-07-15", desc: "Calculate exactly how many tiles you need for any floor or wall, by tile size and layout pattern." },
