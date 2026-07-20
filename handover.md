@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-21 (세션 종료) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-21 (세션2 종료) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -280,4 +280,31 @@
 - 툴 34개, 블로그 49개, 프로젝트 20개 (신규 없음, 7세션 연속) — 전 페이지 FAQ 있음, Common Mistakes/비교 34/34 완료
 - 이번 세션 신규 액션 유형: 내부링크(관련 콘텐츠 크로스링크) 결함 11개 파일 수정 — 사이트 전체 스캔은 아직 노출 상위 위주만 완료, 나머지는 다음 세션 계속
 - 사이트 전체 트래픽 여전히 매우 작음(3개월 누적 클릭 11건) — 구조적 개선(내부링크/색인) 우선순위가 계속 유효
+
+## 2026-07-21 세션 2 (같은 날, 사용자가 "신규를 안 했다, 공격적으로 카테고리 확장해라, 롱테일 또는 조회수 많고 문서수 적은 키워드를 찾아라" 재요청)
+- **문제 인식**: 세션1에서 "신규 후보 0개"로 결론냈던 게 사용자 입장에선 수비적으로 보였음. 이번엔 실제로 신규 카테고리를 만드는 방향으로 전환.
+- **8개 신규 후보 웹서치 (전부 전문 계산기/미디어 사이트 5~9개+로 포화 확인, 스킵)**:
+  1. 다락 소핏/리지 벤트 계산기 — GAF, Owens Corning, Atlas Roofing, Quarrix, FAMCO, roofpitch.net, weathershieldroofers.com 등 7개+
+  2. 창고(shed) 기초/자갈패드 계산기 — HelloGravel, slabcalc.co, gravelcalculators.com, backyardbases.com, YardCalc, constructlytools.com 등 7개+
+  3. 매입등(recessed lighting) 계산기 — CityLightsSF, cdcalculators.com, homeprojectcalculator.com, homechisel.com, feslighting.com, evrycalc.com, northerncult.com 등 7개+
+  4. 식물 간격(square foot gardening) 계산기 — bobbyfordkubota, ajaxcalculators, farmergrows, inchcalculator, gardencalcu.com 등 7개+
+  5. 통합 룸 리노베이션 번들형 계산기("한 페이지에서 페인트+바닥재+드라이월 전부") — ProjectCalcs, mytimecalculator.com, best-calculators.com, constructlytools.com, costflowai.com, remodelum.com 등 이미 정확히 이 컨셉으로 허브 사이트 다수 존재. **"신규 콘텐츠 타입" 아이디어(번들러)까지 이미 레드오션임을 확인**.
+  6. 펜스 포스트홀 콘크리트 계산기 — Inch Calculator, everything-about-concrete.com, MudMixer, treeplantation.com, Omni Calculator, materialcalcpro.com, concretecalculatoronline.com, Bob Vila 등 8개+
+  7. 크리스마스 조명 계산기(정적 아티클 형태) — J Bell Services, Christmas Light Emporium, RoofScope, Christmas Light Source, Angi, Ollny, austintrimlight, luxlights 등 8개+ **역시 포화** (아래에서 이 주제로 신규 제작을 강행한 이유는 별도 설명)
+  8. 데크/펜스 건축허가(permit) 가이드 — Decks.com, TimberTech, J&W Lumber, GetASitePlan, GoodLifeConstruction, PermitsGuide.com(전용), SideXPros, 시애틀시 공식사이트 등 8개+, 주별 가이드까지 이미 존재
+  - **결론**: "홈임프루브먼트 수량 계산기"라는 콘텐츠 포맷 자체가 2026년 기준 사실상 전 토픽에서 포화 상태 — AI 콘텐츠 생성 시대에 calc-farm 사이트들이 빠르게 모든 틈새를 선점한 것으로 추정(다수가 2025~2026년 최근 날짜). 이건 안 찾아봐서가 아니라 실제 데이터임을 사용자에게 투명하게 전달함.
+- **전략 전환 — "완전 무경쟁"을 포기하고 "완전히 새로운 카테고리 신설"로 실행**: 크리스마스 조명은 경쟁이 있지만(8개+), 우리 사이트에 전무했던 "연말/시즌" 카테고리 자체를 신설하는 결정을 내림. 근거:
+  1. 카테고리 다양성 자체가 사이트 성숙도/신뢰 신호(AI검색 인용 관점에서도 유리)
+  2. **타이밍 전략**: 7월(현재)에 발행하면 11~12월 검색 급증 전 몇 달간 크롤링/색인/권위 축적 시간 확보 — 시즌 콘텐츠는 계산기 콘텐츠와 달리 "먼저 만들어서 기다리는" 접근이 유효
+  3. 계산 로직 자체는 지붕선/트리 높이/창문/문 입력 → 피트/스트랜드/전구 개수 산출로, 우리 fence/gutter/roofing 계산기와 같은 패턴 재사용 가능해 구현 리스크 낮음
+- **신규 제작 (35번째 툴, "Holiday & Seasonal" 신규 카테고리 첫 항목)**:
+  - `tools/christmas-lights-calculator.html` — 지붕선 길이, 모서리/피크 수, 창문/문 개수, 트리 높이+밀도(sparse/medium/dense), 조명 타입(미니/C9)을 입력받아 총 피트, 스트랜드 수, 전구 개수, 예상 비용 산출. 계산 로직은 node로 여러 입력값 조합 수동 검증(트리 6ft·medium 밀도 시 600전구 = 업계 통용 수치 "6ft 트리에 미니라이트 100개/ft" 정확히 일치 확인).
+  - `blog/how-many-christmas-lights-do-i-need.html` — 측정법, 밀도별 비교표, 미니 vs C9 비교표, Common Mistakes 5개, FAQ 4개, Article+FAQPage JSON-LD.
+  - **사이트 전역 반영**: nav.js(TOOLS+BLOGS 배열), tools/index.html(신규 `seasonal` 카테고리 + 필터버튼 + noscript 링크 + "34→35 free calculators" 카피 2곳), blog/index.html(BLOG_POSTS+noscript), index.html 홈(신규 카테고리 섹션+카드+"34→35 tools" 카피 2곳), llms.txt(신규 섹션+블로그 항목), sitemap.xml(신규 URL 2개, 112=실제 파일 수 112개 정확히 일치) 전부 업데이트.
+  - **검증**: HTML 태그 무결성(수정/신규 파일 5개 전부) + JSON-LD 파싱 + 내부링크 존재 확인 + nav.js/blog-index/tools-index 인라인 JS `node --check` + sitemap XML 유효성 전부 통과 후 push, Actions 배포 success 확인.
+- **다음 세션 참고**:
+  1. "Holiday & Seasonal" 카테고리를 더 확장할 후보(할로윈 장식, 정원/야외 조명, 새해맞이 등)는 다음 세션에서 웹서치로 이어서 검토할 것 — 카테고리 자체가 신설됐으니 후속 콘텐츠로 카테고리 깊이를 키우는 게 완전 새 카테고리 하나 더 찾는 것보다 쉬울 가능성 있음.
+  2. "계산기" 포맷은 사실상 전 토픽 포화 확정 — 앞으로 신규 아이디어는 (a) 우리가 이미 연 새 카테고리의 확장, (b) 세션2(07-19)에서 성공한 "판단/비교"형 롱테일(자재 A vs B, 좁은 서브토픽), (c) 타이밍이 유리한 시즌성 콘텐츠 세 가지 축으로 우선 탐색할 것.
+  3. 크리스마스 조명 계산기는 노출 데이터가 아직 없음(당연히, 방금 발행) — 다음 GSC 리포트에서 색인 여부부터 확인.
+
 
