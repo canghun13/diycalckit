@@ -330,8 +330,12 @@
   3. 사용자가 직접 index.html에 배지를 추가하는 패턴이 반복되고 있으니, 홈페이지 수정 시 항상 최신 pull 후 배지 섹션이 파일 하단 `</div></main>` 직전에 있다는 걸 기억하고 그 위치를 건드리지 않을 것.
 
 ## 현재 콘텐츠 (2026-07-24, 세션 종료 시점 — 최종)
-- 툴 36개(카테고리: Paint & Wallpaper, Flooring, Space & Area[Baseboard & Trim 신규], Renovation Cost, Garden & Outdoor, Moving, Roofing & Insulation, Holiday & Seasonal), 블로그 51개, 프로젝트 20개
-- 카테고리 갭 분석 기반으로 처음 신규 제작 — 지금까지는 GSC 키워드 매칭/타이밍 전략이었다면, 이번엔 "우리 사이트 자체에 없는 코어 기능" 관점으로 후보를 찾은 첫 세션
+- 툴 37개(카테고리: Paint & Wallpaper, Flooring[Backsplash Tile 신규], Space & Area[Baseboard & Trim 신규], Renovation Cost, Garden & Outdoor, Moving, Roofing & Insulation, Holiday & Seasonal), 블로그 52개, 프로젝트 20개
+- 이번 세션에 다음 두 코어 갭을 이어서 채움:
+  1. `tools/baseboard-trim-calculator.html` — Space & Area 카테고리의 빈 자리(걸레받이/문선/창문선/크라운몰딩), remodelcalculators.com 수준의 완성도로 통합 제작
+  2. `tools/backsplash-tile-calculator.html` — 기존 tile-calculator는 범용이라 백스플래시 특화(패턴별 폐기율, 레인지후드/창문 공제) 계산기 신규 제작, tile-calculator/grout-calculator에서 역방향 링크도 추가
+  - 둘 다 "경쟁 강해도 코어 기능이면 강행" 원칙으로 진행, 계산 로직은 node로 경쟁사 실측 예시와 대조 검증 완료
 - 사용자가 KittyLaunch에 직접 프로덕트를 런칭함 (Maker Comment/Thank You Note 문구는 대화에서 작성해 전달함) — 외부 트래픽 소스 하나 추가된 상태, 다음 GSC/GA 리포트에서 referral 소스 변화 확인해볼 것
+- **다음 세션 후보**: 파버 패티오 계산기(Garden & Outdoor 카테고리에 자연스럽게 어울림, 경쟁 강함이지만 동일 원칙 적용 가능) — 아직 미착수.
 
 
