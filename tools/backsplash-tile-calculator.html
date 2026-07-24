@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Backsplash Tile Calculator — How Much Tile Do I Need?</title>
-  <meta name="description" content="Calculate tile, square footage, and cost for your kitchen or bathroom backsplash. Accounts for layout pattern waste, cutouts, and tile size — free instant results.">
+  <meta name="description" content="Calculate tile, grout, thinset, and cost for your kitchen or bathroom backsplash. Accounts for layout pattern waste, cutouts, and tile size — free instant results.">
   <link rel="canonical" href="https://diycalckit.com/tools/backsplash-tile-calculator.html">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/nav.js" defer></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Backsplash Tile Calculator — How Much Tile Do I Need?","description":"Calculates tile count, square footage, and cost for a kitchen or bathroom backsplash based on wall dimensions, tile size, and layout pattern.","url":"https://diycalckit.com/tools/backsplash-tile-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Backsplash Tile Calculator — How Much Tile Do I Need?","description":"Calculates tile count, grout, thinset, square footage, and cost for a kitchen or bathroom backsplash based on wall dimensions, tile size, and layout pattern.","url":"https://diycalckit.com/tools/backsplash-tile-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tile do I need for a kitchen backsplash?","acceptedAnswer":{"@type":"Answer","text":"A standard kitchen backsplash (18 inches high, 10 feet of counter) needs about 15 sq ft of tile before waste. Add 10% for a straight layout, 12% for brick/offset, 15% for diagonal, or 20% for herringbone to get your purchase total."}},{"@type":"Question","name":"What height should I measure for a backsplash?","acceptedAnswer":{"@type":"Answer","text":"Standard kitchen backsplash height is 18 inches, measured from the countertop to the bottom of the upper cabinets. A full-height backsplash that runs to the ceiling can be 24-36+ inches depending on your cabinet layout."}},{"@type":"Question","name":"Do I subtract the range hood area from my backsplash tile order?","acceptedAnswer":{"@type":"Answer","text":"Yes — subtract large openings like a range hood or window from your gross wall area, but don't subtract small openings like standard outlets, since the waste factor already covers cuts around them."}},{"@type":"Question","name":"How much extra tile should I order for waste?","acceptedAnswer":{"@type":"Answer","text":"10% for a straight/stacked layout, 12% for brick or offset patterns, 15% for a diagonal layout, and 20% for herringbone or other complex patterns — more intricate layouts create more cut pieces and more waste."}},{"@type":"Question","name":"How many bags of grout do I need for a backsplash?","acceptedAnswer":{"@type":"Answer","text":"Backsplash grout needs are small compared to flooring — most standard kitchen backsplashes use less than one bag. Use a dedicated grout calculator with your exact tile size and joint width for a precise bag count."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tile do I need for a kitchen backsplash?","acceptedAnswer":{"@type":"Answer","text":"A standard kitchen backsplash (18 inches high, 10 feet of counter) needs about 15 sq ft of tile before waste. Add 10% for a straight layout, 12% for brick/offset, 15% for diagonal, or 20% for herringbone to get your purchase total."}},{"@type":"Question","name":"What height should I measure for a backsplash?","acceptedAnswer":{"@type":"Answer","text":"Standard kitchen backsplash height is 18 inches, measured from the countertop to the bottom of the upper cabinets. A full-height backsplash that runs to the ceiling can be 24-36+ inches depending on your cabinet layout."}},{"@type":"Question","name":"Do I subtract the range hood area from my backsplash tile order?","acceptedAnswer":{"@type":"Answer","text":"Yes — subtract large openings like a range hood or window from your gross wall area, but don't subtract small openings like standard outlets, since the waste factor already covers cuts around them."}},{"@type":"Question","name":"How much extra tile should I order for waste?","acceptedAnswer":{"@type":"Answer","text":"10% for a straight/stacked layout, 12% for brick or offset patterns, 15% for a diagonal layout, and 20% for herringbone or other complex patterns — more intricate layouts create more cut pieces and more waste."}},{"@type":"Question","name":"How many bags of grout do I need for a backsplash?","acceptedAnswer":{"@type":"Answer","text":"Most standard kitchen backsplashes use well under one full 25 lb bag. This calculator estimates grout weight using the same joint-volume formula as a dedicated grout calculator, based on your tile size and joint width."}}]}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
 </head>
@@ -21,7 +21,7 @@
 <main>
   <div class="tool-page">
     <h1>Backsplash Tile Calculator — How Much Tile Do I Need?</h1>
-    <p class="tool-desc">Enter your backsplash width, height, and tile size to get square footage, tile count, and cost — with waste built in for your layout pattern.</p>
+    <p class="tool-desc">Enter your backsplash width, height, and tile size to get square footage, tile count, grout, thinset, and cost — with waste built in for your layout pattern.</p>
 
     <div class="tool-box">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
@@ -58,6 +58,15 @@
           <option value="18">Premium Marble / Mosaic ($12–25/sq ft)</option>
         </select>
       </div>
+      <div class="form-group">
+        <label>Grout Joint Width</label>
+        <select id="bs-joint">
+          <option value="0.0625">1/16" (tight, mosaic/glass)</option>
+          <option value="0.125" selected>1/8" (standard subway/ceramic)</option>
+          <option value="0.1875">3/16" (rustic/handmade tile)</option>
+          <option value="0.25">1/4" (large-format, wide joint)</option>
+        </select>
+      </div>
 
       <button class="btn-primary" onclick="calcBacksplash()" style="width:100%">Calculate Tile Needed →</button>
 
@@ -72,6 +81,16 @@
           <div>
             <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="bs-cost">—</div>
             <div style="font-size:0.78rem; color:var(--mid)">estimated cost</div>
+          </div>
+        </div>
+        <div style="margin-top:0.75rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="bs-grout">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">bags of grout</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="bs-thinset">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">tubs of mastic/thinset</div>
           </div>
         </div>
         <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;" id="bs-detail"></p>
@@ -116,7 +135,7 @@
     <p><strong>How much extra tile should I order for waste?</strong></p>
     <p>10% for a straight/stacked layout, 12% for brick or offset patterns, 15% for a diagonal layout, and 20% for herringbone or other complex patterns — more intricate layouts create more cut pieces and more waste.</p>
     <p><strong>How many bags of grout do I need for a backsplash?</strong></p>
-    <p>Backsplash grout needs are small compared to flooring — most standard kitchen backsplashes use less than one bag. Use a dedicated grout calculator with your exact tile size and joint width for a precise bag count.</p>
+    <p>Most standard kitchen backsplashes use well under one full 25 lb bag. This calculator estimates grout weight using the same TCNA-style joint-volume formula as our dedicated Grout Calculator, based on your tile size and joint width — use the dedicated calculator instead if you want to fine-tune tile thickness or try a different bag size.</p>
 
     <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
       <strong>Related tools and guides:</strong>
@@ -138,6 +157,7 @@ function calcBacksplash() {
   const [tileL, tileW] = document.getElementById('bs-tile').value.split(',').map(Number);
   const waste = parseFloat(document.getElementById('bs-pattern').value);
   const pricePerSqFt = parseFloat(document.getElementById('bs-price').value);
+  const jointIn = parseFloat(document.getElementById('bs-joint').value);
 
   if (!widthFt || !heightIn) { alert('Please enter backsplash width and height.'); return; }
 
@@ -149,10 +169,23 @@ function calcBacksplash() {
   const costLow = Math.round(areaWithWaste * pricePerSqFt * 0.85);
   const costHigh = Math.round(areaWithWaste * pricePerSqFt * 1.15);
 
+  // Grout (TCNA-style formula, same approach as our Grout Calculator): assumes standard 5/16" tile thickness
+  const tileThicknessIn = 0.3125;
+  const density = jointIn >= 0.125 ? 0.1875 : 0.165; // sanded vs unsanded lbs/in3
+  const sqin = areaWithWaste * 144;
+  const jointRatio = ((tileL + tileW) / (tileL * tileW)) * jointIn * tileThicknessIn;
+  const groutLbs = sqin * jointRatio * density * 1.1;
+  const groutBags = Math.max(1, Math.ceil(groutLbs / 25));
+
+  // Thinset/mastic: small-format wall tile typically ~40 sq ft per 1-gallon premixed tub
+  const thinsetTubs = Math.max(1, Math.ceil(areaWithWaste / 40));
+
   document.getElementById('bs-sqft').textContent = Math.round(areaWithWaste * 10) / 10;
   document.getElementById('bs-tiles').textContent = tilesNeeded.toLocaleString();
   document.getElementById('bs-cost').textContent = '$' + costLow.toLocaleString() + '–$' + costHigh.toLocaleString();
-  document.getElementById('bs-detail').textContent = 'Gross area: ' + Math.round(grossArea * 10) / 10 + ' sq ft before waste. Includes ' + waste + '% pattern waste allowance.';
+  document.getElementById('bs-grout').textContent = groutBags + ' (25 lb)';
+  document.getElementById('bs-thinset').textContent = thinsetTubs + ' (1 gal)';
+  document.getElementById('bs-detail').textContent = 'Gross area: ' + Math.round(grossArea * 10) / 10 + ' sq ft before waste. Includes ' + waste + '% pattern waste allowance. Grout estimate uses ' + (jointIn >= 0.125 ? 'sanded' : 'unsanded') + ' density at your selected joint width.';
   document.getElementById('result').style.display = 'block';
 }
 </script>
