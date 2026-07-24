@@ -97,6 +97,7 @@ Step-by-step DIY project guides with built-in calculator links.
 
 ## Cost Guides & Blog
 
+- [Cement Board vs. Greenboard: What Goes Behind Tile in a Shower?](https://diycalckit.com/blog/cement-board-vs-greenboard-shower-tile.html): Which tile backer is rated for direct water contact in a shower, cost, and where greenboard is still acceptable.
 - [How Much Tile Do I Need for a Backsplash? Complete Guide](https://diycalckit.com/blog/how-much-tile-do-i-need-for-a-backsplash.html): Backsplash tile, square footage, and cost by wall size, tile size, and layout pattern.
 - [How Much Baseboard Do I Need? Room & Whole-House Guide](https://diycalckit.com/blog/how-much-baseboard-do-i-need.html): Baseboard, door casing, window casing, and crown molding linear footage by room or whole house.
 - [How Many Christmas Lights Do I Need? Roofline, Tree & Window Guide](https://diycalckit.com/blog/how-many-christmas-lights-do-i-need.html): Formulas to calculate feet, strands, and bulbs for roofline, windows, doors, and trees.

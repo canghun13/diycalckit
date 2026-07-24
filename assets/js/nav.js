@@ -60,6 +60,7 @@ const TOOLS = [
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "Cement Board vs. Greenboard: What Goes Behind Tile in a Shower?", url: "/blog/cement-board-vs-greenboard-shower-tile.html", date: "2026-07-24", desc: "Which tile backer is actually rated for direct water contact in a shower, and where greenboard is still fine." },
   { name: "How Much Tile Do I Need for a Backsplash? Complete Guide", url: "/blog/how-much-tile-do-i-need-for-a-backsplash.html", date: "2026-07-24", desc: "Calculate backsplash tile, square footage, and cost by wall size, tile size, and layout pattern waste." },
   { name: "How Much Baseboard Do I Need? Room & Whole-House Guide", url: "/blog/how-much-baseboard-do-i-need.html", date: "2026-07-24", desc: "Calculate baseboard, door casing, window casing, and crown molding by room or whole house, with waste allowance and cost." },
   { name: "How Many Christmas Lights Do I Need? Roofline, Tree & Window Guide", url: "/blog/how-many-christmas-lights-do-i-need.html", date: "2026-07-21", desc: "Free formulas to calculate feet, strands, and bulbs for roofline, windows, doors, and trees." },
