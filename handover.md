@@ -329,13 +329,23 @@
   2. sod 계산기는 잔디농장 자체 사이트들이 영업 목적으로 만든 게 대부분이라 경쟁 강도 대비 우리 브랜드 적합도가 낮다고 판단해 보류 — 대신 이미 있는 lawn-seed-calculator 보강(새싹 vs 뗏장 비교 섹션 추가하는 정도)이 더 나은 대안일 수 있음.
   3. 사용자가 직접 index.html에 배지를 추가하는 패턴이 반복되고 있으니, 홈페이지 수정 시 항상 최신 pull 후 배지 섹션이 파일 하단 `</div></main>` 직전에 있다는 걸 기억하고 그 위치를 건드리지 않을 것.
 
-## 현재 콘텐츠 (2026-07-24, 세션 종료 시점 — 최종)
-- 툴 37개(카테고리: Paint & Wallpaper, Flooring[Backsplash Tile 신규], Space & Area[Baseboard & Trim 신규], Renovation Cost, Garden & Outdoor, Moving, Roofing & Insulation, Holiday & Seasonal), 블로그 52개, 프로젝트 20개
-- 이번 세션에 다음 두 코어 갭을 이어서 채움:
-  1. `tools/baseboard-trim-calculator.html` — Space & Area 카테고리의 빈 자리(걸레받이/문선/창문선/크라운몰딩), remodelcalculators.com 수준의 완성도로 통합 제작
-  2. `tools/backsplash-tile-calculator.html` — 기존 tile-calculator는 범용이라 백스플래시 특화(패턴별 폐기율, 레인지후드/창문 공제) 계산기 신규 제작, tile-calculator/grout-calculator에서 역방향 링크도 추가
-  - 둘 다 "경쟁 강해도 코어 기능이면 강행" 원칙으로 진행, 계산 로직은 node로 경쟁사 실측 예시와 대조 검증 완료
-- 사용자가 KittyLaunch에 직접 프로덕트를 런칭함 (Maker Comment/Thank You Note 문구는 대화에서 작성해 전달함) — 외부 트래픽 소스 하나 추가된 상태, 다음 GSC/GA 리포트에서 referral 소스 변화 확인해볼 것
+## 현재 콘텐츠 (2026-07-24, 세션 완전 종료 시점)
+- 툴 37개, 블로그 53개, 프로젝트 20개
+- 이번 세션 최종 산출물: 신규 툴 2개(baseboard-trim-calculator, backsplash-tile-calculator), 신규 블로그 2개(how-much-tile-do-i-need-for-a-backsplash, cement-board-vs-greenboard-shower-tile), 기존 페이지 보강 1건(backsplash 계산기에 그라우트/신셋 추가)
+- **핵심 교훈**: "계산기/일반비교" 신규 키워드 발굴은 30개+ 체크 끝에 한계 확인. 유일하게 통한 패턴은 "판단형 롱테일"(narrow mid-project decision) — 다음 세션은 이 각도 위주로 탐색할 것.
 - **다음 세션 후보**: 파버 패티오 계산기(Garden & Outdoor 카테고리에 자연스럽게 어울림, 경쟁 강함이지만 동일 원칙 적용 가능) — 아직 미착수.
+
+## 2026-07-24 세션 계속 (사용자 피드백: "헤드키워드로 그냥 만들었잖아, 롱테일 제대로 했냐, 기능도 부실하다")
+- **정당한 지적 인정**: baseboard-trim-calculator, backsplash-tile-calculator 둘 다 제목을 헤드 키워드 그대로 지었고, 만들지 말지 판단(경쟁 세도 코어면 강행)과 실행 단계(그럼 어떻게 이름 붙일지)를 분리해서 재검토하지 않은 게 실수였음.
+- **클러스터 확장 시도, 5개 검색 — 전부 포화 확인**: 서브웨이타일 계산기(6개+), 헤링본 패턴 계산기(6개+, 일부는 타일 재사용 매칭 시뮬레이션까지 하는 herron.app 등 우리보다 정교함), MDF vs 원목 걸레받이 비교(6개+), 크라운몰딩 단독 계산기(7개+, 마이터/베벨 각도 공식까지), 옷장 선반 계산기(구조공학 sag 계산까지 하는 곳 다수). **롱테일로 좁혀도 안 뚫림 확인** → 신규 페이지 추가 대신 기존 페이지 보강으로 전환.
+- **백스플래시 계산기 보강**: 그라우트(조인트 폭 선택 가능, 기존 grout-calculator.html과 동일한 TCNA 공식 재사용) + 신셋(mastic) 계산 추가. 최상위 경쟁사(remodelcalculators.com) 수준으로 완성도 맞춤.
+- **사용자 재지적**: "이걸 추천한건 너다, 안 하겠다는거야?" — 키워드 리서치 전략 자체를 포기하자는 게 아니라 실행 방식을 더 다듬어야 한다는 걸 인지하고 계속 진행.
+- **폭넓게 재검색 (16개 신규 후보, 계산기+비교글 둘 다)**: 다락환기구, 창고기초, 매입등, 식물간격, 룸번들러계산기, 펜스포스트콘크리트, 크리스마스조명, 데크허가, 서브웨이타일, 헤링본, MDF vs원목, 크라운몰딩, 옷장선반, **계단 스트링거 계산기(8개+, calculator.net/Omni/mycarpentry 등)**, **EV차저 회로 사이징(6개+, NEC 코드 준수 검증까지 하는 정교한 도구들 — 안전 문제라 우리 사이트가 다룰 영역도 아니라고 판단)**, **프렌치드레인 계산기(9개+, remodelcalculators 포함)**, 타일 위에 타일 시공 가능여부(8개+), **시멘트보드 vs 그린보드(경쟁 3개뿐, 나머지는 Quora/Houzz/DIY챗룸 등 포럼 — 이번 세션에서 가장 얇은 경쟁으로 확인)**.
+  - **결론**: "계산기/일반비교" 포맷은 홈임프루브먼트 전 토픽에서 사실상 포화 확정(누적 30개+ 체크, 전부 포화). 예외적으로 "시멘트보드 vs 그린보드"만 상대적으로 얇았음(정식 아티클 3개 vs 포럼 위주).
+- **신규 제작**: `blog/cement-board-vs-greenboard-shower-tile.html` — 07-19 세션에 통했던 "판단형 롱테일" 패턴(self-leveling-compound-vs-plywood, 1/2-vs-5/8-drywall)과 동일한 각도로, 샤워 타일 밑작업에 어떤 백커보드를 써야 하는지 판단 콘텐츠. tile-calculator/backsplash-tile-calculator/grout-calculator 세 곳에 역방향 링크 추가해 타일 클러스터에 편입. 사이트 전역(nav.js, blog/index.html, llms.txt, sitemap.xml) 반영, 검증 통과 후 push, 배포 성공 확인.
+- **다음 세션 참고**:
+  1. **"계산기/일반비교"로 신규 키워드 찾기는 사실상 한계에 도달** — 앞으로는 (a) 판단형 롱테일(narrow mid-project decision) 위주로만 탐색, (b) 계산기 카테고리는 신규 발굴보다 기존 페이지 기능 완성도 보강(그라우트/신셋 추가 사례처럼) 우선, (c) SEO 콘텐츠 외 채널(KittyLaunch 등 외부 런칭)의 효과도 다음 GSC/GA 리포트에서 같이 확인할 것.
+  2. 판단형 롱테일 다음 후보 브레인스토밍: "왜 타일 사이 그라우트가 갈라지나"(원인진단형), "샤워 니치는 타일 시공 전에 만드나 후에 만드나"(시공순서 판단), "코너 비드는 언제 필요한가"(drywall 카테고리) 등 — 전부 "일반 비교"가 아니라 "구체적 시공 판단" 각도로 좁혀서 다음에 검색해볼 것.
+  3. 파버 패티오 계산기 후보는 위 결론(계산기 신규는 한계)에 따라 우선순위 낮춤 — 검토한다면 계산기 단독이 아니라 "파버 vs 콘크리트 패티오 어느 쪽" 같은 판단형으로 접근할 것.
 
 
