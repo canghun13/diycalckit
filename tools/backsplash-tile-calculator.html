@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backsplash Tile Calculator — How Much Tile Do I Need?</title>
+  <meta name="description" content="Calculate tile, square footage, and cost for your kitchen or bathroom backsplash. Accounts for layout pattern waste, cutouts, and tile size — free instant results.">
+  <link rel="canonical" href="https://diycalckit.com/tools/backsplash-tile-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Backsplash Tile Calculator — How Much Tile Do I Need?","description":"Calculates tile count, square footage, and cost for a kitchen or bathroom backsplash based on wall dimensions, tile size, and layout pattern.","url":"https://diycalckit.com/tools/backsplash-tile-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tile do I need for a kitchen backsplash?","acceptedAnswer":{"@type":"Answer","text":"A standard kitchen backsplash (18 inches high, 10 feet of counter) needs about 15 sq ft of tile before waste. Add 10% for a straight layout, 12% for brick/offset, 15% for diagonal, or 20% for herringbone to get your purchase total."}},{"@type":"Question","name":"What height should I measure for a backsplash?","acceptedAnswer":{"@type":"Answer","text":"Standard kitchen backsplash height is 18 inches, measured from the countertop to the bottom of the upper cabinets. A full-height backsplash that runs to the ceiling can be 24-36+ inches depending on your cabinet layout."}},{"@type":"Question","name":"Do I subtract the range hood area from my backsplash tile order?","acceptedAnswer":{"@type":"Answer","text":"Yes — subtract large openings like a range hood or window from your gross wall area, but don't subtract small openings like standard outlets, since the waste factor already covers cuts around them."}},{"@type":"Question","name":"How much extra tile should I order for waste?","acceptedAnswer":{"@type":"Answer","text":"10% for a straight/stacked layout, 12% for brick or offset patterns, 15% for a diagonal layout, and 20% for herringbone or other complex patterns — more intricate layouts create more cut pieces and more waste."}},{"@type":"Question","name":"How many bags of grout do I need for a backsplash?","acceptedAnswer":{"@type":"Answer","text":"Backsplash grout needs are small compared to flooring — most standard kitchen backsplashes use less than one bag. Use a dedicated grout calculator with your exact tile size and joint width for a precise bag count."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Backsplash Tile Calculator — How Much Tile Do I Need?</h1>
+    <p class="tool-desc">Enter your backsplash width, height, and tile size to get square footage, tile count, and cost — with waste built in for your layout pattern.</p>
+
+    <div class="tool-box">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Backsplash Width (ft) — total counter length</label><input type="number" id="bs-width" placeholder="e.g. 10" min="0" step="0.1"></div>
+        <div class="form-group"><label>Backsplash Height (in)</label><input type="number" id="bs-height" placeholder="e.g. 18" min="0" step="1" value="18"></div>
+      </div>
+      <div class="form-group"><label>Subtract Large Openings (sq ft) — range hood, window, etc.</label><input type="number" id="bs-subtract" placeholder="e.g. 6 (leave 0 if none)" min="0" step="0.1" value="0"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group">
+          <label>Tile Size</label>
+          <select id="bs-tile">
+            <option value="3,6">3" x 6" Subway</option>
+            <option value="4,4">4" x 4"</option>
+            <option value="6,6">6" x 6"</option>
+            <option value="12,12" selected>12" x 12"</option>
+            <option value="1,1">1" x 1" Mosaic Sheet (treat as 1 sq ft)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Layout Pattern</label>
+          <select id="bs-pattern">
+            <option value="10">Straight / Stacked (+10%)</option>
+            <option value="12" selected>Brick / Offset (+12%)</option>
+            <option value="15">Diagonal (+15%)</option>
+            <option value="20">Herringbone (+20%)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tile Price Tier</label>
+        <select id="bs-price">
+          <option value="3.5">Budget Ceramic ($2–5/sq ft)</option>
+          <option value="9" selected>Mid-Range Porcelain / Glass ($6–12/sq ft)</option>
+          <option value="18">Premium Marble / Mosaic ($12–25/sq ft)</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" onclick="calcBacksplash()" style="width:100%">Calculate Tile Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="bs-sqft">—</div>
+        <div class="result-label">sq ft of tile (with waste)</div>
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="bs-tiles">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">tiles needed</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="bs-cost">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">estimated cost</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;" id="bs-detail"></p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">How to Measure for a Backsplash</h2>
+    <p>Measure the total width of counter you're tiling above, and the height from the countertop to the bottom of the upper cabinets — the industry standard is 18 inches, though a full-height backsplash running to the ceiling can be 24 to 36+ inches depending on your layout. Multiply width by height (in feet) to get your gross square footage.</p>
+    <p>Subtract large openings like a range hood or a window from that gross number, but leave standard outlets alone — your waste allowance already covers the small cuts needed around them.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Waste Factor by Layout Pattern</h2>
+    <table>
+      <thead><tr><th>Pattern</th><th>Waste Allowance</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Straight / Stacked</td><td>10%</td><td>Simplest cuts, mostly along the edges</td></tr>
+        <tr><td>Brick / Offset</td><td>12%</td><td>Row offsets create a few more partial pieces</td></tr>
+        <tr><td>Diagonal</td><td>15%</td><td>Every edge tile is an angled cut</td></tr>
+        <tr><td>Herringbone</td><td>20%</td><td>Most complex cuts and the most offcuts</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Buy all your tile in one order from the same dye lot. Reordering later — even the "same" tile — often comes from a different production batch with a slightly different shade, which is very visible on a backsplash at eye level.
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Common Backsplash Mistakes</h2>
+    <ul style="margin:0.75rem 0 1rem 1.25rem; line-height:1.85;">
+      <li><strong>Underestimating pattern waste.</strong> Straight-lay waste percentages don't apply to diagonal or herringbone layouts — those patterns turn far more tile into offcuts.</li>
+      <li><strong>Forgetting the range hood or window cutout.</strong> Not subtracting a large opening means over-ordering tile for space you'll never fill.</li>
+      <li><strong>Buying tile from multiple dye lots.</strong> A reorder mid-project can come from a different batch with a visibly different shade.</li>
+      <li><strong>Ignoring outlet height when planning the layout.</strong> Grout lines that land right at outlet edges look unplanned — dry-lay the first row before committing to spacing.</li>
+      <li><strong>Skipping edge trim.</strong> An exposed tile edge without bullnose or metal trim chips easily and looks unfinished at the end of a run.</li>
+    </ul>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How much tile do I need for a kitchen backsplash?</strong></p>
+    <p>A standard kitchen backsplash (18 inches high, 10 feet of counter) needs about 15 sq ft of tile before waste. Add 10% for a straight layout, 12% for brick/offset, 15% for diagonal, or 20% for herringbone to get your purchase total.</p>
+    <p><strong>What height should I measure for a backsplash?</strong></p>
+    <p>Standard kitchen backsplash height is 18 inches, measured from the countertop to the bottom of the upper cabinets. A full-height backsplash that runs to the ceiling can be 24-36+ inches depending on your cabinet layout.</p>
+    <p><strong>Do I subtract the range hood area from my backsplash tile order?</strong></p>
+    <p>Yes — subtract large openings like a range hood or window from your gross wall area, but don't subtract small openings like standard outlets, since the waste factor already covers cuts around them.</p>
+    <p><strong>How much extra tile should I order for waste?</strong></p>
+    <p>10% for a straight/stacked layout, 12% for brick or offset patterns, 15% for a diagonal layout, and 20% for herringbone or other complex patterns — more intricate layouts create more cut pieces and more waste.</p>
+    <p><strong>How many bags of grout do I need for a backsplash?</strong></p>
+    <p>Backsplash grout needs are small compared to flooring — most standard kitchen backsplashes use less than one bag. Use a dedicated grout calculator with your exact tile size and joint width for a precise bag count.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/tile-calculator.html">Tile Calculator</a></li>
+        <li><a href="/tools/grout-calculator.html">Grout Calculator — Exact Bag Count by Joint Width</a></li>
+        <li><a href="/blog/how-much-does-a-bathroom-renovation-cost.html">How Much Does a Bathroom Renovation Cost in 2026?</a></li>
+        <li><a href="/tools/bathroom-remodel-cost-calculator.html">Bathroom Remodel Cost Calculator</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<script>
+function calcBacksplash() {
+  const widthFt = parseFloat(document.getElementById('bs-width').value) || 0;
+  const heightIn = parseFloat(document.getElementById('bs-height').value) || 0;
+  const subtract = parseFloat(document.getElementById('bs-subtract').value) || 0;
+  const [tileL, tileW] = document.getElementById('bs-tile').value.split(',').map(Number);
+  const waste = parseFloat(document.getElementById('bs-pattern').value);
+  const pricePerSqFt = parseFloat(document.getElementById('bs-price').value);
+
+  if (!widthFt || !heightIn) { alert('Please enter backsplash width and height.'); return; }
+
+  const grossArea = widthFt * (heightIn / 12);
+  const netArea = Math.max(0, grossArea - subtract);
+  const areaWithWaste = netArea * (1 + waste / 100);
+  const tileAreaSqFt = (tileL * tileW) / 144;
+  const tilesNeeded = Math.ceil(areaWithWaste / tileAreaSqFt);
+  const costLow = Math.round(areaWithWaste * pricePerSqFt * 0.85);
+  const costHigh = Math.round(areaWithWaste * pricePerSqFt * 1.15);
+
+  document.getElementById('bs-sqft').textContent = Math.round(areaWithWaste * 10) / 10;
+  document.getElementById('bs-tiles').textContent = tilesNeeded.toLocaleString();
+  document.getElementById('bs-cost').textContent = '$' + costLow.toLocaleString() + '–$' + costHigh.toLocaleString();
+  document.getElementById('bs-detail').textContent = 'Gross area: ' + Math.round(grossArea * 10) / 10 + ' sq ft before waste. Includes ' + waste + '% pattern waste allowance.';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

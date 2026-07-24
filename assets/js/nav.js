@@ -28,6 +28,7 @@ const TOOLS = [
   { name: "Paint Cost Calculator", url: "/tools/paint-cost-calculator.html" },
   { name: "Flooring Calculator", url: "/tools/flooring-calculator.html" },
   { name: "Tile Calculator", url: "/tools/tile-calculator.html" },
+  { name: "Backsplash Tile Calculator", url: "/tools/backsplash-tile-calculator.html" },
   { name: "Grout Calculator", url: "/tools/grout-calculator.html" },
   { name: "Carpet Calculator", url: "/tools/carpet-calculator.html" },
   { name: "Hardwood Floor Calculator", url: "/tools/hardwood-floor-calculator.html" },
@@ -59,6 +60,7 @@ const TOOLS = [
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "How Much Tile Do I Need for a Backsplash? Complete Guide", url: "/blog/how-much-tile-do-i-need-for-a-backsplash.html", date: "2026-07-24", desc: "Calculate backsplash tile, square footage, and cost by wall size, tile size, and layout pattern waste." },
   { name: "How Much Baseboard Do I Need? Room & Whole-House Guide", url: "/blog/how-much-baseboard-do-i-need.html", date: "2026-07-24", desc: "Calculate baseboard, door casing, window casing, and crown molding by room or whole house, with waste allowance and cost." },
   { name: "How Many Christmas Lights Do I Need? Roofline, Tree & Window Guide", url: "/blog/how-many-christmas-lights-do-i-need.html", date: "2026-07-21", desc: "Free formulas to calculate feet, strands, and bulbs for roofline, windows, doors, and trees." },
   { name: "Self-Leveling Compound vs. Plywood Underlayment: Which Do You Need?", url: "/blog/self-leveling-compound-vs-plywood-underlayment.html", date: "2026-07-19", desc: "What each product actually fixes, cost comparison, and when a subfloor needs both before LVP, hardwood, or tile." },
