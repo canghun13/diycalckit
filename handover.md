@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-21 (세션2 종료) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-24 (세션 종료) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -306,5 +306,32 @@
   1. "Holiday & Seasonal" 카테고리를 더 확장할 후보(할로윈 장식, 정원/야외 조명, 새해맞이 등)는 다음 세션에서 웹서치로 이어서 검토할 것 — 카테고리 자체가 신설됐으니 후속 콘텐츠로 카테고리 깊이를 키우는 게 완전 새 카테고리 하나 더 찾는 것보다 쉬울 가능성 있음.
   2. "계산기" 포맷은 사실상 전 토픽 포화 확정 — 앞으로 신규 아이디어는 (a) 우리가 이미 연 새 카테고리의 확장, (b) 세션2(07-19)에서 성공한 "판단/비교"형 롱테일(자재 A vs B, 좁은 서브토픽), (c) 타이밍이 유리한 시즌성 콘텐츠 세 가지 축으로 우선 탐색할 것.
   3. 크리스마스 조명 계산기는 노출 데이터가 아직 없음(당연히, 방금 발행) — 다음 GSC 리포트에서 색인 여부부터 확인.
+
+## 참고: 사용자가 직접 커밋한 변경사항 (세션 외)
+- 2026-07-21, 2026-07-22에 사용자가 직접 `index.html`에 커밋 2건 추가 (KittyLaunch, Sell With boost 런칭 배지) — 다음 세션에서 작업 시 이 배지들을 실수로 지우지 않도록 주의할 것.
+
+## 2026-07-24 세션 (새 GitHub 토큰, 사용자가 "신규 좀 해볼까, 키워드를 다양하게 폭넓게 찾아보고 경쟁강도 체크, 세면 롱테일로, 중요기능은 경쟁 세도 결국 해야된다" 요청)
+- **폭넓은 키워드 후보 리서치**: 사이트 자체 갭 분석(36개 툴 목록 중 "있어야 할 코어 카테고리인데 없는 것")부터 시작 — 백스플래시 타일, 걸레받이/트림, 파버 패티오, 잔디 뗏장(sod), 옹벽, 조리대, 보드피트 목재, 옷장 정리 등 후보 리스트업.
+- **경쟁강도 체크 (웹서치 4건)**:
+  1. 백스플래시 타일 계산기 — Billd, remodelcalculators.com(TCNA/ANSI 공식까지 탑재), Inch Calculator, Fireclay Tile, Transworld Tile 등 6개+ **강한 경쟁**
+  2. 걸레받이/트림 계산기 — remodelcalculators.com(trim+crown+casing+shoe 통합), Inch Calculator, constructioncalculate.com, builditcalc.com, themouldingcompany.com, turn2engineering.com, diyproject.ai 등 7개+ **강한 경쟁**
+  3. 파버 패티오 계산기 — Omni Calculator, Inch Calculator, calculator-online.net, concrete-calculator.org, stonecenters.com, concalculator.com, landscapioai.com 등 7개+ **강한 경쟁**
+  4. 잔디 뗏장(sod) 계산기 — Ergeon, Inch Calculator, concalculator.com, usasod.com, activecalculator.com, 각종 잔디농장 자체 사이트 등 9개+ **매우 강한 경쟁** (잔디농장들이 영업 목적으로 자체 계산기를 많이 만들어둠 — 우리 브랜드와 결합도 낮다고 판단해 이번엔 스킵)
+- **판단**: 4개 전부 경쟁 강함. 이 중 "걸레받이/트림"을 최우선으로 선택한 이유 — 우리 사이트가 paint/drywall/flooring/tile 등 "Space & Area" 카테고리를 이미 촘촘히 다루면서 정작 홈임프루브먼트 계산기 허브라면 반드시 있어야 할 트림/걸레받이가 **완전히 비어있었음**. 이건 신규 저경쟁 틈새가 아니라 "우리 사이트 자체의 구멍"이라 사용자 지시("중요기능은 경쟁이 세도 해야된다")에 정확히 해당한다고 판단해 강행.
+- **신규 제작 (36번째 툴)**:
+  - `tools/baseboard-trim-calculator.html` — 벽 둘레(전체 방 합산 가능) + 문/창문 개수 + 폐기율 + 자재 규격(8/10/12/16ft) + 자재 등급을 입력받아 걸레받이·문선/창문선(선택)·크라운몰딩(선택) 각각의 총 피트·보드 개수·비용을 산출. 최상위 경쟁사(remodelcalculators.com)와 동급으로 걸레받이+문선+창문선+크라운을 한 화면에서 전부 계산하도록 만들어 완성도로 차별화.
+  - `blog/how-much-baseboard-do-i-need.html` — 방 크기별 참고표, 문선/창문선 피트표, 자재 비교표, 흔한 실수 5개, FAQ 5개.
+  - **계산 로직 검증**: node로 실제 시나리오 계산해 경쟁사 실측 데이터와 대조 — "1500 sqft 집 = 둘레 460ft, 문10/창15개" 입력 시 결과 494ft가 builditcalc.com이 제시한 실측 범위(400-500ft)와 정확히 부합함을 확인.
+  - **사이트 전역 반영**: nav.js(TOOLS+BLOGS), tools/index.html(space 카테고리+noscript+개수 35→36), blog/index.html(BLOG_POSTS+noscript), index.html 홈(카드+개수 35→36×2곳), llms.txt(신규 항목 2개), sitemap.xml(신규 URL 2개, 114=실제 파일 수 114개 일치).
+  - **검증**: HTML 태그 무결성 + JSON-LD 파싱 + 내부링크 존재 + nav.js/tools-index/blog-index 인라인 JS `node --check` + sitemap XML 유효성 전부 통과 후 push, Actions 배포 success 확인.
+- **다음 세션 참고**:
+  1. 백스플래시 타일 계산기(강한 경쟁이지만 우리 tile-calculator가 이미 있어 완성도로 붙기 좋은 후보)와 파버 패티오 계산기(Garden & Outdoor 카테고리에 자연스럽게 어울림)는 다음 세션에 이어서 "중요기능" 원칙으로 검토할 만함.
+  2. sod 계산기는 잔디농장 자체 사이트들이 영업 목적으로 만든 게 대부분이라 경쟁 강도 대비 우리 브랜드 적합도가 낮다고 판단해 보류 — 대신 이미 있는 lawn-seed-calculator 보강(새싹 vs 뗏장 비교 섹션 추가하는 정도)이 더 나은 대안일 수 있음.
+  3. 사용자가 직접 index.html에 배지를 추가하는 패턴이 반복되고 있으니, 홈페이지 수정 시 항상 최신 pull 후 배지 섹션이 파일 하단 `</div></main>` 직전에 있다는 걸 기억하고 그 위치를 건드리지 않을 것.
+
+## 현재 콘텐츠 (2026-07-24, 세션 종료 시점 — 최종)
+- 툴 36개(카테고리: Paint & Wallpaper, Flooring, Space & Area[Baseboard & Trim 신규], Renovation Cost, Garden & Outdoor, Moving, Roofing & Insulation, Holiday & Seasonal), 블로그 51개, 프로젝트 20개
+- 카테고리 갭 분석 기반으로 처음 신규 제작 — 지금까지는 GSC 키워드 매칭/타이밍 전략이었다면, 이번엔 "우리 사이트 자체에 없는 코어 기능" 관점으로 후보를 찾은 첫 세션
+- 사용자가 KittyLaunch에 직접 프로덕트를 런칭함 (Maker Comment/Thank You Note 문구는 대화에서 작성해 전달함) — 외부 트래픽 소스 하나 추가된 상태, 다음 GSC/GA 리포트에서 referral 소스 변화 확인해볼 것
 
 
