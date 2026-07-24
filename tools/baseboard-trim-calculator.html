@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baseboard & Trim Calculator — Linear Feet, Boards & Cost</title>
+  <meta name="description" content="Calculate linear feet of baseboard, door casing, window casing, and crown molding for any room or whole house — plus how many boards to buy and total cost.">
+  <link rel="canonical" href="https://diycalckit.com/tools/baseboard-trim-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Baseboard & Trim Calculator — Linear Feet, Boards & Cost","description":"Calculates linear feet and board count for baseboard, door casing, window casing, and crown molding from room perimeter, door count, and window count.","url":"https://diycalckit.com/tools/baseboard-trim-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much baseboard do I need for a room?","acceptedAnswer":{"@type":"Answer","text":"Measure the room's perimeter (add up all four wall lengths), subtract about 3 feet for each doorway, then add 10-15% for waste, corners, and cuts. A typical 12x14 ft room needs about 50-56 linear feet of baseboard."}},{"@type":"Question","name":"How much baseboard does a whole house need?","acceptedAnswer":{"@type":"Answer","text":"A typical 1,500 sq ft home needs roughly 400-500 linear feet of baseboard, depending on layout and number of rooms. Add 10-15% waste to get your purchase total, plus door and window casing if you're replacing that trim too."}},{"@type":"Question","name":"How much door and window casing do I need?","acceptedAnswer":{"@type":"Answer","text":"Budget about 17 linear feet of casing per standard interior door (both side legs plus the top header) and about 10 linear feet per standard window. Wider or taller openings need proportionally more."}},{"@type":"Question","name":"Does crown molding use more material than baseboard?","acceptedAnswer":{"@type":"Answer","text":"Crown molding typically uses slightly more linear footage than baseboard for the same room because it runs the full ceiling perimeter uninterrupted by doorways, and the compound miter cuts at each corner waste more material than baseboard's simpler cuts."}},{"@type":"Question","name":"What size boards should I buy for trim?","acceptedAnswer":{"@type":"Answer","text":"Standard trim stock comes in 8, 10, 12, and 16-foot lengths. Match your board length to your longest wall run where possible to minimize seams — a 12-ft wall with 12-ft boards needs zero splices on that wall."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+  <div class="tool-page">
+    <h1>Baseboard & Trim Calculator — Linear Feet, Boards & Cost</h1>
+    <p class="tool-desc">Enter your room or whole-house perimeter to get baseboard, door casing, window casing, and crown molding — in linear feet, board count, and estimated cost.</p>
+
+    <div class="tool-box">
+      <div class="form-group"><label>Total Wall Perimeter (ft) — sum every room you're trimming</label><input type="number" id="bt-perimeter" placeholder="e.g. 52 for one room, 460 for a whole house" min="0" step="1"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Number of Doors</label><input type="number" id="bt-doors" placeholder="e.g. 1" min="0" step="1" value="1"></div>
+        <div class="form-group"><label>Number of Windows</label><input type="number" id="bt-windows" placeholder="e.g. 2" min="0" step="1" value="0"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Waste Allowance</label>
+          <select id="bt-waste">
+            <option value="10">10% (simple rectangular rooms)</option>
+            <option value="15" selected>15% (standard — most homes)</option>
+            <option value="20">20% (many corners, angles, or a first-time DIY cut list)</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Stock Board Length</label>
+          <select id="bt-stock">
+            <option value="8">8 ft</option>
+            <option value="10">10 ft</option>
+            <option value="12" selected>12 ft</option>
+            <option value="16">16 ft</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Trim Material</label>
+        <select id="bt-material">
+          <option value="0.5,1.25">MDF / Paint-Grade ($0.50–1.25/ft)</option>
+          <option value="1,2.25" selected>Stain-Grade Pine ($1.00–2.25/ft)</option>
+          <option value="2,4.5">Hardwood / Premium Profile ($2.00–4.50/ft)</option>
+        </select>
+      </div>
+      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; margin:0.5rem 0 1rem;">
+        <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.9rem;"><input type="checkbox" id="bt-casing" checked> Include door &amp; window casing</label>
+        <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.9rem;"><input type="checkbox" id="bt-crown"> Also include crown molding</label>
+      </div>
+
+      <button class="btn-primary" onclick="calcTrim()" style="width:100%">Calculate Trim Needed →</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="bt-total-ft">—</div>
+        <div class="result-label">total linear feet of trim</div>
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="bt-boards">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">boards to buy</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="bt-cost">—</div>
+            <div style="font-size:0.78rem; color:var(--mid)">estimated cost</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--mid); margin-top:0.75rem;" id="bt-detail"></p>
+      </div>
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">How to Calculate Baseboard and Trim</h2>
+    <p>Measure the perimeter of every room you're trimming — add up all four wall lengths (or however many walls the room has). Add every room together for a whole-house total. Then subtract about 3 feet of baseboard for each doorway, since baseboard stops at the door casing rather than running across the opening.</p>
+    <p>Add a waste allowance on top: 10% for simple rectangular rooms with few cuts, 15% as the standard default for most homes, or 20% if the room has lots of corners, angles, or you're new to cutting trim and expect a few mistakes.</p>
+    <p>If you're also replacing door and window casing, budget roughly 17 linear feet per standard interior door (two vertical legs plus the top header) and about 10 linear feet per standard window. Crown molding runs the full ceiling perimeter with no door deduction, but its compound miter cuts at each corner waste more material — this calculator adds an extra 5% on top of your waste allowance for crown specifically.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Trim Material Comparison</h2>
+    <table>
+      <thead><tr><th>Material</th><th>Price per Linear Foot</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td>MDF (paint-grade)</td><td>$0.50–1.25</td><td>Painted trim, budget-friendly, resists warping</td></tr>
+        <tr><td>Stain-Grade Pine</td><td>$1.00–2.25</td><td>Natural wood look on a mid-range budget</td></tr>
+        <tr><td>Hardwood / Premium</td><td>$2.00–4.50</td><td>High-end finishes, oak/poplar/maple profiles</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:var(--amber-light); border-radius:var(--radius); border-left:4px solid var(--amber);">
+      <strong>Pro tip:</strong> Match your stock board length to your longest wall wherever possible. A 12-ft wall with 12-ft boards needs zero splices; the same wall with 8-ft boards needs a seam, which is both more visible and more waste.
+    </div>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Common Baseboard & Trim Mistakes</h2>
+    <ul style="margin:0.75rem 0 1rem 1.25rem; line-height:1.85;">
+      <li><strong>Forgetting the door deduction.</strong> Baseboard doesn't run across doorway openings — subtract roughly 3 ft per door or you'll over-order.</li>
+      <li><strong>Buying by room square footage instead of perimeter.</strong> A 120 sq ft room isn't 120 linear feet of baseboard — always work from wall length, not floor area.</li>
+      <li><strong>Skipping the waste allowance.</strong> Miter cuts at inside and outside corners use more material than a straight run; 10-15% extra prevents a mid-project supply run.</li>
+      <li><strong>Mismatching profile height between rooms.</strong> Mixing a 3" baseboard in one room with 5" in the next reads as an unfinished remodel from the doorway between them.</li>
+      <li><strong>Not accounting for base shoe separately.</strong> Base shoe nails to the floor, not the baseboard, so it can be added or skipped independently — don't fold it into your baseboard linear footage.</li>
+    </ul>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How much baseboard do I need for a room?</strong></p>
+    <p>Measure the room's perimeter (add up all four wall lengths), subtract about 3 feet for each doorway, then add 10-15% for waste, corners, and cuts. A typical 12x14 ft room needs about 50-56 linear feet of baseboard.</p>
+    <p><strong>How much baseboard does a whole house need?</strong></p>
+    <p>A typical 1,500 sq ft home needs roughly 400-500 linear feet of baseboard, depending on layout and number of rooms. Add 10-15% waste to get your purchase total, plus door and window casing if you're replacing that trim too.</p>
+    <p><strong>How much door and window casing do I need?</strong></p>
+    <p>Budget about 17 linear feet of casing per standard interior door (both side legs plus the top header) and about 10 linear feet per standard window. Wider or taller openings need proportionally more.</p>
+    <p><strong>Does crown molding use more material than baseboard?</strong></p>
+    <p>Crown molding typically uses slightly more linear footage than baseboard for the same room because it runs the full ceiling perimeter uninterrupted by doorways, and the compound miter cuts at each corner waste more material than baseboard's simpler cuts.</p>
+    <p><strong>What size boards should I buy for trim?</strong></p>
+    <p>Standard trim stock comes in 8, 10, 12, and 16-foot lengths. Match your board length to your longest wall run where possible to minimize seams — a 12-ft wall with 12-ft boards needs zero splices on that wall.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/drywall-calculator.html">Drywall Calculator</a></li>
+        <li><a href="/tools/paint-calculator.html">Paint Calculator — How Much Paint Do I Need?</a></li>
+        <li><a href="/tools/flooring-calculator.html">Flooring Calculator</a></li>
+        <li><a href="/tools/room-area-calculator.html">Room Area Calculator</a></li>
+        <li><a href="/tools/renovation-cost-estimator.html">Renovation Cost Estimator</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<script>
+function calcTrim() {
+  const perimeter = parseFloat(document.getElementById('bt-perimeter').value) || 0;
+  const doors = parseFloat(document.getElementById('bt-doors').value) || 0;
+  const windows = parseFloat(document.getElementById('bt-windows').value) || 0;
+  const waste = parseFloat(document.getElementById('bt-waste').value);
+  const stockLen = parseFloat(document.getElementById('bt-stock').value);
+  const [priceLow, priceHigh] = document.getElementById('bt-material').value.split(',').map(Number);
+  const includeCasing = document.getElementById('bt-casing').checked;
+  const includeCrown = document.getElementById('bt-crown').checked;
+
+  if (!perimeter) { alert('Please enter your total wall perimeter.'); return; }
+
+  const doorDeduct = doors * 3;
+  const baseboardNet = Math.max(0, perimeter - doorDeduct);
+  const baseboardLF = baseboardNet * (1 + waste / 100);
+  const baseboardBoards = Math.ceil(baseboardLF / stockLen);
+
+  let casingLF = 0, casingBoards = 0;
+  if (includeCasing) {
+    casingLF = (doors * 17 + windows * 10) * (1 + waste / 100);
+    casingBoards = Math.ceil(casingLF / stockLen);
+  }
+
+  let crownLF = 0, crownBoards = 0;
+  if (includeCrown) {
+    crownLF = perimeter * (1 + (waste + 5) / 100);
+    crownBoards = Math.ceil(crownLF / stockLen);
+  }
+
+  const totalLF = Math.round(baseboardLF + casingLF + crownLF);
+  const totalBoards = baseboardBoards + casingBoards + crownBoards;
+  const costLow = Math.round(totalLF * priceLow);
+  const costHigh = Math.round(totalLF * priceHigh);
+
+  document.getElementById('bt-total-ft').textContent = totalLF.toLocaleString();
+  document.getElementById('bt-boards').textContent = totalBoards;
+  document.getElementById('bt-cost').textContent = '$' + costLow.toLocaleString() + '–$' + costHigh.toLocaleString();
+
+  let detail = 'Baseboard: ' + Math.round(baseboardLF) + ' ft (' + baseboardBoards + ' boards).';
+  if (includeCasing) detail += ' Casing: ' + Math.round(casingLF) + ' ft (' + casingBoards + ' boards).';
+  if (includeCrown) detail += ' Crown: ' + Math.round(crownLF) + ' ft (' + crownBoards + ' boards).';
+  document.getElementById('bt-detail').textContent = detail;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

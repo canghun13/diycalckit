@@ -34,6 +34,7 @@ const TOOLS = [
   { name: "Room Area Calculator", url: "/tools/room-area-calculator.html" },
   { name: "Square Footage Calculator", url: "/tools/square-footage-calculator.html" },
   { name: "Drywall Calculator", url: "/tools/drywall-calculator.html" },
+  { name: "Baseboard & Trim Calculator", url: "/tools/baseboard-trim-calculator.html" },
   { name: "Concrete Calculator", url: "/tools/concrete-calculator.html" },
   { name: "Renovation Cost Estimator", url: "/tools/renovation-cost-estimator.html" },
   { name: "Bathroom Remodel Cost Calculator", url: "/tools/bathroom-remodel-cost-calculator.html" },
@@ -58,6 +59,7 @@ const TOOLS = [
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "How Much Baseboard Do I Need? Room & Whole-House Guide", url: "/blog/how-much-baseboard-do-i-need.html", date: "2026-07-24", desc: "Calculate baseboard, door casing, window casing, and crown molding by room or whole house, with waste allowance and cost." },
   { name: "How Many Christmas Lights Do I Need? Roofline, Tree & Window Guide", url: "/blog/how-many-christmas-lights-do-i-need.html", date: "2026-07-21", desc: "Free formulas to calculate feet, strands, and bulbs for roofline, windows, doors, and trees." },
   { name: "Self-Leveling Compound vs. Plywood Underlayment: Which Do You Need?", url: "/blog/self-leveling-compound-vs-plywood-underlayment.html", date: "2026-07-19", desc: "What each product actually fixes, cost comparison, and when a subfloor needs both before LVP, hardwood, or tile." },
   { name: "1/2\" vs. 5/8\" Drywall: Which Do You Need for Walls & Ceilings?", url: "/blog/1-2-vs-5-8-drywall.html", date: "2026-07-19", desc: "Weight, sag resistance, fire rating, and cost compared — plus when building code requires 5/8\" Type X." },

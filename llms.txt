@@ -33,6 +33,7 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [Room Area Calculator](https://diycalckit.com/tools/room-area-calculator.html): Calculates room square footage for rectangular, L-shaped, and triangular rooms.
 - [Square Footage Calculator](https://diycalckit.com/tools/square-footage-calculator.html): Calculates total square footage for multiple rooms or an entire floor plan.
 - [Drywall Calculator](https://diycalckit.com/tools/drywall-calculator.html): Estimates number of drywall sheets needed for walls and ceilings.
+- [Baseboard & Trim Calculator](https://diycalckit.com/tools/baseboard-trim-calculator.html): Calculates linear feet and board count for baseboard, door casing, window casing, and crown molding from room perimeter, door count, and window count.
 - [Concrete Calculator](https://diycalckit.com/tools/concrete-calculator.html): Calculates cubic yards or bags of concrete needed for slabs, footings, and posts.
 
 ### Renovation & Cost
@@ -95,6 +96,7 @@ Step-by-step DIY project guides with built-in calculator links.
 
 ## Cost Guides & Blog
 
+- [How Much Baseboard Do I Need? Room & Whole-House Guide](https://diycalckit.com/blog/how-much-baseboard-do-i-need.html): Baseboard, door casing, window casing, and crown molding linear footage by room or whole house.
 - [How Many Christmas Lights Do I Need? Roofline, Tree & Window Guide](https://diycalckit.com/blog/how-many-christmas-lights-do-i-need.html): Formulas to calculate feet, strands, and bulbs for roofline, windows, doors, and trees.
 - [How Much Insulation Do I Need? Attic & Wall Guide](https://diycalckit.com/blog/how-much-insulation-do-i-need.html): Bags or rolls of insulation by area and R-value. Recommended R-values by area, blown-in vs. batt.
 - [How Many Tiles Do I Need? Tile Count by Room Size](https://diycalckit.com/blog/how-many-tiles-do-i-need.html): Tile count by tile size, layout pattern, and room type, with box-coverage guidance.
