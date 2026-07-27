@@ -1,5 +1,5 @@
 # DIYCalcKit HANDOVER
-**최종 업데이트: 2026-07-24 (세션 종료) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
+**최종 업데이트: 2026-07-27 (세션 종료) | 사이트: https://diycalckit.com | 레포: canghun13/diycalckit (main, GitHub Pages)**
 
 새 채팅 시작 시: 이 파일을 업로드하고 "이거 보고 이어서 작업해"라고 말할 것.
 
@@ -307,6 +307,37 @@
   2. "계산기" 포맷은 사실상 전 토픽 포화 확정 — 앞으로 신규 아이디어는 (a) 우리가 이미 연 새 카테고리의 확장, (b) 세션2(07-19)에서 성공한 "판단/비교"형 롱테일(자재 A vs B, 좁은 서브토픽), (c) 타이밍이 유리한 시즌성 콘텐츠 세 가지 축으로 우선 탐색할 것.
   3. 크리스마스 조명 계산기는 노출 데이터가 아직 없음(당연히, 방금 발행) — 다음 GSC 리포트에서 색인 여부부터 확인.
 
+## 2026-07-27 세션 (GSC 2026-07-27 export + GA 6/29-7/26 기준, "중복확인+키워드경쟁 조사+롱테일 활용, AI검색은 콘텐츠가 도메인권위보다 중요→문제해결/비교분석 위주, 애드센스 수익화 관점 우선순위" 지시 반영)
+- **Coverage**: 심각한 문제 45(발견됨14+크롤링됨28+리디렉션3) — 07-17부터 완전 동일, 계속 정체. GSC Coverage 리포트 자체가 데이터 지연이 커서(차트 마지막 날짜가 07-10) 최신 상태 반영 안 됨. sitemap=117(이번 세션 전 114+baseboard/backsplash 등 반영)=실제 파일 수 정확히 일치, 고아 페이지 없음. 계속 자연 해소 대기, 이번 라운드 조치 없음.
+- **Performance 1000개 검색어 전수 필터링** (37툴/53블로그/20프로젝트 슬러그 토큰 매칭) → 미매칭 50개 전부 (a) 기존 스킵 확정된 labor/moving-cost 클러스터(mover cost calculator, removals cost calculator, labor cost 등), (b) 네덜란드어 타일 쿼리(hoeveel tegels, vloercalculator 등), (c) 노출 1~17회 스팸성/초저볼륨 쿼리(외국어 잡음 포함). **신규 콘텐츠 후보 0개 — 9세션 연속 동일 결론.**
+- **핸드오버에 남겨둔 "다음 판단형 롱테일 후보" 4개 웹서치로 재검증 → 전부 포화 확인, 스킵**:
+  1. "왜 그라우트가 갈라지나"(원인진단형) — TileBar, Zerorez, Mapei, TCNA(공식), Calahan Bath, Magic Steam Co, Cavastone 등 7개+ 확인, 포화
+  2. "샤워 니치는 타일 시공 전/후"(시공순서 판단) — Craving Some Creativity, Fine Homebuilding(2건), Palisade Tiles(2건), FloorElf, Houzz 등 6개+ 확인. 니치 종류(매립형 vs 표면부착형)에 따라 답이 갈리는 흥미로운 각도였지만 이미 다수 매체가 이 구분까지 다루고 있어 스킵
+  3. "코너비드는 언제 필요한가"(drywall) — Fine Homebuilding, Today's Homeowner, Hyde Tools, Trim-Tex, NIUYUAN(2건), SinoExtrud(2건) 등 8개+ 확인, 완전 포화
+  4. "1/4 vs 1/2 시멘트보드"(두께 선택, 07-19 성공 패턴과 동일 각도로 재시도) — ehow, upgradedhome, flooringclarity, DIYTileGuy, ArchitectureAdrenaline + DIY포럼 2개 등 7개+ 확인, 포화
+  - **결론**: "판단형 롱테일" 패턴도 이제 거의 소진 — 07-19 세션에 성공한 3건(self-leveling vs plywood, 1/2 vs 5/8 drywall, cement board vs greenboard)이 남아있던 마지막 진짜 빈틈이었던 것으로 보임. 신규 콘텐츠보다 기존 자산 보강이 이번에도 압도적으로 유리하다고 판단.
+- **★ 핵심 발견 — 사이트 전역 FAQPage 스키마 결함 (신규 발견, 61개 파일 수정)**: 툴/블로그/프로젝트 전체에 FAQ 시각적 섹션 유무와 FAQPage JSON-LD 스키마 유무를 대조하는 정밀 스캔을 처음으로 실행한 결과 — **툴 37개는 100% FAQPage 스키마 보유**, 반면 **블로그는 53개 중 41개, 프로젝트는 20개 전부(20/20)가 화면엔 FAQ Q&A가 있는데 구조화 데이터가 아예 없었음**(그동안 스캔은 "중복 스키마 vs 중복 안 됨"만 봤지 "스키마 자체의 부재"는 확인한 적 없었던 사각지대). FAQ 리치 스니펫 자체는 폐지됐지만, 사용자가 이번에 강조한 "AI검색은 콘텐츠의 문제해결력을 구조적으로 잘 표현하는 게 유리"라는 원칙에 정확히 부합하는 조치라 판단해 즉시 실행.
+  - 61개 파일(블로그 41 + 프로젝트 20) 전부 화면의 `<p><strong>질문</strong> 답변</p>` 패턴을 파싱해 FAQPage JSON-LD를 자동 생성, 각 파일 기존 Article 스키마 바로 뒤(AdSense 스크립트 앞)에 삽입. 화면에 보이는 텍스트는 전혀 안 건드림 — **순수 메타데이터 추가라 사용자 화면 확인 불필요.**
+  - 검증: 61개 파일 전부 HTML 태그 무결성(HTMLParser) 통과 + JSON-LD `json.loads()` 파싱 통과(원본 FAQ 답변에 중첩 태그가 하나도 없어 안전하게 텍스트 추출 가능했음) + 사이트 전체(113개 파일) 재검증도 이상 없음.
+- **내부링크 결함 5건 수정 (07-21 세션에서 예고한 "전체 페이지로 스캔 범위 확대" 실행)**: 전체 111개 페이지 내부링크 개수 스캔(평균 5.4개, 최소 3개) 후 링크 최하위 페이지들의 "짝꿍 콘텐츠 누락/일방통행" 패턴 정밀 확인:
+  - `tools/insulation-calculator.html` ↔ `projects/how-to-install-insulation.html` — **완전히 서로 링크가 없었음**(둘 다 square-footage-calculator 등만 링크), 양방향 신설
+  - `tools/fence-calculator.html` → `projects/how-to-build-a-fence.html` 누락(반대 방향은 있었음, 일방통행) 추가 + `how-to-build-a-fence.html`에 비용 블로그(`how-much-does-it-cost-to-build-a-fence`) 링크도 누락돼있어 같이 추가
+  - `tools/flooring-calculator.html` → `projects/how-to-install-lvp-flooring.html` 누락(반대 방향은 있었음) 추가
+  - `tools/moving-cost-calculator.html`(노출 919회, **사이트 내 전체 최대 노출 페이지**) → `projects/how-to-move-house.html`, `blog/how-many-boxes-do-i-need-to-move.html` 둘 다 누락돼 있었음(반대 방향들은 이미 있었음) 추가. 노출이 가장 큰 페이지의 구조적 손실이라 우선순위 최상단으로 처리.
+  - **판단 근거**: 애드센스 수익화 관점에서, 이미 노출/유입이 발생하는 페이지에서 사용자가 다음 페이지로 이동 못 하고 이탈하는 손실을 막는 게 신규 저볼륨 페이지 제작보다 세션당 페이지뷰(광고 노출수)에 더 직접 기여. 아직 전체 111개 페이지의 나머지 저링크 케이스(주로 프로젝트 폴더, 원래 outbound 링크 자체가 적은 구조)는 다 훑지 못함 — 다음 세션에 이어서 확인 가능.
+- **CTR 개선 실행** (title/meta 텍스트만 변경, H1·JSON-LD headline 유지 — 화면 확인 불필요): 노출 있는데 0~1클릭이고 포지션이 나쁘지 않은데 아직 숫자훅이 없었던 페이지 3개 신규 발견
+  - `tools/room-area-calculator.html` (노출414/클릭1/순위40.85) — "Rectangle or L-Shape, Instant Sq Ft" 훅 추가(square-footage-calculator와 차별화 위해 L자형+즉시성 강조)
+  - `tools/carpet-calculator.html` (노출573/클릭0/순위50.58) — "Sq Yards + Waste Factor (Free)" 훅 추가
+  - `tools/contractor-cost-calculator.html` (노출432/클릭0/순위56.29) — 페이지 내 실제 요금표 데이터 기준 "$25–$150/hr" 실측 범위 훅 추가(일반 컨트랙터 $50-150, 페인터/플로어링/드라이월 등 최저 $25 — 표 전체 최저~최고 정확히 반영)
+- **sitemap.xml**: 위 61개(FAQPage) + 4개(내부링크 수정 tools) + 3개(CTR) 총 64개 파일 lastmod 2026-07-27로 갱신. XML 유효성(`xml.etree.ElementTree`) 통과, 117 URL = 실제 html 파일 수(37+1 tools, 53+1 blog, 20+1 projects, 루트4) 정확히 일치.
+- **검증**: 수정 69개 파일 전부 + 사이트 전체 113개 파일 재검증 — HTML 태그 무결성(HTMLParser open/close 스택) 전체 통과, JSON-LD `json.loads()` 파싱 전체 통과, 내부링크 href 대상 파일 실제 존재 여부 전체 통과, sitemap XML 유효성 통과. 전부 push 후 GitHub Actions 배포 success 확인.
+- **화면 변경 없음**: 이번 세션 조치 전부(FAQPage 스키마 추가, 내부링크 몇 줄 추가, title/meta 텍스트 교체)가 시각적으로 새 UI 요소를 만드는 게 아니라 기존 화면 그대로에 메타데이터/링크만 보강한 것 — **사용자가 브라우저로 확인해야 할 페이지 없음** (단, 원하면 아래 페이지들 링크 참고: room-area-calculator, carpet-calculator, contractor-cost-calculator — title 텍스트가 브라우저 탭에 바뀐 걸로 보임).
+- **다음 세션 참고**:
+  1. **신규 콘텐츠 발굴은 사실상 완전히 소진**(9세션 연속 GSC후보 0건, 판단형 롱테일도 07-19의 3건 이후 4번의 재시도 전부 실패) — 다음에 "신규 왜 안 하냐" 재요청이 오면, 반복 재확인보다 이번처럼 **사이트 전역 구조 스캔으로 새로운 종류의 결함**(이번엔 FAQPage 스키마 부재)을 찾는 접근이 더 생산적이었음. 다음 후보: (a) OG 태그/Twitter Card 메타 존재 여부 전수 스캔, (b) 이미지 alt 텍스트 전수 스캔, (c) 내부링크 나머지 페이지(특히 project 폴더 전반) 스캔 마무리.
+  2. FAQPage 스키마는 이제 111개 페이지 중 108개(툴37+블로그41+프로젝트20+기존5블로그+미검토분) 사실상 전부 보유 — 혹시 놓친 파일 있는지만 다음 세션 초반에 한번 재확인.
+  3. 내부링크 결함 스캔은 이번에 전체 111페이지로 확대했지만 "링크 개수가 적은 페이지" 위주로만 봤음 — 프로젝트 폴더는 원래 outbound 링크 구조 자체가 툴/블로그보다 적게 설계돼 있어서(대부분 3~4개가 정상 범위), 진짜 결함(짝꿍 페이지 완전 누락)인지 원래 구조인지 매번 개별 확인 필요.
+  4. GA 데이터(2026-06-29~07-26): 활성사용자 69명, 신규 71명 — (direct)/(none) 53명 압도적 1위, google/organic 9명, bing/organic 2명, 나머지는 Findly.tools/kittylaunch/foundrlist/newtool.site/twelve.tools 같은 툴 런칭 디렉토리 referral. 유기검색 자체는 여전히 초기 단계 — 구조적 개선(이번 세션의 스키마/내부링크류)이 앞으로도 몇 세션은 신규 콘텐츠보다 우선순위 높을 것으로 판단.
+
 ## 참고: 사용자가 직접 커밋한 변경사항 (세션 외)
 - 2026-07-21, 2026-07-22에 사용자가 직접 `index.html`에 커밋 2건 추가 (KittyLaunch, Sell With boost 런칭 배지) — 다음 세션에서 작업 시 이 배지들을 실수로 지우지 않도록 주의할 것.
 
@@ -349,3 +380,11 @@
   3. 파버 패티오 계산기 후보는 위 결론(계산기 신규는 한계)에 따라 우선순위 낮춤 — 검토한다면 계산기 단독이 아니라 "파버 vs 콘크리트 패티오 어느 쪽" 같은 판단형으로 접근할 것.
 
 
+
+## 현재 콘텐츠 (2026-07-27, 세션 종료 시점)
+- 툴 37개, 블로그 53개, 프로젝트 20개 (신규 없음, 10세션 연속 — 니치 자체가 계산기/판단형 롱테일 양쪽 다 사실상 포화)
+- FAQPage 스키마: 툴 37/37 + 블로그 46/53(이번 세션 41개 신규 추가 + 기존 5개) + 프로젝트 20/20 — 화면 FAQ 있는 페이지는 사실상 전부 스키마도 보유
+- "Common Mistakes/비교" 섹션: 툴 37/37 완료 유지
+- 내부링크: moving-cost-calculator(사이트 최대노출), insulation-calculator↔프로젝트, fence-calculator→프로젝트, flooring-calculator→LVP프로젝트 5건 이번 세션에 보강. 나머지 프로젝트 폴더는 미검토 잔여분 있음.
+- CTR 훅 누적: room-area/carpet/contractor-cost-calculator(이번 세션) + 기존 다수(square-footage, primer, fence, packing-box 등)
+- 사이트 트래픽 여전히 초기 단계(GA 활성사용자 69명/4주, 유기검색 9~11명 수준) — 구조적 개선이 신규 콘텐츠보다 우선순위 계속 유효
