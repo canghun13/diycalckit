@@ -525,3 +525,51 @@ Performance `차트.csv` 일별 데이터가 명확함:
    - `tools/grout-calculator.html`(683단어, 노출0) — 독립 계산기, 중복 아님. 다만 오래 발행됐는데도 노출0이라 다음 라운드 "삭제 후보"가 아니라 "보강/내부링크 강화 후보"로 볼 것.
 3. **여전히 신규 콘텐츠 제작 금지.** 트래픽 회복 신호가 나올 때까지 유지.
 4. 애드센스 심사 결과는 아직 미확인 — 다음에 물어볼 것 (6개 확인항목 중 유일하게 아직 안 받은 것).
+
+---
+
+# 2026-08-07 세션 3 — 2차 콘텐츠 정리 (전수 재스캔, 사용자 승인 후 실행)
+
+사용자가 GSC 재확인 없이 "수동조치 없고 색인은 유지되는데 순위만 강등된 상태"를 전제로 2차 정리를 명시적으로 요청. 텍스트로 계획 먼저 보고 → 승인("니가 판단해서 알아서 잘하되 문제없게 해라") 받은 뒤 실행.
+
+## 전수 재스캔 (107개 페이지, 1차 정리 이후 기준)
+- 노출 0 페이지 38개, 그 중 단어수 800 미만 24개
+- 노출0+얇은 페이지들을 대상으로 계산기↔블로그 페어 후보 약 20개를 **직접 본문 대조**해서 진짜 중복과 아닌 것을 구분(제목 유사성만으로 판단 안 함)
+
+## 삭제 실행 완료 (블로그 7개, 계산기로 흡수)
+
+| 삭제 | 흡수 대상 | 흡수한 고유정보 |
+|---|---|---|
+| `blog/how-much-insulation-do-i-need.html` | `tools/insulation-calculator.html` | R-value별 백(bag)당 커버리지표(fiberglass/cellulose × R-30/38/49/60) + 워크드 예시 |
+| `blog/how-much-grout-do-i-need.html` | `tools/grout-calculator.html` | 없음 — TCNA 공식/그라우트 소요표까지 100% 동일 수치, 계산기가 샌디드/언샌디드/에폭시 비교표까지 더 충실해서 흡수할 것 자체가 없었음 |
+| `blog/how-much-fabric-do-i-need-for-curtains.html` | `tools/window-treatment-calculator.html` | 헴 여유분(하단8"/상단4-8"), 원단폭(54"/108")과 시밍, 시어vs블랙아웃 풀니스 차이 |
+| `blog/how-much-hardwood-flooring-do-i-need.html` | `tools/hardwood-floor-calculator.html` | 없음 — **H1 제목까지 완전히 동일**했고 설치패턴별 폐기율 숫자도 동일, 계산기가 이미 더 충실(솔리드vs엔지니어드, 비용표, 흔한실수까지 보유) |
+| `blog/how-much-grass-seed-do-i-need.html` | `tools/lawn-seed-calculator.html` | 발아기간표(종별 5-30일) + 흔한실수 2건(폭우직전 파종, 오래된 종자 사용). **참고: 사고이력에 남아있는 과거 수치불일치 버그가 바로 이 페어였음** |
+| `blog/how-many-christmas-lights-do-i-need.html` | `tools/christmas-lights-calculator.html` | FAQ 1개(퍼머넌트 올시즌 조명) — 나머지는 구글맵 위성뷰 팁부터 미니vs C9 표까지 거의 문장 단위로 동일했음(07-19/07-21 이틀 차이로 제작된 페어) |
+| `blog/how-much-concrete-do-i-need.html` | `tools/concrete-calculator.html` | 프로젝트별 표준두께표(보도/패티오/진입로/헛간기초) + 포스트 풋팅 원기둥 부피공식(π×r²×depth) 워크드 예시 |
+
+## 중복 아님으로 확인되어 보존한 페어들 (내용 대조 근거 남김)
+- `home-renovation-roi-calculator.html` vs `home-renovations-that-add-the-most-value.html`(노출123) — 개인화 계산기 vs TOP10 서술형, 데이터출처만 같고 형식 다름
+- `storage-unit-size-calculator.html` vs `what-size-storage-unit-do-i-need.html` — 계산기는 체크박스 인터랙티브, 블로그는 월 임대료 포함 사이즈 가이드표
+- `fence-calculator.html` vs `how-much-does-it-cost-to-build-a-fence.html` / `flooring-calculator.html` vs `how-much-does-it-cost-to-lay-flooring.html` / `deck-size-calculator.html` vs `how-much-does-it-cost-to-build-a-deck.html` — 전부 "수량계산기 vs 자재별 시공비 가격표" 동일 패턴, 의도가 다름
+- `tile-calculator.html` vs `how-many-tiles-do-i-need.html` — 07-15 세션에 의도적으로 다른 각도(개인화계산 vs 사이즈별 참조표)로 분리 제작, 실제 표 구조도 다름
+- `backsplash-tile-calculator.html` vs `how-much-tile-do-i-need-for-a-backsplash.html` vs `how-to-install-a-backsplash.html`(프로젝트) — 경계선상 중복이나 완전 중복은 아님. 프로젝트는 시공단계라 명확히 다름. 계산기/블로그는 보류, 다음 라운드에도 노출0 지속되면 재검토
+- `how-to-install-carpet.html` vs `how-to-install-carpet-tiles.html` — 니킥커+택스트립 전통시공 vs 필앤스틱 타일시공, 도구/공정 완전히 다름
+
+## 연쇄 반영 및 검증
+- nav.js, blog/index.html(배열+noscript), sitemap.xml, llms.txt에서 7개 항목 전부 제거(스크립트로 일괄 처리 후 grep 재검색으로 잔여 0건 확인)
+- 개별 상호링크 9개 파일(계산기 자기참조 6개 + 프로젝트/블로그 교차링크 3개) 정리
+- **정리 과정에서 중복 링크 1건 자체 발견/수정**: `projects/how-to-pour-a-concrete-slab.html`에 concrete-calculator 링크가 실수로 2번 들어간 것 확인, 하나 제거
+- 사이트 전체 재검증: HTML 태그 무결성(107개 파일, 0건) + JSON-LD 파싱(0건) + 내부링크 href 대상 파일 실존여부 전수 스캔(0건 죽은링크) + sitemap.xml `xml.etree` 유효성(107 URL = 실제 파일 107개 정확히 일치) + nav.js/blog-index 인라인 스크립트 `node --check` 통과
+- push 후 `pages/builds/latest`로 배포 확인(`status: built`, 커밋 SHA `daf928e1` 일치)
+
+## 현재 상태 (2026-08-07 세션3 종료 시점)
+- 콘텐츠: 툴 37개, 블로그 46개(53→46, 1차3+2차7=10개 삭제), 프로젝트 20개, 총 107개 파일
+- **1차+2차 누적으로 117 → 107개 파일 정리 완료**
+- 아직 GSC 재크롤링 결과 확인 전 — 다음 GSC export가 최우선 확인 대상
+
+## 다음 세션 지침
+1. **다음 GSC export 받으면 가장 먼저 할 일**: 07-24 붕괴 이후 노출이 회복되는 조짐이 있는지 확인. 있으면 이 방향이 맞았다는 뜻이니 3차 정리(아래 보류 후보들)를 계속 진행. 없으면 콘텐츠 중복이 원인이 아니었을 가능성도 열어두고 다른 가설(예: 도메인 나이 자체의 낮은 신뢰도, 백링크 프로필 등) 재검토.
+2. **3차 정리 후보(이번에 보류한 것, 노출0 지속되면 재검토)**: backsplash 계산기/블로그 페어, home-renovation-roi-calculator(538단어, 얇지만 독립 콘텐츠 — 삭제보다 보강 검토)
+3. **여전히 신규 콘텐츠 제작 금지.**
+4. 애드센스 심사 결과 아직 미확인 — 물어볼 것.
