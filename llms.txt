@@ -103,18 +103,15 @@ Step-by-step DIY project guides with built-in calculator links.
 - [How Many Christmas Lights Do I Need? Roofline, Tree & Window Guide](https://diycalckit.com/blog/how-many-christmas-lights-do-i-need.html): Formulas to calculate feet, strands, and bulbs for roofline, windows, doors, and trees.
 - [How Much Insulation Do I Need? Attic & Wall Guide](https://diycalckit.com/blog/how-much-insulation-do-i-need.html): Bags or rolls of insulation by area and R-value. Recommended R-values by area, blown-in vs. batt.
 - [How Many Tiles Do I Need? Tile Count by Room Size](https://diycalckit.com/blog/how-many-tiles-do-i-need.html): Tile count by tile size, layout pattern, and room type, with box-coverage guidance.
-- [How Many Shingles Do I Need? Roofing Calculator Guide](https://diycalckit.com/blog/how-many-shingles-do-i-need.html): Roofing squares and shingle bundles from roof footprint and pitch.
 - [How Much Gutter Do I Need? Gutter Calculator Guide](https://diycalckit.com/blog/how-much-gutter-do-i-need.html): Linear feet of gutter, downspouts, and hangers from home size and roof type.
 - [Self-Leveling Compound vs. Plywood Underlayment](https://diycalckit.com/blog/self-leveling-compound-vs-plywood-underlayment.html): What each product actually fixes, cost comparison, and when a subfloor needs both before LVP, hardwood, or tile.
 - [1/2" vs. 5/8" Drywall: Which Do You Need?](https://diycalckit.com/blog/1-2-vs-5-8-drywall.html): Weight, sag resistance, fire rating, and cost compared, plus when building code requires 5/8" Type X.
 
 - [How Much Does a Gallon of Paint Cost? (2026 Price Guide)](https://diycalckit.com/blog/how-much-does-a-gallon-of-paint-cost.html): Paint costs $20-$80/gallon on average, depending on brand and quality tier. Price by brand, finish, and can size.
 
-- [How to Calculate Room Area for Flooring, Paint & Tile](https://diycalckit.com/blog/how-to-calculate-room-area.html): Room area for any material — square feet for paint, square yards for carpet — plus L-shaped rooms and closets.
 - [How to Measure a Garden Bed for Planning](https://diycalckit.com/blog/how-to-measure-a-garden-bed.html): Rectangular, circular, and irregular bed measurement, and how area feeds into soil and mulch calculations.
 - [How Much Hardwood Flooring Do I Need?](https://diycalckit.com/blog/how-much-hardwood-flooring-do-i-need.html): Waste allowance by installation pattern, plus bundle coverage guidance.
 - [How Many Boxes Do I Need to Move?](https://diycalckit.com/blog/how-many-boxes-do-i-need-to-move.html): Box count by room and home size, with a box size and specialty box guide.
-- [How Many Square Feet Does a Gallon of Paint Cover?](https://diycalckit.com/blog/how-many-square-feet-does-a-gallon-of-paint-cover.html): Standard coverage rate and what changes it — surface type, color change, application method.
 - [How Much Fabric Do I Need for Curtains?](https://diycalckit.com/blog/how-much-fabric-do-i-need-for-curtains.html): Fullness ratio, length, and hem allowance calculations for curtain fabric.
 - [How Much Grass Seed Do I Need to Reseed a Lawn?](https://diycalckit.com/blog/how-much-grass-seed-do-i-need.html): New seeding vs. overseeding rates by grass type, with timing guidance.
 - [How Much Drywall Do I Need? Sheet Count Guide](https://diycalckit.com/blog/how-much-drywall-do-i-need.html): Sheet count by room size, plus joint compound and tape quantities.
