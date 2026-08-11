@@ -249,9 +249,17 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </footer>`;
 
-  document.body.insertAdjacentHTML('afterbegin', header);
+  // 헤더/푸터는 2026-08-11부터 각 페이지 raw HTML에 정적으로 들어있음
+  // (Googlebot 1차 크롤에 내비게이션이 보이게 하기 위함)
+  // 정적 마크업이 없는 페이지에서만 기존처럼 JS로 주입 = 하위 호환 유지
+  if (!document.querySelector('.site-header')) {
+    document.body.insertAdjacentHTML('afterbegin', header);
+  }
+  if (!document.querySelector('.site-footer')) {
+    document.body.insertAdjacentHTML('beforeend', footer);
+  }
+  // 모바일 드롭다운(툴 37개 전체 목록)은 JS 전용이라 항상 주입
   document.querySelector('.site-header').insertAdjacentHTML('afterend', mobileNav);
-  document.body.insertAdjacentHTML('beforeend', footer);
 
   const currentPath = window.location.pathname;
 
