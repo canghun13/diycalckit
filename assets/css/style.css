@@ -3,7 +3,8 @@
    assets/css/style.css
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+/* 폰트는 각 페이지 <head>의 <link rel=preconnect>+<link rel=stylesheet>로 로드.
+   CSS @import는 style.css 파싱이 끝나야 폰트 요청이 시작되는 체인이라 LCP를 늦춤 (2026-08-11 변경) */
 
 :root {
   /* Brand */
