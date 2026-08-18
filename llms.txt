@@ -18,7 +18,7 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [Paint Calculator](https://diycalckit.com/tools/paint-calculator.html): Calculates gallons of paint needed based on room dimensions, number of coats, and door/window deductions.
 - [Paint Cost Calculator](https://diycalckit.com/tools/paint-cost-calculator.html): Estimates total cost to paint a room including paint, primer, supplies, and optional professional labor.
 - [Paint Coverage Calculator](https://diycalckit.com/tools/paint-coverage-calculator.html): Calculates how far a gallon of paint covers, or how many gallons are needed for a specific area.
-- [Primer Calculator](https://diycalckit.com/tools/primer-calculator.html): Estimates primer coverage for walls and ceilings before painting.
+- [Primer Calculator](https://diycalckit.com/tools/primer-calculator.html): Estimates gallons of primer for walls and ceilings, with coverage rates by surface including bare drywall, bare wood, textured walls, concrete block, smooth and rough stucco, and bare metal (DTM). Includes square-feet-per-gallon to square-metres-per-litre conversions.
 - [Wallpaper Calculator](https://diycalckit.com/tools/wallpaper-calculator.html): Calculates number of wallpaper rolls needed for a room, accounting for pattern repeat and waste.
 - [Window Treatment Calculator](https://diycalckit.com/tools/window-treatment-calculator.html): Calculates curtain panels, fabric yardage, or blind dimensions for any window — inside and outside mount.
 
@@ -99,7 +99,7 @@ Step-by-step DIY project guides with built-in calculator links.
 
 - [Cement Board vs. Greenboard: What Goes Behind Tile in a Shower?](https://diycalckit.com/blog/cement-board-vs-greenboard-shower-tile.html): Which tile backer is rated for direct water contact in a shower, cost, and where greenboard is still acceptable.
 - [How Much Tile Do I Need for a Backsplash? Complete Guide](https://diycalckit.com/blog/how-much-tile-do-i-need-for-a-backsplash.html): Backsplash tile, square footage, and cost by wall size, tile size, and layout pattern.
-- [How Much Baseboard Do I Need? Room & Whole-House Guide](https://diycalckit.com/blog/how-much-baseboard-do-i-need.html): Baseboard, door casing, window casing, and crown molding linear footage by room or whole house.
+- [How Much Baseboard Do I Need? Room & Whole-House Guide](https://diycalckit.com/blog/how-much-baseboard-do-i-need.html): Baseboard, door casing, window casing, and crown molding linear footage by room, plus whole-house estimates from 900 to 2,500 sq ft by bedroom and bathroom count, baseboard height by ceiling height, and coping versus mitering.
 - [How Many Tiles Do I Need? Tile Count by Room Size](https://diycalckit.com/blog/how-many-tiles-do-i-need.html): Tile count by tile size, layout pattern, and room type, with box-coverage guidance.
 - [How Much Gutter Do I Need? Gutter Calculator Guide](https://diycalckit.com/blog/how-much-gutter-do-i-need.html): Linear feet of gutter, downspouts, and hangers from home size and roof type.
 - [Self-Leveling Compound vs. Plywood Underlayment](https://diycalckit.com/blog/self-leveling-compound-vs-plywood-underlayment.html): What each product actually fixes, cost comparison, and when a subfloor needs both before LVP, hardwood, or tile.
@@ -139,7 +139,7 @@ Step-by-step DIY project guides with built-in calculator links.
 - [How to Hang Wallpaper: Step-by-Step](https://diycalckit.com/blog/how-to-hang-wallpaper.html): Wall prep, measuring, cutting, pasting, and finishing.
 - [Wallpaper Calculator with Pattern Repeat](https://diycalckit.com/blog/wallpaper-calculator-with-repeat.html): How pattern repeat affects roll count, straight vs. drop match explained.
 - [How Much Peel and Stick Wallpaper Do I Need?](https://diycalckit.com/blog/peel-and-stick-wallpaper-calculator.html): Coverage by roll type and comparison with traditional wallpaper.
-- [How Much Primer Do I Need?](https://diycalckit.com/blog/how-much-primer-do-i-need.html): Coverage rates by surface type, coats guide, and room size reference.
+- [How Much Primer Do I Need?](https://diycalckit.com/blog/how-much-primer-do-i-need.html): Coverage rates by surface type, coats guide, gallons by room size and by total square footage (200 to 1,500 sq ft), plus US to metric coverage conversions.
 - [Do I Need to Prime Before Painting?](https://diycalckit.com/blog/when-to-use-primer-before-painting.html): When primer is required, when to skip it, and which type to use.
 - [How Many Coats of Primer Do I Need?](https://diycalckit.com/blog/how-many-coats-of-primer-do-i-need.html): One vs. two coats by surface type — bare drywall, stains, color changes, and wood.
 
