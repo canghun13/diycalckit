@@ -100,6 +100,10 @@
           <option value="250" selected>Bare drywall / new construction (250 sq ft/gal)</option>
           <option value="220">Bare wood or plaster (220 sq ft/gal)</option>
           <option value="200">Heavily textured / high-porosity surface (200 sq ft/gal)</option>
+          <option value="300">Bare metal — DTM primer (300 sq ft/gal)</option>
+          <option value="250">Concrete block or brick, exterior (250 sq ft/gal)</option>
+          <option value="175">Stucco — smooth or sand finish (175 sq ft/gal)</option>
+          <option value="110">Stucco — rough or heavily porous (110 sq ft/gal)</option>
         </select>
       </div>
       <div class="form-group">
@@ -130,20 +134,33 @@
     <p>The formula is straightforward: total paintable area divided by coverage rate, multiplied by number of coats.</p>
     <p><strong>Step 1 — Wall area:</strong> Multiply the room perimeter (length + width × 2) by the ceiling height. Subtract 21 sq ft per door and 15 sq ft per window.</p>
     <p><strong>Step 2 — Ceiling area:</strong> Multiply room length × width if you're priming the ceiling.</p>
-    <p><strong>Step 3 — Divide by coverage rate:</strong> Most primers cover 200–350 sq ft per gallon depending on surface type (see table below). Always round up to the nearest quart.</p>
+    <p><strong>Step 3 — Divide by coverage rate:</strong> Most primers cover 200–350 sq ft per gallon on interior surfaces, and as little as 80–150 on rough stucco (see table below). Always round up to the nearest quart.</p>
     <p>Add a 10% buffer for touch-ups and roller waste. It's cheaper to have a partial gallon left over than to make a second hardware store trip mid-project.</p>
 
     <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Primer Coverage by Surface Type</h2>
     <table>
       <thead><tr><th>Surface</th><th>Coverage per Gallon</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>Previously painted, smooth</td><td>350 sq ft</td><td>Best-case coverage</td></tr>
-        <tr><td>Previously painted, textured</td><td>300 sq ft</td><td>Slight porosity increase</td></tr>
-        <tr><td>Bare drywall (new construction)</td><td>250 sq ft</td><td>Paper face absorbs primer</td></tr>
-        <tr><td>Bare wood / plaster</td><td>220 sq ft</td><td>Higher absorption</td></tr>
-        <tr><td>Heavy texture / masonry</td><td>200 sq ft</td><td>Most porous — buy extra</td></tr>
+        <tr><td>Previously painted, smooth</td><td>350 sq ft (~8.6 m&sup2;/L)</td><td>Best-case coverage</td></tr>
+        <tr><td>Previously painted, textured</td><td>300 sq ft (~7.4 m&sup2;/L)</td><td>Slight porosity increase</td></tr>
+        <tr><td>Bare drywall (new construction)</td><td>250 sq ft (~6.1 m&sup2;/L)</td><td>Paper face absorbs primer</td></tr>
+        <tr><td>Bare wood / plaster</td><td>220 sq ft (~5.4 m&sup2;/L)</td><td>Higher absorption</td></tr>
+        <tr><td>Heavy texture / interior masonry</td><td>200 sq ft (~4.9 m&sup2;/L)</td><td>Most porous of the interior surfaces</td></tr>
+        <tr><td>Concrete block / brick (exterior)</td><td>200&ndash;300 sq ft (~4.9&ndash;7.4 m&sup2;/L)</td><td>Use an alkali-resistant masonry primer</td></tr>
+        <tr><td>Smooth or sand-finish stucco</td><td>150&ndash;200 sq ft (~3.7&ndash;4.9 m&sup2;/L)</td><td>Must cure about 28 days before priming</td></tr>
+        <tr><td>Rough or heavily porous stucco</td><td>80&ndash;150 sq ft (~2.0&ndash;3.7 m&sup2;/L)</td><td>Worst case on the chart, roughly 3x the smooth-wall quantity</td></tr>
+        <tr><td>Bare metal (DTM primer)</td><td>250&ndash;350 sq ft (~6.1&ndash;8.6 m&sup2;/L)</td><td>Coverage is set by film thickness, not absorption</td></tr>
       </tbody>
     </table>
+    <p style="font-size:0.92rem; color:var(--mid); margin-top:-0.4rem;"><strong>Working in metric?</strong> One US gallon is 3.785 litres and 1 sq ft is 0.0929 m&sup2;. A primer rated at 400 sq ft per gallon is about 9.8 m&sup2; per litre; at 250 sq ft per gallon it is about 6.1 m&sup2; per litre.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Three Surfaces That Break the 400 Sq Ft Rule</h2>
+    <p>The "one gallon covers 400 square feet" figure on the can is a smooth, sealed-wall number. Three surfaces come up constantly and none of them behave that way:</p>
+    <ul style="margin:0.75rem 0 1rem 1.25rem; line-height:1.85;">
+      <li><strong>Fresh stucco.</strong> New stucco is both porous and highly alkaline. It needs roughly 28 days to cure before priming, and it needs an alkali-resistant masonry primer, because a standard interior PVA or latex primer will saponify and fail. On rough stucco, coverage can fall as low as 80 sq ft per gallon, so a 900 sq ft wall can take 6 or more gallons rather than the 2 you would budget for drywall. Order from the low end of the range and return the surplus.</li>
+      <li><strong>Ceilings.</strong> The coverage rate is the same as a wall of the same material, so a 900 sq ft ceiling of bare drywall needs about 3.6 gallons at 250 sq ft per gallon. What changes is application: overhead rolling drops more material, so add roughly 10% over the calculated figure. If the ceiling is popcorn or heavy texture, treat it as textured at 200 sq ft per gallon and consider spraying, because rolling a textured ceiling tears the texture off.</li>
+      <li><strong>Bare metal.</strong> Metal is not porous, so coverage is governed by the film thickness you lay down rather than by absorption. DTM (direct-to-metal) primers typically land at 250 to 350 sq ft per gallon on smooth stock, but complex shapes such as railings, grating, or ornamental iron have far more real surface area than their outline suggests. For anything with open framework, calculate the outline area and double it.</li>
+    </ul>
 
     <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Do You Actually Need Primer?</h2>
     <p>Not every paint job needs a separate primer coat — but skipping it when you shouldn't is one of the most common DIY mistakes. Here's when primer is non-negotiable:</p>
