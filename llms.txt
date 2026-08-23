@@ -97,6 +97,7 @@ Step-by-step DIY project guides with built-in calculator links.
 
 ## Cost Guides & Blog
 
+- [Mastic vs. Thinset: Which Tile Adhesive Does Your Project Need?](https://diycalckit.com/blog/mastic-vs-thinset-tile-adhesive.html): Mastic versus thinset by tile size, tile material (glass, natural stone, large format), and location, including ANSI A136.1 Type 1 and Type 2 labeling and why mastic fails over waterproofing membranes.
 - [Cement Board vs. Greenboard: What Goes Behind Tile in a Shower?](https://diycalckit.com/blog/cement-board-vs-greenboard-shower-tile.html): Which tile backer is rated for direct water contact in a shower, cost, and where greenboard is still acceptable.
 - [How Much Tile Do I Need for a Backsplash? Complete Guide](https://diycalckit.com/blog/how-much-tile-do-i-need-for-a-backsplash.html): Backsplash tile, square footage, and cost by wall size, tile size, and layout pattern.
 - [How Much Baseboard Do I Need? Room & Whole-House Guide](https://diycalckit.com/blog/how-much-baseboard-do-i-need.html): Baseboard, door casing, window casing, and crown molding linear footage by room, plus whole-house estimates from 900 to 2,500 sq ft by bedroom and bathroom count, baseboard height by ceiling height, and coping versus mitering.
