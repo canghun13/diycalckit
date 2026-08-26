@@ -19,6 +19,7 @@ gtag('config', GA_ID);
 
 // ── 툴 목록 ─────────────────────────────────────────────────
 const TOOLS = [
+  { name: "Board and Batten Calculator", url: "/tools/board-and-batten-calculator.html" },
   { name: "Roofing Calculator", url: "/tools/roofing-calculator.html" },
   { name: "Insulation Calculator", url: "/tools/insulation-calculator.html" },
   { name: "Gutter Calculator", url: "/tools/gutter-calculator.html" },
@@ -60,6 +61,8 @@ const TOOLS = [
 
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
+  { name: "Garage Floor Paint vs. Epoxy vs. Polyaspartic: Which One Your Slab Can Actually Hold", url: "/blog/garage-floor-coating-epoxy-vs-polyaspartic.html", date: "2026-08-31", desc: "Cost, durability, and DIY difficulty compared, plus the two slab tests that decide whether any coating will bond." },
+  { name: "Carpet Pad Density: What 6 lb, 8 lb and 10 lb Actually Mean for Your Room", url: "/blog/carpet-pad-density-guide.html", date: "2026-08-31", desc: "Why density is not thickness, what each rating suits room by room, and the warranty clause that decides it." },
   { name: "Mastic vs. Thinset: Which Tile Adhesive Does Your Project Need?", url: "/blog/mastic-vs-thinset-tile-adhesive.html", date: "2026-08-24", desc: "Which adhesive your tile actually needs, by tile size, tile material, and location, plus where mastic is never allowed." },
   { name: "Cement Board vs. Greenboard: What Goes Behind Tile in a Shower?", url: "/blog/cement-board-vs-greenboard-shower-tile.html", date: "2026-07-24", desc: "Which tile backer is actually rated for direct water contact in a shower, and where greenboard is still fine." },
   { name: "How Much Tile Do I Need for a Backsplash? Complete Guide", url: "/blog/how-much-tile-do-i-need-for-a-backsplash.html", date: "2026-07-24", desc: "Calculate backsplash tile, square footage, and cost by wall size, tile size, and layout pattern waste." },

@@ -97,6 +97,9 @@ Step-by-step DIY project guides with built-in calculator links.
 
 ## Cost Guides & Blog
 
+- [Board and Batten Calculator](https://diycalckit.com/tools/board-and-batten-calculator.html): Batten count and exact even spacing for any wall width, with tape-measure mark positions from the corner, board count by stock length, nominal versus actual lumber widths, and cost.
+- [Garage Floor Paint vs. Epoxy vs. Polyaspartic](https://diycalckit.com/blog/garage-floor-coating-epoxy-vs-polyaspartic.html): Cost, lifespan, hot tire pickup resistance and DIY difficulty compared across the three coating types, plus the plastic-sheet moisture test and water absorption test that determine whether a slab will hold any coating, and coverage adjustments by slab finish.
+- [Carpet Pad Density: What 6 lb, 8 lb and 10 lb Mean](https://diycalckit.com/blog/carpet-pad-density-guide.html): Density versus thickness explained, density ratings room by room, carpet warranty minimum density and maximum thickness clauses, and what stairs, basement slabs and rolling chairs need instead.
 - [Mastic vs. Thinset: Which Tile Adhesive Does Your Project Need?](https://diycalckit.com/blog/mastic-vs-thinset-tile-adhesive.html): Mastic versus thinset by tile size, tile material (glass, natural stone, large format), and location, including ANSI A136.1 Type 1 and Type 2 labeling and why mastic fails over waterproofing membranes.
 - [Cement Board vs. Greenboard: What Goes Behind Tile in a Shower?](https://diycalckit.com/blog/cement-board-vs-greenboard-shower-tile.html): Which tile backer is rated for direct water contact in a shower, cost, and where greenboard is still acceptable.
 - [How Much Tile Do I Need for a Backsplash? Complete Guide](https://diycalckit.com/blog/how-much-tile-do-i-need-for-a-backsplash.html): Backsplash tile, square footage, and cost by wall size, tile size, and layout pattern.
