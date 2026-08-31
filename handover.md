@@ -1130,3 +1130,90 @@ nav.js TOOLS/BLOGS → tools/index.html(noscript + TOOLS_DATA) 또는 blog/index
 - 툴 **38** / 블로그 **46** / 프로젝트 20 / 허브 3 / 루트 4 = **111개 파일** (sitemap 111 일치)
 - 클러스터: 차고(garage) 신규 개시
 - 커밋: `e9d31cd`(신규 3건)
+
+---
+
+# 2026-09-07 세션 (GSC 08-31 + **Bing Keyword Report 첫 수령** + GA 08-03~08-30)
+
+## 구글: 4주 연속 재크롤링 없음
+- **최종 크롤링 날짜가 여전히 07-21에서 멈춰 있음**(08-11, 08-18, 08-24에 이어 4번째 확인).
+  색인 26/11도 변화 없음. 일별 노출 1~5.
+- 지침대로 **구조 변경은 하지 않았음**. 이 원칙 계속 유지할 것.
+  08-11 구조 조치가 언제 평가받을지는 여전히 알 수 없음.
+
+## ★ Bing Keyword Report 첫 수령 — contractor 인건비가 최대 클러스터
+
+지난 세션에 요청했던 쿼리 단위 데이터가 처음 도착(121개 쿼리). 결과가 사이트 방향을 바꿀 만함.
+
+**Bing PageTraffic 1위 페이지 = `tools/contractor-cost-calculator.html`**
+(41노출 / 순위 3.66 / **클릭 1건, CTR 2.44%**). 2위 square-footage(35), 3위 1-2-vs-5-8-drywall(32).
+
+**contractor 인건비 계열 쿼리가 15개 이상**이고 평균 순위가 1~5로 사이트 전체에서 가장 높음:
+`4 guy average cost of buolding contractor per hr`(1위), `how much does it average to get a
+contractor estimate`(1위), `hows much would an independant contractor charge fot doing 128 feet yard`
+(2위, **클릭 1, CTR 100%**), `what to expect to pay a contractor to construct a new 2'x5' linen closet`(2위),
+`how much labor charge for office 18x12 finished everything`(2위),
+`what's the going rate labor only to install a 4 ft wide`(2위),
+그리고 `as a contractor what would a reasonable price range be for this full scope of work, including
+450 sq ft of glue down flooring removal... painting, door-trim repair, and baseboard work?`(2위).
+
+**기존 계산기는 "시급 × 시간" 구조라 이 쿼리들 대부분에 답을 못 하고 있었음.**
+일당도, 크루 단가도, 소규모 작업 총액도, 멀티 트레이드 스코프도 없었음.
+수익화 관점에서도 contractor 계열은 홈임프루브먼트 중 CPC 최상위권이라 우선순위 1위로 판단.
+
+## 실행
+
+### 1) `blog/contractor-labor-cost-per-day-and-square-foot.html` 신규 (1,774단어)
+경쟁(Angi / HomeGuide / Homewyse / CountBricks)이 헤드를 장악하고 있으나 공통 약점 3가지가 있음:
+자재+인건 **합산** 총액만 주고, **단일 작업 하나**만 다루며, **소규모 작업의 단가 폭등을 정량화하지 않음**.
+(참고: CountBricks는 같은 사이트 안에서 트림 인건비를 $15~45/hr, $60~90/hr, $15~60/hr로 글마다 다르게 씀 —
+이 영역 상위 콘텐츠의 품질이 생각보다 낮다.)
+그 세 지점을 경쟁 회피 장치로 삼음:
+- **labor only로 일관되게 분리** (쿼리가 실제로 "labor only"를 묻고 있음)
+- **일당 = 시급×8에서 10~15% 할인**이라는 구조 + 트레이드별 일당표
+- **크루는 인원수×리드단가가 아님**. 리드/중급/헬퍼 혼합이라 4인 마감크루 시간당 $150~280
+  ("4 guy... per hr" 1위 쿼리 정면 대응)
+- **작업 규모별 유효단가 역전표** — 방 1개 트림 $4~7/lf vs 전체집 $3~5/lf,
+  방 1개 페인트 $1.80~3.50/sqft vs 전체집 $1.50~2.50/sqft.
+  **온라인 평균단가가 전부 whole-house 스코프**라는 함정을 수치로 보여줌. 이게 이 글의 핵심 차별점.
+- 최소 출동료(GC·목수 2~4시간, 전기·배관 1~2시간)가 소규모 인보이스를 지배
+- **멀티 트레이드 스코프 6개 라인아이템 분해 워크시트** (2위 쿼리 그대로 대응, GC 조정비 10~20% 포함)
+- 지역 보정 메트로 +15~25% / 시골 −15~20%, 견적 유료 여부 3가지 예외
+
+### 2) `tools/contractor-cost-calculator.html` 보강 (797 → 999단어)
+**빙 1위 페이지라 계산기 로직은 일절 건드리지 않고 콘텐츠만 추가.**
+"Day Rates, Crew Rates, and Small-Job Minimums" 섹션 신설 + 신규 글 링크.
+기존 시급/sqft 표와 겹치지 않는 축(일당·크루·최소출동료)만 담음.
+
+## 보강하지 **않기로** 판단한 것 (다음 세션에 재검토하지 말 것)
+- **square footage 멀티룸 쿼리 11개**(순위 3~10, `how to calculate square footage for multiple floors` 등)
+  → `square-footage-calculator`에 **이미 Add Room 멀티룸 기능이 있어서** 그 쿼리들을 잡고 있는 것.
+  순위가 높은 건 갭이 아니라 성과. 추가 작업 불필요.
+- **carpet 야드 변환 쿼리 6개**(클릭 1건 발생) → carpet-calculator와 how-much-carpet 양쪽에
+  sq yd·롤폭 언급이 각 25회/24회로 이미 충분히 커버 중.
+
+## GA (08-03~08-30)
+- 활성 35명(전 42), **평균 참여시간 22.6초** — 12.2 → 14.3 → 18.5 → **22.6초로 4주 연속 상승**
+- 오가닉 12명: duckduckgo 7 + bing 3 + google 1 + yahoo 1.
+  **빙 생태계가 오가닉의 83%**, 구글은 1명. direct는 25→18로 계속 감소(디렉토리 효과 소멸).
+- GA 페이지 목록에 **Contractor Cost Calculator가 조회 2**로 등장 — 빙 데이터와 정합.
+
+## 검증
+- 7-gram 자카드로 기존 111개 전 페이지 대조 → 신규 글 **2% 초과 쌍 0건**
+- HTML 무결성 112/112, JSON-LD 308블록 100%, 죽은링크 0, sitemap 112 = 파일 112,
+  llms.txt 108 URL 죽은링크 0, node --check, **계산기 38/38 jsdom 동작 정상**,
+  blog grid 47장 렌더 확인
+
+## 다음 세션 지침
+1. **Bing Keyword Report를 매주 받을 것.** 이번에 사이트 최대 기회를 찾아낸 유일한 자료였음.
+   구글은 4주째 재크롤링이 없어 데이터가 사실상 정지 상태.
+2. **contractor 클러스터를 계속 키울 것.** 빙 순위 1~5에 클릭까지 나오는 유일한 영역이고 CPC도 최상위.
+   미대응 각도: 트레이드별 인건비 상세(전기/배관/HVAC 서비스콜 구조), 견적서 항목 읽는 법,
+   계약금·중도금 지급 일정, 자재를 직접 사는 경우의 단가 협상. 단 만들기 전 기존 파일 대조 필수.
+3. **빙 쿼리에서 순위가 이미 높은 것 = 갭이 아니라 성과.** 이번 square-footage/carpet 케이스처럼
+   먼저 기존 파일이 그 기능을 갖고 있는지 확인하고, 있으면 손대지 말 것.
+4. 구글 최종 크롤링 날짜부터 확인하는 루틴 유지. 07-21에서 갱신되면 그때 08-11 구조 조치를 판정.
+
+## 현재 상태 (2026-09-07 세션 종료)
+- 툴 38 / 블로그 **47** / 프로젝트 20 / 허브 3 / 루트 4 = **112개 파일** (sitemap 112 일치)
+- 커밋: `0a8a8c3`(contractor 인건비 클러스터 확장)
