@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contractor Payment Schedule Calculator — Deposit, Draws &amp; Overpayment Risk</title>
+  <meta name="description" content="Build a milestone payment schedule for any contract value and see exactly how much you would be overpaid at each stage. Includes state deposit caps.">
+  <link rel="canonical" href="https://diycalckit.com/tools/contractor-payment-schedule-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Contractor Payment Schedule Calculator — Deposit, Draws & Overpayment Risk", "description": "Build a milestone payment schedule for any contract value and see exactly how much you would be overpaid at each stage. Includes state deposit caps.", "url": "https://diycalckit.com/tools/contractor-payment-schedule-calculator.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "provider": {"@type": "Organization", "name": "DIYCalcKit", "url": "https://diycalckit.com"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much should I pay a contractor upfront?", "acceptedAnswer": {"@type": "Answer", "text": "It depends mostly on the size of the job, and the percentage falls as the job grows. Under $5,000 a deposit of anywhere from nothing to half is normal because materials are a large share of a small job. Between $5,000 and $25,000, expect 10 to 30 percent. Above $25,000, 10 to 20 percent is typical, and above $100,000 a deposit of 10 percent or less is standard because established contractors carry credit lines for materials."}}, {"@type": "Question", "name": "Is a 50% deposit normal?", "acceptedAnswer": {"@type": "Answer", "text": "On a small job, often yes, especially where materials dominate the price. On a project over about $10,000 it is well above market norms and is worth questioning. In states that cap home improvement deposits it may not be legal at all. The concern is not the contractor's honesty so much as their capitalisation: a business that needs half the money before starting may be funding a previous job with your deposit."}}, {"@type": "Question", "name": "What is a draw schedule?", "acceptedAnswer": {"@type": "Answer", "text": "A draw schedule breaks the contract into payments released as verifiable phases finish, rather than on fixed dates. A typical kitchen might run deposit at signing, a draw when demolition and rough-in are complete and inspected, another when cabinets are installed, another at countertops and fixtures, and a final payment once the punch list is cleared. The point is that each payment is tied to something you can inspect before you release the money."}}, {"@type": "Question", "name": "Why does my payment run ahead of the work in the middle of a project?", "acceptedAnswer": {"@type": "Answer", "text": "Because payment schedules and work value follow different curves. Demolition and rough-in occupy roughly half the calendar but usually only a quarter to a third of the contract value, while finish work such as cabinets, tile, fixtures, and trim carries most of the cost. A schedule spread evenly across the timeline will therefore pay out faster than value is created through the whole middle of the job, which is exactly where the overpayment gap peaks."}}, {"@type": "Question", "name": "How much should the final payment be?", "acceptedAnswer": {"@type": "Answer", "text": "Five to ten percent of the contract, held until the punch list is complete and any final inspection has passed. The final payment is your only remaining leverage on the small defects that are easiest to leave unfinished, so a final payment small enough that the contractor can walk away from it will not get the punch list done. Some states also require a lien waiver before final payment, which is worth asking for regardless."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://diycalckit.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://diycalckit.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Contractor Payment Schedule Calculator — Deposit, Draws & Overpayment Risk", "item": "https://diycalckit.com/tools/contractor-payment-schedule-calculator.html"}]}
+</script>
+
+  <meta property="og:title" content="Contractor Payment Schedule Calculator — Deposit, Draws &amp; Overpayment Risk">
+  <meta property="og:description" content="Build a milestone payment schedule for any contract value and see exactly how much you would be overpaid at each stage. Includes state deposit caps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diycalckit.com/tools/contractor-payment-schedule-calculator.html">
+  <meta property="og:site_name" content="DIYCalcKit">
+  <meta property="og:image" content="https://diycalckit.com/assets/img/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DIYCalcKit &mdash; free home improvement calculators">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contractor Payment Schedule Calculator — Deposit, Draws &amp; Overpayment Risk">
+  <meta name="twitter:description" content="Build a milestone payment schedule for any contract value and see exactly how much you would be overpaid at each stage. Includes state deposit caps.">
+  <meta name="twitter:image" content="https://diycalckit.com/assets/img/og-default.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">DIYCalc<span>Kit</span></a>
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="/tools/" class="nav-link">Tools</a></li>
+          <li><a href="/blog/" class="nav-link">Blog</a></li>
+          <li><a href="/projects/" class="nav-link">Projects</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+<main>
+  <div class="tool-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li aria-current="page">Contractor Payment Schedule Calculator</li>
+      </ol>
+    </nav>
+    <h1>Contractor Payment Schedule Calculator</h1>
+    <p class="tool-desc">Enter your contract value and deposit to get a milestone draw schedule &mdash; plus the one figure most guides leave out: how far ahead of the completed work your payments run at each stage.</p>
+
+    <div class="tool-box">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Total Contract Value ($)</label><input type="number" id="cp-total" placeholder="e.g. 25000" min="0" step="100" value="25000"></div>
+        <div class="form-group"><label>Deposit Requested (%)</label><input type="number" id="cp-dep" placeholder="e.g. 15" min="0" max="100" step="1" value="15"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Project Type</label>
+          <select id="cp-type">
+            <option value="bath">Bathroom remodel</option>
+            <option value="kitchen" selected>Kitchen remodel</option>
+            <option value="whole">Whole-home renovation</option>
+            <option value="addition">Addition / new build</option>
+            <option value="single">Single-trade job (paint, floor, roof)</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Your State's Deposit Rule</label>
+          <select id="cp-state">
+            <option value="0">No cap / not sure</option>
+            <option value="10-1000">Capped at 10% or $1,000, whichever is less</option>
+            <option value="33-0">Capped at one third (33%)</option>
+            <option value="50-0">Capped at 50%</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcPay()" style="width:100%">Build Payment Schedule &rarr;</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="cp-dep-amt">&mdash;</div>
+        <div class="result-label" id="cp-dep-label">deposit at signing</div>
+        <div id="cp-warn" style="display:none; margin-top:.9rem; padding:.75rem 1rem; border-radius:var(--radius); background:#fdecea; border:1px solid #f0b4ad; color:#8a2c20; font-size:.88rem;"></div>
+        <div style="overflow-x:auto; margin-top:1.1rem;">
+          <table style="width:100%; font-size:.86rem; border-collapse:collapse;" id="cp-table">
+            <thead><tr>
+              <th style="text-align:left">Milestone</th>
+              <th style="text-align:right">Payment</th>
+              <th style="text-align:right">Paid to date</th>
+              <th style="text-align:right">Work value done</th>
+              <th style="text-align:right">Ahead by</th>
+            </tr></thead>
+            <tbody id="cp-body"></tbody>
+          </table>
+        </div>
+        <p style="font-size:.8rem; color:var(--mid); margin-top:.85rem;" id="cp-detail"></p>
+      </div>
+    </div>
+
+<h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">The Number Nobody Gives You: How Far Ahead Your Money Is</h2>
+    <p>Every payment guide tells you what a normal deposit looks like. Almost none of them tell you the thing that actually matters while a job is running: <strong>at each milestone, how much have you paid compared with how much work has genuinely been completed?</strong> That gap is your exposure. If the contractor walks, stops, or does the finish work badly, it is the amount you cannot get back without a lawsuit.</p>
+    <p>The reason the gap opens up is that payment schedules and work value do not follow the same curve. Demolition and rough-in feel like half the project because they take half the calendar, but they are usually only about a quarter to a third of the contract value. Finish work &mdash; cabinets, tile, fixtures, trim, paint &mdash; is where the money is. A schedule that pays out evenly across the calendar therefore runs ahead of the work through the entire middle of the job.</p>
+    <p>The table above shows both curves side by side. The "Ahead by" column is the number to watch. Keeping it small is the entire point of a milestone schedule.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Deposit Norms by Job Size</h2>
+    <table>
+      <thead><tr><th>Contract value</th><th>Typical deposit</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Under $5,000</td><td>0&ndash;50%, or none</td><td>Often two payments total; materials are a large share of a small job</td></tr>
+        <tr><td>$5,000&ndash;25,000</td><td>10&ndash;30%</td><td>Covers mobilization, permits, and material deposits</td></tr>
+        <tr><td>$25,000&ndash;100,000</td><td>10&ndash;20%</td><td>Progress draws carry the rest</td></tr>
+        <tr><td>Over $100,000</td><td>10% or less</td><td>Established contractors have credit lines for materials</td></tr>
+      </tbody>
+    </table>
+    <p>Notice the direction: <strong>the deposit percentage falls as the job gets bigger.</strong> A 50% deposit on a $4,000 fence is unremarkable. The same percentage on a $60,000 remodel is well above market norms, and in states with deposit caps it is not legal for home improvement work.</p>
+    <p>One legitimate exception cuts across all of this. Custom or non-returnable orders &mdash; made-to-measure cabinets, a special-order tile run, custom windows &mdash; are normally paid for in full when they are ordered, because the contractor cannot resell them if you cancel. That payment should be itemised as a material deposit for those specific items rather than folded into a larger percentage of the whole contract.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">State Deposit Caps</h2>
+    <p>At least nine states limit what a home improvement contractor can collect before work begins, and the caps differ enough to matter. The strictest common rule is <strong>10% of the contract price or $1,000, whichever is less</strong> &mdash; which on a $40,000 kitchen means a legal maximum deposit of $1,000, not $4,000. Other states draw the line at one third. Many have no cap at all.</p>
+    <p>These rules generally apply to residential home improvement contracts rather than to new construction, and the definitions vary. Check your own state's contractor licensing board before treating a number as illegal rather than merely unusual. The calculator flags the request against whichever rule you select, which is a starting point for that conversation, not legal advice.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">What Each Payment Should Be Tied To</h2>
+    <p>A milestone is only useful if it is <em>verifiable</em>. "50% at halfway" is not a milestone; it is a date. Tie each draw to something you can stand in the room and confirm:</p>
+    <ul style="margin:.75rem 0 1rem 1.25rem; line-height:1.9;">
+      <li><strong>Rough-in complete</strong> &mdash; framing, plumbing, and electrical installed and, ideally, inspected before drywall covers it. This is the last moment you can see the expensive hidden work.</li>
+      <li><strong>Substrate and waterproofing</strong> &mdash; in a bathroom, before any tile goes on. Photograph it.</li>
+      <li><strong>Major items installed</strong> &mdash; cabinets hung, countertops set, fixtures operational.</li>
+      <li><strong>Substantial completion</strong> &mdash; everything done except the punch list.</li>
+      <li><strong>Final payment</strong> &mdash; punch list cleared and final inspection passed. Keep 5&ndash;10% here. A final payment small enough to walk away from is a final payment that does not get the punch list finished.</li>
+    </ul>
+    <p>Two habits protect the schedule more than the percentages do. Pay by check or card, never cash, so there is a record and a dispute path. And ask for a conditional lien waiver with each payment, which is a signed acknowledgement that the contractor and their suppliers have been paid for that phase. Without it, a subcontractor your contractor failed to pay can place a lien on your house even though you paid in full.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Red Flags in a Payment Request</h2>
+    <ul style="margin:.75rem 0 1rem 1.25rem; line-height:1.9;">
+      <li><strong>50% or more upfront on a job over $10,000.</strong> The most common single warning sign. A contractor with a working credit line does not need it.</li>
+      <li><strong>Cash only, or a discount for cash.</strong> No paper trail, no chargeback, no recourse.</li>
+      <li><strong>Payment dates instead of payment milestones.</strong> "Second payment on the 15th" pays for the calendar, not for work.</li>
+      <li><strong>A draw requested before the previous phase passed inspection.</strong> Getting ahead once tends to become a pattern.</li>
+      <li><strong>No written contract, or verbal changes to the schedule.</strong> If it is not in writing it does not exist.</li>
+      <li><strong>Change orders handled informally.</strong> Every change should be its own written amount, agreed before the work happens, not settled at the end.</li>
+    </ul>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How much should I pay a contractor upfront?</strong></p>
+    <p>It depends mostly on the size of the job, and the percentage falls as the job grows. Under $5,000 a deposit of anywhere from nothing to half is normal because materials are a large share of a small job. Between $5,000 and $25,000, expect 10 to 30 percent. Above $25,000, 10 to 20 percent is typical, and above $100,000 a deposit of 10 percent or less is standard because established contractors carry credit lines for materials.</p>
+    <p><strong>Is a 50% deposit normal?</strong></p>
+    <p>On a small job, often yes, especially where materials dominate the price. On a project over about $10,000 it is well above market norms and is worth questioning. In states that cap home improvement deposits it may not be legal at all. The concern is not the contractor's honesty so much as their capitalisation: a business that needs half the money before starting may be funding a previous job with your deposit.</p>
+    <p><strong>What is a draw schedule?</strong></p>
+    <p>A draw schedule breaks the contract into payments released as verifiable phases finish, rather than on fixed dates. A typical kitchen might run deposit at signing, a draw when demolition and rough-in are complete and inspected, another when cabinets are installed, another at countertops and fixtures, and a final payment once the punch list is cleared. The point is that each payment is tied to something you can inspect before you release the money.</p>
+    <p><strong>Why does my payment run ahead of the work in the middle of a project?</strong></p>
+    <p>Because payment schedules and work value follow different curves. Demolition and rough-in occupy roughly half the calendar but usually only a quarter to a third of the contract value, while finish work such as cabinets, tile, fixtures, and trim carries most of the cost. A schedule spread evenly across the timeline will therefore pay out faster than value is created through the whole middle of the job, which is exactly where the overpayment gap peaks.</p>
+    <p><strong>How much should the final payment be?</strong></p>
+    <p>Five to ten percent of the contract, held until the punch list is complete and any final inspection has passed. The final payment is your only remaining leverage on the small defects that are easiest to leave unfinished, so a final payment small enough that the contractor can walk away from it will not get the punch list done. Some states also require a lien waiver before final payment, which is worth asking for regardless.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/tools/contractor-cost-calculator.html">Contractor Cost Calculator &mdash; Fair Rates by Trade</a></li>
+        <li><a href="/blog/contractor-labor-cost-per-day-and-square-foot.html">How Much Do Contractors Charge for Labor Only?</a></li>
+        <li><a href="/blog/diy-vs-hiring-a-contractor.html">DIY vs. Hiring a Contractor: When to Do It Yourself</a></li>
+        <li><a href="/tools/renovation-cost-estimator.html">Renovation Cost Estimator</a></li>
+        <li><a href="/projects/how-to-plan-a-home-renovation.html">How to Plan a Home Renovation</a></li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+<script>
+
+// 단계별 "완성 가치 %" — 지급 일정이 아니라 실제로 만들어진 가치의 분포.
+// 철거/러프인은 공기의 절반을 쓰지만 계약가의 1/4~1/3에 불과하다는 것이 핵심.
+var CP_PHASES = {
+  bath: [
+    ['Demo + rough-in complete', 30],
+    ['Waterproofing + tile set', 30],
+    ['Fixtures + finishes installed', 25],
+    ['Punch list complete', 15]
+  ],
+  kitchen: [
+    ['Demo + rough-in complete', 28],
+    ['Cabinets installed', 32],
+    ['Countertops + backsplash + appliances', 25],
+    ['Punch list complete', 15]
+  ],
+  whole: [
+    ['Demo + rough-in complete', 25],
+    ['Drywall + substrate complete', 20],
+    ['Cabinetry + fixtures installed', 30],
+    ['Finishes complete', 15],
+    ['Punch list complete', 10]
+  ],
+  addition: [
+    ['Foundation complete', 15],
+    ['Framing + roof dried in', 25],
+    ['Rough-ins complete + inspected', 20],
+    ['Drywall + insulation complete', 15],
+    ['Finishes complete', 15],
+    ['Punch list complete', 10]
+  ],
+  single: [
+    ['Materials on site + work started', 40],
+    ['Work substantially complete', 45],
+    ['Punch list complete', 15]
+  ]
+};
+
+function money(n) {
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function calcPay() {
+  var total = parseFloat(document.getElementById('cp-total').value) || 0;
+  var depPct = parseFloat(document.getElementById('cp-dep').value);
+  if (isNaN(depPct)) depPct = 0;
+  var type = document.getElementById('cp-type').value;
+  var rule = document.getElementById('cp-state').value;
+
+  if (!total) { alert('Please enter the total contract value.'); return; }
+  if (depPct < 0 || depPct > 100) { alert('Deposit must be between 0 and 100 percent.'); return; }
+
+  var phases = CP_PHASES[type];
+  var deposit = total * depPct / 100;
+
+  // 계약금 이후 잔액을 각 단계의 "가치 비중"에 비례해 배분하되,
+  // 마지막 단계(펀치리스트)는 최소 5%를 남겨 레버리지를 확보
+  var remaining = total - deposit;
+  var minFinal = total * 0.05;
+  var valueSum = 0;
+  var i;
+  for (i = 0; i < phases.length; i++) valueSum += phases[i][1];
+
+  var pay = [];
+  for (i = 0; i < phases.length; i++) pay.push(remaining * phases[i][1] / valueSum);
+
+  var last = pay.length - 1;
+  if (pay[last] < minFinal && pay.length > 1) {
+    var shortfall = minFinal - pay[last];
+    var earlierSum = 0;
+    for (i = 0; i < last; i++) earlierSum += pay[i];
+    if (earlierSum > shortfall) {
+      for (i = 0; i < last; i++) pay[i] -= shortfall * pay[i] / earlierSum;
+      pay[last] = minFinal;
+    }
+  }
+
+  var body = document.getElementById('cp-body');
+  body.innerHTML = '';
+  var paidToDate = deposit;
+  var valueDone = 0;
+  var maxAhead = 0, maxAheadPhase = '';
+
+  function row(label, amt, paid, value, isDep) {
+    var ahead = paid - value;
+    // 계약금 시점은 정의상 완성가치가 0이라 항상 최대가 된다.
+    // 계약금 자체는 별도 경고(예치금 규범/주별 상한)에서 다루므로 노출 추적에서 제외.
+    if (!isDep && ahead > maxAhead) { maxAhead = ahead; maxAheadPhase = label; }
+    var color = ahead > total * 0.12 ? '#b3402f' : (ahead > 0 ? 'var(--mid)' : '#2f7d4f');
+    var tr = document.createElement('tr');
+    tr.innerHTML =
+      '<td style="padding:.42rem .3rem; border-bottom:1px solid #e6eaee;">' + label + '</td>' +
+      '<td style="padding:.42rem .3rem; text-align:right; border-bottom:1px solid #e6eaee;">' + money(amt) + '</td>' +
+      '<td style="padding:.42rem .3rem; text-align:right; border-bottom:1px solid #e6eaee;">' + money(paid) + '</td>' +
+      '<td style="padding:.42rem .3rem; text-align:right; border-bottom:1px solid #e6eaee;">' + money(value) + '</td>' +
+      '<td style="padding:.42rem .3rem; text-align:right; border-bottom:1px solid #e6eaee; color:' + color + '; font-weight:600;">' +
+        (ahead > 0 ? money(ahead) : '&mdash;') + '</td>';
+    body.appendChild(tr);
+  }
+
+  row('Deposit at signing', deposit, paidToDate, 0, true);
+  for (i = 0; i < phases.length; i++) {
+    valueDone += total * phases[i][1] / 100;
+    paidToDate += pay[i];
+    row(phases[i][0], pay[i], paidToDate, valueDone, false);
+  }
+
+  document.getElementById('cp-dep-amt').textContent = money(deposit);
+  document.getElementById('cp-dep-label').textContent =
+    'deposit at signing (' + depPct + '% of ' + money(total) + ')';
+
+  // 주별 상한 검사
+  var warn = document.getElementById('cp-warn');
+  var msgs = [];
+  if (rule !== '0') {
+    var parts = rule.split('-');
+    var capPct = parseFloat(parts[0]);
+    var capAbs = parseFloat(parts[1]);
+    var cap = total * capPct / 100;
+    if (capAbs > 0 && capAbs < cap) cap = capAbs;
+    if (deposit > cap + 0.5) {
+      msgs.push('This deposit exceeds the rule you selected. The cap on this contract would be '
+        + money(cap) + ', which is ' + money(deposit - cap) + ' less than what is being asked.');
+    }
+  }
+  if (depPct >= 50 && total > 10000) {
+    msgs.push('A deposit of 50% or more on a contract over $10,000 is well above market norms and is the most common single warning sign of an undercapitalised contractor.');
+  }
+  if (maxAheadPhase && maxAhead > total * 0.12) {
+    msgs.push('Your payments run ahead of completed work by up to ' + money(maxAhead)
+      + ' at "' + maxAheadPhase + '". Consider splitting that milestone into two smaller draws.');
+  }
+  if (msgs.length) {
+    warn.innerHTML = msgs.join('<br><br>');
+    warn.style.display = 'block';
+  } else {
+    warn.style.display = 'none';
+  }
+
+  var finalPay = pay[pay.length - 1];
+  document.getElementById('cp-detail').textContent =
+    'Final payment held back: ' + money(finalPay) + ' ('
+    + (finalPay / total * 100).toFixed(1) + '% of contract). Peak overpayment exposure: '
+    + money(maxAhead) + (maxAheadPhase ? ' at "' + maxAheadPhase + '"' : '')
+    + '. Work-value percentages are typical residential splits, not a quote — '
+    + 'ask your contractor for their own schedule of values and compare.';
+  document.getElementById('result').style.display = 'block';
+}
+
+</script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">DIYCalc<span>Kit</span></a>
+        <p>Free home improvement calculators, step-by-step project guides, and cost breakdowns for every project.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul><li><a href="/tools/contractor-payment-schedule-calculator.html">Contractor Payment Schedule Calculator</a></li><li><a href="/tools/thinset-calculator.html">Thinset Calculator</a></li><li><a href="/tools/board-and-batten-calculator.html">Board and Batten Calculator</a></li><li><a href="/tools/roofing-calculator.html">Roofing Calculator</a></li><li><a href="/tools/insulation-calculator.html">Insulation Calculator</a></li><li><a href="/tools/gutter-calculator.html">Gutter Calculator</a></li><li><a href="/tools/">View All Tools &rarr;</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Blog</h4>
+          <ul><li><a href="/blog/contractor-labor-cost-per-day-and-square-foot.html">How Much Do Contractors Charge for Labor Only? Hourly, Daily, and Per Square Foot</a></li><li><a href="/blog/carpet-pad-density-guide.html">Carpet Pad Density: What 6 lb, 8 lb and 10 lb Actually Mean for Your Room</a></li><li><a href="/blog/garage-floor-coating-epoxy-vs-polyaspartic.html">Garage Floor Paint vs. Epoxy vs. Polyaspartic: Which One Your Slab Can Actually Hold</a></li><li><a href="/blog/mastic-vs-thinset-tile-adhesive.html">Mastic vs. Thinset: Which Tile Adhesive Does Your Project Need?</a></li><li><a href="/blog/how-much-baseboard-do-i-need.html">How Much Baseboard Do I Need? Room &amp; Whole-House Guide</a></li><li><a href="/blog/how-much-tile-do-i-need-for-a-backsplash.html">How Much Tile Do I Need for a Backsplash? Complete Guide</a></li><li><a href="/blog/">View All Posts &rarr;</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projects</h4>
+          <ul><li><a href="/projects/how-to-paint-a-room.html">How to Paint a Room</a></li><li><a href="/projects/how-to-wallpaper-a-room.html">How to Wallpaper a Room</a></li><li><a href="/projects/how-to-install-lvp-flooring.html">How to Install LVP Flooring</a></li><li><a href="/projects/how-to-install-hardwood-flooring.html">How to Install Hardwood Flooring</a></li><li><a href="/projects/how-to-install-carpet.html">How to Install Carpet</a></li><li><a href="/projects/how-to-install-carpet-tiles.html">How to Install Carpet Tiles</a></li><li><a href="/projects/">View All Projects &rarr;</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="/tools/">Tools</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DIYCalcKit. For informational purposes only.</p>
+    </div>
+  </footer>
+</body>
+</html>

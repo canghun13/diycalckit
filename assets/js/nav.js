@@ -19,6 +19,8 @@ gtag('config', GA_ID);
 
 // ── 툴 목록 ─────────────────────────────────────────────────
 const TOOLS = [
+  { name: "Contractor Payment Schedule Calculator", url: "/tools/contractor-payment-schedule-calculator.html" },
+  { name: "Thinset Calculator", url: "/tools/thinset-calculator.html" },
   { name: "Board and Batten Calculator", url: "/tools/board-and-batten-calculator.html" },
   { name: "Roofing Calculator", url: "/tools/roofing-calculator.html" },
   { name: "Insulation Calculator", url: "/tools/insulation-calculator.html" },
