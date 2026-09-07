@@ -19,6 +19,7 @@ gtag('config', GA_ID);
 
 // ── 툴 목록 ─────────────────────────────────────────────────
 const TOOLS = [
+  { name: "Adding Insulation Over Existing — R-Value Top-Up Calculator", url: "/tools/attic-insulation-top-up-calculator.html" },
   { name: "Contractor Payment Schedule Calculator", url: "/tools/contractor-payment-schedule-calculator.html" },
   { name: "Thinset Calculator", url: "/tools/thinset-calculator.html" },
   { name: "Board and Batten Calculator", url: "/tools/board-and-batten-calculator.html" },

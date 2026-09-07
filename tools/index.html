@@ -127,6 +127,7 @@
 <li><a href="/tools/baseboard-trim-calculator.html">Baseboard & Trim Calculator</a></li>
 <li><a href="/tools/board-and-batten-calculator.html">Board and Batten Calculator</a></li>
 <li><a href="/tools/contractor-payment-schedule-calculator.html">Contractor Payment Schedule Calculator</a></li>
+<li><a href="/tools/attic-insulation-top-up-calculator.html">Adding Insulation Over Existing — R-Value Top-Up Calculator</a></li>
 <li><a href="/tools/thinset-calculator.html">Thinset Calculator</a></li>
 <li><a href="/tools/concrete-calculator.html">Concrete Calculator</a></li>
 <li><a href="/tools/renovation-cost-estimator.html">Renovation Cost Estimator</a></li>
@@ -177,6 +178,7 @@ const TOOLS_DATA = [
   { name: "Baseboard & Trim Calculator", url: "/tools/baseboard-trim-calculator.html", icon: "📏", desc: "Linear feet of baseboard, door casing, window casing, and crown molding — plus board count and cost.", cat: "space" },
   { name: "Board and Batten Calculator", url: "/tools/board-and-batten-calculator.html", icon: "📐", desc: "Exact batten count, even spacing, and the tape-measure mark positions for any wall.", cat: "space" },
   { name: "Contractor Payment Schedule Calculator", url: "/tools/contractor-payment-schedule-calculator.html", icon: "📋", desc: "Milestone draw schedule for any contract value, plus how far ahead of completed work your payments run.", cat: "cost" },
+  { name: "Adding Insulation Over Existing — R-Value Top-Up Calculator", url: "/tools/attic-insulation-top-up-calculator.html", icon: "🧣", desc: "Already have R-30? Get the R-value you still need, inches to add, and whether it must be unfaced.", cat: "roofing" },
   { name: "Thinset Calculator", url: "/tools/thinset-calculator.html", icon: "🧱", desc: "Recommended trowel notch by tile size and how many bags of mortar that notch actually needs.", cat: "flooring" },
   { name: "Concrete Calculator", url: "/tools/concrete-calculator.html", icon: "⬛", desc: "Calculate cubic yards of concrete needed for slabs, footings, or steps.", cat: "space" },
   // Renovation Cost
@@ -265,7 +267,9 @@ function renderTools(list) {
     grouped[t.cat].push(t);
   });
 
-  const catOrder = ['paint','flooring','space','cost','garden','moving'];
+  // CATEGORY_LABELS의 8개 키와 필터 버튼 8개에 모두 대응해야 한다.
+  // roofing/seasonal이 빠져 있어서 해당 계산기 5개가 허브 그리드에 렌더되지 않았음 (2026-09-21 수정)
+  const catOrder = ['paint','flooring','space','cost','garden','moving','roofing','seasonal'];
 
   grid.innerHTML = catOrder
     .filter(c => grouped[c])
@@ -298,7 +302,7 @@ renderTools(getFiltered('', 'all'));
       <div class="footer-links">
         <div class="footer-col">
           <h4>Tools</h4>
-          <ul><li><a href="/tools/contractor-payment-schedule-calculator.html">Contractor Payment Schedule Calculator</a></li><li><a href="/tools/thinset-calculator.html">Thinset Calculator</a></li><li><a href="/tools/board-and-batten-calculator.html">Board and Batten Calculator</a></li><li><a href="/tools/roofing-calculator.html">Roofing Calculator</a></li><li><a href="/tools/insulation-calculator.html">Insulation Calculator</a></li><li><a href="/tools/gutter-calculator.html">Gutter Calculator</a></li><li><a href="/tools/">View All Tools &rarr;</a></li></ul>
+          <ul><li><a href="/tools/attic-insulation-top-up-calculator.html">Adding Insulation Over Existing — R-Value Top-Up Calculator</a></li><li><a href="/tools/contractor-payment-schedule-calculator.html">Contractor Payment Schedule Calculator</a></li><li><a href="/tools/thinset-calculator.html">Thinset Calculator</a></li><li><a href="/tools/board-and-batten-calculator.html">Board and Batten Calculator</a></li><li><a href="/tools/roofing-calculator.html">Roofing Calculator</a></li><li><a href="/tools/insulation-calculator.html">Insulation Calculator</a></li><li><a href="/tools/">View All Tools &rarr;</a></li></ul>
         </div>
         <div class="footer-col">
           <h4>Blog</h4>
