@@ -1286,3 +1286,103 @@ contractor estimate`(1위), `hows much would an independant contractor charge fo
 ## 현재 상태 (2026-09-14 세션 종료)
 - 툴 **40** / 블로그 47 / 프로젝트 20 / 허브 3 / 루트 4 = **114개 파일** (sitemap 114 일치)
 - 커밋: `389d67a`(신규 계산기 2건)
+
+---
+
+# 2026-09-21 세션 (GSC 09-07 + Bing Keyword/PageTraffic 09-07 + GA 08-10~09-06)
+
+## 데이터 판독
+
+### 구글: 5주 연속 재크롤링 없음 + **신규 발행물이 전부 "발견됨-미색인"에 적체**
+- 최종 크롤링 날짜 여전히 **07-21 정지**. 지침대로 구조 변경 안 함.
+- **"발견됨-색인 안됨"이 11 → 18로 증가**했는데, 늘어난 7건이 **전부 8월 이후 신규 발행물**
+  (carpet-pad / contractor-labor / garage-floor / mastic-vs-thinset / board-and-batten /
+  contractor-payment-schedule / thinset). 최종 크롤링이 `1970-01-01` = 한 번도 크롤 안 됨.
+  → 구글이 sitemap에서 URL은 **발견**하지만 **크롤 자체를 안 하는** 상태. 콘텐츠 품질 문제가 아니라
+  사이트 레벨 크롤 예산 문제로 봐야 함. 신규를 더 찍는다고 구글에서 풀릴 항목이 아님.
+- 색인 26/18 (크롤링됨-미색인 26은 지난주와 동일, 그중 9개는 08-07 삭제분)
+
+### 빙: 계속 성장, 신규 발행물이 즉시 성과
+| 페이지 | 노출(전주) | 순위 |
+|---|---|---|
+| contractor-cost-calculator | **84**(41) | 4.7 |
+| square-footage-calculator | **65**(35) | 5.9 |
+| how-much-primer-do-i-need | 38 | 5.4 |
+| carpet-calculator | 38 | 5.9 (클릭 1) |
+| 1-2-vs-5-8-drywall | 36 | 5.3 |
+| **board-and-batten-calculator** | **29** | 6.9 |
+| contractor-labor-cost | 7 | 5.7 (**클릭 1, CTR 14.3%**) |
+
+- 클릭 5건 발생(contractor-cost / square-footage / carpet / peel-and-stick / contractor-labor)
+- **"board and batten calculator"가 단일 최다 키워드(8노출)** — 08-31에 만든 계산기가 정확히 그 쿼리를 잡음.
+  **신규 발행 → 빙에서 2~3주 내 노출 발생**이라는 사이클이 확인됨.
+
+### GA: 활성 52명(전 35), 참여 19.4초 — **신규 발행물이 전부 조회 발생**
+`contractor-labor-cost` 5조회로 **사이트 2위**, thinset 2, board-and-batten 1, carpet-pad 1.
+→ 구글이 죽어 있는 동안에도 신규 콘텐츠가 빙 경유로 실제 유입을 만들고 있음. **확장 전략이 작동 중.**
+
+## 실행 3건
+
+### 1) `tools/attic-insulation-top-up-calculator.html` 신규 (1,574단어)
+빙 쿼리 `how much batt insulation do i need to add over r-30 insulation to equal r-49 and does it
+have to be without a backing`(순위 5) 대응. 9월은 다락 단열 시즌 시작이라 계절성도 맞음.
+
+경쟁 8개+(EnergyStar/MoneyPit/ProToolReviews/usainsulation/fixupfirst/iamhome/atticman)이나
+**전부 "기존 R값을 빼면 된다"고 산문으로만 말하고 그 계산을 해주는 도구가 없음.**
+경쟁 도구에 없는 출력 = 측정 깊이 → 현재 R값 역산 → 부족분 → 추가 두께/수량/마감 깊이.
+- **faced/unfaced 자동 판정**: 기존 단열재가 있으면 무조건 unfaced(이중 증기막 → 수분 갇힘 → R값 손실 + 골조 부식).
+  이 영역 최대 실수인데 다들 계산과 분리해서 다룸.
+- **조이스트 매몰 안내**: 마감 깊이 vs 조이스트 깊이 비교 후 워크보드·해치 표시·이브 배플 안내.
+  조이스트를 덮는 게 정상(열교 차단)이라는 점 명시.
+- **버미큘라이트 선택 시 석면 검사 경고를 결과 최상단에 별도 박스로 표시.**
+  본문에만 두면 계산만 보고 넘어갈 수 있어 결과에도 배치함. → **안전 관련 정보는 본문이 아니라 결과에 띄울 것.**
+- 셀룰로스 침하 10~20%를 설치 깊이에 반영
+- **블론 백 수량은 기존 insulation-calculator와 동일한 상수(약 970 R·sq ft/bag)를 사용**해
+  두 계산기 결과가 어긋나지 않게 함. 기존 값(R-30/32sqft, R-38/25.7, R-49/20)에서 역산해
+  960/977/980으로 일정함을 확인한 뒤 채택. → **관련 계산기끼리 상수를 공유하는지 항상 확인할 것.**
+
+### 2) ★ `tools/index.html` 허브 그리드 렌더 버그 수정 (실사용 버그)
+`renderTools()`의 `catOrder` 배열이 6개(`paint/flooring/space/cost/garden/moving`)뿐이라,
+`CATEGORY_LABELS`와 필터 버튼에는 존재하는 **`roofing`과 `seasonal`이 걸러지고 있었음.**
+
+**결과: 계산기 5개(roofing 4 = roofing/insulation/gutter/신규 attic, seasonal 1 = christmas-lights)가
+`/tools/` 허브 그리드에 전혀 렌더되지 않았고, "Roofing & Insulation"과 "Holiday & Seasonal"
+필터 버튼을 눌러도 빈 화면이 나왔음.** `/tools/` 허브는 색인조차 안 된 상태인데 그 허브에서
+5개 계산기가 내부링크를 못 받고 있던 셈.
+
+수정 후 검증: 그리드 링크 36 → **41**(전체 계산기 수와 일치), 섹션 6 → 8,
+roofing 필터 4개, seasonal 필터 1개, all 41개 정상.
+→ **신규 계산기 추가 시 `cat` 값이 `CATEGORY_LABELS`에만 있으면 부족하다. `catOrder`에도 있어야 렌더된다.**
+지난 세션에 "cat 값을 기존과 대조하라"고 적었는데, 대조 대상이 하나 더 있었던 것.
+
+### 3) `tools/board-and-batten-calculator.html` 보강 (1,077 → 1,321단어)
+빙 신규 쿼리 `board and batten isn't long enough for exterior wall`(순위 7) 대응.
+"When the Wall Is Taller Than the Boards" 섹션 — 수평 밴드로 2단 구성, 스카프 조인트(45도 겹침,
+버트 조인트는 건조 시 벌어짐), 조인트 스태거, 긴 자재는 필요한 벽에만 구매.
+
+## 검증
+- 7-gram 자카드로 기존 114개 전 페이지 대조 → 신규 계산기 **2% 초과 쌍 0건**
+- HTML 무결성 115/115, JSON-LD 317블록 100%, 죽은링크 0, sitemap 115 = 파일 115,
+  llms.txt 111 URL 죽은링크 0, node --check, **계산기 41/41 jsdom 동작 정상**
+- 상호링크: insulation-calculator / how-to-install-insulation → 신규 계산기
+
+## 다음 세션 지침
+1. 구글 최종 크롤링 날짜 확인은 계속하되, **"발견됨-미색인"에 신규 발행물이 쌓이는 것은
+   콘텐츠 문제가 아니라 크롤 예산 문제**로 해석할 것. 신규를 더 찍어서 풀 수 있는 항목이 아님.
+   반대로 빙에서는 신규가 2~3주 내 노출을 만들고 있으므로 **확장은 빙 기준으로 계속 정당함.**
+2. **빙 쿼리에서 "우리 신규 페이지 이름 자체"가 키워드로 등장하는지 볼 것.**
+   이번에 "board and batten calculator" 8노출이 그 사례이고, 발행이 수요를 만들었다는 증거.
+3. contractor 클러스터 미대응 각도(그대로 유효): 견적서 항목 읽는 법, 변경명세 처리,
+   전기·배관·HVAC 서비스콜 요금 구조.
+4. 이번 빙 쿼리에서 새로 보인 미대응 각도:
+   - `can you use greenboard behind a full slab ceramic shower wall panels`(2건, 순위 8·10)
+     — 기존 cement-board-vs-greenboard 글이 타일 기준이라 **대형 슬랩 패널 각도는 미커버**
+   - `how many 1x12 boards to vertically cover a 24' wall with a 3/4" gap`(순위 8)
+     — 진짜 board-and-batten(보드 자체를 세로로) 각도, 현 계산기는 배튼만 다룸
+   - `gypcrete vs self leveling compound over 3/4 plywood with pex`(순위 1) — 방통/난방배관 각도
+5. 신규 계산기 추가 시 체크: `cat` 값이 **CATEGORY_LABELS + catOrder 양쪽**에 있는지,
+   관련 기존 계산기와 **상수가 공유되는지**, 안전 정보는 **결과 영역에** 있는지.
+
+## 현재 상태 (2026-09-21 세션 종료)
+- 툴 **41** / 블로그 47 / 프로젝트 20 / 허브 3 / 루트 4 = **115개 파일** (sitemap 115 일치)
+- 커밋: `8e29297`(단열 계산기 + 허브 렌더 버그 수정 + board&batten 보강)
