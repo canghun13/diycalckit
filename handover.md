@@ -1386,3 +1386,100 @@ roofing 필터 4개, seasonal 필터 1개, all 41개 정상.
 ## 현재 상태 (2026-09-21 세션 종료)
 - 툴 **41** / 블로그 47 / 프로젝트 20 / 허브 3 / 루트 4 = **115개 파일** (sitemap 115 일치)
 - 커밋: `8e29297`(단열 계산기 + 허브 렌더 버그 수정 + board&batten 보강)
+
+---
+
+# 2026-09-28 세션 (GSC 09-14 + Bing Keyword/PageTraffic 09-14 + GA 08-17~09-13)
+
+## 데이터 판독
+
+### 구글: 6주 연속 정지 — 지난주와 **완전히 동일**
+색인 26/18, 최종 크롤링 07-21. 신규 발행물은 여전히 "발견됨-미색인"에 `1970-01-01`(크롤 이력 없음)로 적체.
+GSC export 날짜가 09-14인데 차트 마지막이 09-04로, 09-07분과 실질 동일한 데이터. 구조 변경 안 함.
+
+### 빙: 노출·클릭 모두 가속
+| 페이지 | 노출(전주) | 클릭 | CTR |
+|---|---|---|---|
+| contractor-cost-calculator | **111**(84) | 2 | 1.8% |
+| square-footage-calculator | **94**(65) | **4** | 4.26% |
+| carpet-calculator | **59**(38) | **3** | 5.08% |
+| how-much-primer-do-i-need | 43 | 0 | — |
+| 1-2-vs-5-8-drywall | 41 | 0 | — |
+| board-and-batten-calculator | 35(29) | 0 | — |
+| **grout-calculator** | **18**(8) | 0 | — |
+| deck-size-calculator | 5 | **3** | **60%** |
+| contractor-labor-cost | 8 | 1 | 12.5% |
+
+**총 클릭 14건(전주 5건).** grout-calculator가 2배 이상 성장.
+
+### GA: 활성 60명(전 52), 참여시간 **23.6초**(전 19.4) — 5주 연속 상승
+12.2 → 14.3 → 18.5 → 22.6 → 23.6초. contractor-cost 6조회로 홈 다음 2위.
+
+## 실행 2건
+
+### 1) `tools/lvp-layout-calculator.html` 신규 (1,409단어)
+LVP 쿼리가 신규 등장(`how to measure to start laying lvp flooring in a room` 순위 8.7,
+`how can is lvp flooring to diy` 순위 3)하고 `how-to-install-lvp-flooring`이 빙에 9노출로 첫 진입.
+
+경쟁 8개+ 이고 tileprocalculator는 전용 LVP 계산기까지 보유. 그런데 **전부 "마지막 열이 슬리버면
+첫 열을 리핑하라"는 규칙만 산문으로 말하고 실제 치수를 계산해주지 않음.**
+우리 프로젝트 페이지도 같은 수준이라 중복 아님.
+
+**경쟁 도구에 없는 출력 = 행 끝 오프컷이 다음 행 시작재로 쓸 수 있는지 판정.**
+- 너비 방향: 행 수, 마지막 행 폭, 슬리버 2단 판정(2인치 미만 필수 / 플랭크 절반 미만 권장), 균등 배분값
+- **길이 방향(핵심)**: 끝 컷과 오프컷이 **둘 다** 스태거 최소를 넘어야 함.
+  끝 컷이 짧으면 벽에 안 잠기는 토막, 오프컷이 짧으면 매 행마다 새 플랭크 → 실질 웨이스트 폭증.
+  tileprocalculator가 "오프컷 8인치 미만은 스크랩"이라 언급만 한 지점.
+- 둘 다 불만족일 때 **첫 플랭크를 몇 인치 잘라 시작할지 0.25인치 단위로 탐색해 제시**
+- 전 치수 1/16인치 표기
+
+**검산에서 2건 수정** (둘 다 기록해둘 가치 있음):
+- `lvFmt(0.5)`가 `0 1/2"`로 출력 → `whole === 0`이면 분수만 반환하도록. **분수 포맷터는 정수부 0을 따로 처리할 것.**
+- 초기 구현이 **"끝 컷이 짧을 때"만 트림을 제안하고 "오프컷이 짧을 때"는 스크랩이라고만 하고 해법을 안 줬음.**
+  두 조건을 통합해 `stag <= endCut <= pl-stag`를 만족하는 최소 트림을 탐색하도록 변경.
+  144x192/6x48 → 6.5in 트림(끝컷 6, 오프컷 42), 240x300/7.5x60 stag12 → 13in 트림(끝컷 12, 오프컷 48).
+  수동 검산과 일치 확인. → **대칭적인 두 제약이 있으면 한쪽만 처리하고 있는지 확인할 것.**
+
+### 2) `tools/grout-calculator.html` 보강 (646 → 1,107단어)
+빙 그라우트 쿼리가 **12개 이상으로 최대 클러스터**이고 계산기 노출이 2배 성장했는데,
+기존 계산기는 수량만 주고 믹싱을 전혀 다루지 않았음(프로젝트 페이지에 절차만 존재).
+실측: `i need to mix grout for around 1 12x12 tile, how much grout and water do i use`(순위 8.5),
+`how much grout should i expect to mix for a 8x14 bathroom with mapei all in one grout`(6.75),
+`how much grout do you need for a coaster`(4), `how many bags of grout do i need for 2.3m3`.
+
+"Mixing: Water Ratio, Small Batches, and Pot Life" 섹션 신설.
+핵심 차별점: **제조사는 전량(25lb) 기준 물 비율만 표기하므로, 부분 배치용 파운드당 수치를 제공.**
+이게 소량 쿼리의 실제 미충족 지점. 그 외 무게 계량(스쿱은 밀도 편차), 물 먼저 파우더 나중,
+슬레이크 후 물 추가 금지(시멘트 비율 영구 파괴), 포트라이프, 0.5lb 미만은 프리믹스 권장, 미터법 환산.
+
+## 검증
+- 7-gram 자카드로 기존 115개 전 페이지 대조 → 신규/보강 모두 **2% 초과 쌍 0건**
+- HTML 116/116, JSON-LD 320블록 100%, 죽은링크 0, sitemap 116 = 파일 116,
+  llms.txt 112 URL 죽은링크 0, node --check, **계산기 42/42 jsdom 동작 정상**
+- **지난주 체크리스트 적용됨**: cat은 기존 `flooring` 사용(새 키 안 만듦), catOrder 8개 정합 확인,
+  tools grid **42개 전부 렌더** 및 신규 포함 확인
+
+## 작업 환경 주의 (이번에 걸렸던 것)
+컨테이너가 세션 간 리셋되므로 `/home/claude`의 헬퍼 스크립트(`mktool.py`, `mkblog.py`, `tooltest.js`)와
+`npm install jsdom`이 **매 세션 사라진다.** 이번에 mktool.py를 재작성해야 했음.
+템플릿은 기존 계산기 파일에서 head/footer를 잘라 쓰면 되므로(`/tmp/head0.html`, `/tmp/foot0.html`) 복구는 빠름.
+
+## 다음 세션 지침
+1. 구글 최종 크롤링 날짜 확인 루틴 유지. 07-21에서 안 움직이면 구조 변경 금지.
+2. **빙 클릭이 5 → 14건으로 늘었다. 이 추세를 계속 볼 것.** CTR이 4~5%대인 페이지
+   (square-footage, carpet, deck-size)는 이미 상위 노출 중이므로 순위보다 **해당 쿼리의
+   미충족 각도**를 찾는 게 효율적.
+3. 이번 빙 쿼리에서 미대응으로 남긴 것:
+   - `how much bags of insulation needed for 16x16 garage`(순위 9) — 차고 단열. 차고 클러스터 확장 여지
+   - `what is the procedure for hanging wallpaper strips?`(4노출), `where to start wallpaper —
+     eye first or center`(2노출) — 벽지 **시작 위치** 각도. 우리 how-to-hang-wallpaper가 절차만 다룸
+   - `gypcrete vs self leveling compound over 3/4 plywood with pex`(순위 1) — 방통/난방배관
+   - `can you use greenboard behind a full slab ceramic shower wall panels`(2건) — 대형 슬랩 패널
+4. contractor 클러스터 미대응(그대로 유효): 견적서 항목 읽는 법, 변경명세 처리, 서비스콜 요금 구조.
+5. 신규 계산기 체크리스트(누적): cat이 CATEGORY_LABELS+catOrder 양쪽에 있는지 /
+   관련 기존 계산기와 상수 공유하는지 / 안전 정보는 결과 영역에 / 분수 포맷터 정수부 0 처리 /
+   대칭 제약을 한쪽만 처리하고 있지 않은지.
+
+## 현재 상태 (2026-09-28 세션 종료)
+- 툴 **42** / 블로그 47 / 프로젝트 20 / 허브 3 / 루트 4 = **116개 파일** (sitemap 116 일치)
+- 커밋: `95ddb3f`(LVP 레이아웃 계산기 + 그라우트 믹싱 보강)
