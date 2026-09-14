@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LVP Layout Calculator — First Row Width, Last Row &amp; Offcut Reuse</title>
+  <meta name="description" content="Stop guessing where to start. Get the exact first and last row widths, the end cut on every row, and whether each offcut is long enough to start the next row.">
+  <link rel="canonical" href="https://diycalckit.com/tools/lvp-layout-calculator.html">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/nav.js" defer></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "LVP Layout Calculator — First Row Width, Last Row & Offcut Reuse", "description": "Stop guessing where to start. Get the exact first and last row widths, the end cut on every row, and whether each offcut is long enough to start the next row.", "url": "https://diycalckit.com/tools/lvp-layout-calculator.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "provider": {"@type": "Organization", "name": "DIYCalcKit", "url": "https://diycalckit.com"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate the first row width for LVP?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract the expansion gap from both sides of the room width, divide by the plank width, and look at the remainder. That remainder is your last row. If it is narrower than about two inches, or narrower than half a plank, add a full plank width to it and divide by two: that figure is what you rip both the first and last rows to, so the two edges match. If the remainder is already a reasonable width, start with a full plank."}}, {"@type": "Question", "name": "What is the minimum width for the last row of vinyl plank?", "acceptedAnswer": {"@type": "Answer", "text": "Two inches is the usual floor, and half a plank width is the better target. Below two inches the strip is difficult to lock in securely, tends to lift, and is the single most visible sign that a floor was not planned. Some manufacturers specify a minimum in the installation instructions, and going below it can affect the warranty, so check the box before deciding a narrow last row is acceptable."}}, {"@type": "Question", "name": "Can I reuse the offcut from the end of a row to start the next row?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as long as it is at least as long as your stagger minimum, usually 6 inches but sometimes 8 or 12 for wide planks. This is the normal way to install plank flooring and it is what keeps waste low, because otherwise you open a fresh plank for every row. If the offcut is consistently too short, shorten the first plank of row one so the end cut lands somewhere more useful."}}, {"@type": "Question", "name": "What happens if the end cut on each row is too short?", "acceptedAnswer": {"@type": "Answer", "text": "You get a stub at the end of every row that will not lock securely and sits along a wall where it is visible. Fix it at the start rather than the end: cut the first plank of the row shorter so the leftover at the far wall grows by the same amount. The calculator shows how much to take off the first plank to bring the end cut up to your stagger minimum."}}, {"@type": "Question", "name": "Which direction should the planks run?", "acceptedAnswer": {"@type": "Answer", "text": "Parallel to the longest wall in most rooms, and always parallel to the length of a hallway. If a room has strong natural light from one side, running the planks away from the window puts the shadow lines in the joints rather than across them, which hides the seams. Where several rooms connect without transitions, pick one direction for the whole run and plan the layout from the largest continuous sightline."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://diycalckit.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://diycalckit.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "LVP Layout Calculator — First Row Width, Last Row & Offcut Reuse", "item": "https://diycalckit.com/tools/lvp-layout-calculator.html"}]}
+</script>
+
+  <meta property="og:title" content="LVP Layout Calculator — First Row Width, Last Row &amp; Offcut Reuse">
+  <meta property="og:description" content="Stop guessing where to start. Get the exact first and last row widths, the end cut on every row, and whether each offcut is long enough to start the next row.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diycalckit.com/tools/lvp-layout-calculator.html">
+  <meta property="og:site_name" content="DIYCalcKit">
+  <meta property="og:image" content="https://diycalckit.com/assets/img/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DIYCalcKit &mdash; free home improvement calculators">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LVP Layout Calculator — First Row Width, Last Row &amp; Offcut Reuse">
+  <meta name="twitter:description" content="Stop guessing where to start. Get the exact first and last row widths, the end cut on every row, and whether each offcut is long enough to start the next row.">
+  <meta name="twitter:image" content="https://diycalckit.com/assets/img/og-default.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">DIYCalc<span>Kit</span></a>
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="/tools/" class="nav-link">Tools</a></li>
+          <li><a href="/blog/" class="nav-link">Blog</a></li>
+          <li><a href="/projects/" class="nav-link">Projects</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+<main>
+  <div class="tool-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li aria-current="page">LVP Layout Calculator</li>
+      </ol>
+    </nav>
+    <h1>LVP Layout Calculator &mdash; First Row, Last Row &amp; Offcuts</h1>
+    <p class="tool-desc">Enter the room and plank dimensions to get the exact first and last row widths, the end cut on every row, and whether the offcut is long enough to start the next row.</p>
+
+    <div class="tool-box">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Room Width &mdash; across the planks (inches)</label><input type="number" id="lv-w" placeholder="e.g. 144" min="0" step="0.25" value="144"></div>
+        <div class="form-group"><label>Room Length &mdash; along the planks (inches)</label><input type="number" id="lv-l" placeholder="e.g. 180" min="0" step="0.25" value="180"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Plank Width (inches)</label><input type="number" id="lv-pw" placeholder="e.g. 7" min="0.5" step="0.05" value="7"></div>
+        <div class="form-group"><label>Plank Length (inches)</label><input type="number" id="lv-pl" placeholder="e.g. 48" min="6" step="0.25" value="48"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="form-group"><label>Expansion Gap (each side)</label>
+          <select id="lv-gap">
+            <option value="0.25" selected>1/4 in &mdash; standard</option>
+            <option value="0.375">3/8 in</option>
+            <option value="0.5">1/2 in &mdash; rooms over 50 ft</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Minimum Stagger Between Rows</label>
+          <select id="lv-stag">
+            <option value="6" selected>6 in &mdash; common minimum</option>
+            <option value="8">8 in &mdash; conservative</option>
+            <option value="12">12 in &mdash; wide plank / manufacturer spec</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Sq Ft Per Box (optional, for box count)</label><input type="number" id="lv-box" placeholder="e.g. 24" min="0" step="0.01" value="24"></div>
+
+      <button class="btn-primary" onclick="calcLVP()" style="width:100%">Calculate Layout &rarr;</button>
+
+      <div class="result-box" id="result" style="display:none">
+        <div class="result-num" id="lv-first">&mdash;</div>
+        <div class="result-label" id="lv-first-label">rip the first row to this width</div>
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; text-align:center;">
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="lv-rows">&mdash;</div>
+            <div style="font-size:.78rem; color:var(--mid)">rows</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="lv-last">&mdash;</div>
+            <div style="font-size:.78rem; color:var(--mid)">last row width</div>
+          </div>
+          <div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--amber-dark)" id="lv-planks">&mdash;</div>
+            <div style="font-size:.78rem; color:var(--mid)">planks needed</div>
+          </div>
+        </div>
+        <div id="lv-sliver" style="display:none; margin-top:.9rem; padding:.75rem 1rem; border-radius:var(--radius); font-size:.88rem;"></div>
+        <div id="lv-offcut" style="margin-top:.7rem; padding:.75rem 1rem; border-radius:var(--radius); background:#f4f6f8; border:1px solid #dde3e9; font-size:.87rem; color:var(--slate);"></div>
+        <p style="font-size:.78rem; color:var(--mid); margin-top:.85rem; line-height:1.7;" id="lv-detail"></p>
+      </div>
+    </div>
+
+<h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">The Two Cuts That Decide How the Floor Looks</h2>
+    <p>Every guide says the same two things: run the planks parallel to the longest wall, and do not end with a skinny last row. Both are correct and neither tells you what to actually cut. The numbers above do, and there are two of them, in two different directions.</p>
+    <p><strong>Across the room</strong> is the one everyone knows about. Divide the usable width by the plank width and the remainder becomes your last row. If that remainder is a sliver, you split the difference by ripping the first row narrower so the two edges match.</p>
+    <p><strong>Along the room</strong> is the one that gets skipped, and it causes more visible problems. The end cut on each row is whatever is left after the full planks, and if that leftover is shorter than your stagger minimum, you have a row ending in a stub that will not lock securely and sits right where the eye follows the wall. The fix is the same idea applied sideways: shorten the <em>first plank</em> of the row so the end cut grows.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Why the Offcut Number Matters More Than the Waste Percentage</h2>
+    <p>Plank flooring waste is not really a percentage. It is a question of whether the piece you cut off the end of one row is long enough to legally start the next one.</p>
+    <p>If it is, you start the next row with it, the stagger happens automatically, and your real waste drops close to nothing. If it is an inch too short, that piece is scrap, you open a new plank for every single row, and the offcut pile grows to the size of the job. Two rooms with identical square footage and identical planks can differ by 15% in material for exactly this reason.</p>
+    <p>The calculator reports the offcut length and tells you which side of that line you are on. When the offcut is unusable, two things fix it: change where the first plank of row one starts, or choose a plank length that divides into the room better. The second is worth checking before you buy, because plank lengths vary more between products than widths do.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Stagger: The Rules Behind the Number</h2>
+    <ul style="margin:.75rem 0 1rem 1.25rem; line-height:1.9;">
+      <li><strong>Minimum offset.</strong> End joints in adjacent rows should be at least 6 inches apart, and many wide-plank products specify 8 or even 12. Check the box before you assume 6.</li>
+      <li><strong>No H-joints.</strong> An H-joint is where joints in rows one and three line up with each other around a single plank in row two. It reads as a repeating ladder down the floor even when every individual offset is legal.</li>
+      <li><strong>No step pattern.</strong> If every row shifts by the same amount in the same direction, the joints form a diagonal staircase. Vary the starting length across at least three rows before repeating.</li>
+      <li><strong>Never shorter than the stagger minimum.</strong> That applies to the start of a row as much as the end. A 4-inch piece at either end of a row is both fragile and obvious.</li>
+    </ul>
+    <p>A practical rhythm that satisfies all four: start row one full, row two at two thirds, row three at one third, then repeat. If you are reusing offcuts, check that the offcut length is not landing on the same value every row, which quietly recreates the step pattern.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Measure the Room in More Than One Place</h2>
+    <p>Walls are not parallel and rooms are not rectangles. Measure the width at both ends and in the middle, and use the <strong>narrowest</strong> figure for the layout so nothing binds. If the two ends differ by more than about half an inch, the wall is out of square and the first row cannot simply follow it &mdash; snap a chalk line square to the room, lay the first row to the line, and scribe the plank edge to the wall.</p>
+    <p>Bump-outs, closets, and hallways that open off the main room are the other complication. Plan the layout from the <strong>largest continuous sightline</strong>, usually the view from the main entrance, and let the secondary spaces take whatever cut falls out. A sliver in a closet nobody looks into costs nothing; a sliver along the main wall is the thing you will notice for years.</p>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Before the First Plank</h2>
+    <ul style="margin:.75rem 0 1rem 1.25rem; line-height:1.9;">
+      <li><strong>Acclimate the boxes 48 hours</strong> in the room where they will be installed. LVP and SPC ship cold and expand as they warm; locking them together cold is the usual cause of seasonal gapping.</li>
+      <li><strong>Open three or four boxes and mix.</strong> Pattern repetition is printed, and pulling from one box at a time clusters identical planks in one area.</li>
+      <li><strong>Keep the expansion gap on every edge</strong>, including around pipes, door jambs, and islands, not just the perimeter walls.</li>
+      <li><strong>Dry-lay the first two rows</strong> before locking anything. Two minutes here is cheaper than discovering the sliver at the far wall.</li>
+      <li><strong>Groove side to the wall</strong> on the first row, and rip the tongue off if the first row is being cut to width anyway.</li>
+    </ul>
+
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How do I calculate the first row width for LVP?</strong></p>
+    <p>Subtract the expansion gap from both sides of the room width, divide by the plank width, and look at the remainder. That remainder is your last row. If it is narrower than about two inches, or narrower than half a plank, add a full plank width to it and divide by two: that figure is what you rip both the first and last rows to, so the two edges match. If the remainder is already a reasonable width, start with a full plank.</p>
+    <p><strong>What is the minimum width for the last row of vinyl plank?</strong></p>
+    <p>Two inches is the usual floor, and half a plank width is the better target. Below two inches the strip is difficult to lock in securely, tends to lift, and is the single most visible sign that a floor was not planned. Some manufacturers specify a minimum in the installation instructions, and going below it can affect the warranty, so check the box before deciding a narrow last row is acceptable.</p>
+    <p><strong>Can I reuse the offcut from the end of a row to start the next row?</strong></p>
+    <p>Yes, as long as it is at least as long as your stagger minimum, usually 6 inches but sometimes 8 or 12 for wide planks. This is the normal way to install plank flooring and it is what keeps waste low, because otherwise you open a fresh plank for every row. If the offcut is consistently too short, shorten the first plank of row one so the end cut lands somewhere more useful.</p>
+    <p><strong>What happens if the end cut on each row is too short?</strong></p>
+    <p>You get a stub at the end of every row that will not lock securely and sits along a wall where it is visible. Fix it at the start rather than the end: cut the first plank of the row shorter so the leftover at the far wall grows by the same amount. The calculator shows how much to take off the first plank to bring the end cut up to your stagger minimum.</p>
+    <p><strong>Which direction should the planks run?</strong></p>
+    <p>Parallel to the longest wall in most rooms, and always parallel to the length of a hallway. If a room has strong natural light from one side, running the planks away from the window puts the shadow lines in the joints rather than across them, which hides the seams. Where several rooms connect without transitions, pick one direction for the whole run and plan the layout from the largest continuous sightline.</p>
+
+    <div style="margin-top:2rem; padding:1.25rem; background:#f8f9fb; border-radius:var(--radius); border:1px solid #e2e6ea;">
+      <strong>Related tools and guides:</strong>
+      <ul style="margin:0.5rem 0 0 1.25rem; line-height:2;">
+        <li><a href="/projects/how-to-install-lvp-flooring.html">How to Install LVP Flooring</a></li>
+        <li><a href="/tools/flooring-calculator.html">Flooring Calculator &mdash; Square Footage &amp; Waste</a></li>
+        <li><a href="/tools/hardwood-floor-calculator.html">Hardwood Floor Calculator</a></li>
+        <li><a href="/blog/self-leveling-compound-vs-plywood-underlayment.html">Self-Leveling Compound vs. Plywood Underlayment</a></li>
+        <li><a href="/tools/baseboard-trim-calculator.html">Baseboard &amp; Trim Calculator</a></li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+<script>
+
+function lvFmt(v) {
+  // 1/16 인치 단위로 표기 (현장에서 줄자로 읽는 단위)
+  var whole = Math.floor(v);
+  var frac = Math.round((v - whole) * 16);
+  if (frac === 16) { whole += 1; frac = 0; }
+  if (frac === 0) return whole + '"';
+  var n = frac, d = 16;
+  while (n % 2 === 0 && d % 2 === 0) { n /= 2; d /= 2; }
+  if (whole === 0) return n + '/' + d + '"';
+  return whole + ' ' + n + '/' + d + '"';
+}
+
+function calcLVP() {
+  var W  = parseFloat(document.getElementById('lv-w').value) || 0;
+  var L  = parseFloat(document.getElementById('lv-l').value) || 0;
+  var pw = parseFloat(document.getElementById('lv-pw').value) || 0;
+  var pl = parseFloat(document.getElementById('lv-pl').value) || 0;
+  var gap = parseFloat(document.getElementById('lv-gap').value);
+  var stag = parseFloat(document.getElementById('lv-stag').value);
+  var boxSf = parseFloat(document.getElementById('lv-box').value) || 0;
+
+  if (!W || !L) { alert('Please enter the room width and length in inches.'); return; }
+  if (!pw || !pl) { alert('Please enter the plank width and length.'); return; }
+  var uw = W - 2 * gap;
+  var ul = L - 2 * gap;
+  if (uw <= pw) { alert('The room is narrower than one plank once the expansion gap is taken off — check your measurements.'); return; }
+  if (ul <= pl) { alert('The room is shorter than one plank once the expansion gap is taken off — check your measurements.'); return; }
+
+  // ── 너비 방향: 행 수와 마지막 행 폭 ──────────────────
+  var rows = Math.ceil(uw / pw);
+  var lastRaw = uw - (rows - 1) * pw;
+  var firstW, lastW, slivMsg = '', slivLevel = 0;
+
+  if (lastRaw < 2) {
+    slivLevel = 2;
+  } else if (lastRaw < pw / 2) {
+    slivLevel = 1;
+  }
+
+  if (slivLevel > 0) {
+    // 첫 행과 마지막 행에 균등 배분
+    firstW = lastW = (pw + lastRaw) / 2;
+  } else {
+    firstW = pw;
+    lastW = lastRaw;
+  }
+
+  // ── 길이 방향: 행 끝 컷과 오프컷 ─────────────────────
+  var fullPerRow = Math.floor(ul / pl);
+  var endCut = ul - fullPerRow * pl;
+
+  // 끝 컷과 오프컷이 모두 stagger 최소를 넘어야 한다.
+  // 끝 컷이 짧으면 벽에 못 잠기는 토막이 남고, 오프컷이 짧으면 다음 행 시작재로 못 써서
+  // 매 행마다 새 플랭크를 열게 된다. 첫 플랭크를 c만큼 잘라 시작하면
+  // 끝 컷이 (endCut + c) mod pl 로 이동하므로, 둘 다 만족하는 최소 c를 찾는다.
+  var trimFirst = 0;
+  var endCutAdj = endCut;
+  if (endCut > 0 && (endCut < stag || (pl - endCut) < stag)) {
+    var found = false;
+    for (var c = 0.25; c < pl; c += 0.25) {
+      var e = (endCut + c) % pl;
+      if (e >= stag && (pl - e) >= stag) { trimFirst = c; endCutAdj = e; found = true; break; }
+    }
+    if (!found) { trimFirst = 0; endCutAdj = endCut; }
+  }
+  var offcut = endCutAdj > 0 ? (pl - endCutAdj) : 0;
+  var reusable = offcut >= stag && endCutAdj >= stag;
+
+  var planksPerRow = fullPerRow + (endCut > 0 ? 1 : 0);
+  var totalPlanks = rows * planksPerRow;
+
+  document.getElementById('lv-first').textContent = lvFmt(firstW);
+  document.getElementById('lv-first-label').textContent =
+    (slivLevel > 0) ? 'rip the first row to this width' : 'first row \u2014 full plank width';
+  document.getElementById('lv-rows').textContent = rows;
+  document.getElementById('lv-last').textContent = lvFmt(lastW);
+  document.getElementById('lv-planks').textContent = totalPlanks;
+
+  // ── 슬리버 경고 ──────────────────────────────────────
+  var sl = document.getElementById('lv-sliver');
+  if (slivLevel === 2) {
+    sl.style.background = '#fdecea'; sl.style.border = '1px solid #f0b4ad'; sl.style.color = '#8a2c20';
+    sl.innerHTML = '<strong>Sliver last row.</strong> Left as is, the far wall would finish at only '
+      + lvFmt(lastRaw) + ', which is too narrow to lock in securely and is the most visible sign of an unplanned floor. '
+      + 'Rip the first row to ' + lvFmt(firstW) + ' so both edges match.';
+    sl.style.display = 'block';
+  } else if (slivLevel === 1) {
+    sl.style.background = 'var(--amber-light)'; sl.style.border = '1px solid var(--amber)'; sl.style.color = 'var(--slate)';
+    sl.innerHTML = '<strong>Narrow last row.</strong> Unadjusted it would be ' + lvFmt(lastRaw)
+      + ', under half a plank. Ripping the first row to ' + lvFmt(firstW)
+      + ' balances both edges and looks considerably better.';
+    sl.style.display = 'block';
+  } else {
+    sl.style.background = '#eef6f0'; sl.style.border = '1px solid #cfe4d6'; sl.style.color = '#2f5d43';
+    sl.innerHTML = '<strong>No adjustment needed.</strong> The last row lands at ' + lvFmt(lastRaw)
+      + ', wide enough to install normally. Start with a full plank.';
+    sl.style.display = 'block';
+  }
+
+  // ── 오프컷 안내 ──────────────────────────────────────
+  var oc = document.getElementById('lv-offcut');
+  var ocHtml = '';
+  if (endCut <= 0) {
+    ocHtml = '<strong>Rows divide evenly.</strong> Each row is exactly ' + fullPerRow
+      + ' full planks with no end cut, so there are no offcuts to reuse — but you must still stagger the rows. '
+      + 'Cut the first plank of every second and third row so the end joints do not line up.';
+  } else {
+    if (trimFirst > 0) {
+      var why = (endCut < stag)
+        ? 'Left alone the end cut would be only ' + lvFmt(endCut) + ', shorter than your '
+          + stag + ' in stagger minimum, leaving a stub at the wall that will not lock securely.'
+        : 'Left alone the end cut would be ' + lvFmt(endCut) + ', leaving an offcut of only '
+          + lvFmt(pl - endCut) + ' — too short to start the next row, so you would open a fresh plank for every row.';
+      ocHtml = '<strong>Trim the first plank of each row by ' + lvFmt(trimFirst) + '.</strong> '
+        + why + ' Taking ' + lvFmt(trimFirst) + ' off the start moves the end cut to '
+        + lvFmt(endCutAdj) + ', which leaves a reusable offcut. ';
+    } else {
+      ocHtml = '<strong>End cut on each row: ' + lvFmt(endCutAdj) + '.</strong> ';
+    }
+    ocHtml += reusable
+      ? 'The offcut is ' + lvFmt(offcut) + ', longer than your ' + stag
+        + ' in minimum, so it can start the next row. Doing that keeps the stagger automatic and cuts waste to almost nothing.'
+      : 'The offcut is only ' + lvFmt(offcut) + ', shorter than your ' + stag
+        + ' in minimum, so it cannot start the next row and becomes scrap. You will open a fresh plank for every row. '
+        + 'If you have not bought yet, a different plank length may divide into this room far better.';
+  }
+  oc.innerHTML = ocHtml;
+
+  // ── 수량 ─────────────────────────────────────────────
+  var areaSf = (W * L) / 144;
+  var plankSf = (pw * pl) / 144;
+  var detail = 'Usable area after the expansion gap is ' + uw.toFixed(1) + ' x ' + ul.toFixed(1)
+    + ' in. That is ' + rows + ' rows of ' + planksPerRow + ' planks, ' + totalPlanks
+    + ' planks total against ' + Math.ceil(areaSf / plankSf) + ' by bare area — about '
+    + Math.round((totalPlanks / (areaSf / plankSf) - 1) * 100) + '% over, before any offcut reuse.';
+  if (boxSf > 0) {
+    var boxes = Math.ceil(totalPlanks * plankSf / boxSf);
+    detail += ' At ' + boxSf + ' sq ft per box that is ' + boxes + ' boxes.';
+  }
+  detail += ' Measure the room width in three places and use the narrowest. Dry-lay the first two rows before locking anything.';
+  document.getElementById('lv-detail').textContent = detail;
+
+  document.getElementById('result').style.display = 'block';
+}
+
+</script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">DIYCalc<span>Kit</span></a>
+        <p>Free home improvement calculators, step-by-step project guides, and cost breakdowns for every project.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul><li><a href="/tools/lvp-layout-calculator.html">LVP Layout Calculator — First Row Width, Last Row &amp; Offcut Reuse</a></li><li><a href="/tools/attic-insulation-top-up-calculator.html">Adding Insulation Over Existing — R-Value Top-Up Calculator</a></li><li><a href="/tools/contractor-payment-schedule-calculator.html">Contractor Payment Schedule Calculator</a></li><li><a href="/tools/thinset-calculator.html">Thinset Calculator</a></li><li><a href="/tools/board-and-batten-calculator.html">Board and Batten Calculator</a></li><li><a href="/tools/roofing-calculator.html">Roofing Calculator</a></li><li><a href="/tools/">View All Tools &rarr;</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Blog</h4>
+          <ul><li><a href="/blog/contractor-labor-cost-per-day-and-square-foot.html">How Much Do Contractors Charge for Labor Only? Hourly, Daily, and Per Square Foot</a></li><li><a href="/blog/carpet-pad-density-guide.html">Carpet Pad Density: What 6 lb, 8 lb and 10 lb Actually Mean for Your Room</a></li><li><a href="/blog/garage-floor-coating-epoxy-vs-polyaspartic.html">Garage Floor Paint vs. Epoxy vs. Polyaspartic: Which One Your Slab Can Actually Hold</a></li><li><a href="/blog/mastic-vs-thinset-tile-adhesive.html">Mastic vs. Thinset: Which Tile Adhesive Does Your Project Need?</a></li><li><a href="/blog/how-much-baseboard-do-i-need.html">How Much Baseboard Do I Need? Room &amp; Whole-House Guide</a></li><li><a href="/blog/how-much-tile-do-i-need-for-a-backsplash.html">How Much Tile Do I Need for a Backsplash? Complete Guide</a></li><li><a href="/blog/">View All Posts &rarr;</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projects</h4>
+          <ul><li><a href="/projects/how-to-paint-a-room.html">How to Paint a Room</a></li><li><a href="/projects/how-to-wallpaper-a-room.html">How to Wallpaper a Room</a></li><li><a href="/projects/how-to-install-lvp-flooring.html">How to Install LVP Flooring</a></li><li><a href="/projects/how-to-install-hardwood-flooring.html">How to Install Hardwood Flooring</a></li><li><a href="/projects/how-to-install-carpet.html">How to Install Carpet</a></li><li><a href="/projects/how-to-install-carpet-tiles.html">How to Install Carpet Tiles</a></li><li><a href="/projects/">View All Projects &rarr;</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="/tools/">Tools</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DIYCalcKit. For informational purposes only.</p>
+    </div>
+  </footer>
+</body>
+</html>

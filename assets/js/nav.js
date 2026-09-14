@@ -19,6 +19,7 @@ gtag('config', GA_ID);
 
 // ── 툴 목록 ─────────────────────────────────────────────────
 const TOOLS = [
+  { name: "LVP Layout Calculator — First Row Width, Last Row & Offcut Reuse", url: "/tools/lvp-layout-calculator.html" },
   { name: "Adding Insulation Over Existing — R-Value Top-Up Calculator", url: "/tools/attic-insulation-top-up-calculator.html" },
   { name: "Contractor Payment Schedule Calculator", url: "/tools/contractor-payment-schedule-calculator.html" },
   { name: "Thinset Calculator", url: "/tools/thinset-calculator.html" },
