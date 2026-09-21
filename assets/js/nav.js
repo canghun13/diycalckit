@@ -66,6 +66,7 @@ const TOOLS = [
 // ── 블로그 목록 (날짜 내림차순 — 추가 시 맨 위에) ──────────
 const BLOGS = [
   { name: "Garage Floor Paint vs. Epoxy vs. Polyaspartic: Which One Your Slab Can Actually Hold", url: "/blog/garage-floor-coating-epoxy-vs-polyaspartic.html", date: "2026-08-31", desc: "Cost, durability, and DIY difficulty compared, plus the two slab tests that decide whether any coating will bond." },
+  { name: "Deck Lumber List by Size: Framing Take-Offs from 8x8 to 28x14", url: "/blog/deck-lumber-list-by-size.html", date: "2026-09-21", desc: "Joist size, joists, posts, concrete, decking and screws for 12 common deck sizes, plus the projection breakpoints." },
   { name: "How Much Do Contractors Charge for Labor Only? Hourly, Daily, and Per Square Foot", url: "/blog/contractor-labor-cost-per-day-and-square-foot.html", date: "2026-09-07", desc: "Labor-only rates by hour, by day, by crew, and by square foot, plus why small jobs cost more per foot." },
   { name: "Carpet Pad Density: What 6 lb, 8 lb and 10 lb Actually Mean for Your Room", url: "/blog/carpet-pad-density-guide.html", date: "2026-08-31", desc: "Why density is not thickness, what each rating suits room by room, and the warranty clause that decides it." },
   { name: "Mastic vs. Thinset: Which Tile Adhesive Does Your Project Need?", url: "/blog/mastic-vs-thinset-tile-adhesive.html", date: "2026-08-24", desc: "Which adhesive your tile actually needs, by tile size, tile material, and location, plus where mastic is never allowed." },
