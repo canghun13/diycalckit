@@ -1581,6 +1581,10 @@ HTML 117/117, JSON-LD 323블록, 죽은링크 0, sitemap 117=파일 117, llms 11
 
 ## 작업 환경 주의 (추가)
 - tooltest.js 입력 자동채움에서 placeholder `"e.g. 12"`를 `/[0-9.]+/`로 파싱하면 `"."`이 먼저 잡혀 빈값 → 29개 계산기가 가짜 실패. **`/\d+(\.\d+)?/` 사용.** storage-unit은 체크박스 하나 체크해야 통과.
+- **배포 확인 경로 변경**: 이번 세션부터 `pages/builds/latest`가 프록시에서 차단됨. 대신
+  `curl -s https://api.github.com/repos/canghun13/diycalckit/deployments?per_page=1`의 `sha`가 푸시 SHA와 같은지 +
+  해당 `statuses_url`의 최신 state가 `success`인지 확인. push도 토큰 URL이 아니라 세션에 레포를 추가(add_repo)한 뒤 일반 URL로 해야 통과했음.
+- 이번 배포: `95d7338` success 확인.
 
 ## 다음 세션 지침
 1. contractor-cost-calculator: 빙 CTR(1.56%)이 새 타이틀로 움직이는지, GA 이탈률 0.83에서 떨어지는지.
