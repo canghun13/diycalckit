@@ -1539,3 +1539,54 @@ HTML 117/117, JSON-LD 323블록, 죽은링크 0, sitemap 117=파일 117, llms 11
 ## 현재 상태
 - 툴 42 / 블로그 **48** / 프로젝트 20 / 허브 3 / 루트 4 = **117개 파일** (sitemap 117)
 - 커밋: `4ada4b6`(덱 개편 + 신규 글 + 날짜 정정)
+
+---
+
+# 2026-09-28 세션 (실제 날짜 09-28 / GSC 09-28 + Bing Keyword/PageTraffic 09-28 + GA 08-31~09-27)
+
+## 데이터 판독
+- **구글**: 여전히 정지. 크롤링됨-미색인 26 그대로, 최종 크롤링 07-21. 발견됨-미색인 20(09-15부터 불변, 지난주 신규 2건은 아직 발견조차 안 됨). 3개월 누적 페이지 표에서 deck-size-calculator 3클릭(순위 17.9)이 1위지만 과거분. 구조 변경 안 함.
+- **빙 PageTraffic 09-28은 09-21과 숫자가 완전히 동일** — 빙 쪽 리포트가 갱신 안 된 것. 다음 주 재확인.
+- **빙 Keyword**: contractor 쿼리가 여전히 최대 클러스터(50건+). 새로 눈에 띄는 패턴은 **"작업 크기만 알고 시간은 모르는" 쿼리**
+  (`how much do i charge ... labor only to install 21 sq ft of base cabinets`, `paint a 1000 sq home labor only`,
+  `15 by 20 square foot labor cost`, `do trades charge hourly or by square foot` 순위 2, `how to check contractor unit prices` 순위 5.5).
+  배튼: `1x2 vs 1x3 batts`(순위 4), 간격 틀렸을 때(`12 12 19 18 19 12 12`, 순위 4), `1x12 세로 보드 24ft 벽 3/4 갭`(순위 8).
+- **GA**: 활성 55, 참여 19.8초(23.0→하락). 소스: **bing/organic 10이 direct 다음 1위**, **chatgpt.com/ai-assistant 첫 유입 1건**.
+  **덱 계산기 이탈률 0.80 → 0.67 (4조회)** — 표본 작지만 "약속 채우기" 개편의 첫 긍정 신호.
+  contractor-cost-calculator 이탈률 0.83 (5조회) → 이번 개편 대상.
+
+## 실행 (둘 다 기존 페이지 보강, URL 유지)
+### 1) `tools/contractor-cost-calculator.html` — "작업 크기로 가격" 모드 추가
+기존 계산기는 **시간(hours)을 입력해야** 결과가 나오는데, 실제 쿼리는 전부 면적/길이 기반. 빙 노출 1위(128) 페이지가 CTR 1.56%, 이탈 83%.
+- 13개 작업(페인트/LVP/엔지니어드/원목/재마감/카펫/세라믹/포슬린/타일철거/접착식철거/석고보드/걸레받이/주방캐비닛) × 단위단가 × 지역계수
+- **단가는 사이트 기존 수치 재사용**(how-much-does-it-cost-to-lay-flooring 표, 이 페이지 per-sq-ft 표, contractor-labor 블로그). 캐비닛만 신규: HomeGuide stock $50–120/linear ft.
+- **경쟁 도구에 없는 출력**: ① 최소출장비(minimum) vs 단가×면적 중 큰 값 채택 + "최소비가 가격을 결정함 / 실효 단가 $X" + 손익분기 면적
+  ② 시간 환산(같은 작업이 몇 시간어치인지 — "시간제냐 평당이냐" 쿼리 대응) ③ **받은 견적 입력 시 판정**(30% 미만 저가 경고 / 범위 내 / 상단 / 30% 초과).
+- 최소비 = 기존 `CONTRACTOR_RATES` 시급 밴드(×0.85~×1.3) × 최소시간(페인터 8h, 나머지 4h) — 위쪽 시급 계산기와 같은 상수 공유.
+- 타이틀 변경: "Fair Rates by Trade ($25–$150/hr)" → **"Hourly or Per Sq Ft, Labor Only"** (쿼리 언어에 맞춤). 설명문, FAQ 2개(JSON-LD 포함), 해설 섹션 2개 추가.
+- 계산기 JS 검산: 144sqft 페인트 $306–504(블로그 12x12 방 $300–600과 정합), 1x3 등 7케이스 확인.
+
+### 2) `tools/board-and-batten-calculator.html` — 섹션 2개 (1,978단어)
+- 1x2 / 1x3 / 1x4 비교표(144in 벽, 16in 목표 간격): 9개 16 5/16 / 9개 15 3/16 / 8개 16 9/16 — **계산기 실제 출력과 대조 일치 확인**.
+- 간격이 이미 틀어졌을 때: 대칭이면 의도된 패턴으로 읽힘(쿼리 예시 그대로 사용), 수정 시 양 끝은 두고 중간만 이동 + 벽 재도장.
+- 외장 board-and-batten 사이딩 보드 수 예시(24ft, 1x12, 3/4 갭 → 24장, 갭 23개 ≈25/32in, 배튼 23개). **별도 사이딩 계산기는 만들지 않음** — Inch Calculator 전용 계산기 존재, 포화.
+
+## 검토 후 스킵
+- 업자 측 "얼마 받아야 하나" 가격책정 계산기(handyman pricing) — Housecall Pro·Jobber·MethodMe·WrenchBid 등 SaaS가 전용 계산기 보유, 포화.
+  → 이 쿼리들은 위 1)의 작업크기 모드로 흡수.
+
+## 검증
+HTML 117/117, JSON-LD 323블록, 죽은링크 0, sitemap 117=파일 117, llms 113 URL 죽은링크 0, nav.js/인라인 JS node --check,
+**계산기 42/42 jsdom 정상**, 7-gram 최고 중복 0.8%(contractor 계산기 ↔ contractor-labor 블로그).
+
+## 작업 환경 주의 (추가)
+- tooltest.js 입력 자동채움에서 placeholder `"e.g. 12"`를 `/[0-9.]+/`로 파싱하면 `"."`이 먼저 잡혀 빈값 → 29개 계산기가 가짜 실패. **`/\d+(\.\d+)?/` 사용.** storage-unit은 체크박스 하나 체크해야 통과.
+
+## 다음 세션 지침
+1. contractor-cost-calculator: 빙 CTR(1.56%)이 새 타이틀로 움직이는지, GA 이탈률 0.83에서 떨어지는지.
+2. 덱 계산기 이탈률 추이 계속(0.80 → 0.67).
+3. 빙 PageTraffic이 이번처럼 전주와 동일하면 리포트 미갱신으로 보고 판단 보류.
+4. 미대응 각도(누적): 벽지 시작 위치, 차고 단열, gypcrete vs SLC, 대형 슬랩 샤워패널 뒤 보드, LVP 적응 시간.
+
+## 현재 상태
+- 툴 42 / 블로그 48 / 프로젝트 20 / 허브 3 / 루트 4 = **117개 파일** (sitemap 117)
