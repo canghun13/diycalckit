@@ -1594,3 +1594,50 @@ HTML 117/117, JSON-LD 323블록, 죽은링크 0, sitemap 117=파일 117, llms 11
 
 ## 현재 상태
 - 툴 42 / 블로그 48 / 프로젝트 20 / 허브 3 / 루트 4 = **117개 파일** (sitemap 117)
+
+---
+
+# 2026-10-05 세션 (GSC 10-05 + Bing Keyword/PageTraffic 10-05 + GA 09-07~10-04)
+
+## 데이터 판독
+- **빙 PageTraffic·Keyword 리포트 10-05가 09-28본과 바이트 단위로 동일**(cmp 확인). PageTraffic은 3주째 같은 숫자.
+  빙 쪽 미갱신이거나 내보내기 기간이 고정돼 있을 가능성 → **사용자에게 빙 리포트 기간 설정 확인 요청함.** 빙 신호로는 판단 보류.
+- **구글**: 정지 그대로. 색인 26/20, 차트 마지막 09-21, 최종 크롤링 07-21. 실적 일일 노출 0~3.
+  3개월 페이지 표: **primer-calculator 557노출(순위 15.8, 2클릭)이 구글 내 계산기 최다 노출**.
+- **GA**(28일 창이 이동): 활성 34(55에서 감소 — 창에서 8월 말 유입이 빠진 영향), 참여 21.0초. bing 5, chatgpt 1 유지.
+  contractor 계산기 새 타이틀로 1조회(이탈 0) 첫 집계.
+
+## 실행 (기존 페이지 보강 2건, URL 유지)
+### 1) `tools/primer-calculator.html` — "면적 숫자 하나만 아는" 모드 추가
+빙 프라이머 쿼리 대부분이 방 치수가 아니라 숫자 하나: `1700 sq ft`, `2000 sq ft house`, `3500 square feet`, `7100 sqft of wall`,
+`900/1000 sq ft ceiling`, `400sqft room`, `how many m2 does 1 gallon cover`. 기존 계산기는 가로×세로만 받음.
+- 입력: 면적, 단위(sq ft / m²), **그 숫자가 무엇인지**(측정한 표면 / 집 바닥면적-벽만 / 집 바닥면적-벽+천장), 천장고, 코트, 표면.
+- **경쟁 도구에 없는 출력 = 집 바닥면적 → 실제 도장 면적 환산.** 계수 2.13~2.45 × (천장고/8)는
+  how-much-baseboard-do-i-need의 "1,500 sq ft 집 = 벽 400~460 linear ft"에서 유도(사이트 내부 수치 공유). 천장 = 바닥면적.
+- 출력: 갤런 범위 + 리터, 5갤런 페일 구매 수(나머지 4갤런 이상이면 페일 1개 추가), m²/L 환산.
+- 표면 select는 기존 `#surface`의 options를 JS로 복사 → **커버리지 수치 단일 출처**.
+- "House Size Is Not the Area You Prime" 섹션 + 집 크기별 갤런 표(**표 수치는 계산기 함수 `primerQuickEstimate`를 node로 돌려 생성** —
+  처음 손으로 쓴 1,000/1,500 행이 틀려서 교정함. 표는 항상 함수로 생성할 것) + FAQ 1개(JSON-LD 포함).
+
+### 2) `blog/self-leveling-compound-vs-plywood-underlayment.html` — 바닥난방 PEX 위 타설 섹션
+빙 순위 1인데 우리 페이지에 해당 내용이 없던 쿼리: `gypcrete vs self leveling compound over 3/4 plywood with pex`(1위),
+`density of plywood vs density of self leveler concrete`(1위), `using plywood versus pouring leveler`(3위).
+- 두께별 무게 표: 합판 2.2 / 석고계(Maxxon Gyp-Crete 건조밀도 110~120 pcf) / 시멘트계 표준·경량(Laticrete 공표치).
+- **차별점: IRC 장선 스팬표가 고정하중 10 psf / 20 psf 두 열로 나뉘는데, 1.5인치 타설(14~16 psf)은 20 psf 열로 넘어간다는 점.**
+- 석고계(펌프 시공·실러 필요·물에 약함) vs 시멘트계(타일 직접 가능·깊은 1회 타설 제품 필요·합판 위 라스) + 200sqft×1.5in ≈ 50lb 포대 48개.
+- FAQ 1개 추가, dateModified 10-05.
+
+## 검토 후 스킵
+- 바닥난방 별도 신규 글: 쿼리량 극소(각 1~2노출)라 기존 글 섹션으로 충분. 노출 늘면 분리 검토.
+
+## 검증
+HTML 117/117, JSON-LD 323블록, 죽은링크 0, sitemap 117=파일 117, llms 113 URL 죽은링크 0, node --check,
+**계산기 42/42 jsdom**, 프라이머 신규 모드 6케이스 수동검산, 7-gram 최고 중복 1.3%(primer ↔ paint-calculator).
+
+## 다음 세션 지침
+1. **빙 리포트가 또 동일하면** 기간 설정 문제로 보고 사용자에게 재확인. 갱신되면 contractor(타이틀 변경 후 CTR), primer 쿼리 클릭 확인.
+2. 구글: primer-calculator가 구글에서 가장 노출 많은 계산기 — 구글 크롤 재개 시 이 페이지 순위 변화 우선 확인.
+3. 미대응 각도(누적): 벽지 시작 위치, 차고 단열, 대형 슬랩 샤워패널 뒤 보드, LVP 적응 시간, contractor 견적서/변경명세.
+
+## 현재 상태
+- 툴 42 / 블로그 48 / 프로젝트 20 / 허브 3 / 루트 4 = **117개 파일** (sitemap 117)

@@ -16,7 +16,7 @@
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Primer Calculator — How Much Primer Do I Need?","description":"Estimate primer coverage for walls and ceilings before painting. Accounts for surface type, coats, doors and windows.","url":"https://diycalckit.com/tools/primer-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"DIYCalcKit","url":"https://diycalckit.com"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need primer if I'm painting the same color?","acceptedAnswer":{"@type":"Answer","text":"Usually no, if the existing paint is in good condition and you're using the same or a similar color. Primer is essential when covering a dark color, painting new drywall, or covering stains."}},{"@type":"Question","name":"How many gallons of primer do I need per coat?","acceptedAnswer":{"@type":"Answer","text":"Primer covers a similar rate to paint, roughly 300-400 sq ft per gallon, though porous new drywall can absorb more on the first coat."}},{"@type":"Question","name":"Can I skip primer on new drywall?","acceptedAnswer":{"@type":"Answer","text":"Not recommended. Unprimed drywall absorbs paint unevenly, causing a blotchy effect called flashing, and drywall primer is inexpensive relative to the paint it saves."}},{"@type":"Question","name":"Is tinted primer better than white for dramatic color changes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tinting primer close to your final paint color reduces the number of topcoats needed, especially for reds, oranges, and other deep tones."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much primer do I need for a 2,000 sq ft house?", "acceptedAnswer": {"@type": "Answer", "text": "About 19 to 22 gallons for one coat on the walls over bare drywall, and 28 to 31 gallons if the ceilings are primed too. The house size is a floor area; the walls you prime add up to a little over twice that, which is why dividing 2,000 by the coverage on the can comes out far too low."}}, {"@type": "Question", "name": "Do I need primer if I'm painting the same color?", "acceptedAnswer": {"@type": "Answer", "text": "Usually no, if the existing paint is in good condition and you're using the same or a similar color. Primer is essential when covering a dark color, painting new drywall, or covering stains."}}, {"@type": "Question", "name": "How many gallons of primer do I need per coat?", "acceptedAnswer": {"@type": "Answer", "text": "Primer covers a similar rate to paint, roughly 300-400 sq ft per gallon, though porous new drywall can absorb more on the first coat."}}, {"@type": "Question", "name": "Can I skip primer on new drywall?", "acceptedAnswer": {"@type": "Answer", "text": "Not recommended. Unprimed drywall absorbs paint unevenly, causing a blotchy effect called flashing, and drywall primer is inexpensive relative to the paint it saves."}}, {"@type": "Question", "name": "Is tinted primer better than white for dramatic color changes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Tinting primer close to your final paint color reduces the number of topcoats needed, especially for reds, oranges, and other deep tones."}}]}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5592663499707350" crossorigin="anonymous"></script>
 <script type="application/ld+json">
@@ -65,7 +65,7 @@
       </ol>
     </nav>
     <h1>How Much Primer Do I Need?</h1>
-    <p class="tool-desc">Enter your room dimensions to calculate exactly how many gallons of primer you need. Accounts for doors, windows, surface type, and number of coats.</p>
+    <p class="tool-desc">Enter your room dimensions to calculate exactly how many gallons of primer you need. Accounts for doors, windows, surface type, and number of coats. Only have a total square footage or a house size? <a href="#known-area">Use the square-footage version</a>.</p>
 
     <div class="tool-box">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
@@ -130,6 +130,56 @@
       </div>
     </div>
 
+
+    <h2 id="known-area" style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:2rem 0 0.5rem;">Already Know the Square Footage?</h2>
+    <p style="margin-bottom:1rem;">If all you have is one number (a ceiling that is 900 sq ft, a 2,000 sq ft house, 60 m&sup2; of wall), start here instead. Say what the number measures, because a house's floor area and the wall area you will actually prime are very different figures.</p>
+    <div class="tool-box">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Area</label>
+          <input type="number" id="pq-area" value="1500" min="1" step="1">
+        </div>
+        <div class="form-group"><label>Units</label>
+          <select id="pq-unit">
+            <option value="ft" selected>Square feet</option>
+            <option value="m">Square metres (m&sup2;)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>What does that number measure?</label>
+        <select id="pq-kind">
+          <option value="surface">The surface itself (walls or ceiling I already measured)</option>
+          <option value="house-walls" selected>My home's floor area, priming walls only</option>
+          <option value="house-all">My home's floor area, priming walls and ceilings</option>
+        </select>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Ceiling Height</label>
+          <select id="pq-height">
+            <option value="8" selected>8 ft (2.4 m)</option>
+            <option value="9">9 ft (2.7 m)</option>
+            <option value="10">10 ft (3.0 m)</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Number of Coats</label>
+          <select id="pq-coats">
+            <option value="1">1 coat</option>
+            <option value="2">2 coats</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Surface Type</label>
+        <select id="pq-surface"></select>
+      </div>
+      <button class="btn-primary" onclick="calcPrimerQuick()" style="width:100%">Calculate From Square Footage &rarr;</button>
+      <div class="result-box" id="pq-result" style="display:none">
+        <div class="result-num" id="pq-gallons">&mdash;</div>
+        <div class="result-label" id="pq-label">gallons of primer needed</div>
+        <div style="margin-top:0.5rem; font-size:0.9rem; color:var(--mid)" id="pq-buy"></div>
+        <div style="margin-top:0.9rem; font-size:0.85rem; line-height:1.6" id="pq-area-note"></div>
+        <div style="margin-top:0.6rem; font-size:0.82rem; color:var(--mid)" id="pq-details"></div>
+      </div>
+    </div>
+
     <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin-bottom:0.75rem;">How to Calculate How Much Primer You Need</h2>
     <p>The formula is straightforward: total paintable area divided by coverage rate, multiplied by number of coats.</p>
     <p><strong>Step 1 — Wall area:</strong> Multiply the room perimeter (length + width × 2) by the ceiling height. Subtract 21 sq ft per door and 15 sq ft per window.</p>
@@ -154,6 +204,19 @@
     </table>
     <p style="font-size:0.92rem; color:var(--mid); margin-top:-0.4rem;"><strong>Working in metric?</strong> One US gallon is 3.785 litres and 1 sq ft is 0.0929 m&sup2;. A primer rated at 400 sq ft per gallon is about 9.8 m&sup2; per litre; at 250 sq ft per gallon it is about 6.1 m&sup2; per litre.</p>
 
+    <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">House Size Is Not the Area You Prime</h2>
+    <p>The most common way to badly under-buy primer is to divide a house's square footage by the coverage on the can. A 2,000 sq ft home does not have 2,000 sq ft of wall. Every interior wall has two faces, every room has four walls, and the walls are eight feet tall, so the paintable wall area runs a little over twice the floor area. Our <a href="/blog/how-much-baseboard-do-i-need.html">baseboard guide</a> puts a typical 1,500 sq ft home at 400&ndash;460 linear feet of wall; at 8 feet high that is 3,200&ndash;3,700 sq ft of wall, or 2.1&ndash;2.5 times the floor area. Add the ceilings and you are close to 3.5 times.</p>
+    <table>
+      <thead><tr><th>Home size</th><th>Walls only, 1 coat</th><th>Walls + ceilings, 1 coat</th></tr></thead>
+      <tbody>
+        <tr><td>1,000 sq ft</td><td>9.5&ndash;11 gal</td><td>14&ndash;15.25 gal</td></tr>
+        <tr><td>1,500 sq ft</td><td>14.25&ndash;16.25 gal</td><td>20.75&ndash;23 gal</td></tr>
+        <tr><td>2,000 sq ft</td><td>19&ndash;21.75 gal</td><td>27.75&ndash;30.5 gal</td></tr>
+        <tr><td>3,000 sq ft</td><td>28.25&ndash;32.5 gal</td><td>41.5&ndash;45.75 gal</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.85rem;color:var(--mid);">Bare drywall at 250 sq ft per gallon, 8 ft ceilings, 10% extra included. Double for two coats; scale down by the coverage ratio for previously painted walls (350 sq ft per gallon cuts each figure by about 30%).</p>
+    <p>A ceiling is the exception: its area is the floor area of the room below it, so a "900 sq ft ceiling" really is 900 sq ft to prime. If the number you have came from a listing or a tax record, it is a floor area; if you measured walls with a tape, it is a surface area. The square-footage version of the calculator above asks which one you have for exactly this reason.</p>
     <h2 style="font-family:'DM Serif Display',serif; font-size:1.4rem; font-weight:400; color:var(--slate); margin:1.5rem 0 0.75rem;">Three Surfaces That Break the 400 Sq Ft Rule</h2>
     <p>The "one gallon covers 400 square feet" figure on the can is a smooth, sealed-wall number. Three surfaces come up constantly and none of them behave that way:</p>
     <ul style="margin:0.75rem 0 1rem 1.25rem; line-height:1.85;">
@@ -202,6 +265,8 @@
     </ul>
 
         <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--slate);margin:1.5rem 0 .75rem;">Frequently Asked Questions</h2>
+    <p><strong>How much primer do I need for a 2,000 sq ft house?</strong></p>
+    <p>About 19 to 22 gallons for one coat on the walls over bare drywall, and 28 to 31 gallons if the ceilings are primed too. The house size is a floor area; the walls you prime add up to a little over twice that, which is why dividing 2,000 by the coverage on the can comes out far too low.</p>
     <p><strong>Do I need primer if I'm painting the same color?</strong></p>
     <p>Usually no, if the existing paint is in good condition and you're using the same or a similar color. Primer is essential when covering a dark color, painting new drywall, or covering stains.</p>
     <p><strong>How many gallons of primer do I need per coat?</strong></p>
@@ -257,6 +322,64 @@ function calcPrimer() {
     (ceiling === 'yes' ? ` + Ceiling: ${Math.round(ceilArea)} sq ft` : '') +
     ` = ${Math.round(totalArea)} sq ft × ${coats} coat${coats > 1 ? 's' : ''} ÷ ${coverage} sq ft/gal`;
   document.getElementById('result').style.display = 'block';
+}
+
+// Known-area mode (2026-10-05). Coverage options are copied from #surface so both modes
+// share one set of numbers. Floor-to-wall factor comes from the baseboard guide:
+// a 1,500 sq ft home has about 400-460 linear ft of wall, x 8 ft = 2.13-2.45 x floor area.
+var PQ_WALL_LO = 400 / 1500 * 8, PQ_WALL_HI = 460 / 1500 * 8;
+var PQ_M2 = 10.7639, PQ_L = 3.78541;
+(function () {
+  var src = document.getElementById('surface'), dst = document.getElementById('pq-surface');
+  if (src && dst) { dst.innerHTML = src.innerHTML; dst.value = src.value; }
+})();
+
+function pqRoundQuart(g) { return Math.ceil(g * 1.1 * 4) / 4; }
+function pqBuy(g) {
+  var whole = Math.floor(g), q = Math.round((g - whole) * 4);
+  if (g >= 5) {
+    var pails = Math.floor(g / 5), rest = Math.ceil(g - pails * 5);
+    if (rest >= 4) { pails += 1; rest = 0; }
+    return 'Buy ' + pails + ' five-gallon pail' + (pails > 1 ? 's' : '') + (rest ? ' + ' + rest + ' gallon' + (rest > 1 ? 's' : '') : '') + ' (pails usually cost less per gallon than singles)';
+  }
+  if (q === 0) return 'Buy ' + whole + ' gallon' + (whole !== 1 ? 's' : '');
+  if (whole === 0) return 'Buy ' + q + ' quart' + (q !== 1 ? 's' : '');
+  return 'Buy ' + whole + ' gallon' + (whole !== 1 ? 's' : '') + ' + ' + q + ' quart' + (q !== 1 ? 's' : '');
+}
+function pqFmt(n) { return Math.round(n).toLocaleString(); }
+
+function primerQuickEstimate(area, unit, kind, height, coats, coverage) {
+  var a = unit === 'm' ? area * PQ_M2 : area;
+  var hf = height / 8, lo, hi;
+  if (kind === 'surface') { lo = hi = a; }
+  else {
+    lo = a * PQ_WALL_LO * hf; hi = a * PQ_WALL_HI * hf;
+    if (kind === 'house-all') { lo += a; hi += a; }
+  }
+  return { sqLo: lo, sqHi: hi, gLo: pqRoundQuart(lo / coverage * coats), gHi: pqRoundQuart(hi / coverage * coats) };
+}
+
+function calcPrimerQuick() {
+  var area = parseFloat(document.getElementById('pq-area').value);
+  if (!(area > 0)) { alert('Please enter the area.'); return; }
+  var unit = document.getElementById('pq-unit').value, kind = document.getElementById('pq-kind').value;
+  var height = parseFloat(document.getElementById('pq-height').value);
+  var coats = parseInt(document.getElementById('pq-coats').value, 10);
+  var coverage = parseInt(document.getElementById('pq-surface').value, 10);
+  var r = primerQuickEstimate(area, unit, kind, height, coats, coverage);
+  var same = r.gLo === r.gHi;
+  document.getElementById('pq-gallons').textContent = same ? r.gHi.toFixed(2) : r.gLo.toFixed(2) + '–' + r.gHi.toFixed(2);
+  document.getElementById('pq-label').textContent = 'gallons of primer (' + (same ? (r.gHi * PQ_L).toFixed(1) : (r.gLo * PQ_L).toFixed(1) + '–' + (r.gHi * PQ_L).toFixed(1)) + ' litres), including 10% extra';
+  document.getElementById('pq-buy').textContent = pqBuy(r.gHi) + (same ? '' : ' to cover the high end');
+  var note;
+  if (kind === 'surface') {
+    note = 'Priming <strong>' + pqFmt(r.sqHi) + ' sq ft</strong> (' + pqFmt(r.sqHi / PQ_M2) + ' m&sup2;) of surface as entered. If that figure is actually a floor area, switch the second box: a floor area understates the wall area by more than half.';
+  } else {
+    note = 'A home of that floor area has roughly <strong>' + pqFmt(r.sqLo) + '&ndash;' + pqFmt(r.sqHi) + ' sq ft</strong> to prime' + (kind === 'house-all' ? ' (walls plus ceilings)' : ' of wall') + '. The low end fits open-plan layouts; the high end fits homes split into many small rooms, which add wall without adding floor.';
+  }
+  document.getElementById('pq-area-note').innerHTML = note;
+  document.getElementById('pq-details').textContent = coats + ' coat' + (coats > 1 ? 's' : '') + ' at ' + coverage + ' sq ft per gallon (' + (coverage / PQ_M2 / PQ_L).toFixed(1) + ' m² per litre).';
+  document.getElementById('pq-result').style.display = 'block';
 }
 </script>
   <footer class="site-footer">
