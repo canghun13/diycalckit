@@ -1661,6 +1661,8 @@ HTML 117/117, JSON-LD 323블록, 죽은링크 0, sitemap 117=파일 117, llms 11
 - 키 파일 `/e4dab337aa6bc4aebb0ef152933601ab.txt`(루트, 지우지 말 것) + `.github/workflows/indexnow.yml`.
 - push 시 그 push에서 바뀐 .html만 제출, 수동 실행(workflow_dispatch) 시 sitemap 전체 제출. Pages 배포 대기 90초 후 제출.
 - 이 컨테이너에서는 api.indexnow.org가 프록시 차단이라 GitHub Actions에서 보내도록 함.
+- **10-12 첫 실행: push분(c7126f5) 성공 + 수동 실행으로 sitemap 전체 118개 제출 성공**(둘 다 Actions success = IndexNow가 2xx 응답).
+  Actions 로그 본문은 이 환경의 gh가 blob 리다이렉트를 거부해 못 읽음 — 성공/실패 여부만 runs API로 확인.
 
 ### 2) `tools/garage-insulation-calculator.html` 신규 (계산기 43개째)
 빙 미대응 쿼리 `how much bags of insulation needed for 16x16 garage`(순위 9). 일반 단열 계산기는 포화(Inch/InsulationPal/전용 사이트 다수)라
