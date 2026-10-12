@@ -1,0 +1,53 @@
+# Notify Bing (and other IndexNow engines) when pages change.
+# Push: submits only the .html files changed in that push. Manual run: submits every URL in sitemap.xml.
+# Key file: /e4dab337aa6bc4aebb0ef152933601ab.txt (must stay at the site root).
+name: IndexNow
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'sitemap.xml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Wait for GitHub Pages to publish
+        if: github.event_name == 'push'
+        run: sleep 90
+      - name: Build URL list and submit
+        env:
+          KEY: e4dab337aa6bc4aebb0ef152933601ab
+          HOST: diycalckit.com
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import os, re, json, subprocess, urllib.request
+          host, key, event = os.environ['HOST'], os.environ['KEY'], os.environ['EVENT']
+          if event == 'push' and not set(os.environ['BEFORE']) <= {'0'}:
+              out = subprocess.run(['git', 'diff', '--name-only', '--diff-filter=AM', os.environ['BEFORE'], os.environ['AFTER']],
+                                   capture_output=True, text=True, check=True).stdout.split()
+              urls = []
+              for f in out:
+                  if not f.endswith('.html') or f.startswith('.'):
+                      continue
+                  path = '/' + (f[:-len('index.html')] if f.endswith('index.html') else f)
+                  urls.append('https://' + host + path)
+          else:
+              urls = re.findall(r'<loc>([^<]+)</loc>', open('sitemap.xml').read())
+          urls = sorted(set(urls))
+          print(len(urls), 'URLs'); print('\n'.join(urls))
+          if not urls:
+              raise SystemExit(0)
+          body = json.dumps({'host': host, 'key': key, 'keyLocation': f'https://{host}/{key}.txt', 'urlList': urls}).encode()
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=body,
+                                       headers={'Content-Type': 'application/json; charset=utf-8'})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print('IndexNow response', r.status)
+          PY
