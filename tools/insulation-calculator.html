@@ -164,7 +164,9 @@
 const INSULATION_COVERAGE = {
   blown_fiberglass: { "13":65, "19":45, "30":32.5, "38":25.7, "49":19.7, "60":16 },
   blown_cellulose:  { "13":60, "19":41, "30":27,   "38":21,   "49":16,   "60":13.5 },
-  batt:             { "13":88, "19":49, "21":45, "30":40 }
+  // Batt packages: printed coverage per bag, Owens Corning (2026-10-19): R-13 15x93 11 pcs, R-19 15x93 8 pcs,
+  // R-21 15x93 7 pcs, R-30 and R-38 16x48. Shared with garage-insulation-calculator. Pack sizes vary by store.
+  batt:             { "13":106.56, "19":77.5, "21":67.81, "30":53.33, "38":42.67 }
 };
 const INSULATION_UNIT_LABEL = { blown_fiberglass: 'bags needed', blown_cellulose: 'bags needed', batt: 'packages needed' };
 
@@ -187,7 +189,7 @@ function calcInsulation() {
   const bags = Math.ceil(area / coveragePerBag);
   document.getElementById('bags').textContent = bags;
   document.getElementById('unit-label').textContent = INSULATION_UNIT_LABEL[type];
-  document.getElementById('area_detail').textContent = Math.round(area) + ' sq ft at R-' + rvalue + ' (~' + coveragePerBag + ' sq ft per unit).';
+  document.getElementById('area_detail').textContent = Math.round(area) + ' sq ft at R-' + rvalue + ' (~' + coveragePerBag + ' sq ft per unit' + (type === 'batt' ? '; batt pack sizes vary, so check the coverage printed on the bag' : '') + ').';
   document.getElementById('result').style.display = 'block';
 }
 </script>

@@ -27,7 +27,7 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [Tile Calculator](https://diycalckit.com/tools/tile-calculator.html): Calculates number of tiles needed for floors or walls, including grout joint and waste allowance.
 - [Backsplash Tile Calculator](https://diycalckit.com/tools/backsplash-tile-calculator.html): Calculates tile count, square footage, and cost for a kitchen or bathroom backsplash based on wall dimensions, tile size, and layout pattern.
 - [Grout Calculator](https://diycalckit.com/tools/grout-calculator.html): Calculates exact bags of grout needed based on tile size, joint width, tile thickness, and grout type.
-- [Carpet Calculator](https://diycalckit.com/tools/carpet-calculator.html): Estimates square yards of carpet needed for a room, with seam and waste factored in.
+- [Carpet Calculator](https://diycalckit.com/tools/carpet-calculator.html): Estimates square yards of carpet for one or more rooms, then lays each room out on 12 ft and 15 ft rolls: strips, linear feet to order, seams, and which roll width wastes less.
 - [Hardwood Floor Calculator](https://diycalckit.com/tools/hardwood-floor-calculator.html): Calculates square footage and board count for hardwood flooring installation.
 
 ### Area & Structural
