@@ -1773,3 +1773,49 @@ HTML 119/119, JSON-LD 329블록, 죽은링크 0, sitemap 119=파일 119, llms 11
 
 ## 현재 상태
 - 툴 **44** / 블로그 48 / 프로젝트 20 / 허브 3 / 루트 4 = **119개 파일** (sitemap 119)
+
+---
+
+# 2026-11-02 세션 (GSC 11-02 + Bing Keyword/PageTraffic 11-02 + GA 10-05~11-01)
+
+## 데이터 판독
+- **빙 리포트 11-02도 09-28본과 바이트 동일(7주째).** 판단 제외.
+- **GA**: 활성 35, 참여 4.5초. 소스: direct 29 / **chatgpt.com 3명·4세션(1→2→3, 유일하게 증가 중인 채널)** / google organic 2 / newtool 1.
+  신규 SLC 계산기 1조회. 차고 단열 3조회 유지.
+- **구글 3개월**: 노출 192, 클릭 0. 페이지 1위 how-to-build-a-deck(26, 순위 70), SLC 글 17(순위 51.5 — 지난주 49.5, 타이틀 변경 효과는 아직 없음).
+  눈에 띈 쿼리: **`cement board system calculator` 순위 29**(전용 페이지 없이 노출), `how to cut densshield`(78).
+- 색인: 발견됨-미색인 22, 크롤링됨-미색인 26, 최종 크롤링 07-21 그대로.
+
+## 실행
+### `tools/cement-board-calculator.html` 신규 (계산기 45개째, cat flooring)
+구글에서 순위 29로 걸리는 `cement board system calculator` + 빙 시멘트보드 클러스터(`is cement board ok for tile showers` 1위, greenboard vs cement 4위).
+경쟁(projectcalcs, vibecalc, simplified.tools, projectyards, Lowe's PDF)은 **총면적 ÷ 시트 면적**만 함. 회피 장치:
+- **벽 단위 레이아웃**(욕조 알코브 = 뒷벽+양 끝벽 / 샤워 스톨 / 커스텀 3벽), 벽마다 세로·가로 배치 중 시트 적은 쪽(동률이면 이음매 짧은 쪽).
+- **3x5 vs 4x8 동시 표시** + 오프컷 재사용 시 절감 수. 3x5를 옆으로 눕히면 5ft = 표준 욕조 길이라는 점을 본문 근거로.
+- 메시 테이프 = 시트 이음매 + 벽 사이 내부 코너, 10% 여유, 50ft 롤 수.
+- 나사: Lowe's 시멘트보드 견적표(벽: 3x5당 36, 4x8당 ~50), 25개 단위 올림.
+- 액상 방수막: RedGard TDS 견적표 **약 55 sq ft/gal(방수, 2코트)**, 1갤런/3.5갤런 구매 안내.
+- IRC R307.2 "바닥에서 6ft 이상 비흡수 마감" 안내, 방수막+비닐 이중 방습 금지 경고.
+- 표 수치는 계산 함수로 생성(테이프 반올림 2건 교정).
+- cement-board-vs-greenboard 글에 계산기 링크 추가(양방향), dateModified 11-02.
+- 수익화: 시멘트보드·방수막·전용 나사·메시테이프 제휴 접점(욕실 리모델 클러스터).
+
+### 기타
+툴 개수 44→45(홈·허브), 푸터 120페이지 갱신(신규 추가, thinset 제거).
+
+## 작업 환경 주의
+- 컨테이너 교체로 스크래치 스크립트(validate.py, tooltest.js) 소실 → 재작성. 둘 다 위 기록대로 재현 가능.
+  tooltest: placeholder 파싱은 `/\d+(\.\d+)?/`, storage-unit은 체크박스 1개 체크.
+
+## 검증
+HTML 120/120, JSON-LD 332블록, 죽은링크 0, sitemap 120=파일 120, llms 116 URL 죽은링크 0, node --check(nav·신규·허브),
+**계산기 45/45 jsdom**, 신규 3케이스 수동검산, 7-gram 최고 0.5%.
+
+## 다음 세션 지침
+1. 빙 웹마스터 확인(사용자) — 7주째 미갱신.
+2. **ChatGPT 유입이 3주 연속 증가** — 어떤 페이지로 들어오는지 GA 랜딩 확인 요청 고려. llms.txt 최신 유지.
+3. 구글: SLC 글 순위, `cement board system calculator` 쿼리에 신규 페이지가 잡히는지.
+4. 미대응 각도(누적): 벽지 시작 위치, DensShield 재단(`how to cut densshield`), 데크 스테인 방법, contractor 견적서/변경명세.
+
+## 현재 상태
+- 툴 **45** / 블로그 48 / 프로젝트 20 / 허브 3 / 루트 4 = **120개 파일** (sitemap 120)

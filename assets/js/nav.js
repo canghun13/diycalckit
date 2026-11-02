@@ -19,6 +19,7 @@ gtag('config', GA_ID);
 
 // ── 툴 목록 ─────────────────────────────────────────────────
 const TOOLS = [
+  { name: "Cement Board Calculator for Showers & Tub Surrounds — Sheets, Screws, Tape", url: "/tools/cement-board-calculator.html" },
   { name: "Self-Leveling Compound Calculator — Bags for Concrete or Plywood", url: "/tools/self-leveling-compound-calculator.html" },
   { name: "Garage Insulation Calculator — Bags for Walls, Ceiling & the House Wall", url: "/tools/garage-insulation-calculator.html" },
   { name: "LVP Layout Calculator — First Row Width, Last Row & Offcut Reuse", url: "/tools/lvp-layout-calculator.html" },
