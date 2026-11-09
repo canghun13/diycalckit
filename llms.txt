@@ -12,7 +12,7 @@ DIYCalcKit provides free, instant calculators that help homeowners estimate mate
 - [Gutter Calculator](https://diycalckit.com/tools/gutter-calculator.html): Calculates linear feet of gutter, downspouts, and hangers needed based on home size and roof type (gable or hip).
 
 ### Holiday & Seasonal
-- [Christmas Lights Calculator](https://diycalckit.com/tools/christmas-lights-calculator.html): Calculates total feet, strand count, and bulb count of Christmas lights needed for roofline, windows, doors, and trees.
+- [Christmas Lights Calculator](https://diycalckit.com/tools/christmas-lights-calculator.html): Calculates total feet, strand count, and bulb count of Christmas lights for roofline, windows, doors, and trees, then plans the power: runs allowed by the end-to-end limit, 15 A circuits at the 1,440 W continuous limit, and season electricity cost in LED vs incandescent.
 
 ### Paint & Wall
 - [Paint Calculator](https://diycalckit.com/tools/paint-calculator.html): Calculates gallons of paint needed based on room dimensions, number of coats, and door/window deductions.

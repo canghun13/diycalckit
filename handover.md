@@ -1819,3 +1819,45 @@ HTML 120/120, JSON-LD 332블록, 죽은링크 0, sitemap 120=파일 120, llms 11
 
 ## 현재 상태
 - 툴 **45** / 블로그 48 / 프로젝트 20 / 허브 3 / 루트 4 = **120개 파일** (sitemap 120)
+
+---
+
+# 2026-11-09 세션 (GSC 11-09 + Bing Keyword/PageTraffic 11-09 + GA 10-12~11-08)
+
+## 데이터 판독
+- **빙 리포트가 7주 만에 갱신됨.** PageTraffic 페이지 45→50, 노출 662→754, 클릭 15→19. → 지난 7주 "동일 파일"은 빙 쪽 리포트 정체였고 사이트 문제는 아니었던 것으로 정리.
+  눈에 띄는 변화: grout 18→**36**(2배), peel-and-stick 11→17·클릭 1→**3**(CTR 17.6%), how-many-coats 4→14, garden-area 1→8,
+  **신규 진입: backsplash 블로그 6노출·1클릭, christmas-lights-calculator 3노출·1클릭**(`how many christmas lights ... around a standard door` 순위 2).
+  신규 쿼리: `how deep is a standerd garden bed in cm`(5노출, 순위 7.8), `circular garden area calculation`(3, 9), `what size curtain panel to cover 70 in window`(2, 8),
+  `can i use mastic over dry thinset on floor tiles`(2, 2), `contractor charge per square foot labor only 8x8 deck`(SC, 순위 2).
+- **GA 10-12~11-08**: 활성 83(35→83), 참여 26.9초. bing 7 / ddg 4 / yahoo 2 / chatgpt 3 / google 2 → **빙 계열 오가닉이 다시 잡힘**.
+  단, 마지막 4일에 신규 52명 급증 + 도시 Ashburn 12(데이터센터 지역) + 페이지마다 1조회씩 고르게 분포 → **크롤러성 트래픽 섞인 것으로 판단. 83명을 실사용자로 해석하지 말 것.**
+- 구글: 정지 그대로(색인 수치 변화 없음, 최종 크롤링 07-21).
+
+## 판단 — 시즌성 우선
+11월 = 크리스마스 조명 수요 정점 직전. 조명 계산기는 빙 클릭이 막 시작됐고(순위 2) GA 3조회. 제휴(LED 조명·타이머·실외 연장선) 전환 시기이므로 최우선.
+
+## 실행
+### 1) `tools/christmas-lights-calculator.html` — 전원 계획 추가
+기존은 길이·세트 수·전구 수뿐. **경쟁 계산기에 없는 출력 = 플러그/회로/전기료**:
+- LED/백열 선택, 세트당 소비전력(Christmas Light Emporium 기준: 백열 미니 100구 ~40W, LED 미니 ~5W, 백열 C9 25구 ~175W, LED C9 ~15W).
+- 끝끝 연결 한도(박스 태그, 기본 LED 20 / 백열 미니 3 / 백열 C9 2, 수정 가능) → **콘센트·연장선 run 수**.
+- 15A 회로 연속부하 80% = 1,440W 기준 **필요 회로 수** + 실외 콘센트가 차고·욕실과 같은 회로인 경우 경고.
+- 시즌 전기료(기본 6시간 × 40일 × $0.18/kWh — 2026-11 미국 평균 18.34¢) + **반대 기술(LED↔백열) 비용 비교**(LED 전환 제휴 훅).
+- 섹션 1개 + FAQ 3개(끝끝 연결 수, 문 둘레 필요 길이 = 36x80 문 약 16ft, 회로당 몇 개) + 메타 설명 갱신.
+
+### 2) `blog/how-deep-should-raised-garden-bed-be.html` — cm 섹션
+`how deep is a standard garden bed in cm`(빙 신규 최다 쿼리) 대응: 표준 30cm, 작물별 cm 범위, **미터법 베드 5종의 흙 리터·50L/40L 봉지 수 표**, 공식(m×1,000 = L), FAQ 1개.
+
+## 검증
+HTML 120/120, JSON-LD 332블록, 죽은링크 0, sitemap 120, llms 116 URL 죽은링크 0, node --check, **계산기 45/45 jsdom**, 조명 5케이스 수동검산, 7-gram 최고 0.7%.
+
+## 다음 세션 지침
+1. 조명 계산기: 빙 노출·클릭, GA 조회 추이(12월 초까지 시즌). 필요 시 "타이머/스마트 플러그" 각도 추가 검토.
+2. 빙 갱신 재개 — 다음 주 리포트와 비교해 정상 주기 확인.
+3. 미대응(누적): 원형 화단 면적(`circular garden area calculation` — 계산기에 원형 탭은 있으나 cm/미터 입력 없음), 커튼 패널 폭(70in 창),
+   매스틱 위 씬셋(`can i use mastic over dry thinset`), 데크 시공 인건비(평당) — contractor 작업크기 모드에 데크 항목 추가 후보(출처 확인 필요),
+   벽지 시작 위치, DensShield 재단, contractor 견적서/변경명세.
+
+## 현재 상태
+- 툴 45 / 블로그 48 / 프로젝트 20 / 허브 3 / 루트 4 = **120개 파일** (sitemap 120)
