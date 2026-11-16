@@ -1861,3 +1861,54 @@ HTML 120/120, JSON-LD 332블록, 죽은링크 0, sitemap 120, llms 116 URL 죽�
 
 ## 현재 상태
 - 툴 45 / 블로그 48 / 프로젝트 20 / 허브 3 / 루트 4 = **120개 파일** (sitemap 120)
+
+---
+
+# 2026-11-16 세션 (GSC 11-16 + Bing Keyword/PageTraffic 11-16 + GA 10-19~11-15)
+
+## 데이터 판독 — 빙 2주 연속 갱신, 성장 확인
+| 페이지 | 노출(11-09) | 클릭 |
+|---|---|---|
+| contractor-cost-calculator | **187**(132) | **4**(2) |
+| square-footage | 124(115) | 4 |
+| **1-2-vs-5-8-drywall** | **85**(53) | **2**(0) |
+| carpet | 61 | 3 |
+| **how-many-coats-of-primer** | **57**(14) | **2**(0) |
+| grout-calculator | 54(36) | 1 |
+| peel-and-stick 블로그 | 16 | 3 (CTR 18.8%) |
+| christmas-lights | 7 | 1 |
+| carpet-pad-density | 6 | 1 |
+PageTraffic 합계 페이지 57개. **contractor 계산기는 10-02 타이틀 변경 후 클릭 2→4.**
+- 키워드: 프라이머 코트 수 쿼리 다수 신규(`two coats of primer on new walls or one coat primer and two coats paint`, `1 coat primer and 2 coats paint`, `what does extra coats and prime mean`, `wooden windows exposed to rain and sea salt` 등),
+  드라이월 두께 쿼리 신규(`fire rating of 1/2 inch type x vs 5/8`, `drywall 5/8 vs two ply 1/2`, `drywall return window 1/2 or 5/8`, `when to use 1/2 next to 5/8`, `5/8 vs 1/2 for bedroom ceiling`, `basement ceiling`).
+- GA: 활성 124, **bing organic 14명(7→14)**, yahoo 4, ddg 4, chatgpt 2. Ashburn 15 등 크롤러성 유입 계속 섞임.
+- 구글: 정지. 크롤링됨-미색인 26, **발견됨-미색인 24**(+2, 최근 신규). 3개월 노출 151, 클릭 0.
+
+## 실행 (빙에서 급성장 중인 블로그 2개 보강)
+### 1) `blog/1-2-vs-5-8-drywall.html`
+- **오류 2건 교정(중요)**:
+  ① 무게 "5/8가 sq ft당 2.5~3lb 더 무겁다" → 실제 5/8 Type X **2.2 lb/sq ft**(USG Firecode X 공표, 4x8 약 70lb), 1/2는 1.2~1.6lb.
+  ② 차고 FAQ·본문 "차고 벽·천장 모두 5/8 Type X 필요" → **IRC R302.6: 집과의 벽은 1/2 이상, 천장은 위에 거실 공간 있을 때만 5/8 Type X**(차고 단열 계산기와 일치시킴).
+- 신규 섹션 "Where the Two Thicknesses Meet": 천장(처짐 — 24" 간격, sag-resistant 1/2), 창문 리턴(5/8 쓰면 잼 1/8" 들어감 → 연장 잼), 같은 면 혼용(1/8" 단차 처리, 내부 코너에서 전환),
+  1/2 두 겹 vs 5/8 한 겹(질량 약 60% 증가·소음, 내화등급은 시험된 조립체로만 — Type C 언급).
+- FAQ 2개 추가(1/2 Type X/Type C 내화, 침실·지하 천장 두께), JSON-LD 교정 반영, dateModified 11-16.
+
+### 2) `blog/how-many-coats-of-primer-do-i-need.html`
+- 신규 섹션 "Primer Coats and Paint Coats Together": 표면별 **프라이머 코트 + 페인트 코트 조합표**(신규 석고보드·동색 재도장·중간톤 변경·진한 색/얼룩·외부 목재 창호·콘크리트 바닥),
+  "페인트 2코트는 고정, 프라이머 수가 바뀜", paint-and-primer-in-one 의미와 대체 불가한 표면, 외부 목재 창·트림(염분·비, 단면 프라이밍, 2주 이상 노출 시 재샌딩).
+- **사이트 기존 입장(신규 석고보드 프라이머 2코트) 유지**하며 조합표 작성 — 모순 없음 확인.
+- FAQ 2개 추가, dateModified 11-16.
+
+## 남겨둔 것 (다음 정리 후보)
+- `blog/how-much-drywall-do-i-need.html`, `tools/drywall-calculator.html`에 "차고는 보통 5/8 Type X 필요(지역 확인)" 문구 — 틀린 건 아니나 위 교정 기준(벽 1/2, 위층 있는 천장 5/8)과 표현을 맞추면 좋음.
+
+## 검증
+HTML 120/120, JSON-LD 332블록, 죽은링크 0, sitemap 120, llms 116 URL 죽은링크 0, **계산기 45/45 jsdom**, 7-gram 최고 0.7%.
+
+## 다음 세션 지침
+1. 빙: drywall·primer-coats 블로그 노출·클릭 변화(이번 보강 효과), contractor 클릭 추이.
+2. 크리스마스 조명 계산기 시즌 추적(12월 초까지).
+3. 미대응(누적): 원형 화단 면적·미터 입력, 커튼 패널 폭, 매스틱/씬셋 세부, 데크 시공 인건비, 벽지 시작 위치, DensShield 재단.
+
+## 현재 상태
+- 툴 45 / 블로그 48 / 프로젝트 20 / 허브 3 / 루트 4 = **120개 파일** (sitemap 120)
